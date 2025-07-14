@@ -8,6 +8,36 @@
 
 Provides comprehensive technical specification management capabilities integrated with Jira development workflows. Enables creation of detailed technical specifications, architecture documentation, and design decisions that align with project requirements and facilitate effective development.
 
+## AI Integration Strategy
+
+### Primary: Gemini CLI Integration
+**Uses Gemini CLI when available for superior documentation generation:**
+
+```bash
+# AI-powered technical specification generation
+if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
+    # Generate comprehensive technical specifications
+    gemini --all-files -p "Create a comprehensive technical specification for this feature.
+    Include: system architecture, API design, database schema, security considerations.
+    Use professional technical writing standards." --format markdown
+    
+    # Architecture documentation
+    gemini --all-files -p "Generate detailed architecture documentation.
+    Include: component diagrams, data flow, integration points, scalability considerations.
+    Format as structured technical documentation." --format structured
+    
+    # API specification generation
+    gemini -p "Generate OpenAPI specification for the API endpoints in this codebase.
+    Include: request/response schemas, authentication, error handling." --format yaml
+fi
+```
+
+### Enhanced AI Capabilities
+- **Code-to-Spec Generation**: Automatically generates specs from existing code
+- **Architecture Analysis**: AI-powered system architecture documentation
+- **API Documentation**: Generates comprehensive API specifications
+- **Security Assessment**: Identifies and documents security considerations
+
 ## Core Features
 
 ### Intelligent Spec Generation

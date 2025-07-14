@@ -8,6 +8,33 @@
 
 Streamlines Jira issue creation and management with intelligent templates, automatic field population, and integration with development workflows. Supports all issue types with project-specific customization.
 
+## AI Integration Strategy
+
+### Primary: Gemini CLI Integration
+**Uses Gemini CLI when available for superior issue creation:**
+
+```bash
+# AI-powered issue creation
+if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
+    # Analyze current context for issue creation
+    git diff --name-only | head -10 | xargs cat | \
+    gemini -p "Based on these code changes, suggest a comprehensive Jira issue.
+    Include: summary, description, acceptance criteria, story points estimate.
+    Format as structured Jira issue data." --format json
+    
+    # Generate user stories from requirements
+    gemini --all-files -p "Generate user stories for the current feature implementation.
+    Use format: As a [user type], I want [goal] so that [benefit].
+    Include acceptance criteria and technical requirements." --format markdown
+fi
+```
+
+### Enhanced AI Capabilities
+- **Context-Aware Creation**: Analyzes code changes to suggest relevant issues
+- **Smart Field Population**: Auto-fills priority, labels, and components based on context
+- **Acceptance Criteria Generation**: Creates comprehensive acceptance criteria from requirements
+- **Story Point Estimation**: AI-powered complexity analysis and point estimation
+
 ## Core Features
 
 ### Smart Issue Creation

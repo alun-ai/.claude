@@ -1,8 +1,35 @@
-# Code Review Workflow: Comprehensive Analysis & Report Generation
+# Code Review Workflow: AI-Enhanced Comprehensive Analysis
 
 **Target:** $ARGUMENTS (Default: latest commits of current branch)
 
-**Scope:** Analyze code changes, architecture patterns, and implementation quality
+**Scope:** Analyze code changes, architecture patterns, and implementation quality with AI assistance
+
+## AI Integration Strategy
+
+### Primary: Gemini CLI Integration
+**Uses Gemini CLI when available for enhanced code analysis:**
+
+```bash
+# AI-powered comprehensive code review
+if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
+    # Analyze current changes with full context
+    git diff HEAD~1 | gemini --all-files -p "Perform a comprehensive code review.
+    Analyze: architecture patterns, security vulnerabilities, performance issues,
+    code quality, test coverage, and best practices compliance.
+    Provide specific, actionable recommendations." --format structured
+    
+    # Security-focused analysis
+    gemini --all-files -p "Conduct a security-focused code review.
+    Look for: authentication issues, authorization gaps, input validation,
+    SQL injection, XSS vulnerabilities, sensitive data exposure." --focus security
+fi
+```
+
+### Enhanced AI Capabilities
+- **Deep Architecture Analysis**: AI-powered pattern recognition and design assessment
+- **Security Vulnerability Detection**: Advanced security analysis beyond traditional tools
+- **Performance Optimization**: Intelligent performance bottleneck identification
+- **Best Practice Enforcement**: Context-aware best practice recommendations
 
 ## Execution Steps
 

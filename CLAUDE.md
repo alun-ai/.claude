@@ -4,6 +4,44 @@ We're building production-quality code together. Your role is to create maintain
 
 When you seem stuck or overly complex, I'll redirect you - my guidance helps you stay on track.
 
+## 🤖 AI-Powered Development Commands
+
+### Gemini CLI Integration
+**PRIORITY: Use Gemini CLI when available for enhanced AI capabilities**
+
+All `/m-*` commands now support Gemini CLI integration for superior AI assistance:
+- **Commit Messages**: `/m-commit-push` uses Gemini for intelligent commit message generation
+- **Code Review**: `/m-review-code` leverages Gemini for comprehensive analysis
+- **Documentation**: `/m-jira-docs`, `/m-jira-tech-spec` use Gemini for content generation
+- **Issue Management**: All Jira commands use Gemini for smart suggestions and analysis
+- **Architecture**: `/m-debate-architecture` uses Gemini for system design discussions
+
+### AI Assistant Commands
+- `/m-ask-gemini` - Direct AI assistance for any development question
+- `/m-gemini-setup` - Configure Gemini CLI integration
+
+### Jira Workflow Integration
+Complete Jira integration with AI-powered automation:
+- `/m-jira-workflow` - Main Jira workflow management
+- `/m-jira-issue` - Create and manage issues with AI suggestions
+- `/m-jira-update` - Update issues with intelligent automation
+- `/m-jira-dev-start` - AI-guided development workflow initialization
+- `/m-jira-dev-complete` - Smart completion with automated documentation
+- `/m-jira-test-plan` - AI-generated comprehensive test plans
+- `/m-jira-qa-findings` - Intelligent QA documentation and bug reporting
+- `/m-jira-tech-spec` - AI-assisted technical specification creation
+- `/m-jira-docs` - Smart documentation generation and maintenance
+- `/m-jira-sprint` - AI-enhanced sprint planning and management
+- `/m-jira-planning` - Strategic planning with AI insights
+- `/m-jira-report` - Automated reporting and analytics
+- `/m-jira-metrics` - Advanced metrics with predictive analysis
+
+### Command Execution Priority
+1. **Check for Gemini CLI**: Commands first check if `gemini-cli` is available and `GEMINI_API_KEY` is set
+2. **Use Gemini When Available**: Leverage Gemini's superior context understanding and generation
+3. **Fallback to Claude**: Use Claude Code's native functionality as backup
+4. **Hybrid Approach**: Some commands use both for optimal results
+
 ## 🚨 AUTOMATED CHECKS ARE MANDATORY
 **ALL hook issues are BLOCKING - EVERYTHING must be ✅ GREEN!**
 No errors. No formatting issues. No linting problems. Zero tolerance.

@@ -8,6 +8,23 @@
 
 Provides comprehensive documentation management capabilities integrated with Jira development workflows. Enables creation and maintenance of user documentation, technical guides, API references, and knowledge base articles that evolve with project development.
 
+## AI Integration Strategy
+
+### Primary: Gemini CLI Integration
+**PRIORITY: Uses Gemini CLI when available for superior documentation generation**
+
+```bash
+# AI-powered documentation generation
+if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
+    # Generate comprehensive documentation
+    gemini --all-files -p "Generate comprehensive user documentation for this application.
+    Include: getting started guide, feature documentation, API reference, troubleshooting.
+    Use clear, professional writing with examples." --format markdown
+fi
+```
+
+**Fallback**: Use Claude Code native functionality if Gemini CLI unavailable.
+
 ## Core Features
 
 ### Intelligent Documentation Generation

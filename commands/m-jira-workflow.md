@@ -8,6 +8,27 @@
 
 Provides a complete Jira integration workflow for developers to manage issues, track progress, and maintain project alignment without leaving the development environment. Integrates with git workflows and development tools.
 
+## AI Integration Strategy
+
+### Primary: Gemini CLI Integration
+**Uses Gemini CLI when available for enhanced AI capabilities:**
+
+```bash
+# Check for Gemini CLI availability
+if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
+    # Use Gemini for intelligent Jira operations
+    gemini --all-files -p "Analyze project context and suggest optimal Jira workflow actions.
+    Consider: current branch, recent commits, project status, team velocity.
+    Provide actionable Jira recommendations." --format structured
+fi
+```
+
+### Enhanced Capabilities with Gemini
+- **Smart Issue Creation**: Context-aware issue generation from code changes
+- **Intelligent Status Updates**: Automatic status transitions based on git activity
+- **AI-Powered Planning**: Sprint planning with velocity analysis and risk assessment
+- **Documentation Generation**: Automated technical specifications and user stories
+
 ## Core Workflow Commands
 
 ### Issue Management
