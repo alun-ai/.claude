@@ -5,7 +5,8 @@
       "Bash(brew info:*)",
       "Bash(gemini:*)",
       "Bash(source:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
