@@ -21,7 +21,6 @@
       "source",
       "timeout",
       "curl",
-
       "git add",
       "git commit",
       "git push",
@@ -38,7 +37,6 @@
       "git log",
       "git diff",
       "git status",
-
       "npm install",
       "npm run",
       "npm test",
@@ -49,24 +47,18 @@
       "node",
       "yarn",
       "pnpm",
-
       "python3",
       "pip",
       "poetry",
-
       "cargo",
       "rustc",
-
       "go",
-
       "docker",
-
       "nix-shell",
       "nix",
       "nix-instantiate",
       "nix-env",
       "direnv",
-
       "claude-cmd",
       "claude-security-scan",
       "claude-test",
@@ -82,41 +74,35 @@
       "monitor",
       "inc-status",
       "build",
-      "test",
       "lint",
-
       "hyperfine",
       "time",
       "htop",
       "ps",
       "top",
-
       "trivy",
       "semgrep",
       "safety",
       "bandit",
       "gosec",
-
       "jq",
       "yq",
       "bc",
       "sqlite3",
-
       "psql",
       "supabase",
       "vercel",
       "bash",
-
       "pkill",
       "kill",
       "killall",
-
       "asdf",
+
+      "jira",
 
       "tsc",
       "tsx",
       "next",
-
       "mcp__filesystem__search_files",
       "mcp__filesystem__list_directory",
       "mcp__filesystem__read_file",
@@ -128,9 +114,7 @@
       "mcp__filesystem__move_file",
       "mcp__filesystem__get_file_info",
       "mcp__filesystem__list_allowed_directories",
-
       "mcp__ide__getDiagnostics",
-
       "mcp__memory__create_entities",
       "mcp__memory__create_relations",
       "mcp__memory__add_observations",
@@ -140,12 +124,11 @@
       "mcp__memory__read_graph",
       "mcp__memory__search_nodes",
       "mcp__memory__open_nodes",
-
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:nixos.org)",
-      "WebFetch(domain:nix.dev)"
+      "WebFetch(domain:nix.dev)",
     ],
     "deny": [
       "rm -rf /",
@@ -162,7 +145,6 @@
       "mkfs"
     ]
   },
-
   "environment": {
     "CLAUDE_CODE_SHARED_CONFIG": "true",
     "CLAUDE_CODE_CONFIG_PATH": "../.claude",
@@ -172,7 +154,6 @@
     "CLAUDE_CODE_SECURITY_ENABLED": "true",
     "CLAUDE_CODE_METRICS_ENABLED": "true"
   },
-
   "hooks": {
     "pre_command": [
       "export CLAUDE_CODE_PROJECT_TYPE=$(detect_project_type)",
@@ -186,7 +167,6 @@
       "fi"
     ]
   },
-
   "aliases": {
     "nix-env": "nix-shell ../.claude/nix/",
     "shared-help": "/m-help",
@@ -214,7 +194,6 @@
     "cache-status": "cache-status",
     "monitor": "claude-monitor"
   },
-
   "commands": {
     "/m-help": "/Users/chadupton/Documents/Github/.claude/commands/m-help.md",
     "/m-project-init": "/Users/chadupton/Documents/Github/.claude/commands/m-project-init.md",
