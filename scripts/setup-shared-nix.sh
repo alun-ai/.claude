@@ -312,7 +312,9 @@ show_usage() {
     echo "  • Architecture: /m-debate-architecture, /m-debate-code"
     echo "  • Management: /m-project-cleanup, /m-document-update, /m-branch-prune"
     echo "  • Environment: /m-nix-setup, /m-project-init, /m-help"
-    echo "  • Tools: dashboard, security, cache-status, monitor"
+    echo "  • AI Assistant: /m-ask-gemini, /m-gemini-setup"
+    echo "  • Jira Integration: /m-jira-workflow, /m-jira-issue, /m-jira-dev-start, /m-jira-sprint"
+    echo "  • Tools: dashboard, security, cache-status, monitor, gemini-cli, jira-cli"
     echo
     echo "⚡ Cross-Project Benefits:"
     echo "  • Shared dependency caching (faster builds)"
