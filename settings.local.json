@@ -1,7 +1,6 @@
 {
   "permissions": {
     "allow": [
-      // Core development tools
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(rg:*)",
@@ -24,16 +23,23 @@
       "Bash(timeout:*)",
       "Bash(curl:*)",
 
-      // Git operations
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git reset:*)",
       "Bash(git tag:*)",
-      "Bash(git clone:*)"
+      "Bash(git clone:*)",
+      "Bash(git submodule:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(git stash:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git status)",
 
-      // Node.js ecosystem
       "Bash(npm install:*)",
       "Bash(npm run:*)",
       "Bash(npm run lint)",
@@ -46,30 +52,26 @@
       "Bash(npm ls:*)",
       "Bash(npx:*)",
       "Bash(node:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
 
-      // Python tools
       "Bash(python3:*)",
       "Bash(pip:*)",
       "Bash(poetry:*)",
 
-      // Rust tools
       "Bash(cargo:*)",
       "Bash(rustc:*)",
 
-      // Go tools
       "Bash(go:*)",
 
-      // Container tools
       "Bash(docker:*)",
 
-      // Nix ecosystem
       "Bash(nix-shell:*)",
       "Bash(nix:*)",
       "Bash(nix-instantiate:*)",
       "Bash(nix-env:*)",
       "Bash(direnv:*)",
 
-      // Claude Code Nix commands
       "Bash(claude-cmd:*)",
       "Bash(claude-security-scan:*)",
       "Bash(claude-test:*)",
@@ -88,27 +90,23 @@
       "Bash(test:*)",
       "Bash(lint:*)",
 
-      // Performance and monitoring tools
       "Bash(hyperfine:*)",
       "Bash(time:*)",
       "Bash(htop:*)",
       "Bash(ps:*)",
       "Bash(top:*)",
 
-      // Security tools
       "Bash(trivy:*)",
       "Bash(semgrep:*)",
       "Bash(safety:*)",
       "Bash(bandit:*)",
       "Bash(gosec:*)",
 
-      // Data processing
       "Bash(jq:*)",
       "Bash(yq:*)",
       "Bash(bc:*)",
       "Bash(sqlite3:*)",
 
-      // Database tools
       "Bash(psql:*)",
       "Bash(supabase:*)",
       "Bash(supabase db:*)",
@@ -120,7 +118,6 @@
       "Bash(supabase migration list:*)",
       "Bash(supabase migration repair:*)",
 
-      // Deployment tools
       "Bash(vercel:*)",
       "Bash(./scripts/deploy.sh:*)",
       "Bash(./scripts/deploy-helpers.sh:*)",
@@ -128,7 +125,6 @@
       "Bash(bash:*)",
       "Bash(./run-tests.sh)",
 
-      // Control structures and loops
       "Bash(for:*)",
       "Bash(do mv \"$file\" \"$file.backup\")",
       "Bash(do mv \"$file\" \"$file%.backup\")",
@@ -136,20 +132,20 @@
       "Bash(true)",
       "Bash(done)",
 
-      // Process management
       "Bash(pkill:*)",
       "Bash(kill:*)",
       "Bash(killall:*)",
 
-      // Version managers
       "Bash(asdf:*)",
       "Bash(asdf list:*)",
 
-      // Claude MCP
       "Bash(claude mcp)",
       "Bash(claude mcp:*)",
 
-      // MCP filesystem operations
+      "Bash(tsc:*)",
+      "Bash(tsx:*)",
+      "Bash(next:*)",
+
       "mcp__filesystem__search_files",
       "mcp__filesystem__list_directory",
       "mcp__filesystem__read_file",
@@ -162,10 +158,8 @@
       "mcp__filesystem__get_file_info",
       "mcp__filesystem__list_allowed_directories",
 
-      // MCP IDE operations
       "mcp__ide__getDiagnostics",
 
-      // MCP memory operations
       "mcp__memory__create_entities",
       "mcp__memory__create_relations",
       "mcp__memory__add_observations",
@@ -176,7 +170,6 @@
       "mcp__memory__search_nodes",
       "mcp__memory__open_nodes",
 
-      // Web operations
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:docs.anthropic.com)",
@@ -184,19 +177,14 @@
       "WebFetch(domain:nix.dev)"
     ],
     "deny": [
-      // Dangerous operations
       "Bash(rm -rf /)",
       "Bash(sudo:*)",
       "Bash(su:*)",
       "Bash(chown:*)",
       "Bash(chmod 777:*)",
-
-      // Network security
       "Bash(nc:*)",
       "Bash(netcat:*)",
       "Bash(telnet:*)",
-
-      // System modification
       "Bash(mount:*)",
       "Bash(umount:*)",
       "Bash(fdisk:*)",
@@ -216,16 +204,12 @@
 
   "hooks": {
     "pre_command": [
-      "# Auto-detect project type",
       "export CLAUDE_CODE_PROJECT_TYPE=$(detect_project_type)",
-      "# Load Nix environment if available",
       "if [[ -f '../.claude/nix/default.nix' && -z '$NIX_SHELL_PACKAGES' ]]; then",
       "  echo 'Nix environment available. Run: nix-shell ../.claude/nix/'",
       "fi"
     ],
-
     "post_command": [
-      "# Record command metrics if available",
       "if command -v claude-cmd >/dev/null 2>&1; then",
       "  claude-cmd learn \"$(basename $(pwd))\" \"$LAST_COMMAND\" \"$?\"",
       "fi"
@@ -233,11 +217,8 @@
   },
 
   "aliases": {
-    // Environment shortcuts
     "nix-env": "nix-shell ../.claude/nix/",
     "shared-help": "/m-help",
-
-    // Claude command aliases (ensure consistent /m-* prefix)
     "help": "/m-help",
     "project-init": "/m-project-init",
     "setup-nix": "/m-nix-setup",
@@ -257,8 +238,6 @@
     "branch-prune-lite": "/m-branch-prune-lite",
     "debate-architecture": "/m-debate-architecture",
     "debate-code": "/m-debate-code",
-
-    // Environment tools shortcuts
     "dashboard": "claude-cmd dashboard",
     "security": "claude-security-scan",
     "cache-status": "cache-status",
