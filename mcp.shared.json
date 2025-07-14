@@ -1,0 +1,63 @@
+{
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${PROJECT_ROOT}"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "[SUPABASE_DB_URL]"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "[YOUR_BRAVE_API_KEY]"
+      }
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    },
+    "jira": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-e", "JIRA_URL",
+        "-e", "JIRA_USERNAME",
+        "-e", "JIRA_API_TOKEN",
+        "ghcr.io/sooperset/mcp-atlassian:latest"
+      ],
+      "env": {
+        "JIRA_URL": "https://alunai.atlassian.net",
+        "JIRA_USERNAME": "chad@alun.ai",
+        "JIRA_API_TOKEN": "ATATT3xFfGF0ndZX5vHpIM42VReZbownStaSjZ7fqra1ygTzgB1XqRziJykROLg4uo01ZeQyeSw1Iir5jp9iQvGuSVdwm1uDZg3lue2SZUyhuE7uJmlfBoWommcg2nBF3EaKkNdrCY5KkQaHHRGgWcQ5VVZ48JPKZsGgovnWRSxk_tam14rXAH4=06A05426"
+      }
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-notion"],
+      "env": {
+        "NOTION_API_KEY": "[YOUR_NOTION_API_KEY]"
+      }
+    }
+  }
+}
