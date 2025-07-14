@@ -6,43 +6,47 @@
 
 ## AI Integration Strategy
 
-### Primary: Gemini CLI First-Pass Analysis
-**PRIORITY: Uses Gemini CLI for comprehensive initial analysis and research**
+### Primary: MCP Gemini Agent Analysis
+**PRIORITY: Uses MCP Gemini agent for comprehensive initial analysis and research**
 
 ```bash
-# Gemini CLI performs first-pass analysis and research
-if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
-    echo "=== GEMINI FIRST-PASS ANALYSIS ===" > /tmp/gemini_task_analysis.md
-    
-    # Comprehensive requirements analysis
-    gemini --all-files -p "Conduct comprehensive task planning analysis for this project.
-    
-    Analyze and research:
-    1. Requirements extraction from documentation and code
-    2. Technical constraints and dependencies identification
-    3. Architecture patterns and system design considerations
-    4. Implementation complexity assessment and risk analysis
-    5. Testing strategy and coverage requirements
-    6. Task decomposition and prioritization framework
-    7. Resource allocation and timeline estimation
-    8. Integration points and external dependencies
-    
-    Provide detailed findings with specific recommendations for implementation approach.
-    Format as structured markdown with clear sections and actionable insights." --format markdown >> /tmp/gemini_task_analysis.md
-    
-    # Deep technical research
-    echo -e "\n## Technical Research and Feasibility" >> /tmp/gemini_task_analysis.md
-    gemini --all-files -p "Conduct deep technical research on implementation feasibility.
-    Research areas:
-    - Technology stack compatibility and limitations
-    - Performance requirements and scalability considerations
-    - Security requirements and compliance needs
-    - Third-party integrations and API dependencies
-    - Database design and data flow requirements
-    - Frontend/backend architecture coordination
-    
-    Provide comprehensive technical research with specific recommendations." --format markdown >> /tmp/gemini_task_analysis.md
-fi
+# MCP Gemini agent performs first-pass analysis and research
+echo "=== MCP GEMINI ANALYSIS ===" > /tmp/gemini_task_analysis.md
+
+# Comprehensive requirements analysis
+/gemini-brainstorm "Conduct comprehensive task planning analysis for this project.
+
+Current Context:
+- Branch: $(git branch --show-current)
+- Recent files: $(git ls-files --cached | head -20)
+- Project structure: $(find . -type f -name "*.md" | head -10)
+
+Analyze and research:
+1. Requirements extraction from documentation and code
+2. Technical constraints and dependencies identification
+3. Architecture patterns and system design considerations
+4. Implementation complexity assessment and risk analysis
+5. Testing strategy and coverage requirements
+6. Task decomposition and prioritization framework
+7. Resource allocation and timeline estimation
+8. Integration points and external dependencies
+
+Provide detailed findings with specific recommendations for implementation approach.
+Format as structured markdown with clear sections and actionable insights." >> /tmp/gemini_task_analysis.md
+
+# Deep technical research
+echo -e "\n## Technical Research and Feasibility" >> /tmp/gemini_task_analysis.md
+/gemini-analyze-code "Conduct deep technical research on implementation feasibility.
+
+Research areas:
+- Technology stack compatibility and limitations
+- Performance requirements and scalability considerations
+- Security requirements and compliance needs
+- Third-party integrations and API dependencies
+- Database design and data flow requirements
+- Frontend/backend architecture coordination
+
+Provide comprehensive technical research with specific recommendations." >> /tmp/gemini_task_analysis.md
 ```
 
 ### Secondary: Claude Code Review and Synthesis

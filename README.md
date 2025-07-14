@@ -148,7 +148,17 @@ Each project can have its own settings in `.claude/settings.local.json`:
    /m-nix-setup install
    ```
 
-3. **Initialize project**:
+3. **Setup environment variables** (if using MCP servers):
+   ```bash
+   # Ensure direnv is properly configured
+   echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc  # or ~/.bashrc
+   
+   # Create .envrc with your API keys
+   echo 'export GEMINI_API_KEY="your-key-here"' >> .envrc
+   direnv allow
+   ```
+
+4. **Initialize project**:
    ```bash
    /m-project-init
    ```
@@ -245,6 +255,94 @@ Projects automatically inherit shared configuration while allowing local overrid
 3. **Runtime Detection**: Automatic project type detection
 4. **Environment Variables**: Project-specific environment
 
+## 🔐 Environment Variable Configuration
+
+### direnv Setup for MCP Servers
+
+When using environment variables in your MCP configuration (e.g., `${GEMINI_API_KEY}`, `${GITHUB_TOKEN}`), proper direnv setup is **critical** for Claude Code to access these variables.
+
+#### Shell Configuration
+
+**For Zsh users** (most common):
+```bash
+# Add to ~/.zshrc
+eval "$(direnv hook zsh)"
+```
+
+**For Bash users**:
+```bash
+# Add to ~/.bashrc
+eval "$(direnv hook bash)"
+```
+
+**⚠️ Common Issue**: Having `direnv hook bash` in `.zshrc` or vice versa will prevent environment loading.
+
+#### Project .envrc Setup
+
+Create `.envrc` in your project root:
+```bash
+# Example .envrc file
+export GEMINI_API_KEY="your-gemini-api-key"
+export GITHUB_PERSONAL_ACCESS_TOKEN="your-github-token"
+export SUPABASE_DB_URL="your-database-url"
+export JIRA_API_TOKEN="your-jira-token"
+```
+
+#### Allow direnv for your project:
+```bash
+direnv allow
+```
+
+#### MCP Configuration Example
+
+In your `.claude_settings.local.json`:
+```json
+{
+  "mcpServers": {
+    "gemini": {
+      "command": "npx",
+      "args": ["-y", "https://github.com/Jinkxed/gemini-mcp"],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+#### Troubleshooting Environment Variables
+
+**Check if direnv is working**:
+```bash
+direnv status
+```
+
+**Verify environment variables are loaded**:
+```bash
+echo $GEMINI_API_KEY
+env | grep GEMINI
+```
+
+**Common fixes**:
+1. **Wrong shell hook**: Ensure `direnv hook zsh` for zsh, `direnv hook bash` for bash
+2. **Not allowed**: Run `direnv allow` in project directory
+3. **Shell restart**: Restart terminal after adding direnv hook
+4. **MCP connection fails**: Claude Code inherits environment from shell - ensure variables are exported
+
+#### Security Best Practices
+
+- **Never commit** `.envrc` files with actual API keys
+- **Use** `.envrc.example` files for documentation
+- **Add** `.envrc` to `.gitignore`
+- **Rotate** API keys regularly
+
 ## 🧪 Testing
 
 Test the shared configuration:
@@ -291,6 +389,28 @@ To add new shared functionality:
 ```bash
 # Reinstall Nix integration
 /m-nix-setup install
+```
+
+**MCP servers failing to connect**:
+```bash
+# Check direnv configuration
+direnv status
+echo $GEMINI_API_KEY
+
+# Common fixes:
+# 1. Fix shell hook in ~/.zshrc or ~/.bashrc
+# 2. Run 'direnv allow' in project directory
+# 3. Restart terminal after hook changes
+```
+
+**Environment variables not loading**:
+```bash
+# Debug direnv issues
+direnv status
+direnv reload
+
+# Verify shell hook is correct
+grep direnv ~/.zshrc  # or ~/.bashrc
 ```
 
 **Project-specific issues**:

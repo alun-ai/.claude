@@ -38,21 +38,22 @@ Provides a streamlined interface to Google Gemini AI specifically optimized for 
 
 2. **Query Processing**
    - Parse user prompt and intent
-   - Select appropriate Gemini model based on complexity
+   - Route to appropriate MCP Gemini tool based on query type
    - Format prompt with development-specific context
    - Apply best practices for technical queries
 
-3. **AI Interaction**
-   - Send contextual query to Gemini API
+3. **MCP Integration**
+   - Use MCP Gemini agent through Claude Code's native integration
+   - Leverage `/gemini-query` for general questions
+   - Use `/gemini-analyze-code` for code analysis
+   - Use `/gemini-brainstorm` for collaborative problem-solving
    - Handle streaming responses and error conditions
-   - Process and format AI response
-   - Provide follow-up suggestions and actions
 
 4. **Result Integration**
    - Format response for CLI consumption
    - Provide actionable insights and suggestions
    - Integrate with development workflows
-   - Save results for future reference
+   - No external dependencies required (MCP handles authentication)
 
 ## Usage Patterns
 
@@ -70,6 +71,12 @@ Provides a streamlined interface to Google Gemini AI specifically optimized for 
 # Interactive session for complex topics
 /m-ask-gemini --interactive "Let's discuss system architecture"
 ```
+
+**New MCP Integration**: Commands now use the MCP Gemini agent:
+- General queries → `/gemini-query`
+- Code analysis → `/gemini-analyze-code`
+- Brainstorming → `/gemini-brainstorm`
+- No CLI dependency required
 
 ### Code Review and Analysis
 ```bash

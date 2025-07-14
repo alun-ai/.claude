@@ -6,7 +6,25 @@
       "Bash(gemini:*)",
       "Bash(source:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__read_multiple_files",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(npm search:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(find:*)",
+      "Bash(claude mcp get:*)",
+      "Bash(cat:*)",
+      "Bash(env)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Bash(mcp list:*)",
+      "mcp__filesystem__write_file",
+      "mcp__gemini__gemini-query",
+      "Bash(git submodule:*)"
     ],
     "deny": []
   }

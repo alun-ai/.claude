@@ -6,48 +6,55 @@
 
 ## AI Integration Strategy
 
-### Primary: Gemini CLI Integration
-**Uses Gemini CLI when available for enhanced code analysis:**
+### MCP Gemini Agent Integration
+**Uses MCP Gemini agent for enhanced code analysis:**
 
 ```bash
-# AI-powered comprehensive code review using Gemini CLI
-if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
-    echo "Using Gemini CLI for enhanced code review..."
-    
-    # Analyze staged changes or recent commits
-    if git diff --staged --quiet; then
-        # Analyze recent commits if nothing staged
-        echo "Analyzing recent commits with Gemini CLI..."
-        git diff HEAD~1 | gemini -p "Perform comprehensive code review of these changes.
-        
-        Analyze in detail:
-        1. Architecture patterns and design decisions
-        2. Security vulnerabilities (auth, input validation, XSS, SQL injection)
-        3. Performance bottlenecks and optimization opportunities
-        4. Code quality, maintainability, and best practices
-        5. Error handling and edge case coverage
-        6. Test coverage adequacy and quality
-        7. Multi-tenant security and data isolation
-        8. API design consistency and usability
-        
-        Provide specific, actionable recommendations with code examples.
-        Format as structured markdown with severity levels." --format markdown
-    else
-        # Analyze staged changes
-        echo "Analyzing staged changes with Gemini CLI..."
-        git diff --cached | gemini -p "Review these staged code changes for:
-        - Code quality and best practices compliance
-        - Security vulnerabilities and access control
-        - Performance implications and optimizations
-        - Test coverage and edge case handling
-        - Architecture consistency with existing patterns
-        
-        Provide detailed feedback with specific improvement suggestions." --format markdown
-    fi
-    
-    # Additional security-focused analysis with full context
-    echo "Conducting security-focused analysis..."
-    gemini --all-files -p "Conduct comprehensive security review of the codebase.
+# AI-powered comprehensive code review using MCP Gemini agent
+echo "Using MCP Gemini agent for enhanced code review..."
+
+# Analyze staged changes or recent commits
+if git diff --staged --quiet; then
+    # Analyze recent commits if nothing staged
+    echo "Analyzing recent commits with MCP Gemini agent..."
+    DIFF=$(git diff HEAD~1)
+    /gemini-analyze-code "Perform comprehensive code review of these changes:
+
+${DIFF}
+
+Analyze in detail:
+1. Architecture patterns and design decisions
+2. Security vulnerabilities (auth, input validation, XSS, SQL injection)
+3. Performance bottlenecks and optimization opportunities
+4. Code quality, maintainability, and best practices
+5. Error handling and edge case coverage
+6. Test coverage adequacy and quality
+7. Multi-tenant security and data isolation
+8. API design consistency and usability
+
+Provide specific, actionable recommendations with code examples.
+Format as structured markdown with severity levels."
+else
+    # Analyze staged changes
+    echo "Analyzing staged changes with MCP Gemini agent..."
+    DIFF=$(git diff --cached)
+    /gemini-analyze-code "Review these staged code changes:
+
+${DIFF}
+
+Focus on:
+- Code quality and best practices compliance
+- Security vulnerabilities and access control
+- Performance implications and optimizations
+- Test coverage and edge case handling
+- Architecture consistency with existing patterns
+
+Provide detailed feedback with specific improvement suggestions."
+fi
+
+# Additional security-focused analysis with full context
+echo "Conducting security-focused analysis..."
+/gemini-analyze-code "Conduct comprehensive security review of the codebase.
     
     Focus on:
     - Authentication and authorization mechanisms

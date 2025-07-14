@@ -10,17 +10,20 @@ Provides a complete Jira integration workflow for developers to manage issues, t
 
 ## AI Integration Strategy
 
-### Primary: Gemini CLI Integration
-**Uses Gemini CLI when available for enhanced AI capabilities:**
+### MCP Gemini Agent Integration
+**Uses MCP Gemini agent for enhanced AI capabilities:**
 
 ```bash
-# Check for Gemini CLI availability
-if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
-    # Use Gemini for intelligent Jira operations
-    gemini --all-files -p "Analyze project context and suggest optimal Jira workflow actions.
-    Consider: current branch, recent commits, project status, team velocity.
-    Provide actionable Jira recommendations." --format structured
-fi
+# Use MCP Gemini agent for intelligent Jira operations
+/gemini-brainstorm "Analyze project context and suggest optimal Jira workflow actions.
+
+Current Context:
+- Branch: $(git branch --show-current)
+- Recent commits: $(git log --oneline -5)
+- Project status: $(git status --porcelain)
+
+Consider: current branch, recent commits, project status, team velocity.
+Provide actionable Jira recommendations with specific next steps."
 ```
 
 ### Enhanced Capabilities with Gemini

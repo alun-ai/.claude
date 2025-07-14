@@ -10,27 +10,31 @@ Provides intelligent git commit and push functionality with AI-powered commit me
 
 ## AI Integration Strategy
 
-### Primary: Gemini CLI (When Available)
+### MCP Gemini Agent Integration
 ```bash
-# Check for Gemini CLI availability
-if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
-    # Use Gemini for commit message generation
-    git diff --cached | gemini -p "Generate a conventional commit message for these changes. 
-    Format: type(scope): description
-    Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build
-    Keep description under 72 characters. Be specific and clear." --format text
-fi
+# Use MCP Gemini agent for commit message generation
+DIFF=$(git diff --cached)
+/gemini-query "Generate a conventional commit message for these changes:
+
+${DIFF}
+
+Format: type(scope): description
+Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build
+Keep description under 72 characters. Be specific and clear."
 ```
 
-### Fallback: Claude Code Native
-If Gemini CLI is not available, use Claude Code's native commit message generation.
+**Benefits of MCP Integration:**
+- No external CLI dependency required
+- Native Claude Code integration
+- Automatic authentication handling
+- Consistent error handling and recovery
 
 ## Execution Steps
 
 1. **Environment Check**
    - Verify git repository status
    - Check for staged/unstaged changes
-   - Validate Gemini CLI availability and API key
+   - MCP Gemini agent is automatically available
 
 2. **Change Analysis**
    - Analyze git diff for context
@@ -38,7 +42,7 @@ If Gemini CLI is not available, use Claude Code's native commit message generati
    - Determine appropriate conventional commit format
 
 3. **AI-Powered Message Generation**
-   - Use Gemini CLI for intelligent commit message generation
+   - Use MCP Gemini agent via `/gemini-query`
    - Apply conventional commit standards
    - Ensure message clarity and specificity
 
