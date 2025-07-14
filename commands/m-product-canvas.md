@@ -1,4 +1,4 @@
-# Notion Product Canvas: AI-Powered Product Strategy Workshop
+# Product Canvas: AI-Powered Product Strategy Workshop
 
 **Target:** $ARGUMENTS (Default: interactive product canvas development or Notion URL for existing canvas)
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-Transform into a world-class head of product to guide comprehensive product canvas development. This command combines strategic product thinking with AI-powered analysis to help define use cases, desired outcomes, and user value propositions. Supports both creating new canvases and analyzing existing ones from Notion.
+Transform into a world-class head of product to guide comprehensive product canvas development. This command combines strategic product thinking with AI-powered analysis to help define use cases, desired outcomes, and user value propositions. Supports both creating new canvases and analyzing existing ones from various sources including Notion, pasted content, or interactive development.
 
 ## AI Integration Strategy
 
@@ -526,25 +526,25 @@ update_notion_canvas() {
 ### Interactive Canvas Creation
 ```bash
 # Start new product canvas session
-/m-notion-canvas "Social media management platform for small businesses"
+/m-product-canvas "Social media management platform for small businesses"
 
 # Create canvas with specific template
-/m-notion-canvas --template b2b_saas "Enterprise collaboration tool"
+/m-product-canvas --template b2b_saas "Enterprise collaboration tool"
 
 # Analyze and improve existing concept
-/m-notion-canvas --analyze "Current product concept text..."
+/m-product-canvas --analyze "Current product concept text..."
 ```
 
 ### Notion URL Analysis
 ```bash
 # Analyze existing Notion canvas
-/m-notion-canvas https://www.notion.so/yourworkspace/Product-Canvas-abc123
+/m-product-canvas https://www.notion.so/yourworkspace/Product-Canvas-abc123
 
 # Update existing canvas with new insights
-/m-notion-canvas --update https://www.notion.so/yourworkspace/Product-Canvas-abc123
+/m-product-canvas --update https://www.notion.so/yourworkspace/Product-Canvas-abc123
 
 # Compare multiple canvases
-/m-notion-canvas --compare \
+/m-product-canvas --compare \
     https://www.notion.so/canvas1 \
     https://www.notion.so/canvas2
 ```
@@ -552,13 +552,13 @@ update_notion_canvas() {
 ### Advanced Analysis
 ```bash
 # Deep competitive analysis
-/m-notion-canvas --competitive-analysis "Product concept"
+/m-product-canvas --competitive-analysis "Product concept"
 
 # Market opportunity assessment
-/m-notion-canvas --market-analysis "Product concept"
+/m-product-canvas --market-analysis "Product concept"
 
 # User value proposition validation
-/m-notion-canvas --value-analysis "Product concept"
+/m-product-canvas --value-analysis "Product concept"
 ```
 
 ## Head of Product Guidance Philosophy
