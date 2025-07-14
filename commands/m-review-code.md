@@ -10,26 +10,70 @@
 **Uses Gemini CLI when available for enhanced code analysis:**
 
 ```bash
-# AI-powered comprehensive code review
+# AI-powered comprehensive code review using Gemini CLI
 if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
-    # Analyze current changes with full context
-    git diff HEAD~1 | gemini --all-files -p "Perform a comprehensive code review.
-    Analyze: architecture patterns, security vulnerabilities, performance issues,
-    code quality, test coverage, and best practices compliance.
-    Provide specific, actionable recommendations." --format structured
+    echo "Using Gemini CLI for enhanced code review..."
     
-    # Security-focused analysis
-    gemini --all-files -p "Conduct a security-focused code review.
-    Look for: authentication issues, authorization gaps, input validation,
-    SQL injection, XSS vulnerabilities, sensitive data exposure." --focus security
+    # Analyze staged changes or recent commits
+    if git diff --staged --quiet; then
+        # Analyze recent commits if nothing staged
+        echo "Analyzing recent commits with Gemini CLI..."
+        git diff HEAD~1 | gemini -p "Perform comprehensive code review of these changes.
+        
+        Analyze in detail:
+        1. Architecture patterns and design decisions
+        2. Security vulnerabilities (auth, input validation, XSS, SQL injection)
+        3. Performance bottlenecks and optimization opportunities
+        4. Code quality, maintainability, and best practices
+        5. Error handling and edge case coverage
+        6. Test coverage adequacy and quality
+        7. Multi-tenant security and data isolation
+        8. API design consistency and usability
+        
+        Provide specific, actionable recommendations with code examples.
+        Format as structured markdown with severity levels." --format markdown
+    else
+        # Analyze staged changes
+        echo "Analyzing staged changes with Gemini CLI..."
+        git diff --cached | gemini -p "Review these staged code changes for:
+        - Code quality and best practices compliance
+        - Security vulnerabilities and access control
+        - Performance implications and optimizations
+        - Test coverage and edge case handling
+        - Architecture consistency with existing patterns
+        
+        Provide detailed feedback with specific improvement suggestions." --format markdown
+    fi
+    
+    # Additional security-focused analysis with full context
+    echo "Conducting security-focused analysis..."
+    gemini --all-files -p "Conduct comprehensive security review of the codebase.
+    
+    Focus on:
+    - Authentication and authorization mechanisms
+    - Multi-tenant data isolation and access control
+    - Input validation and sanitization
+    - API security and rate limiting
+    - Sensitive data handling and encryption
+    - OAuth implementation security
+    - Database query security (SQL injection prevention)
+    - Cross-site scripting (XSS) protection
+    
+    Identify specific vulnerabilities with remediation suggestions." --format markdown
+else
+    echo "Gemini CLI not available, using Claude Code native functionality..."
 fi
 ```
+
+**Fallback**: Use Claude Code native functionality if Gemini CLI unavailable.
 
 ### Enhanced AI Capabilities
 - **Deep Architecture Analysis**: AI-powered pattern recognition and design assessment
 - **Security Vulnerability Detection**: Advanced security analysis beyond traditional tools
 - **Performance Optimization**: Intelligent performance bottleneck identification
 - **Best Practice Enforcement**: Context-aware best practice recommendations
+- **Multi-tenant Security**: Specialized analysis for data isolation and access control
+- **Staged vs Committed Analysis**: Smart detection of what changes to review
 
 ## Execution Steps
 

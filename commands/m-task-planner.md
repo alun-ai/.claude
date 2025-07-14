@@ -1,39 +1,88 @@
-# Dev Task Plan Workflow: Structure Implementation & Tests
+# Dev Task Plan Workflow: Dual-AI Analysis & Structured Implementation
 
 **Target:** $ARGUMENTS (Default: requirement document(s) discovered in the project)
 
-**Scope:** Analyze requirements and generate structured implementation plan with tests
+**Scope:** Comprehensive dual-AI analysis with Gemini research and Claude review for structured implementation planning
+
+## AI Integration Strategy
+
+### Primary: Gemini CLI First-Pass Analysis
+**PRIORITY: Uses Gemini CLI for comprehensive initial analysis and research**
+
+```bash
+# Gemini CLI performs first-pass analysis and research
+if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
+    echo "=== GEMINI FIRST-PASS ANALYSIS ===" > /tmp/gemini_task_analysis.md
+    
+    # Comprehensive requirements analysis
+    gemini --all-files -p "Conduct comprehensive task planning analysis for this project.
+    
+    Analyze and research:
+    1. Requirements extraction from documentation and code
+    2. Technical constraints and dependencies identification
+    3. Architecture patterns and system design considerations
+    4. Implementation complexity assessment and risk analysis
+    5. Testing strategy and coverage requirements
+    6. Task decomposition and prioritization framework
+    7. Resource allocation and timeline estimation
+    8. Integration points and external dependencies
+    
+    Provide detailed findings with specific recommendations for implementation approach.
+    Format as structured markdown with clear sections and actionable insights." --format markdown >> /tmp/gemini_task_analysis.md
+    
+    # Deep technical research
+    echo -e "\n## Technical Research and Feasibility" >> /tmp/gemini_task_analysis.md
+    gemini --all-files -p "Conduct deep technical research on implementation feasibility.
+    Research areas:
+    - Technology stack compatibility and limitations
+    - Performance requirements and scalability considerations
+    - Security requirements and compliance needs
+    - Third-party integrations and API dependencies
+    - Database design and data flow requirements
+    - Frontend/backend architecture coordination
+    
+    Provide comprehensive technical research with specific recommendations." --format markdown >> /tmp/gemini_task_analysis.md
+fi
+```
+
+### Secondary: Claude Code Review and Synthesis
+**Review and refine Gemini's analysis with practical implementation perspective**
+
+```bash
+# Claude reviews Gemini's analysis and provides final recommendations
+if [[ -f /tmp/gemini_task_analysis.md ]]; then
+    echo "Claude Code will now review Gemini's analysis and provide final recommendations..."
+    echo "Generating comprehensive task plan with Claude's review and conclusions..."
+fi
+```
+
+**Fallback**: Use Claude Code native functionality if Gemini CLI unavailable.
 
 ## Execution Steps
 
-1. **Requirements Analysis**
-   - Parse target documents and extract functional requirements
-   - Identify technical constraints and dependencies
-   - Document ambiguities and unclear specifications
+1. **Gemini First-Pass Research**
+   - Comprehensive requirements analysis and extraction
+   - Technical feasibility research and constraint identification
+   - Architecture pattern analysis and system design evaluation
+   - Risk assessment and complexity analysis
 
-2. **Implementation Strategy Design**
-   - Define architecture patterns and system design
-   - Plan API structures and data models
-   - Outline testing strategy and coverage approach
+2. **Claude Review and Synthesis**
+   - Critical review of Gemini's findings and recommendations
+   - Practical implementation perspective and real-world considerations
+   - Final task decomposition with dependency mapping
+   - Implementation roadmap with priority sequencing
 
-3. **Task Decomposition**
-   - Break down features into actionable implementation tasks
-   - Create corresponding test tasks for each feature
-   - Define task types (feature, test, refactor, documentation)
+3. **Collaborative Plan Generation**
+   - Synthesize both AI perspectives into unified plan
+   - Generate actionable task breakdown with clear dependencies
+   - Create implementation timeline with milestone mapping
+   - Produce comprehensive documentation with visual diagrams
 
-4. **Dependency Mapping**
-   - Identify task prerequisites and blocking relationships
-   - Sequence tasks based on logical dependencies
-   - Optimize for parallel development opportunities
-
-5. **Plan Visualization**
-   - Generate Mermaid diagram showing task flow
-   - Illustrate critical path and milestone dependencies
-   - Highlight testing integration points
-
-6. **Generate Task Plan Report**
-   - Compile findings into structured markdown format
-   - Save to `docs/workspaces/task-plan-MM-dd-HH-mm-ss.md`
+4. **Plan Validation and Documentation**
+   - Validate plan completeness and feasibility
+   - Generate Mermaid diagrams for task flow visualization
+   - Create bilingual documentation (English/Chinese)
+   - Save comprehensive plan to timestamped file
 
 ## Output Format
 

@@ -32,6 +32,7 @@ fi
 ### Core Commands
 - ✅ `/m-commit-push` - AI-powered commit message generation
 - ✅ `/m-review-code` - Enhanced code analysis and security review
+- ✅ `/m-security-scan` - Comprehensive AI-powered security analysis
 - ✅ `/m-ask-gemini` - Direct AI assistance interface
 
 ### Jira Integration Commands
@@ -39,6 +40,9 @@ fi
 - ✅ `/m-jira-issue` - Context-aware issue creation
 - ✅ `/m-jira-tech-spec` - AI-powered technical specification generation
 - ✅ `/m-jira-docs` - Intelligent documentation generation
+
+### Task Planning Commands
+- ✅ `/m-task-planner` - Dual-AI analysis with Gemini research and Claude review
 
 ### Commands Requiring Integration
 - 🔄 `/m-jira-update` - Smart issue updates
