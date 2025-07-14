@@ -1,0 +1,289 @@
+{
+  "permissions": {
+    "allow": [
+      // Core development tools
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(touch:*)",
+      "Bash(cat:*)",
+      "Bash(chmod:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(test:*)",
+      "Bash(which:*)",
+      "Bash(command -v:*)",
+      "Bash(/dev/null)",
+      "Bash(env)",
+      "Bash(source:*)",
+      "Bash(timeout:*)",
+      "Bash(curl:*)",
+
+      // Git operations
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git reset:*)",
+      "Bash(git tag:*)",
+      "Bash(git clone:*)"
+
+      // Node.js ecosystem
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm test:*)",
+      "Bash(npm view:*)",
+      "Bash(npm search:*)",
+      "Bash(npm ls:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+
+      // Python tools
+      "Bash(python3:*)",
+      "Bash(pip:*)",
+      "Bash(poetry:*)",
+
+      // Rust tools
+      "Bash(cargo:*)",
+      "Bash(rustc:*)",
+
+      // Go tools
+      "Bash(go:*)",
+
+      // Container tools
+      "Bash(docker:*)",
+
+      // Nix ecosystem
+      "Bash(nix-shell:*)",
+      "Bash(nix:*)",
+      "Bash(nix-instantiate:*)",
+      "Bash(nix-env:*)",
+      "Bash(direnv:*)",
+
+      // Claude Code Nix commands
+      "Bash(claude-cmd:*)",
+      "Bash(claude-security-scan:*)",
+      "Bash(claude-test:*)",
+      "Bash(claude-monitor:*)",
+      "Bash(claude-incremental:*)",
+      "Bash(cache-init:*)",
+      "Bash(cache-status:*)",
+      "Bash(cache-clean:*)",
+      "Bash(security:*)",
+      "Bash(dashboard:*)",
+      "Bash(workflow:*)",
+      "Bash(smart:*)",
+      "Bash(monitor:*)",
+      "Bash(inc-status:*)",
+      "Bash(build:*)",
+      "Bash(test:*)",
+      "Bash(lint:*)",
+
+      // Performance and monitoring tools
+      "Bash(hyperfine:*)",
+      "Bash(time:*)",
+      "Bash(htop:*)",
+      "Bash(ps:*)",
+      "Bash(top:*)",
+
+      // Security tools
+      "Bash(trivy:*)",
+      "Bash(semgrep:*)",
+      "Bash(safety:*)",
+      "Bash(bandit:*)",
+      "Bash(gosec:*)",
+
+      // Data processing
+      "Bash(jq:*)",
+      "Bash(yq:*)",
+      "Bash(bc:*)",
+      "Bash(sqlite3:*)",
+
+      // Database tools
+      "Bash(psql:*)",
+      "Bash(supabase:*)",
+      "Bash(supabase db:*)",
+      "Bash(supabase inspect db:*)",
+      "Bash(supabase db remote exec:*)",
+      "Bash(supabase db push:*)",
+      "Bash(supabase db remote list:*)",
+      "Bash(supabase migration:*)",
+      "Bash(supabase migration list:*)",
+      "Bash(supabase migration repair:*)",
+
+      // Deployment tools
+      "Bash(vercel:*)",
+      "Bash(./scripts/deploy.sh:*)",
+      "Bash(./scripts/deploy-helpers.sh:*)",
+      "Bash(./scripts/deploy-integrated.ts:*)",
+      "Bash(bash:*)",
+      "Bash(./run-tests.sh)",
+
+      // Control structures and loops
+      "Bash(for:*)",
+      "Bash(do mv \"$file\" \"$file.backup\")",
+      "Bash(do mv \"$file\" \"$file%.backup\")",
+      "Bash(do [ -f \"$file\" ])",
+      "Bash(true)",
+      "Bash(done)",
+
+      // Process management
+      "Bash(pkill:*)",
+      "Bash(kill:*)",
+      "Bash(killall:*)",
+
+      // Version managers
+      "Bash(asdf:*)",
+      "Bash(asdf list:*)",
+
+      // Claude MCP
+      "Bash(claude mcp)",
+      "Bash(claude mcp:*)",
+
+      // MCP filesystem operations
+      "mcp__filesystem__search_files",
+      "mcp__filesystem__list_directory",
+      "mcp__filesystem__read_file",
+      "mcp__filesystem__write_file",
+      "mcp__filesystem__create_directory",
+      "mcp__filesystem__edit_file",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__move_file",
+      "mcp__filesystem__get_file_info",
+      "mcp__filesystem__list_allowed_directories",
+
+      // MCP IDE operations
+      "mcp__ide__getDiagnostics",
+
+      // MCP memory operations
+      "mcp__memory__create_entities",
+      "mcp__memory__create_relations",
+      "mcp__memory__add_observations",
+      "mcp__memory__delete_entities",
+      "mcp__memory__delete_observations",
+      "mcp__memory__delete_relations",
+      "mcp__memory__read_graph",
+      "mcp__memory__search_nodes",
+      "mcp__memory__open_nodes",
+
+      // Web operations
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:nixos.org)",
+      "WebFetch(domain:nix.dev)"
+    ],
+    "deny": [
+      // Dangerous operations
+      "Bash(rm -rf /)",
+      "Bash(sudo:*)",
+      "Bash(su:*)",
+      "Bash(chown:*)",
+      "Bash(chmod 777:*)",
+
+      // Network security
+      "Bash(nc:*)",
+      "Bash(netcat:*)",
+      "Bash(telnet:*)",
+
+      // System modification
+      "Bash(mount:*)",
+      "Bash(umount:*)",
+      "Bash(fdisk:*)",
+      "Bash(mkfs:*)"
+    ]
+  },
+
+  "environment": {
+    "CLAUDE_CODE_SHARED_CONFIG": "true",
+    "CLAUDE_CODE_CONFIG_PATH": "../.claude",
+    "CLAUDE_CODE_NIX_PATH": "../.claude/nix",
+    "CLAUDE_CODE_AUTO_DETECT": "true",
+    "CLAUDE_CODE_PERFORMANCE_MODE": "true",
+    "CLAUDE_CODE_SECURITY_ENABLED": "true",
+    "CLAUDE_CODE_METRICS_ENABLED": "true"
+  },
+
+  "hooks": {
+    "pre_command": [
+      "# Auto-detect project type",
+      "export CLAUDE_CODE_PROJECT_TYPE=$(detect_project_type)",
+      "# Load Nix environment if available",
+      "if [[ -f '../.claude/nix/default.nix' && -z '$NIX_SHELL_PACKAGES' ]]; then",
+      "  echo 'Nix environment available. Run: nix-shell ../.claude/nix/'",
+      "fi"
+    ],
+
+    "post_command": [
+      "# Record command metrics if available",
+      "if command -v claude-cmd >/dev/null 2>&1; then",
+      "  claude-cmd learn \"$(basename $(pwd))\" \"$LAST_COMMAND\" \"$?\"",
+      "fi"
+    ]
+  },
+
+  "aliases": {
+    // Environment shortcuts
+    "nix-env": "nix-shell ../.claude/nix/",
+    "shared-help": "/m-help",
+
+    // Claude command aliases (ensure consistent /m-* prefix)
+    "help": "/m-help",
+    "project-init": "/m-project-init",
+    "setup-nix": "/m-nix-setup",
+    "security-scan": "/m-security-scan",
+    "orchestrated-dev": "/m-orchestrated-dev",
+    "commit-push": "/m-commit-push",
+    "bug-fix": "/m-bug-fix",
+    "test-generation": "/m-test-generation",
+    "review-code": "/m-review-code",
+    "task-planner": "/m-task-planner",
+    "tdd-planner": "/m-tdd-planner",
+    "next-task": "/m-next-task",
+    "next-context": "/m-next-context",
+    "project-cleanup": "/m-project-cleanup",
+    "document-update": "/m-document-update",
+    "branch-prune": "/m-branch-prune",
+    "branch-prune-lite": "/m-branch-prune-lite",
+    "debate-architecture": "/m-debate-architecture",
+    "debate-code": "/m-debate-code",
+
+    // Environment tools shortcuts
+    "dashboard": "claude-cmd dashboard",
+    "security": "claude-security-scan",
+    "cache-status": "cache-status",
+    "monitor": "claude-monitor"
+  },
+
+  "commands": {
+    "/m-help": "/Users/chadupton/Documents/Github/.claude/commands/m-help.md",
+    "/m-project-init": "/Users/chadupton/Documents/Github/.claude/commands/m-project-init.md",
+    "/m-nix-setup": "/Users/chadupton/Documents/Github/.claude/commands/m-nix-setup.md",
+    "/m-security-scan": "/Users/chadupton/Documents/Github/.claude/commands/m-security-scan.md",
+    "/m-orchestrated-dev": "/Users/chadupton/Documents/Github/.claude/commands/m-orchestrated-dev.md",
+    "/m-commit-push": "/Users/chadupton/Documents/Github/.claude/commands/m-commit-push.md",
+    "/m-bug-fix": "/Users/chadupton/Documents/Github/.claude/commands/m-bug-fix.md",
+    "/m-test-generation": "/Users/chadupton/Documents/Github/.claude/commands/m-test-generation.md",
+    "/m-review-code": "/Users/chadupton/Documents/Github/.claude/commands/m-review-code.md",
+    "/m-task-planner": "/Users/chadupton/Documents/Github/.claude/commands/m-task-planner.md",
+    "/m-tdd-planner": "/Users/chadupton/Documents/Github/.claude/commands/m-tdd-planner.md",
+    "/m-next-task": "/Users/chadupton/Documents/Github/.claude/commands/m-next-task.md",
+    "/m-next-context": "/Users/chadupton/Documents/Github/.claude/commands/m-next-context.md",
+    "/m-project-cleanup": "/Users/chadupton/Documents/Github/.claude/commands/m-project-cleanup.md",
+    "/m-document-update": "/Users/chadupton/Documents/Github/.claude/commands/m-document-update.md",
+    "/m-branch-prune": "/Users/chadupton/Documents/Github/.claude/commands/m-branch-prune.md",
+    "/m-branch-prune-lite": "/Users/chadupton/Documents/Github/.claude/commands/m-branch-prune-lite.md",
+    "/m-debate-architecture": "/Users/chadupton/Documents/Github/.claude/commands/m-debate-architecture.md",
+    "/m-debate-code": "/Users/chadupton/Documents/Github/.claude/commands/m-debate-code.md"
+  }
+}
