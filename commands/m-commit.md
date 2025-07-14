@@ -1,12 +1,12 @@
-# Intelligent Commit and Push: AI-Powered Git Workflow
+# Intelligent Commit: AI-Powered Local Git Workflow
 
 **Target:** $ARGUMENTS (Default: auto-generate commit message)
 
-**Scope:** Intelligent git commit and push with AI-powered commit message generation
+**Scope:** Intelligent local git commit with AI-powered commit message generation (no push to remote)
 
 ## Overview
 
-Provides intelligent git commit and push functionality with AI-powered commit message generation. Uses Gemini CLI when available for superior context understanding and conventional commit formatting.
+Provides intelligent local git commit functionality with AI-powered commit message generation. Uses MCP Gemini agent for superior context understanding and conventional commit formatting. Commits changes locally without pushing to remote repository.
 
 ## AI Integration Strategy
 
@@ -63,10 +63,7 @@ Context: This is a submodule within a larger project.")
             # Commit submodule changes
             git commit -m "$SUBMODULE_MESSAGE"
             
-            # Push submodule changes
-            git push origin HEAD
-            
-            echo "✅ Submodule $SUBMODULE committed and pushed"
+            echo "✅ Submodule $SUBMODULE committed locally"
         else
             echo "⚪ No changes in submodule: $SUBMODULE"
         fi
@@ -108,10 +105,7 @@ Note: This may include submodule reference updates.")
     # Commit main repository
     git commit -m "$MAIN_MESSAGE"
     
-    # Push main repository
-    git push origin HEAD
-    
-    echo "✅ Main repository committed and pushed"
+    echo "✅ Main repository committed locally"
 }
 
 # Execute main process
@@ -138,7 +132,7 @@ main_commit_process
      - Navigate to submodule directory
      - Analyze submodule changes with AI
      - Generate conventional commit message
-     - Stage, commit, and push submodule changes
+     - Stage and commit submodule changes (local only)
      - Return to main repository
 
 3. **Change Analysis**
@@ -153,11 +147,11 @@ main_commit_process
    - Ensure message clarity and specificity
    - Account for submodule updates in commit message
 
-5. **Main Repository Commit and Push**
+5. **Main Repository Commit**
    - Stage all changes including submodule updates
    - Commit with generated or provided message
-   - Push to remote repository
    - Provide success confirmation for all operations
+   - Changes remain local (no push to remote)
 
 ## Gemini CLI Integration
 
@@ -236,56 +230,56 @@ gemini_prompts:
 
 ### Basic Usage
 ```bash
-# Auto-generate commit message (processes submodules first)
-/m-commit-push
+# Auto-generate commit message (processes submodules first, local commits only)
+/m-commit
 
 # Provide specific message for main repo (submodules still auto-processed)
-/m-commit-push "feat(auth): implement OAuth2 LinkedIn integration"
+/m-commit "feat(auth): implement OAuth2 LinkedIn integration"
 
 # Interactive mode with AI suggestions
-/m-commit-push --interactive
+/m-commit --interactive
 
 # Process only submodules (skip main repo)
-/m-commit-push --submodules-only
+/m-commit --submodules-only
 
 # Skip submodule processing (main repo only)
-/m-commit-push --no-submodules
+/m-commit --no-submodules
 ```
 
 ### Advanced Usage
 ```bash
 # Generate message with full project context (including submodules)
-/m-commit-push --context-full
+/m-commit --context-full
 
 # Review changes before commit (shows submodule changes too)
-/m-commit-push --review
+/m-commit --review
 
 # Include breaking change notation
-/m-commit-push --breaking-change
+/m-commit --breaking-change
 
 # Custom scope specification
-/m-commit-push --scope auth
+/m-commit --scope auth
 
 # Verbose mode with detailed submodule processing
-/m-commit-push --verbose
+/m-commit --verbose
 
 # Dry run mode (show what would be committed without actually committing)
-/m-commit-push --dry-run
+/m-commit --dry-run
 ```
 
 ### Submodule-Specific Usage
 ```bash
 # Process specific submodule only
-/m-commit-push --submodule .claude
+/m-commit --submodule .claude
 
 # Process multiple specific submodules
-/m-commit-push --submodules ".claude,docs,config"
-
-# Force push submodules (use with caution)
-/m-commit-push --force-submodules
+/m-commit --submodules ".claude,docs,config"
 
 # Sync submodules before processing
-/m-commit-push --sync-submodules
+/m-commit --sync-submodules
+
+# Create commits with timestamp in message
+/m-commit --timestamp
 ```
 
 ## Conventional Commit Integration
@@ -333,6 +327,7 @@ scope_detection:
 ```json
 {
   "status": "success",
+  "operation": "local_commit_only",
   "submodules": [
     {
       "name": ".claude",
@@ -344,11 +339,7 @@ scope_detection:
         "insertions": 45,
         "deletions": 0
       },
-      "push": {
-        "status": "success",
-        "remote": "origin",
-        "branch": "main"
-      }
+      "local_only": true
     }
   ],
   "main_repo": {
@@ -359,17 +350,17 @@ scope_detection:
       "insertions": 120,
       "deletions": 15
     },
-    "push": {
-      "status": "success",
-      "remote": "origin",
-      "branch": "main"
-    }
+    "local_only": true
   },
   "ai_assistance": {
     "used_gemini": true,
     "message_generated": true,
     "context_analysis": "comprehensive",
     "submodule_processing": true
+  },
+  "next_steps": {
+    "suggestion": "Run /m-commit-push to push all local commits to remote",
+    "unpushed_commits": 2
   }
 }
 ```
@@ -407,9 +398,9 @@ fi
 
 ### Git Operation Errors
 - **Uncommitted Changes**: Intelligent staging with conflict resolution
-- **Push Failures**: Retry logic with pull/rebase suggestions
 - **Merge Conflicts**: Detection and resolution guidance
-- **Network Issues**: Offline commit with deferred push
+- **Repository State**: Verification of clean working directory
+- **Submodule Issues**: Handling detached HEAD and missing references
 
 ### Submodule Error Handling
 ```bash
@@ -509,26 +500,8 @@ Context: This is a submodule within a larger project." 2>/dev/null)
                 continue
             fi
             
-            # Push submodule changes with retry logic
-            PUSH_ATTEMPTS=0
-            MAX_PUSH_ATTEMPTS=3
-            
-            while [ $PUSH_ATTEMPTS -lt $MAX_PUSH_ATTEMPTS ]; do
-                if git push origin HEAD 2>/dev/null; then
-                    echo "✅ Submodule $SUBMODULE committed and pushed"
-                    break
-                else
-                    PUSH_ATTEMPTS=$((PUSH_ATTEMPTS + 1))
-                    echo "⚠️  Push attempt $PUSH_ATTEMPTS failed for $SUBMODULE, retrying..."
-                    
-                    if [ $PUSH_ATTEMPTS -eq $MAX_PUSH_ATTEMPTS ]; then
-                        echo "❌ Error: Failed to push $SUBMODULE after $MAX_PUSH_ATTEMPTS attempts"
-                        echo "💡 Suggestion: Check network connection and repository permissions"
-                    else
-                        sleep 2
-                    fi
-                fi
-            done
+            echo "✅ Submodule $SUBMODULE committed locally"
+            echo "💡 Note: Use /m-commit-push to push changes to remote"
         else
             echo "⚪ No changes in submodule: $SUBMODULE"
         fi
@@ -552,9 +525,9 @@ Context: This is a submodule within a larger project." 2>/dev/null)
 ### Common Submodule Issues
 - **Submodule Not Initialized**: Automatic initialization and update
 - **Permission Errors**: Clear error messages with suggested fixes
-- **Network Failures**: Retry logic with exponential backoff
 - **Detached HEAD**: Automatic branch switching for commits
 - **Merge Conflicts**: Detection and resolution guidance
+- **Local Commit Management**: Track unpushed commits across submodules
 
 ## Integration Features
 
@@ -565,7 +538,63 @@ Context: This is a submodule within a larger project." 2>/dev/null)
 - **Conventional Commit Validation**: Ensure message format compliance
 
 ### Post-commit Actions
-- **Automatic Tagging**: Tag releases based on commit type
-- **CI/CD Triggers**: Trigger appropriate pipelines
-- **Documentation Updates**: Update changelogs and documentation
-- **Notification Systems**: Alert relevant team members
+- **Local Commit Tracking**: Track unpushed commits for later push
+- **Status Reporting**: Show summary of local changes and commits
+- **Push Reminders**: Suggest when to run /m-commit-push
+- **Commit History**: Maintain local commit history and metadata
+
+## Local Commit Workflow Benefits
+
+### Frequent Local Commits
+- **Rapid Development**: Commit frequently without network overhead
+- **Work in Progress**: Save intermediate states without exposing incomplete work
+- **Offline Development**: Continue working without internet connection
+- **Experimentation**: Try different approaches with easy rollback
+
+### Batch Operations
+- **Reduced Network Traffic**: Push multiple commits at once with /m-commit-push
+- **Atomic Remote Updates**: Ensure consistent remote state updates
+- **Review Before Push**: Examine all local commits before making them public
+- **Selective Pushing**: Choose which commits to push when ready
+
+### Integration with /m-commit-push
+- **Complementary Commands**: Use /m-commit for frequent local saves
+- **Seamless Transition**: /m-commit-push handles all unpushed commits
+- **No Conflicts**: Both commands work together without interference
+- **Flexible Workflow**: Switch between local and remote operations as needed
+
+## Best Practices
+
+### When to Use /m-commit
+- **Feature Development**: Multiple small commits during feature work
+- **Bug Fixes**: Incremental fixes with descriptive commit messages
+- **Refactoring**: Step-by-step code improvements
+- **Documentation**: Ongoing documentation updates
+- **Experimentation**: Testing new approaches or solutions
+
+### When to Use /m-commit-push
+- **Feature Completion**: When ready to share completed work
+- **Daily Sync**: End-of-day push to sync with team
+- **Milestone Reached**: Major progress points
+- **Before Breaks**: Before vacation, weekends, or long breaks
+- **Code Reviews**: When ready for team review
+
+### Workflow Examples
+```bash
+# Development session workflow
+/m-commit "feat(auth): start OAuth implementation"
+/m-commit "feat(auth): add OAuth provider config"
+/m-commit "feat(auth): implement token exchange"
+/m-commit "feat(auth): add error handling"
+/m-commit "test(auth): add OAuth integration tests"
+# End of session - push all commits
+/m-commit-push
+
+# Bug fix workflow
+/m-commit "fix(api): identify rate limiting issue"
+/m-commit "fix(api): implement retry logic"
+/m-commit "fix(api): add rate limit headers"
+/m-commit "test(api): verify rate limit handling"
+# Ready for production
+/m-commit-push
+```

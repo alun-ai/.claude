@@ -25,7 +25,10 @@
       "mcp__filesystem__write_file",
       "mcp__gemini__gemini-query",
       "Bash(git submodule:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(pkill:*)",
+      "Bash(true)",
+      "Bash(pgrep:*)"
     ],
     "deny": []
   }
