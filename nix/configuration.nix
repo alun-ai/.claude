@@ -41,7 +41,7 @@ in {
         type = types.listOf types.str;
         default = [
           "git" "gh" "curl" "wget" "jq" "yq" 
-          "ripgrep" "fd" "tree" "direnv" "just" "jira-cli"
+          "ripgrep" "fd" "tree" "direnv" "just" "jira-cli" "gemini-cli"
         ];
         description = "Core development tools to always include";
       };
