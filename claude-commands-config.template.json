@@ -1,0 +1,96 @@
+{
+  "project": {
+    "name": "{{PROJECT_NAME}}",
+    "displayName": "{{PROJECT_DISPLAY_NAME}}",
+    "domain": "{{PROJECT_DOMAIN}}",
+    "type": "{{PROJECT_TYPE}}",
+    "description": "{{PROJECT_DESCRIPTION}}"
+  },
+  "technology": {
+    "frontend": {
+      "framework": "{{FRONTEND_FRAMEWORK}}",
+      "version": "{{FRONTEND_VERSION}}",
+      "ui_library": "{{UI_LIBRARY}}",
+      "state_management": "{{STATE_MANAGEMENT}}"
+    },
+    "backend": {
+      "framework": "{{BACKEND_FRAMEWORK}}",
+      "database": "{{DATABASE}}",
+      "auth_provider": "{{AUTH_PROVIDER}}",
+      "api_type": "{{API_TYPE}}"
+    },
+    "infrastructure": {
+      "deployment_platform": "{{DEPLOYMENT_PLATFORM}}",
+      "ci_cd": "{{CI_CD_PLATFORM}}",
+      "monitoring": "{{MONITORING_SOLUTION}}"
+    },
+    "integrations": {
+      "payment_provider": "{{PAYMENT_PROVIDER}}",
+      "email_service": "{{EMAIL_SERVICE}}",
+      "analytics": "{{ANALYTICS_PLATFORM}}",
+      "oauth_providers": ["{{OAUTH_PROVIDER_1}}", "{{OAUTH_PROVIDER_2}}"]
+    }
+  },
+  "architecture": {
+    "patterns": {
+      "multi_tenancy": "{{MULTI_TENANCY_ENABLED}}",
+      "tenant_hierarchy": ["{{PRIMARY_ENTITY}}", "{{SECONDARY_ENTITY}}", "{{TERTIARY_ENTITY}}"],
+      "ui_patterns": ["{{UI_PATTERN_1}}", "{{UI_PATTERN_2}}"],
+      "api_patterns": ["{{API_PATTERN_1}}", "{{API_PATTERN_2}}"]
+    },
+    "features": {
+      "real_time": "{{REAL_TIME_ENABLED}}",
+      "file_uploads": "{{FILE_UPLOADS_ENABLED}}",
+      "workflows": "{{WORKFLOWS_ENABLED}}",
+      "notifications": "{{NOTIFICATIONS_ENABLED}}"
+    }
+  },
+  "development": {
+    "build_commands": {
+      "dev": "{{DEV_COMMAND}}",
+      "build": "{{BUILD_COMMAND}}",
+      "test": "{{TEST_COMMAND}}",
+      "lint": "{{LINT_COMMAND}}",
+      "typecheck": "{{TYPECHECK_COMMAND}}"
+    },
+    "directories": {
+      "components": "{{COMPONENTS_DIR}}",
+      "api": "{{API_DIR}}",
+      "lib": "{{LIB_DIR}}",
+      "database": "{{DATABASE_DIR}}",
+      "docs": "{{DOCS_DIR}}"
+    },
+    "conventions": {
+      "file_naming": "{{FILE_NAMING_CONVENTION}}",
+      "component_pattern": "{{COMPONENT_PATTERN}}",
+      "test_pattern": "{{TEST_PATTERN}}"
+    }
+  },
+  "team": {
+    "structure": {
+      "teams": ["{{TEAM_1}}", "{{TEAM_2}}", "{{TEAM_3}}"],
+      "roles": ["{{ROLE_1}}", "{{ROLE_2}}", "{{ROLE_3}}"],
+      "communication": {
+        "primary_channel": "{{PRIMARY_COMM_CHANNEL}}",
+        "issue_tracker": "{{ISSUE_TRACKER}}",
+        "documentation": "{{DOCUMENTATION_PLATFORM}}"
+      }
+    },
+    "workflow": {
+      "methodology": "{{DEVELOPMENT_METHODOLOGY}}",
+      "sprint_length": "{{SPRINT_LENGTH}}",
+      "review_process": "{{REVIEW_PROCESS}}"
+    }
+  },
+  "examples": {
+    "user_stories": [
+      "As a {{USER_TYPE}}, I want to {{ACTION}} so that {{BENEFIT}}",
+      "Given {{CONTEXT}}, when {{EVENT}}, then {{OUTCOME}}"
+    ],
+    "entities": {
+      "primary": "{{PRIMARY_ENTITY_EXAMPLE}}",
+      "secondary": "{{SECONDARY_ENTITY_EXAMPLE}}",
+      "tertiary": "{{TERTIARY_ENTITY_EXAMPLE}}"
+    }
+  }
+}
