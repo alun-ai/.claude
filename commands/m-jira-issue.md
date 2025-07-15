@@ -127,8 +127,34 @@ execute_operation() {
 
 ### 3. **Unified Field Management**
 ```bash
-# Common field handling for both create and update
+# Common field handling for both create and update with AI-powered content analysis
 manage_fields() {
+    # AI-powered content analysis for intelligent suggestions
+    if [[ -n "$SUMMARY" ]] && [[ -n "$DESCRIPTION" ]]; then
+        echo "🤖 Analyzing content for intelligent suggestions..."
+        local CONTENT_SUGGESTIONS=$(analyze_issue_content "$SUMMARY" "$DESCRIPTION")
+        
+        # Extract AI suggestions if not manually provided
+        if [[ -z "$LABELS" ]]; then
+            LABELS=$(echo "$CONTENT_SUGGESTIONS" | jq -r '.suggested_labels[]' | jq -R . | jq -s .)
+        fi
+        
+        if [[ -z "$COMPONENTS" ]]; then
+            COMPONENTS=$(echo "$CONTENT_SUGGESTIONS" | jq -r '.suggested_components[]' | jq -R . | jq -s .)
+        fi
+        
+        if [[ -z "$PRIORITY" ]]; then
+            PRIORITY=$(echo "$CONTENT_SUGGESTIONS" | jq -r '.suggested_priority')
+        fi
+        
+        # Show suggestions to user
+        echo "📋 AI Suggestions:"
+        echo "   Labels: $(echo "$LABELS" | jq -r '.[]' | tr '\n' ', ' | sed 's/, $//')"
+        echo "   Components: $(echo "$COMPONENTS" | jq -r '.[]' | tr '\n' ', ' | sed 's/, $//')"
+        echo "   Priority: $PRIORITY"
+        echo ""
+    fi
+    
     # Core fields applicable to both operations
     FIELDS=$(cat <<EOF
 {
@@ -136,7 +162,7 @@ manage_fields() {
     "description": "$DESCRIPTION",
     "priority": {"name": "$PRIORITY"},
     "labels": $LABELS,
-    "components": $COMPONENTS
+    "components": $(echo "$COMPONENTS" | jq 'map({"name": .})')
 }
 EOF
 )
@@ -186,6 +212,13 @@ EOF
     --priority "High" \
     --sprint "current"
 
+# Create with AI-powered content analysis
+/m-jira-issue --create \
+    --summary "Fix OAuth token refresh timeout in LinkedIn integration" \
+    --description "Users are experiencing timeout errors when LinkedIn OAuth tokens expire. The refresh mechanism is failing silently, causing authentication failures. This affects the posting functionality and user experience." \
+    --analyze-content
+    # AI will suggest: labels=["oauth", "linkedin", "bug", "authentication"], components=["Auth", "API"], priority="High"
+
 # Create subtask
 /m-jira-issue --create \
     --parent ALUN-100 \
@@ -221,39 +254,167 @@ templates:
     create:
       issuetype: "Bug"
       priority: "High"
-      labels: ["bug", "needs-triage"]
+      labels: ["bug", "needs-triage", "reproduction-needed"]
+      components: ["Backend", "Frontend"] # Auto-detected based on files
       template_fields:
         - steps_to_reproduce
         - expected_behavior
         - actual_behavior
+        - environment_info
     update:
-      add_labels: ["in-progress"]
+      add_labels: ["in-progress", "investigating"]
       workflow: "bug-fix-workflow"
+      smart_components: true # AI suggests components based on commits
   
   feature:
     create:
       issuetype: "Story"
       priority: "Medium"
-      labels: ["feature", "needs-design"]
+      labels: ["feature", "needs-design", "enhancement"]
+      components: ["Product", "Frontend"] # Default components
       template_fields:
         - user_story
         - acceptance_criteria
         - technical_notes
+        - business_value
     update:
-      add_labels: ["development"]
+      add_labels: ["development", "implementation"]
       workflow: "feature-workflow"
+      smart_components: true
+  
+  security:
+    create:
+      issuetype: "Bug"
+      priority: "Critical"
+      labels: ["security", "vulnerability", "urgent"]
+      components: ["Security", "Backend", "Auth"]
+      template_fields:
+        - vulnerability_details
+        - impact_assessment
+        - remediation_plan
+    update:
+      add_labels: ["security-review", "penetration-test"]
+      workflow: "security-workflow"
+  
+  oauth:
+    create:
+      issuetype: "Story"
+      priority: "High"
+      labels: ["oauth", "authentication", "integration"]
+      components: ["Auth", "API", "Backend"]
+      template_fields:
+        - platform_integration
+        - auth_flow_requirements
+        - security_considerations
+    update:
+      add_labels: ["oauth-testing", "security-review"]
+      workflow: "oauth-workflow"
+  
+  performance:
+    create:
+      issuetype: "Bug"
+      priority: "Medium"
+      labels: ["performance", "optimization", "monitoring"]
+      components: ["Backend", "Database", "Frontend"]
+      template_fields:
+        - performance_metrics
+        - bottleneck_analysis
+        - optimization_approach
+    update:
+      add_labels: ["performance-testing", "load-testing"]
+      workflow: "performance-workflow"
   
   hotfix:
     create:
       issuetype: "Bug"
       priority: "Critical"
-      labels: ["hotfix", "production"]
+      labels: ["hotfix", "production", "urgent", "customer-impacting"]
+      components: ["Production", "Backend"] # Auto-detected
     update:
       fast_track: true
       skip_review: false
+      add_labels: ["production-ready", "hotfix-deployed"]
 ```
 
 ## Smart Features
+
+### AI-Powered Content Analysis
+```bash
+# Analyze issue content for intelligent categorization
+analyze_issue_content() {
+    local SUMMARY="$1"
+    local DESCRIPTION="$2"
+    
+    # Combine summary and description for analysis
+    local CONTENT="$SUMMARY $DESCRIPTION"
+    
+    # Use Gemini AI for content analysis
+    local ANALYSIS=$(gemini-analyze-text "$CONTENT" --type "key-points" | jq -r '.analysis')
+    
+    # Extract suggested labels based on content
+    local SUGGESTED_LABELS=$(echo "$ANALYSIS" | \
+        gemini-query "Based on this Jira issue analysis, suggest 3-5 relevant labels.
+        Consider: technical areas, urgency, feature type, business impact.
+        Focus on: security, performance, frontend, backend, infrastructure, bug, feature, enhancement.
+        Return as JSON array of strings." | jq -r '.[]')
+    
+    # Extract suggested components based on file changes
+    local CHANGED_FILES=$(git diff --name-only HEAD~1 2>/dev/null || echo "")
+    local SUGGESTED_COMPONENTS=$(echo "$CHANGED_FILES" | \
+        gemini-query "Based on these changed files, suggest Jira components:
+        Files: $CHANGED_FILES
+        Map to components like: Frontend, Backend, Database, Auth, API, Documentation, Testing.
+        Return as JSON array of strings." | jq -r '.[]')
+    
+    # Intelligent priority assessment
+    local PRIORITY_KEYWORDS="critical|urgent|blocker|security|production|down|crash"
+    local SUGGESTED_PRIORITY="Medium"
+    
+    if echo "$CONTENT" | grep -iE "$PRIORITY_KEYWORDS" > /dev/null; then
+        SUGGESTED_PRIORITY="High"
+    fi
+    
+    if echo "$CONTENT" | grep -iE "nice.*have|enhancement|improvement" > /dev/null; then
+        SUGGESTED_PRIORITY="Low"
+    fi
+    
+    # Output structured suggestions
+    cat <<EOF
+{
+  "suggested_labels": $SUGGESTED_LABELS,
+  "suggested_components": $SUGGESTED_COMPONENTS,
+  "suggested_priority": "$SUGGESTED_PRIORITY",
+  "analysis_summary": "$ANALYSIS"
+}
+EOF
+}
+
+# Apply intelligent suggestions to issue
+apply_content_suggestions() {
+    local ISSUE_KEY="$1"
+    local SUGGESTIONS="$2"
+    
+    # Extract suggestions
+    local LABELS=$(echo "$SUGGESTIONS" | jq -r '.suggested_labels[]' | tr '\n' ',' | sed 's/,$//')
+    local COMPONENTS=$(echo "$SUGGESTIONS" | jq -r '.suggested_components[]' | tr '\n' ',' | sed 's/,$//')
+    local PRIORITY=$(echo "$SUGGESTIONS" | jq -r '.suggested_priority')
+    
+    # Update issue with suggestions
+    if [[ "$ISSUE_KEY" != "NEW" ]]; then
+        # Update existing issue
+        jira_update_issue "$ISSUE_KEY" --fields "{
+            \"labels\": [$(echo "$LABELS" | sed 's/,/","/g' | sed 's/^/"/;s/$/"/')]
+            \"components\": [$(echo "$COMPONENTS" | sed 's/,/","/g' | sed 's/^/"/;s/$/"/')]
+            \"priority\": {\"name\": \"$PRIORITY\"}
+        }"
+    else
+        # Store for new issue creation
+        export SUGGESTED_LABELS="$LABELS"
+        export SUGGESTED_COMPONENTS="$COMPONENTS"  
+        export SUGGESTED_PRIORITY="$PRIORITY"
+    fi
+}
+```
 
 ### Duplicate Detection
 ```yaml
@@ -299,12 +460,42 @@ field_intelligence:
     components:
       - analyze_changed_files
       - map_to_components
+      - detect_component_patterns
+      - analyze_import_statements
+      - identify_affected_modules
+    labels:
+      - analyze_content_keywords
+      - detect_urgency_indicators
+      - identify_feature_type
+      - map_technical_areas
+      - extract_business_impact
     priority:
       - check_labels_for_urgency
       - analyze_description_keywords
+      - evaluate_business_impact
+      - assess_technical_complexity
     assignee:
       - check_code_ownership
       - check_expertise_matrix
+      - analyze_skill_requirements
+  
+  content_analysis:
+    summary_keywords:
+      security: ["security", "vulnerability", "auth", "oauth", "encryption", "ssl", "tls"]
+      performance: ["performance", "slow", "optimization", "memory", "cpu", "cache"]
+      frontend: ["ui", "ux", "component", "react", "styling", "responsive"]
+      backend: ["api", "database", "server", "endpoint", "service", "queue"]
+      infrastructure: ["deployment", "docker", "ci/cd", "pipeline", "build"]
+      bug: ["bug", "error", "exception", "crash", "fail", "broken"]
+      feature: ["feature", "enhancement", "improvement", "new", "add"]
+    
+    component_mapping:
+      "supabase/*": ["database", "backend", "auth"]
+      "app/*": ["frontend", "ui", "components"]
+      "lib/*": ["utilities", "core", "shared"]
+      "docs/*": ["documentation"]
+      "scripts/*": ["automation", "tooling"]
+      "tests/*": ["testing", "qa"]
   
   validation:
     summary:
@@ -314,6 +505,12 @@ field_intelligence:
     story_points:
       fibonacci_only: true
       max_value: 21
+    labels:
+      max_labels: 10
+      required_categories: ["type", "priority", "component"]
+    components:
+      max_components: 5
+      must_match_project_components: true
 ```
 
 ## Integration Points

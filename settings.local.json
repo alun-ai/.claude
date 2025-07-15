@@ -44,7 +44,8 @@
       "Bash(cp:*)",
       "Bash(node:*)",
       "Bash(npm run build:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(chmod:*)"
     ],
     "deny": []
   }
