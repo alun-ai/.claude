@@ -28,7 +28,12 @@
       "Bash(git mv:*)",
       "Bash(pkill:*)",
       "Bash(true)",
-      "Bash(pgrep:*)"
+      "Bash(pgrep:*)",
+      "mcp__gemini__gemini-brainstorm",
+      "mcp__filesystem__create_directory",
+      "mcp__gemini__gemini-analyze-code",
+      "Bash(npm test:*)",
+      "mcp__filesystem__list_directory"
     ],
     "deny": []
   }

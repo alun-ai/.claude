@@ -2,11 +2,13 @@
 
 **Target:** $ARGUMENTS (Default: interactive product canvas development or Notion URL for existing canvas)
 
-**Scope:** World-class head of product guidance for comprehensive product canvas development and strategy
+**Scope:** World-class head of product guidance for comprehensive product canvas development using standardized template structure
 
 ## Overview
 
-Transform into a world-class head of product to guide comprehensive product canvas development. This command combines strategic product thinking with AI-powered analysis to help define use cases, desired outcomes, and user value propositions. Supports both creating new canvases and analyzing existing ones from various sources including Notion, pasted content, or interactive development.
+Transform into a world-class head of product to guide comprehensive product canvas development using the standardized `templates/product/canvas.md` template as the foundational structure. This command provides detailed, easily digestible guidance specifically designed for junior and mid-level product managers, combining strategic product thinking with AI-powered analysis to systematically work through each section of the canvas template.
+
+**Template Foundation:** Uses `/templates/product/canvas.md` as the core structure for investigation, discovery, and analysis.
 
 ## AI Integration Strategy
 
@@ -42,200 +44,414 @@ Focus on:
 - **Value Proposition Design**: Strategic value creation and delivery frameworks
 - **Outcome Prediction**: AI-powered success metrics and KPI recommendations
 
-## Product Canvas Framework
+## Product Canvas Framework (Based on Canvas Template)
 
-### Core Canvas Components
+### Template-Driven Section Structure
+Following the standardized `/templates/product/canvas.md` structure for systematic canvas development:
+
 ```yaml
-product_canvas:
-  problem_space:
-    - user_segments: "Who are we solving for?"
-    - pain_points: "What problems exist?"
-    - jobs_to_be_done: "What are users trying to accomplish?"
-    - current_alternatives: "How are users solving this today?"
+canvas_template_sections:
+  1_headline:
+    purpose: "Compelling market positioning statement"
+    junior_pm_guidance: "Write this like a press release headline - what would excite customers?"
+    investigation_focus: ["value proposition clarity", "market positioning", "competitive differentiation"]
   
-  solution_space:
-    - value_propositions: "What value do we create?"
-    - key_features: "What capabilities do we provide?"
-    - user_experience: "How do users interact with our solution?"
-    - competitive_advantages: "What makes us unique?"
+  2_problem_statement:
+    purpose: "Core problems being solved"
+    junior_pm_guidance: "Be specific about WHO has WHAT problem and WHY it matters"
+    investigation_focus: ["user pain points", "business problems", "market gaps"]
   
-  business_model:
-    - revenue_streams: "How do we generate revenue?"
-    - cost_structure: "What are our key costs?"
-    - key_partnerships: "Who are our strategic partners?"
-    - channels: "How do we reach customers?"
+  3_target_audience:
+    purpose: "Specific user segments and their unique needs"
+    junior_pm_guidance: "Create detailed personas - don't say 'everyone' or be too broad"
+    investigation_focus: ["user segmentation", "persona development", "needs analysis"]
   
-  success_metrics:
-    - leading_indicators: "What predicts success?"
-    - lagging_indicators: "What measures success?"
-    - assumptions: "What must be true for success?"
-    - risks: "What could prevent success?"
+  4_goals:
+    purpose: "What we want to accomplish with this project"
+    junior_pm_guidance: "Set SMART goals - Specific, Measurable, Achievable, Relevant, Time-bound"
+    investigation_focus: ["business objectives", "user outcomes", "success criteria"]
+  
+  5_success_metrics:
+    purpose: "How we measure impact and success"
+    sections:
+      adoption_metrics: "User acquisition and engagement"
+      integration_coverage: "Platform and feature adoption"
+      system_health: "Technical performance and reliability"
+      engineering_efficiency: "Development and delivery metrics"
+      business_impact: "Revenue and growth metrics"
+    junior_pm_guidance: "Define both leading indicators (predict success) and lagging indicators (measure results)"
+  
+  6_validation:
+    purpose: "Evidence supporting problem importance and solution viability"
+    junior_pm_guidance: "Gather concrete proof - customer interviews, usage data, market research"
+    investigation_focus: ["customer feedback", "market research", "usage data", "competitive analysis"]
+  
+  7_competitive_analysis:
+    purpose: "Competitor landscape and positioning"
+    junior_pm_guidance: "Analyze both direct and indirect competitors - include their strengths/weaknesses"
+    investigation_focus: ["competitor features", "market positioning", "competitive advantages"]
+  
+  8_big_picture:
+    purpose: "High-level solution approach and key features"
+    junior_pm_guidance: "Describe the solution without getting lost in technical details"
+    investigation_focus: ["solution architecture", "feature prioritization", "user experience"]
+  
+  9_not_doing:
+    purpose: "Explicit scope boundaries and exclusions"
+    junior_pm_guidance: "Be clear about what's out of scope to manage expectations"
+    investigation_focus: ["scope definition", "resource constraints", "future considerations"]
+  
+  10_readiness_checklist:
+    purpose: "Prerequisites and dependencies before execution"
+    junior_pm_guidance: "List everything needed to start - resources, approvals, dependencies"
+    investigation_focus: ["resource requirements", "dependencies", "risk mitigation"]
 ```
 
-## Execution Flow
+## Execution Flow (Template-Driven)
 
-### 1. **Input Processing & Context Analysis**
+### 1. **Template Foundation Setup**
 ```bash
-# Determine input type and extract context
-process_input() {
+# Load canvas template as starting point
+load_canvas_template() {
+    TEMPLATE_PATH="templates/product/canvas.md"
+    CANVAS_TEMPLATE=$(cat "$TEMPLATE_PATH")
+    
+    echo "📋 Loading standardized product canvas template..."
+    echo "🎯 Template sections: Headline → Problem → Audience → Goals → Metrics → Validation → Competition → Big Picture → Scope → Readiness"
+    
+    # Determine operation mode
     if [[ "$INPUT" =~ ^https://www\.notion\.so ]]; then
-        # Extract page ID from Notion URL
         PAGE_ID=$(echo "$INPUT" | grep -oE '[a-f0-9]{32}' | tail -1)
-        
-        # Fetch canvas content
-        CANVAS_DATA=$(/notion_retrieve_page "$PAGE_ID")
-        
-        echo "📋 Analyzing existing product canvas from Notion..."
-        OPERATION_MODE="analyze_existing"
+        EXISTING_CANVAS=$(/notion_retrieve_page "$PAGE_ID")
+        OPERATION_MODE="analyze_existing_against_template"
+        echo "🔍 Analyzing existing canvas against template structure..."
     else
-        # Process text input as new canvas concept
-        CANVAS_DATA="$INPUT"
-        echo "🚀 Creating new product canvas from concept..."
-        OPERATION_MODE="create_new"
+        PRODUCT_CONCEPT="$INPUT"
+        OPERATION_MODE="create_from_template"
+        echo "🚀 Creating new canvas using template structure..."
     fi
 }
 ```
 
-### 2. **AI-Powered Product Analysis**
+### 2. **Template-Driven AI Analysis & Discovery**
 ```bash
-# Deep product strategy analysis
-conduct_product_analysis() {
-    # Market opportunity assessment
-    MARKET_ANALYSIS=$(/gemini-query "As a world-class head of product with 15+ years at top tech companies, analyze this product concept for market opportunity:
+# Systematic analysis through each template section
+conduct_template_driven_analysis() {
+    echo "🧠 Starting template-driven discovery process..."
+    echo "📚 Guidance designed for junior/mid-level product managers"
+    
+    # Section 1: Headline Development
+    HEADLINE_ANALYSIS=$(/gemini-query "As an experienced product mentor working with a junior PM, help develop a compelling headline for this product concept: $PRODUCT_CONCEPT
 
-$CANVAS_DATA
+    Template Section: HEADLINE
+    Purpose: Marketing announcement positioning
+    
+    Junior PM Guidance Needed:
+    1. How to write compelling headlines that capture value
+    2. Common mistakes junior PMs make in positioning
+    3. Examples of great product headlines from similar products
+    4. How to test and validate headline effectiveness
+    
+    Provide step-by-step guidance with specific examples.")
 
-Provide:
-1. Market size and growth potential (TAM, SAM, SOM)
-2. Competitive landscape assessment
-3. Market timing and trends
-4. Barriers to entry and competitive moats
-5. Go-to-market strategy recommendations
+    # Section 2: Problem Statement Deep Dive
+    PROBLEM_ANALYSIS=$(/gemini-query "As a senior product mentor, guide problem statement development for: $PRODUCT_CONCEPT
 
-Format as strategic executive summary.")
+    Template Section: PROBLEM STATEMENT
+    Purpose: Define core problems being solved
+    
+    Junior PM Development Focus:
+    1. How to identify and articulate user pain points
+    2. Techniques for validating problem importance
+    3. Framework for prioritizing multiple problems
+    4. Common pitfalls in problem definition
+    5. How to connect user problems to business problems
+    
+    Include specific questioning techniques and validation methods.")
 
-    # User value proposition analysis
-    VALUE_ANALYSIS=$(/gemini-query "As a seasoned product leader, analyze the user value proposition:
+    # Section 3: Target Audience Analysis
+    AUDIENCE_ANALYSIS=$(/gemini-query "As a user research and product strategy expert, guide target audience definition for: $PRODUCT_CONCEPT
 
-$CANVAS_DATA
-
-Evaluate:
-1. User segments and personas
-2. Pain points and jobs-to-be-done
-3. Value creation mechanisms
-4. User experience and journey
-5. Adoption and retention strategies
-
-Focus on user-centric value delivery.")
-
-    # Business model evaluation
-    BUSINESS_ANALYSIS=$(/gemini-query "As a strategic product executive, evaluate the business model:
-
-$CANVAS_DATA
-
-Assess:
-1. Revenue model viability
-2. Unit economics and scalability
-3. Cost structure optimization
-4. Partnership and channel strategy
-5. Monetization opportunities
-
-Provide strategic business recommendations.")
+    Template Section: TARGET AUDIENCE
+    Purpose: Specific user segments and unique needs
+    
+    Junior PM Skill Building:
+    1. Persona development best practices
+    2. Market segmentation techniques
+    3. How to avoid 'everyone is our user' trap
+    4. User needs analysis frameworks
+    5. Validation methods for persona accuracy
+    
+    Provide actionable frameworks and templates.")
 }
 ```
 
-### 3. **Interactive Canvas Development**
+### 3. **Guided Canvas Development for Junior/Mid-Level PMs**
 ```bash
-# Guide user through canvas completion
-guide_canvas_development() {
-    echo "🎯 Welcome to your Product Canvas Strategy Session"
-    echo "I'm your AI Head of Product - let's build something amazing together!"
+# Systematic template-driven canvas completion
+guide_template_canvas_development() {
+    echo "🎯 Product Canvas Development Workshop"
+    echo "👨‍🏫 Your AI Product Mentor - designed for junior/mid-level PMs"
+    echo "📋 Following standardized canvas template structure"
+    echo ""
+    echo "We'll work through each section systematically with:"
+    echo "• Detailed explanations of each section's purpose"
+    echo "• Common mistakes to avoid"
+    echo "• Best practices and frameworks"
+    echo "• Real examples and templates"
+    echo "• Validation techniques"
     
-    # Start with problem space
-    develop_problem_space
+    # Template-driven section development
+    develop_headline_section
+    develop_problem_statement_section  
+    develop_target_audience_section
+    develop_goals_section
+    develop_success_metrics_section
+    develop_validation_section
+    develop_competitive_analysis_section
+    develop_big_picture_section
+    develop_not_doing_section
+    develop_readiness_checklist_section
     
-    # Move to solution space
-    develop_solution_space
-    
-    # Define business model
-    develop_business_model
-    
-    # Establish success metrics
-    develop_success_metrics
-    
-    # Create final canvas
-    generate_final_canvas
+    # Generate comprehensive final canvas
+    generate_template_based_canvas
 }
-```
 
-## Head of Product AI Persona
+# Individual section development with junior PM guidance
+develop_headline_section() {
+    echo "📰 SECTION 1: HEADLINE"
+    echo "Purpose: What would a marketing announcement say about this?"
+    echo ""
+    echo "🎓 Junior PM Learning Objectives:"
+    echo "• Craft compelling value propositions"
+    echo "• Understand positioning vs. features"
+    echo "• Write customer-focused messaging"
+    
+    HEADLINE_GUIDANCE=$(/gemini-query "As a product mentor, provide comprehensive headline development guidance for: $PRODUCT_CONCEPT
 
-### Strategic Leadership Approach
-```yaml
-product_leadership_persona:
-  experience_level: "15+ years at top-tier tech companies"
-  expertise_areas:
-    - Product Strategy & Vision
-    - User Experience Design
-    - Market Analysis & Positioning
-    - Business Model Innovation
-    - Team Leadership & Execution
-  
-  thinking_framework:
-    - First Principles Thinking
-    - Jobs-to-be-Done Theory
-    - Lean Startup Methodology
-    - Design Thinking Process
-    - Data-Driven Decision Making
-  
-  communication_style:
-    - Strategic yet practical
-    - User-centric focus
-    - Data-informed insights
-    - Visionary but grounded
-    - Collaborative guidance
-```
-
-### Guided Discovery Process
-```bash
-# Problem Space Development
-develop_problem_space() {
-    echo "🔍 Let's start with the PROBLEM SPACE - understanding your users"
-    
-    # User segments analysis
-    echo "💭 Who are we building for? Let's define your core user segments..."
-    USER_SEGMENTS=$(/gemini-query "Based on this product concept: $CANVAS_DATA
-    
-    Help identify and define 2-3 core user segments with:
-    - Demographics and psychographics
-    - Behavioral patterns and motivations
-    - Pain points and frustrations
-    - Current solutions they use
-    
-    Format as user persona summaries.")
-    
-    # Jobs-to-be-done analysis
-    echo "⚡ What jobs are users hiring your product to do?"
-    JOBS_ANALYSIS=$(/gemini-query "Analyze the jobs-to-be-done for: $CANVAS_DATA
-    
-    Identify:
-    - Functional jobs (practical tasks)
-    - Emotional jobs (feelings and self-perception)
-    - Social jobs (how others perceive them)
-    - Job context and circumstances
-    
-    Use jobs-to-be-done framework.")
-    
-    # Market opportunity sizing
-    echo "📊 Let's size the market opportunity..."
-    MARKET_SIZE=$(/gemini-query "Estimate market opportunity for: $CANVAS_DATA
+    Target: Junior/Mid-level Product Manager
     
     Provide:
-    - TAM (Total Addressable Market)
-    - SAM (Serviceable Addressable Market)
-    - SOM (Serviceable Obtainable Market)
-    - Market growth trends
-    - Competitive landscape overview")
+    1. FRAMEWORK: Step-by-step headline creation process
+    2. EXAMPLES: 3-5 headline variations with explanations
+    3. COMMON MISTAKES: What junior PMs typically get wrong
+    4. VALIDATION: How to test headline effectiveness
+    5. TEMPLATES: Fill-in-the-blank headline templates
+    6. BEST PRACTICES: Industry standards and proven patterns
+    
+    Make guidance actionable and specific.")
+}
+
+develop_problem_statement_section() {
+    echo "🎯 SECTION 2: PROBLEM STATEMENT" 
+    echo "Purpose: What problems are we solving and why do they matter?"
+    echo ""
+    echo "🎓 Junior PM Learning Objectives:"
+    echo "• Identify and validate real user problems"
+    echo "• Distinguish symptoms from root causes"
+    echo "• Quantify problem importance"
+    
+    PROBLEM_GUIDANCE=$(/gemini-query "As a product strategy mentor, guide problem statement development for: $PRODUCT_CONCEPT
+
+    Target: Junior/Mid-level Product Manager
+    
+    Provide:
+    1. PROBLEM IDENTIFICATION: Techniques for finding real problems
+    2. VALIDATION METHODS: How to prove problems exist and matter
+    3. PRIORITIZATION: Framework for ranking multiple problems
+    4. PITFALL AVOIDANCE: Common problem definition mistakes
+    5. EXAMPLES: Well-crafted problem statements from similar products
+    6. TEMPLATES: Problem statement structures and formats
+    
+    Include specific questioning techniques and research methods.")
+}
+```
+
+## AI Product Mentor Persona (Junior/Mid-Level PM Focus)
+
+### Teaching & Mentoring Approach
+```yaml
+product_mentor_persona:
+  role: "Senior Product Leader & Mentor"
+  experience_level: "15+ years at top-tier tech companies"
+  specialization: "Developing junior/mid-level product managers"
+  
+  mentoring_philosophy:
+    - "Learn by doing with guided support"
+    - "Framework-first, then intuition"
+    - "Practical application over theory"
+    - "Build confidence through competence"
+    - "Systematic skill development"
+  
+  teaching_methods:
+    - Step-by-step guided frameworks
+    - Real examples with explanations
+    - Common mistake identification
+    - Validation technique training
+    - Template and tool provision
+  
+  communication_style:
+    - Patient and encouraging
+    - Specific and actionable
+    - Example-rich explanations
+    - Question-driven discovery
+    - Progressive skill building
+  
+  focus_areas_for_junior_pms:
+    problem_identification:
+      - User research techniques
+      - Problem validation methods
+      - Root cause analysis
+      - Prioritization frameworks
+    
+    solution_design:
+      - User-centric thinking
+      - Feature prioritization
+      - MVP definition
+      - User experience principles
+    
+    business_acumen:
+      - Success metric definition
+      - Business model basics
+      - Competitive analysis
+      - Go-to-market strategy
+    
+    execution_skills:
+      - Stakeholder communication
+      - Requirements definition
+      - Project planning
+      - Risk management
+```
+
+### Junior PM Learning Framework
+
+#### Template Section Mastery Guide
+Each template section includes comprehensive learning materials for junior/mid-level PMs:
+
+```yaml
+learning_framework_per_section:
+  headline:
+    skill_focus: "Value proposition communication"
+    learning_objectives:
+      - Write compelling product positioning
+      - Understand customer language vs. internal jargon
+      - Test and iterate messaging
+    deliverables: ["3 headline variations", "validation plan"]
+    
+  problem_statement:
+    skill_focus: "Problem identification and validation"
+    learning_objectives:
+      - Distinguish real problems from assumptions
+      - Quantify problem severity and frequency
+      - Connect user problems to business impact
+    deliverables: ["validated problem statement", "evidence portfolio"]
+    
+  target_audience:
+    skill_focus: "User research and segmentation"
+    learning_objectives:
+      - Create actionable user personas
+      - Identify primary vs. secondary segments
+      - Understand user needs hierarchy
+    deliverables: ["detailed personas", "needs analysis", "segment prioritization"]
+    
+  goals:
+    skill_focus: "Strategic planning and OKRs"
+    learning_objectives:
+      - Set SMART goals and objectives
+      - Align product goals with business strategy
+      - Balance user and business outcomes
+    deliverables: ["SMART goals", "success criteria", "goal alignment map"]
+    
+  success_metrics:
+    skill_focus: "Metrics and measurement strategy"
+    learning_objectives:
+      - Define leading vs. lagging indicators
+      - Choose meaningful metrics
+      - Build measurement frameworks
+    deliverables: ["metrics dashboard", "measurement plan", "success thresholds"]
+    
+  validation:
+    skill_focus: "Evidence gathering and research"
+    learning_objectives:
+      - Design validation experiments
+      - Gather compelling evidence
+      - Present research findings
+    deliverables: ["validation study", "evidence summary", "research insights"]
+    
+  competitive_analysis:
+    skill_focus: "Market intelligence and positioning"
+    learning_objectives:
+      - Analyze direct and indirect competitors
+      - Identify competitive advantages
+      - Develop positioning strategy
+    deliverables: ["competitive matrix", "positioning map", "differentiation strategy"]
+    
+  big_picture:
+    skill_focus: "Solution architecture and feature planning"
+    learning_objectives:
+      - Design user-centric solutions
+      - Prioritize features effectively
+      - Plan MVP scope
+    deliverables: ["solution overview", "feature roadmap", "MVP definition"]
+    
+  not_doing:
+    skill_focus: "Scope management and stakeholder alignment"
+    learning_objectives:
+      - Define clear boundaries
+      - Manage scope creep
+      - Communicate constraints
+    deliverables: ["scope boundaries", "exclusion rationale", "stakeholder alignment"]
+    
+  readiness_checklist:
+    skill_focus: "Project planning and risk management"
+    learning_objectives:
+      - Identify dependencies and blockers
+      - Plan resource requirements
+      - Mitigate execution risks
+    deliverables: ["readiness assessment", "dependency map", "risk mitigation plan"]
+```
+
+### Template-Driven Discovery Process
+```bash
+# Complete template-based canvas development
+guide_systematic_canvas_completion() {
+    echo "📚 JUNIOR PM CANVAS DEVELOPMENT WORKSHOP"
+    echo "🎯 Systematic progression through standardized template"
+    echo ""
+    
+    for SECTION in headline problem_statement target_audience goals success_metrics validation competitive_analysis big_picture not_doing readiness_checklist; do
+        echo "📍 Starting Section: $(echo $SECTION | tr '_' ' ' | tr '[:lower:]' '[:upper:]')"
+        
+        # Section-specific guidance and development
+        develop_section_with_mentoring "$SECTION"
+        
+        # Validate section completion before moving forward
+        validate_section_completion "$SECTION"
+        
+        echo "✅ Section completed. Moving to next..."
+        echo ""
+    done
+    
+    # Generate final comprehensive canvas
+    generate_final_template_canvas
+}
+
+# Develop individual section with comprehensive PM mentoring
+develop_section_with_mentoring() {
+    local SECTION=$1
+    
+    case $SECTION in
+        "headline")
+            develop_headline_with_guidance
+            ;;
+        "problem_statement")
+            develop_problem_statement_with_guidance
+            ;;
+        "target_audience")
+            develop_target_audience_with_guidance
+            ;;
+        # ... continue for all sections
+    esac
 }
 ```
 
