@@ -8,12 +8,12 @@ These MCP servers are available for use with Claude Code:
 #### Filesystem Server
 - **Server**: `filesystem`
 - **Purpose**: Enhanced file system operations
-- **Configuration**: 
+- **Configuration**:
   ```json
   {
     "type": "stdio",
     "command": "mcp-server-filesystem",
-    "args": ["/Users/chadupton/Documents/Github/alunai"]
+    "args": ["/Users/user/Documents/Github/project"]
   }
   ```
 
@@ -67,7 +67,7 @@ These servers require environment variables to be configured:
 #### Jira Server
 - **Server**: `jira`
 - **Purpose**: Jira API integration
-- **Environment Variables**: 
+- **Environment Variables**:
   - `JIRA_API_TOKEN`
   - `JIRA_BASE_URL`
   - `JIRA_USERNAME`
