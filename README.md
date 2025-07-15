@@ -1,39 +1,29 @@
 # Shared Claude Code Configuration
 
-This is a shared Claude Code configuration system that provides reusable development tools and workflows across all projects in this directory structure.
+This is a shared Claude Code configuration system that provides reusable development tools and workflows across all projects through git submodules.
 
 ## 🚀 Architecture
 
 ```
 Documents/Github/
-├── .claude/                    # Shared Claude configuration
-│   ├── nix/                   # Nix development environments
+├── .claude/                    # Shared Claude configuration (as submodule)
 │   ├── commands/              # Reusable Claude commands
 │   ├── templates/             # Project templates
-│   ├── scripts/               # Utility scripts
 │   ├── workflows/             # Development workflows
 │   └── docs/                  # Documentation
 ├── project1/
-│   └── .claude/               # Project-specific settings
-│       └── settings.local.json
+│   ├── .claude/               # Submodule linked to shared config
+│   └── .claude_config.json    # Project-specific settings
 ├── project2/
-│   └── .claude/               # Project-specific settings
-│       └── settings.local.json
+│   ├── .claude/               # Submodule linked to shared config
+│   └── .claude_config.json    # Project-specific settings
 └── ...
 ```
 
 ## 📁 Directory Structure
 
-### `/nix/` - Development Environments
-Comprehensive Nix configurations providing:
-- **Smart Project Detection**: Automatically configures for detected technologies
-- **Performance Optimization**: Parallel processing, caching, incremental builds
-- **Security Integration**: Automated vulnerability scanning
-- **Command Intelligence**: AI-powered suggestions and metrics
-- **Testing Framework**: Comprehensive validation and monitoring
-
 ### `/commands/` - Reusable Commands
-Claude Code slash commands available across all projects (all use `/m-*` prefix):
+Claude Code slash commands available across all projects after adding the submodule and restarting Claude (all use `/m-*` prefix):
 
 #### Core Development Workflow
 - `/m-orchestrated-dev` - Multi-agent development workflow
@@ -62,8 +52,7 @@ Claude Code slash commands available across all projects (all use `/m-*` prefix)
 - `/m-branch-prune` - Branch cleanup and management
 - `/m-branch-prune-lite` - Lightweight branch cleanup
 
-#### Environment & Tools
-- `/m-nix-setup` - Nix environment management
+#### Help & Discovery
 - `/m-help` - Context-aware help and command discovery
 
 ### `/templates/` - Project Templates
@@ -74,13 +63,6 @@ Ready-to-use project templates with Claude configuration:
 - Full-stack applications
 - Supabase projects
 
-### `/scripts/` - Utility Scripts
-Automation scripts for common tasks:
-- Project initialization
-- Environment setup
-- Cross-project operations
-- Maintenance tasks
-
 ### `/workflows/` - Development Workflows
 Predefined development workflows:
 - CI/CD pipelines
@@ -90,39 +72,28 @@ Predefined development workflows:
 
 ## 🛠 Setup for New Projects
 
-### Option 1: Using Templates
+### Add as Submodule
 ```bash
-# Create new project from template
-./scripts/new-project.sh my-new-project typescript-next
+# In your project root
+git submodule add https://github.com/your-username/claude-shared-config .claude
 
-# Navigate to project
-cd my-new-project
-
-# Project is automatically configured
+# Restart Claude Code to make commands available
 ```
 
-### Option 2: Manual Setup
+### Manual Setup
 ```bash
-# In your existing project
-mkdir -p .claude
-echo '{}' > .claude/settings.local.json
+# After adding the submodule, create project-specific config
+echo '{}' > .claude_config.json
 
-# Link to shared configuration (automatic via parent lookup)
-```
-
-### Option 3: Using Claude Commands
-```bash
-# From any project directory
-/m-project-init
+# Commands will be available after restarting Claude Code
 ```
 
 ## 🎯 Project-Specific Configuration
 
-Each project can have its own settings in `.claude/settings.local.json`:
+Each project can have its own settings in `.claude_config.json`:
 
 ```json
 {
-  "extends": "../.claude/settings.base.json",
   "permissions": {
     "allow": [
       "project-specific permissions here"
@@ -138,17 +109,12 @@ Each project can have its own settings in `.claude/settings.local.json`:
 ## 🚀 Getting Started
 
 ### For Existing Projects
-1. **Check current setup**:
+1. **Add shared configuration as submodule**:
    ```bash
-   /m-nix-setup status
+   git submodule add https://github.com/your-username/claude-shared-config .claude
    ```
 
-2. **Install Nix environment** (if needed):
-   ```bash
-   /m-nix-setup install
-   ```
-
-3. **Setup environment variables** (if using MCP servers):
+2. **Setup environment variables** (if using MCP servers):
    ```bash
    # Ensure direnv is properly configured
    echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc  # or ~/.bashrc
@@ -158,57 +124,21 @@ Each project can have its own settings in `.claude/settings.local.json`:
    direnv allow
    ```
 
-4. **Initialize project**:
+3. **Restart Claude Code**:
    ```bash
-   /m-project-init
+   # Commands will be available after restart
    ```
 
 ### For New Projects
-1. **Use project template**:
-   ```bash
-   /m-project-init nextjs-supabase my-app
-   ```
-
-2. **Or start from scratch**:
+1. **Create project and add submodule**:
    ```bash
    mkdir my-app && cd my-app
-   /m-project-init
+   git init
+   git submodule add https://github.com/your-username/claude-shared-config .claude
    ```
 
-## 🔧 Available Nix Environments
+2. **Restart Claude Code to access commands**
 
-The shared Nix configuration provides specialized environments:
-
-### Default Development Environment
-```bash
-nix-shell ../.claude/nix/
-```
-Full-featured environment with auto-detected tools.
-
-### Specialized Environments  
-```bash
-# Performance-focused
-nix-shell ../.claude/nix/ -A performance
-
-# Security-focused  
-nix-shell ../.claude/nix/ -A security
-
-# CI/CD simulation
-nix-shell ../.claude/nix/ -A ci
-
-# Minimal environment
-nix-shell ../.claude/nix/ -A minimal
-```
-
-### Flake Support
-```bash
-# Modern Nix flakes
-nix develop ../.claude/nix/
-
-# Specific environments
-nix develop ../.claude/nix/#performance
-nix develop ../.claude/nix/#security
-```
 
 ## 📊 Command Integration
 
@@ -250,10 +180,9 @@ All shared commands automatically work from any project directory and adapt to t
 
 Projects automatically inherit shared configuration while allowing local overrides:
 
-1. **Base Configuration**: `../.claude/settings.base.json`
-2. **Project Override**: `.claude/settings.local.json`
-3. **Runtime Detection**: Automatic project type detection
-4. **Environment Variables**: Project-specific environment
+1. **Shared Commands**: Available from `.claude/commands/` after restart
+2. **Project Override**: `.claude_config.json` for project-specific settings
+3. **Environment Variables**: Project-specific environment via `.envrc`
 
 ## 🔐 Environment Variable Configuration
 
@@ -295,7 +224,7 @@ direnv allow
 
 #### MCP Configuration Example
 
-In your `.claude_settings.local.json`:
+In your `.claude_config.json`:
 ```json
 {
   "mcpServers": {
@@ -343,37 +272,27 @@ env | grep GEMINI
 - **Add** `.envrc` to `.gitignore`
 - **Rotate** API keys regularly
 
-## 🧪 Testing
-
-Test the shared configuration:
-
-```bash
-# From any project
-claude-test run           # Comprehensive testing
-claude-test validate      # Quick validation
-claude-test benchmark     # Performance testing
-```
-
 ## 🔄 Updates
 
 Update the shared configuration:
 
 ```bash
-# Update Nix packages
-/m-nix-setup update
+# Update submodule to latest version
+cd .claude
+git pull origin main
+cd ..
 
-# Update shared commands
-git pull # if using git for configuration management
+# Restart Claude Code to apply updates
 ```
 
 ## 🤝 Contributing
 
 To add new shared functionality:
 
-1. **Commands**: Add to `/commands/`
-2. **Templates**: Add to `/templates/`
-3. **Scripts**: Add to `/scripts/`
-4. **Documentation**: Update relevant docs
+1. **Commands**: Add to `/commands/` in the shared repository
+2. **Templates**: Add to `/templates/` in the shared repository
+3. **Documentation**: Update relevant docs
+4. **Commit and push**: Changes will be available to all projects after update
 
 ## 🆘 Troubleshooting
 
@@ -381,14 +300,10 @@ To add new shared functionality:
 
 **Commands not found**:
 ```bash
-# Check Claude path resolution
-/m-nix-setup status
-```
+# Ensure submodule is properly added
+ls -la .claude/commands/
 
-**Environment not activating**:
-```bash
-# Reinstall Nix integration
-/m-nix-setup install
+# Restart Claude Code after adding submodule
 ```
 
 **MCP servers failing to connect**:
@@ -413,19 +328,20 @@ direnv reload
 grep direnv ~/.zshrc  # or ~/.bashrc
 ```
 
-**Project-specific issues**:
+**Submodule not initialized**:
 ```bash
-# Validate local configuration
-claude-test validate
+# Initialize and update submodules
+git submodule init
+git submodule update
 ```
 
 ### Getting Help
 
-- Check project-specific `.claude/settings.local.json`
+- Check project-specific `.claude_config.json`
 - Review shared configuration documentation
-- Use `/m-help` for context-aware assistance
-- Run diagnostic commands for specific issues
+- Use `/m-help` for context-aware assistance (after restart)
+- Ensure Claude Code is restarted after adding submodule
 
 ---
 
-*This shared configuration system enables consistent, powerful development environments across all your projects while maintaining project-specific flexibility.*
+*This shared configuration system enables consistent, powerful development environments across all your projects through simple git submodule integration.*
