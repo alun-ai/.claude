@@ -100,12 +100,12 @@ fi
 estimation_framework:
   experience_levels:
     senior_engineer:
-      description: "5+ years experience, deep Alunai knowledge"
+      description: "5+ years experience, deep {{PROJECT_NAME}} knowledge"
       efficiency_multiplier: 1.0
       capabilities: ["Architecture decisions", "Complex debugging", "System design", "Mentoring"]
     
     mid_level_engineer:
-      description: "2-4 years experience, moderate Alunai knowledge"
+      description: "2-4 years experience, moderate {{PROJECT_NAME}} knowledge"
       efficiency_multiplier: 1.5
       capabilities: ["Feature implementation", "Standard debugging", "Code reviews", "Documentation"]
     
@@ -132,7 +132,7 @@ estimation_framework:
 - **Intelligent Context Extraction**: AI-powered extraction of technical requirements, user stories, and hidden complexity factors
 - **System Impact Identification**: Advanced analysis of affected system components with architectural consideration and integration mapping
 - **Stakeholder Requirement Validation**: Comprehensive requirement analysis with acceptance criteria evaluation and completeness assessment
-- **Project Context Integration**: Deep integration with Alunai architecture patterns and established development conventions
+- **Project Context Integration**: Deep integration with {{PROJECT_NAME}} architecture patterns and established development conventions
 
 ### 2. **Advanced Codebase Impact and Complexity Analysis Phase**
 - **Intelligent Code Pattern Recognition**: AI-powered analysis of existing code patterns with reusability assessment and integration complexity
@@ -190,7 +190,7 @@ analyze_jira_ticket() {
     DETAILED_ANALYSIS=$(/mcp__gemini__gemini-analyze-text "$TICKET_DATA" "key-points")
     
     # Initial complexity assessment
-    COMPLEXITY_ANALYSIS=$(/mcp__gemini__gemini-query "As a Senior Technical Lead with deep Alunai codebase knowledge, analyze this ticket for complexity:
+    COMPLEXITY_ANALYSIS=$(/mcp__gemini__gemini-query "As a Senior Technical Lead with deep {{PROJECT_NAME}} codebase knowledge, analyze this ticket for complexity:
 
 Ticket Data: $TICKET_DATA
 
@@ -382,7 +382,7 @@ Dependency Categories:
 4. PREREQUISITE WORK: Other tickets that must be completed first
 5. KNOWLEDGE DEPENDENCIES: Domain expertise or research required
 
-Alunai System Dependencies to Consider:
+{{PROJECT_NAME}} System Dependencies to Consider:
 - Supabase database migrations requiring coordinated deployment
 - OAuth provider configurations requiring external approval
 - Multi-tenant data patterns requiring careful testing
@@ -618,7 +618,7 @@ Provide sprint planning recommendations.")
 ### Jira URL Analysis
 ```bash
 # Analyze Jira ticket by URL
-/m-jira-estimate https://alunai.atlassian.net/browse/ALU-123
+/m-jira-estimate https://{{TEAM_NAME}}.atlassian.net/browse/ALU-123
 
 # Analyze by issue key
 /m-jira-estimate ALU-123

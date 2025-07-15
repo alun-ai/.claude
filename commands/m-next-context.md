@@ -422,7 +422,7 @@ ambiguity_indicators:
 ## Project Context
 
 The team is currently implementing a comprehensive authentication system 
-for the Alunai social media management platform. Recent work has focused 
+for the {{PROJECT_NAME}} social media management platform. Recent work has focused 
 on OAuth integration with major social platforms, with Google OAuth 
 currently in development.
 

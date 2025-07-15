@@ -2,7 +2,7 @@
 
 **Target:** $ARGUMENTS (Optional: JIRA project key for team-specific context)
 
-**Scope:** Comprehensive interactive onboarding for new software engineers to quickly understand Alunai's codebase, architecture, history, and development workflow
+**Scope:** Comprehensive interactive onboarding for new software engineers to quickly understand {{PROJECT_NAME}}'s codebase, architecture, history, and development workflow
 
 ## Overview
 
@@ -117,7 +117,7 @@ onboarding_pathways:
 ```bash
 # Interactive onboarding startup
 start_onboarding() {
-    echo "🚀 WELCOME TO ALUNAI!"
+    echo "🚀 WELCOME TO {{PROJECT_NAME}}!"
     echo "========================================"
     echo "Interactive Codebase Onboarding System"
     echo "========================================"
@@ -170,7 +170,7 @@ gather_engineer_context() {
 ```bash
 # Git history analysis and storytelling
 explore_repository_history() {
-    echo "📚 ALUNAI'S STORY: Repository History & Evolution"
+    echo "📚 {{PROJECT_NAME}}'S STORY: Repository History & Evolution"
     echo "================================================"
     echo ""
     echo "Let's understand how this codebase evolved..."
@@ -213,7 +213,7 @@ For each milestone, explain:
 
 Format as story-driven explanations perfect for onboarding.")
 
-    echo "📖 ALUNAI'S TECHNICAL EVOLUTION:"
+    echo "📖 {{PROJECT_NAME}}'S TECHNICAL EVOLUTION:"
     echo "$MILESTONE_ANALYSIS"
     echo ""
     
@@ -230,7 +230,7 @@ tell_architecture_story() {
     echo "🏛️ ARCHITECTURE EVOLUTION STORY"
     echo ""
     
-    ARCHITECTURE_STORY=$(/mcp__gemini__gemini-query "Create an engaging architecture evolution story for Alunai:
+    ARCHITECTURE_STORY=$(/mcp__gemini__gemini-query "Create an engaging architecture evolution story for {{PROJECT_NAME}}:
 
 Context: Social media management platform built with Next.js 15, Supabase, multi-tenant SaaS
 
@@ -273,10 +273,10 @@ explore_architecture_interactively() {
 }
 
 show_architecture_overview() {
-    echo "🌐 BIG PICTURE: Alunai System Architecture"
+    echo "🌐 BIG PICTURE: {{PROJECT_NAME}} System Architecture"
     echo ""
     echo "┌─────────────────────────────────────────────────────────────┐"
-    echo "│                    ALUNAI ARCHITECTURE                      │"
+    echo "│                    {{PROJECT_NAME}} ARCHITECTURE                      │"
     echo "├─────────────────────────────────────────────────────────────┤"
     echo "│ Frontend: Next.js 15 + React 19 + TypeScript               │"
     echo "│ ├── Admin Dashboard (/app/admin/)                           │"
@@ -332,7 +332,7 @@ explore_multitenant_system() {
     echo "🏢 MULTI-TENANT ARCHITECTURE DEEP DIVE"
     echo "======================================"
     echo ""
-    echo "Alunai uses a 3-tier hierarchy: Organizations → Teams → Brands"
+    echo "{{PROJECT_NAME}} uses a 3-tier hierarchy: Organizations → Teams → Brands"
     echo ""
     
     # Show key files
@@ -343,7 +343,7 @@ explore_multitenant_system() {
     echo ""
     
     # Read and explain key files
-    ORGANIZATION_TYPES=$(/mcp__filesystem__read_file "/Users/chadupton/Documents/Github/alunai/src/types/organization.ts")
+    ORGANIZATION_TYPES=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/types/organization.ts")
     
     echo "🔎 Let's look at the organization types:"
     echo "----------------------------------------"
@@ -388,7 +388,7 @@ explore_sliding_panel_system() {
     echo ""
     
     # Show the sliding panel architecture
-    SLIDING_PANEL_README=$(/mcp__filesystem__read_file "/Users/chadupton/Documents/Github/alunai/src/lib/sliding-panel/README.md")
+    SLIDING_PANEL_README=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/lib/sliding-panel/README.md")
     
     echo "📖 SLIDING PANEL SYSTEM OVERVIEW:"
     echo "----------------------------------"
@@ -458,7 +458,7 @@ discover_key_components() {
     echo "Let's find and understand our most important shared components..."
     
     # Search for key components
-    KEY_COMPONENTS=$(/mcp__filesystem__search_files "/Users/chadupton/Documents/Github/alunai/src/components" "*.tsx")
+    KEY_COMPONENTS=$(/mcp__filesystem__search_files "{{PROJECT_PATH}}/src/components" "*.tsx")
     
     echo "📂 COMPONENT INVENTORY:"
     echo "----------------------"
@@ -502,7 +502,7 @@ guided_code_reading_exercises() {
     echo "🔐 EXERCISE 1: OAuth Security Flow"
     echo "-----------------------------------"
     
-    OAUTH_SECURITY=$(/mcp__filesystem__read_file "/Users/chadupton/Documents/Github/alunai/src/lib/oauth-security.ts" 30)
+    OAUTH_SECURITY=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/lib/oauth-security.ts" 30)
     
     echo "Here's a snippet from our OAuth security system:"
     echo "```typescript"
@@ -519,7 +519,7 @@ guided_code_reading_exercises() {
     echo "🛠️ EXERCISE 2: API Route Patterns"
     echo "----------------------------------"
     
-    API_ROUTE_EXAMPLE=$(/mcp__filesystem__read_file "/Users/chadupton/Documents/Github/alunai/src/app/api/brands/route.ts" 40)
+    API_ROUTE_EXAMPLE=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/app/api/brands/route.ts" 40)
     
     echo "Here's an API route example:"
     echo "```typescript"
@@ -536,7 +536,7 @@ guided_code_reading_exercises() {
     echo "🗄️ EXERCISE 3: Database Schema Patterns"
     echo "---------------------------------------"
     
-    MIGRATION_EXAMPLE=$(/mcp__filesystem__read_file "/Users/chadupton/Documents/Github/alunai/supabase/migrations" 30)
+    MIGRATION_EXAMPLE=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/supabase/migrations" 30)
     
     echo "Let's look at our database patterns:"
     echo "📁 Check: /supabase/migrations/20250710000001_asset_library_system.sql"
@@ -690,7 +690,7 @@ map_tickets_to_code_areas() {
     echo "🗺️ MAPPING TICKETS TO CODE AREAS"
     echo ""
     
-    TICKET_CODE_MAPPING=$(/mcp__gemini__gemini-query "Map recent tickets to Alunai code areas:
+    TICKET_CODE_MAPPING=$(/mcp__gemini__gemini-query "Map recent tickets to {{PROJECT_NAME}} code areas:
 
 Recent tickets: $RECENT_TICKETS
 
@@ -747,7 +747,7 @@ show_general_team_structure() {
     echo ""
     echo "💡 Tip: Run '/m-onboard-me [JIRA-PROJECT-KEY]' for team-specific guidance!"
     echo ""
-    echo "🏗️ TYPICAL TEAM STRUCTURE AT ALUNAI:"
+    echo "🏗️ TYPICAL TEAM STRUCTURE AT {{PROJECT_NAME}}:"
     echo "- Frontend Team: React components, UI/UX, sliding panels"
     echo "- Backend Team: API routes, database, integrations"
     echo "- Full-stack: Feature development across the stack"
@@ -1091,7 +1091,7 @@ learning_paths:
 /m-onboard-me
 
 # Team-specific onboarding with JIRA context
-/m-onboard-me ALUNAI-FRONTEND
+/m-onboard-me {{TEAM_NAME}}-FRONTEND
 
 # Frontend-focused onboarding
 /m-onboard-me --role frontend
@@ -1113,4 +1113,4 @@ learning_paths:
 /m-onboard-me --practice database-patterns
 ```
 
-This comprehensive onboarding command provides new engineers with an interactive, personalized journey through the Alunai codebase, combining technical education with practical exercises and team-specific context to accelerate their path to productivity.
+This comprehensive onboarding command provides new engineers with an interactive, personalized journey through the {{PROJECT_NAME}} codebase, combining technical education with practical exercises and team-specific context to accelerate their path to productivity.

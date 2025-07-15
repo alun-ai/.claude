@@ -476,7 +476,7 @@ individual_metrics:
 {
   "metrics_dashboard": {
     "timestamp": "2024-01-26T18:00:00Z",
-    "team": "alunai-development-team",
+    "team": "{{TEAM_NAME}}",
     "period": "2024-01-01 to 2024-01-26",
     "key_metrics": {
       "velocity": {

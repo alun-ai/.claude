@@ -68,7 +68,7 @@ else
 fi
 
 # AI-powered codebase analysis
-/gemini-analyze-code "Analyze current Alunai architecture for:
+/gemini-analyze-code "Analyze current {{PROJECT_NAME}} architecture for:
 $FEATURE_CONCEPT
 
 Focus on:
@@ -266,9 +266,9 @@ architect_persona:
       - Knowledge transfer and mentoring
 ```
 
-### Alunai-Specific Architecture Expertise
+### {{PROJECT_NAME}}-Specific Architecture Expertise
 ```yaml
-alunai_architecture_knowledge:
+{{PROJECT_NAME}}_architecture_knowledge:
   tech_stack:
     frontend: "Next.js 15.3.4, React 19, TypeScript 5, Tailwind CSS 4"
     backend: "Supabase (PostgreSQL, Auth, Real-time, Edge Functions)"

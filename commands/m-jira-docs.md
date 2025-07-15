@@ -500,13 +500,13 @@ format_optimization:
       },
       "docs_site": {
         "enabled": true,
-        "base_url": "https://docs.alunai.com",
+        "base_url": "https://docs.{{DOMAIN}}",
         "auto_deploy": true,
         "review_required": true
       },
       "api_portal": {
         "enabled": true,
-        "base_url": "https://api.alunai.com",
+        "base_url": "https://api.{{DOMAIN}}",
         "auto_generate": true,
         "review_required": false
       }
