@@ -198,14 +198,14 @@ Analysis Framework:
 1. TECHNICAL COMPLEXITY: Frontend, backend, database, integrations
 2. SCOPE ANALYSIS: Feature scope, system boundaries, integration points
 3. RISK FACTORS: Technical risks, unknown dependencies, complexity indicators
-4. ALUNAI IMPACT: Which parts of the system will be affected?
+4. SYSTEM IMPACT: Which parts of the system will be affected?
 
-Alunai System Context:
-- Next.js 15.3.4 + React 19 frontend
-- Supabase backend (PostgreSQL, Auth, Edge Functions)
-- Multi-tenant architecture (Organizations → Teams → Brands)
-- Sliding Panel System with provider architecture
-- OAuth integrations with 10+ social platforms
+System Context:
+- Modern web framework frontend
+- Backend services (Database, Auth, APIs)
+- Multi-tenant architecture
+- Custom UI state management systems
+- OAuth integrations
 - Enterprise security patterns
 
 Provide initial complexity assessment and areas of impact.")
@@ -239,20 +239,19 @@ analyze_codebase_impact() {
 
 Related code files found: $CODE_AREAS
 
-Alunai Architecture Analysis:
-1. FRONTEND IMPACT: React components, pages, UI systems
-2. BACKEND IMPACT: API routes, Edge Functions, business logic
+Architecture Analysis:
+1. FRONTEND IMPACT: UI components, pages, client-side systems
+2. BACKEND IMPACT: API routes, server functions, business logic
 3. DATABASE IMPACT: Schema changes, migrations, data models
 4. INTEGRATION IMPACT: OAuth providers, external APIs, webhooks
 5. INFRASTRUCTURE IMPACT: Deployment, configuration, environment
 
 System Component Mapping:
-- /app: Next.js app router pages and layouts
+- /app: Application pages and layouts
 - /components: Reusable UI components
 - /lib: Core business logic and utilities
-- /lib/sliding-panel: UI state management system
-- /lib/oauth-security: Authentication and security
-- /supabase: Database schema and Edge Functions
+- /api: API routes and server endpoints
+- /database: Database schema and migrations
 - /docs: Architecture and system documentation
 
 Estimate impact scope and complexity for each area.")
@@ -280,11 +279,11 @@ Estimation Requirements:
 5. RISK ASSESSMENT: Technical and timeline risks
 6. ASSUMPTIONS: Key assumptions made in estimation
 
-Alunai Development Context:
-- Strong TypeScript/React patterns established
-- Supabase integration patterns well-defined
+Development Context:
+- Strong TypeScript patterns established
+- Framework integration patterns well-defined
 - OAuth security patterns reusable
-- Sliding panel provider architecture mature
+- UI architecture patterns mature
 - Database patterns and standards established
 - Comprehensive testing patterns in place
 

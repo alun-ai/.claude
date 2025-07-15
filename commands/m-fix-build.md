@@ -6,7 +6,7 @@
 
 ## Overview
 
-Transforms Claude into an expert Build Engineer with comprehensive knowledge of Next.js, TypeScript, Node.js, and CI/CD systems. This command provides intelligent build error detection, analysis, and fixing across local development, production builds, and CircleCI environments using advanced MCP integrations.
+Transforms Claude into an expert Build Engineer with comprehensive knowledge of modern web frameworks, TypeScript, Node.js, and CI/CD systems. This command provides intelligent build error detection, analysis, and fixing across local development, production builds, and CI/CD environments using advanced MCP integrations.
 
 **Key Benefits:**
 - **Multi-Environment Support**: Local dev, production, and CI/CD build fixing
@@ -26,14 +26,14 @@ To see this help documentation, run:
 
 ### 1. Intelligent Build Detection
 - **Environment Recognition**: Auto-detect local, production, or CI build context
-- **Tool Identification**: Recognize Next.js, npm, yarn, TypeScript build systems
+- **Tool Identification**: Recognize various build systems (npm, yarn, pnpm, TypeScript, etc.)
 - **Error Classification**: Categorize build errors by type and severity
 - **Context Analysis**: Understand project structure and build requirements
 
 ### 2. Multi-Platform Error Analysis
-- **Local Development**: Next.js dev server, hot reload, and dependency issues
+- **Local Development**: Development server, hot reload, and dependency issues
 - **Production Builds**: Optimization, bundling, and deployment preparation
-- **CircleCI Integration**: CI/CD pipeline failures and environment issues
+- **CI/CD Integration**: Pipeline failures and environment issues across various CI platforms
 - **Cross-Platform**: Consistent error patterns across different environments
 
 ### 3. Advanced MCP Integration
@@ -132,9 +132,9 @@ output_control:
 ## Build Error Detection Strategy
 
 ### Automatic Build Context Detection
-1. **Local Development** - Next.js development server and build issues
+1. **Local Development** - Development server and build issues
 2. **Production Build** - `npm run build` failures and deployment issues  
-3. **CircleCI Build** - CI/CD pipeline failures using MCP CircleCI agent
+3. **CI/CD Build** - Pipeline failures using MCP CI/CD agents
 
 ### MCP Integration Strategy
 
@@ -190,26 +190,26 @@ fi
 
 ### 1. Build Context Detection
 - **Auto-detect build environment** (local dev, production, CI)
-- **Identify build tool** (Next.js, npm, yarn, etc.)
+- **Identify build tool** (npm, yarn, pnpm, webpack, vite, etc.)
 - **Check for existing build processes** running
 
 ### 2. Local Build Error Fixing
 
-#### Next.js Development Server Issues
+#### Development Server Issues
 ```bash
 # Check for dev server errors
-if pgrep -f "next dev" > /dev/null; then
-    echo "Next.js dev server running - checking for errors..."
+if pgrep -f "dev" > /dev/null; then
+    echo "Development server running - checking for errors..."
     # Analyze dev server logs
-    pm2 logs next-dev --lines 50 2>/dev/null || echo "No PM2 logs found"
+    pm2 logs dev --lines 50 2>/dev/null || echo "No PM2 logs found"
 fi
 
-# Common Next.js dev fixes
-echo "Fixing common Next.js development issues..."
+# Common development fixes
+echo "Fixing common development issues..."
 
-# Clear Next.js cache
-rm -rf .next/
-echo "✓ Cleared Next.js cache"
+# Clear build cache
+rm -rf .next/ dist/ build/
+echo "✓ Cleared build cache"
 
 # Clear node_modules and reinstall
 if [ "$ARGUMENTS" = "--full-clean" ]; then
@@ -255,7 +255,7 @@ fi
 
 ### 3. Production Build Error Fixing
 
-#### Next.js Production Build Issues
+#### Production Build Issues
 ```bash
 # Run production build with detailed output
 echo "Running production build analysis..."

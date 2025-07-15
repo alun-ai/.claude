@@ -26,7 +26,7 @@ To see this help documentation, run:
 
 ### 1. Intelligent Project Detection
 - **Language Detection**: Identify primary programming languages
-- **Framework Recognition**: Detect Next.js, React, Node.js, Python, etc.
+- **Framework Recognition**: Detect various frameworks (React, Vue, Angular, Django, Flask, etc.)
 - **Dependency Analysis**: Parse package.json, requirements.txt, Cargo.toml
 - **Build Tool Identification**: npm, yarn, pip, cargo, go mod
 
@@ -56,10 +56,10 @@ To see this help documentation, run:
 /m-project-init
 
 # Initialize with specific template
-/m-project-init nextjs-supabase
+/m-project-init web-fullstack
 
 # Create new project from template
-/m-project-init nextjs-supabase my-new-app
+/m-project-init web-fullstack my-new-app
 
 # Force re-initialization
 /m-project-init --force
@@ -67,8 +67,8 @@ To see this help documentation, run:
 
 ### Template-Specific Initialization
 ```bash
-# Next.js with Supabase
-/m-project-init nextjs-supabase my-saas-app
+# Web fullstack application
+/m-project-init web-fullstack my-saas-app
 
 # Node.js TypeScript project
 /m-project-init nodejs my-api-server
@@ -95,7 +95,7 @@ To see this help documentation, run:
 ### Parameters
 
 - `template` (optional): Project template to use
-  - `nextjs-supabase` - Next.js with Supabase backend
+  - `web-fullstack` - Modern web fullstack application
   - `nodejs` - Node.js/TypeScript project
   - `python` - Python project with poetry
   - `rust` - Rust project with cargo

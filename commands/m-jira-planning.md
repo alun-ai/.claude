@@ -56,7 +56,7 @@ To see this help documentation, run:
 /m-jira-planning
 
 # Plan specific epic
-/m-jira-planning ALUN-100
+/m-jira-planning PROJ-100
 
 # Interactive strategic planning with AI guidance
 /m-jira-planning --interactive
@@ -415,7 +415,7 @@ skill_analysis:
 ```yaml
 risk_assessment:
   identified_risks:
-    - risk: "Social platform API changes"
+    - risk: "Third-party API changes"
       probability: "Medium"
       impact: "High"
       severity: "High"
@@ -465,10 +465,10 @@ dependency_management:
       status: "At Risk"
   
   external_dependencies:
-    - dependency: "LinkedIn API approval"
+    - dependency: "External API approval"
       owner: "product_manager"
       required_by: "2024-01-30"
-      dependent_features: ["LinkedIn integration"]
+      dependent_features: ["API integration"]
       status: "In Progress"
     
     - dependency: "Legal review of data usage"
