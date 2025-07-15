@@ -449,3 +449,59 @@ Save the comprehensive bilingual task plan to:
 6. **Visual Documentation** - Mermaid diagrams and workflow visualization
 
 Output the saved file path to confirm completion.
+
+## Output Documentation
+
+### Findings Storage
+All task planning analyses are automatically saved to:
+```
+.claude/findings/task-plans/
+├── task-plan-YYYY-MM-DD-HH-mm-ss.md         # Complete task planning analysis
+├── executive-YYYY-MM-DD-HH-mm-ss.md         # Executive summary for stakeholders
+├── timeline-YYYY-MM-DD-HH-mm-ss.md          # Detailed implementation timeline
+├── dependencies-YYYY-MM-DD-HH-mm-ss.md      # Task dependency analysis
+└── gemini-insights-YYYY-MM-DD-HH-mm-ss.md   # AI collaborative insights
+```
+
+### Output Structure
+Each task plan finding includes:
+- **Metadata**: Timestamp, project context, analysis depth
+- **Complete Task Breakdown**: All tasks with priorities and dependencies
+- **Dual-AI Analysis**: Gemini research with Claude synthesis
+- **Implementation Roadmap**: Phased approach with milestones
+- **Resource Requirements**: Skills, time, and tool requirements
+
+### Reusing Findings
+```bash
+# Reference previous task plans
+ls .claude/findings/task-plans/
+
+# Build upon previous analysis
+/m-explore --extend .claude/findings/task-plans/task-plan-2024-01-15-10-30-00.md
+
+# Compare multiple planning approaches
+/m-explore --compare .claude/findings/task-plans/task-plan-*.md
+
+# Generate progress report from initial plan
+/m-explore --progress-check .claude/findings/task-plans/task-plan-2024-01-15-10-30-00.md
+```
+
+### Integration with Other Commands
+```bash
+# Use task plan to drive development
+/m-execute --from-plan .claude/findings/task-plans/task-plan-latest.md
+
+# Generate tech spec from task plan
+/m-product-tech-spec --from-tasks .claude/findings/task-plans/task-plan-latest.md
+```
+
+## Enhanced Final Output
+
+The command will:
+1. Generate comprehensive task planning documentation
+2. Save all findings to `.claude/findings/task-plans/` with timestamps
+3. Create multiple views (executive, detailed, timeline) for different audiences
+4. Document AI collaboration insights and reasoning
+5. Enable iterative refinement and progress tracking
+6. Provide integration points with other development commands
+7. Output all saved file paths for future reference

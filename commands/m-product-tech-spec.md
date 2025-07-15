@@ -460,3 +460,48 @@ Systematic tech debt analysis and improvement opportunities:
 - **Team Enablement**: Create architectures that enable developer productivity
 
 This command transforms Claude into your strategic technical partner, combining Chief Software Architect expertise with comprehensive codebase analysis to help you build robust, scalable technical solutions while minimizing tech debt and maximizing component reuse.
+
+## Output Documentation
+
+### Findings Storage
+All technical specifications are automatically saved to:
+```
+.claude/findings/tech-specs/
+├── tech-spec-YYYY-MM-DD-HH-mm-ss.md          # Complete technical specification
+├── architecture-YYYY-MM-DD-HH-mm-ss.md       # Architecture diagrams and decisions
+├── implementation-YYYY-MM-DD-HH-mm-ss.md     # Implementation plan and milestones
+└── components-YYYY-MM-DD-HH-mm-ss.md        # Component reuse analysis
+```
+
+### Output Structure
+Each tech spec finding includes:
+- **Metadata**: Timestamp, product reference, architecture type
+- **Complete Specification**: All sections from the template
+- **Architecture Decisions**: ADRs with rationale and trade-offs
+- **Component Analysis**: Reusability assessment and recommendations
+- **Implementation Roadmap**: Phased delivery plan with dependencies
+
+### Reusing Findings
+```bash
+# Reference previous tech specs
+ls .claude/findings/tech-specs/
+
+# Extend previous specification
+/m-product-tech-spec --extend .claude/findings/tech-specs/tech-spec-2024-01-15-10-30-00.md
+
+# Compare architecture decisions
+/m-product-tech-spec --compare-architectures .claude/findings/tech-specs/architecture-*.md
+
+# Analyze component evolution
+/m-product-tech-spec --component-history .claude/findings/tech-specs/components-*.md
+```
+
+## Final Output
+
+The command will:
+1. Generate comprehensive technical specification following the template
+2. Save all findings to `.claude/findings/tech-specs/` with timestamps
+3. Create architecture decision records (ADRs) for key choices
+4. Document component reuse opportunities and technical debt
+5. Provide implementation roadmap with clear milestones
+6. Output saved file paths for future reference and iteration

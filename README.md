@@ -26,7 +26,7 @@ Documents/Github/
 Claude Code slash commands available across all projects after adding the submodule and restarting Claude (all use `/m-*` prefix):
 
 #### Core Development Workflow
-- `/m-orchestrated-dev` - Multi-agent development workflow
+- `/m-execute` - Multi-agent development workflow
 - `/m-commit-push` - Intelligent commit and push
 - `/m-bug-fix` - Comprehensive bug analysis and fixing
 - `/m-project-init` - Initialize project with shared configuration
@@ -35,10 +35,10 @@ Claude Code slash commands available across all projects after adding the submod
 - `/m-security-scan` - Security vulnerability scanning
 - `/m-test-generation` - Automated test creation
 - `/m-review-code` - Code quality review
-- `/m-project-cleanup` - Project maintenance and cleanup
+- `/m-cleanup` - Project maintenance and cleanup
 
 #### Planning & Analysis
-- `/m-task-planner` - Task analysis and planning
+- `/m-explore` - Dev task plan workflow with dual-AI analysis
 - `/m-tdd-planner` - Test-driven development planning
 - `/m-next-task` - Next action recommendations
 - `/m-next-context` - Context compilation and analysis
@@ -75,7 +75,7 @@ Predefined development workflows:
 ### Add as Submodule
 ```bash
 # In your project root
-git submodule add https://github.com/your-username/claude-shared-config .claude
+git submodule add https://github.com/your-username/.claude .claude
 
 # Restart Claude Code to make commands available
 ```
@@ -86,6 +86,15 @@ git submodule add https://github.com/your-username/claude-shared-config .claude
 echo '{}' > .claude_config.json
 
 # Commands will be available after restarting Claude Code
+```
+
+### MCP Configuration Setup
+```bash
+# Copy the MCP configuration example to your project root
+cp .claude/.mcp.json.example .mcp.json
+
+# Edit .mcp.json to enable/disable specific MCP servers based on your needs
+# Note: Environment variables are required for most MCP servers
 ```
 
 ## 🎯 Project-Specific Configuration
@@ -111,22 +120,35 @@ Each project can have its own settings in `.claude_config.json`:
 ### For Existing Projects
 1. **Add shared configuration as submodule**:
    ```bash
-   git submodule add https://github.com/your-username/claude-shared-config .claude
+   git submodule add https://github.com/your-username/.claude .claude
    ```
 
-2. **Setup environment variables** (if using MCP servers):
+2. **Setup MCP configuration**:
+   ```bash
+   # Copy MCP configuration to project root
+   cp .claude/.mcp.json.example .mcp.json
+
+   # Edit .mcp.json to enable/disable MCP servers as needed
+   ```
+
+3. **Setup environment variables** (if using MCP servers):
    ```bash
    # Ensure direnv is properly configured
    echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc  # or ~/.bashrc
-   
-   # Create .envrc with your API keys
-   echo 'export GEMINI_API_KEY="your-key-here"' >> .envrc
+
+   # Copy environment variables example
+   cp .claude/.envrc.example .envrc
+
+   # Edit .envrc with your actual API keys
+   nano .envrc  # or use your preferred editor
+
+   # Allow direnv for this project
    direnv allow
    ```
 
-3. **Restart Claude Code**:
+4. **Restart Claude Code**:
    ```bash
-   # Commands will be available after restart
+   # Commands and MCP servers will be available after restart
    ```
 
 ### For New Projects
@@ -134,10 +156,21 @@ Each project can have its own settings in `.claude_config.json`:
    ```bash
    mkdir my-app && cd my-app
    git init
-   git submodule add https://github.com/your-username/claude-shared-config .claude
+   git submodule add https://github.com/your-username/.claude .claude
    ```
 
-2. **Restart Claude Code to access commands**
+2. **Setup MCP and environment**:
+   ```bash
+   # Copy configurations
+   cp .claude/.mcp.json.example .mcp.json
+   cp .claude/.envrc.example .envrc
+
+   # Configure your API keys
+   nano .envrc
+   direnv allow
+   ```
+
+3. **Restart Claude Code to access commands and MCP servers**
 
 
 ## 📊 Command Integration
@@ -146,8 +179,8 @@ All shared commands automatically work from any project directory and adapt to t
 
 ### Development Workflow
 ```bash
-/m-task-planner           # Analyze requirements
-/m-orchestrated-dev       # Coordinated development
+/m-explore              # Dev task plan workflow with dual-AI analysis
+/m-execute              # Multi-agent development workflow
 /m-commit-push           # Intelligent commits
 /m-bug-fix              # Comprehensive debugging
 ```
@@ -157,7 +190,7 @@ All shared commands automatically work from any project directory and adapt to t
 /m-security-scan         # Vulnerability scanning
 /m-test-generation       # Automated testing
 /m-review-code          # Code quality review
-/m-project-cleanup      # Maintenance
+/m-cleanup              # Maintenance
 ```
 
 ### Planning & Architecture

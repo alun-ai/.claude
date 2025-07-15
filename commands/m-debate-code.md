@@ -481,3 +481,62 @@ severity_classification:
 - Break complex improvements into smaller, manageable tasks
 - Prioritize fixes by impact and implementation difficulty
 - Create detailed implementation plans with clear steps and validation criteria
+
+## Output Documentation
+
+### Findings Storage
+All code review analyses are automatically saved to:
+```
+.claude/findings/code-reviews/
+├── review-YYYY-MM-DD-HH-mm-ss.md           # Complete code review analysis
+├── issues-YYYY-MM-DD-HH-mm-ss.md           # Prioritized issues list
+├── improvements-YYYY-MM-DD-HH-mm-ss.md     # Improvement recommendations
+├── security-YYYY-MM-DD-HH-mm-ss.md        # Security-specific findings
+└── consensus-YYYY-MM-DD-HH-mm-ss.md       # AI consensus analysis
+```
+
+### Output Structure
+Each code review finding includes:
+- **Metadata**: Timestamp, files reviewed, language/framework context
+- **Issue Catalog**: Categorized issues with severity and impact
+- **AI Perspectives**: Individual analyses from each AI agent
+- **Consensus Findings**: Agreed-upon critical issues and improvements
+- **Action Plan**: Prioritized implementation roadmap
+
+### Reusing Findings
+```bash
+# Reference previous code reviews
+ls .claude/findings/code-reviews/
+
+# Track improvement progress
+/m-debate-code --progress .claude/findings/code-reviews/review-2024-01-15-10-30-00.md
+
+# Compare code quality over time
+/m-debate-code --trend-analysis .claude/findings/code-reviews/review-*.md
+
+# Generate fix implementation from review
+/m-execute --from-review .claude/findings/code-reviews/review-latest.md
+```
+
+### Integration with Development Workflow
+```bash
+# Pre-commit code review
+/m-debate-code --pre-commit
+
+# Pull request review enhancement
+/m-debate-code --pr-review .claude/findings/code-reviews/
+
+# Continuous quality monitoring
+/m-debate-code --monitor .claude/findings/code-reviews/
+```
+
+## Enhanced Final Output
+
+The command will:
+1. Generate comprehensive multi-perspective code review
+2. Save all findings to `.claude/findings/code-reviews/` with timestamps
+3. Create actionable issue lists with implementation guidance
+4. Document security vulnerabilities and performance concerns
+5. Provide consensus analysis from multiple AI perspectives
+6. Enable progress tracking and quality trend analysis
+7. Output all saved file paths for integration with development workflow

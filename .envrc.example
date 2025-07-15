@@ -1,0 +1,64 @@
+# .envrc.example - MCP Server Environment Variables
+# Copy this file to .envrc in your project root and fill in your actual values
+# Then run: direnv allow
+
+# Gemini AI Server
+# Get your API key from: https://aistudio.google.com/app/apikey
+export GEMINI_API_KEY="your-gemini-api-key-here"
+
+# GitHub Server
+# Create a personal access token at: https://github.com/settings/tokens
+# Required scopes: repo, workflow, write:packages, read:org (if accessing org repos)
+export GITHUB_PERSONAL_ACCESS_TOKEN="your-github-token-here"
+
+# Jira Server
+# Get your API token at: https://id.atlassian.com/manage-profile/security/api-tokens
+export JIRA_API_TOKEN="your-jira-api-token-here"
+export JIRA_BASE_URL="https://your-domain.atlassian.net"
+export JIRA_USERNAME="your-email@domain.com"
+
+# Notion Server
+# Create an integration at: https://www.notion.so/my-integrations
+export NOTION_API_KEY="your-notion-api-key-here"
+
+# Supabase Server
+# Get these from your Supabase project settings
+export SUPABASE_ACCESS_TOKEN="your-supabase-access-token-here"
+export SUPABASE_PROJECT_ID="your-supabase-project-id-here"
+
+# CircleCI Server
+# Create an API token at: https://app.circleci.com/settings/user/tokens
+export CIRCLECI_API_KEY="your-circleci-api-key-here"
+
+# Claude Historian Server
+# This typically uses Claude's session data - check documentation
+export CLAUDE_HISTORIAN_PATH="~/.config/claude-code/sessions"
+
+# Ref Documentation Server
+# Optional API keys for enhanced documentation searching
+export REF_API_KEY="your-ref-api-key-here"
+
+# Sequential Thinking Server
+# No environment variables required
+
+# Additional Environment Variables (Project-Specific)
+# Add any project-specific environment variables below
+
+# Database URL (for dbhub-postgres-npx server)
+# export DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
+
+# API Keys for your application
+# export STRIPE_SECRET_KEY="your-stripe-secret-key"
+# export OPENAI_API_KEY="your-openai-api-key"
+
+# IMPORTANT: Security Best Practices
+# 1. Never commit this file with actual values
+# 2. Add .envrc to your .gitignore
+# 3. Use strong, unique API keys
+# 4. Rotate keys regularly
+# 5. Limit API key permissions to minimum required
+
+# direnv Configuration Check
+# Ensure you have the correct shell hook in your shell rc file:
+# For zsh: eval "$(direnv hook zsh)" in ~/.zshrc
+# For bash: eval "$(direnv hook bash)" in ~/.bashrc

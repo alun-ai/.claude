@@ -583,3 +583,43 @@ success_metrics_workshop:
 - **Enable Success**: Empower teams to make great product decisions
 
 This command transforms Claude into your strategic product partner, combining AI-powered analysis with world-class product leadership experience to help you build winning products.
+
+## Output Documentation
+
+### Findings Storage
+All product canvas analyses are automatically saved to:
+```
+.claude/findings/product-canvas/
+├── canvas-YYYY-MM-DD-HH-mm-ss.md     # Full canvas analysis
+├── summary-YYYY-MM-DD-HH-mm-ss.md    # Executive summary
+└── insights-YYYY-MM-DD-HH-mm-ss.md   # Key insights and recommendations
+```
+
+### Output Structure
+Each canvas finding includes:
+- **Metadata**: Timestamp, input source, analysis type
+- **Complete Canvas**: All 10 sections fully documented
+- **AI Insights**: Gemini and Claude collaborative analysis
+- **Strategic Recommendations**: Actionable next steps
+- **References**: Links to source materials and research
+
+### Reusing Findings
+```bash
+# Reference previous canvas analyses
+ls .claude/findings/product-canvas/
+
+# Build upon previous analysis
+/m-product-canvas --extend .claude/findings/product-canvas/canvas-2024-01-15-10-30-00.md
+
+# Compare multiple canvases
+/m-product-canvas --compare .claude/findings/product-canvas/canvas-*.md
+```
+
+## Final Output
+
+The command will:
+1. Generate comprehensive product canvas based on the template
+2. Save all findings to `.claude/findings/product-canvas/` with timestamps
+3. Create executive summary for stakeholder sharing
+4. Provide path to saved files for future reference
+5. Enable iterative refinement based on previous analyses

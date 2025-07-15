@@ -1,1 +1,4 @@
 settings.local.json
+
+# Ignore files made from commands
+findings/

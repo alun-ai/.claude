@@ -459,3 +459,71 @@ debate_structure:
 - Focus on business impact and ROI for executives
 - Provide detailed technical specifications for developers
 - Create clear implementation timelines and milestones
+
+## Output Documentation
+
+### Findings Storage
+All architecture analyses are automatically saved to:
+```
+.claude/findings/architecture-reviews/
+├── analysis-YYYY-MM-DD-HH-mm-ss.md         # Complete architecture analysis
+├── recommendations-YYYY-MM-DD-HH-mm-ss.md  # Prioritized recommendations
+├── adr-YYYY-MM-DD-HH-mm-ss.md             # Architecture Decision Records
+├── diagrams-YYYY-MM-DD-HH-mm-ss.md        # Architecture diagrams (Mermaid)
+└── debate-log-YYYY-MM-DD-HH-mm-ss.md      # AI debate transcript
+```
+
+### Output Structure
+Each architecture finding includes:
+- **Metadata**: Timestamp, scope, architectural patterns analyzed
+- **Current State Analysis**: Comprehensive assessment of existing architecture
+- **AI Debate Transcript**: Full debate between AI perspectives
+- **Consensus Recommendations**: Agreed-upon architectural improvements
+- **Implementation Roadmap**: Phased approach with dependencies
+
+### Reusing Findings
+```bash
+# Reference previous architecture reviews
+ls .claude/findings/architecture-reviews/
+
+# Track architecture evolution
+/m-debate-architecture --evolution .claude/findings/architecture-reviews/analysis-*.md
+
+# Compare architecture decisions over time
+/m-debate-architecture --adr-history .claude/findings/architecture-reviews/adr-*.md
+
+# Generate implementation plan from recommendations
+/m-execute --from-architecture .claude/findings/architecture-reviews/recommendations-latest.md
+```
+
+### Architecture Decision Records (ADR)
+```bash
+# Generate ADR from debate findings
+/m-debate-architecture --generate-adr .claude/findings/architecture-reviews/debate-log-latest.md
+
+# Review all ADRs for consistency
+/m-debate-architecture --adr-review .claude/findings/architecture-reviews/adr-*.md
+```
+
+### Integration with Development Process
+```bash
+# Pre-implementation architecture review
+/m-debate-architecture --pre-implementation "New microservice design"
+
+# Post-implementation validation
+/m-debate-architecture --validate .claude/findings/architecture-reviews/analysis-original.md
+
+# Continuous architecture monitoring
+/m-debate-architecture --monitor .claude/findings/architecture-reviews/
+```
+
+## Enhanced Final Output
+
+The command will:
+1. Generate comprehensive dual-AI architecture analysis
+2. Save all findings to `.claude/findings/architecture-reviews/` with timestamps
+3. Create Architecture Decision Records (ADRs) for key decisions
+4. Document the full AI debate for transparency and learning
+5. Provide visual architecture diagrams in Mermaid format
+6. Enable architecture evolution tracking and trend analysis
+7. Output all saved file paths for future reference and integration

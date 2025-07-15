@@ -19,7 +19,7 @@ Orchestrates a sophisticated three-agent development workflow where specialized 
 
 To see this help documentation, run:
 ```bash
-/m-orchestrated-dev --help
+/m-execute --help
 ```
 
 ## Core Features
@@ -53,37 +53,37 @@ To see this help documentation, run:
 ### Basic Development Workflow
 ```bash
 # Start orchestrated development
-/m-orchestrated-dev "Build user authentication system"
+/m-execute "Build user authentication system"
 
 # Continue from previous discussion
-/m-orchestrated-dev
+/m-execute
 
 # Specific feature implementation
-/m-orchestrated-dev "Add OAuth2 integration with security best practices"
+/m-execute "Add OAuth2 integration with security best practices"
 ```
 
 ### Advanced Scenarios
 ```bash
 # Performance-focused development
-/m-orchestrated-dev "Optimize database queries" --focus performance
+/m-execute "Optimize database queries" --focus performance
 
 # Security-critical feature
-/m-orchestrated-dev "Implement payment processing" --focus security
+/m-execute "Implement payment processing" --focus security
 
 # Complex architecture
-/m-orchestrated-dev "Design microservices architecture" --research-intensive
+/m-execute "Design microservices architecture" --research-intensive
 ```
 
 ### Workflow Management
 ```bash
 # Resume interrupted workflow
-/m-orchestrated-dev --resume
+/m-execute --resume
 
 # Fast iteration mode
-/m-orchestrated-dev "Fix user login bug" --quick-cycle
+/m-execute "Fix user login bug" --quick-cycle
 
 # Documentation focus
-/m-orchestrated-dev "Update API documentation" --docs-focus
+/m-execute "Update API documentation" --docs-focus
 ```
 
 ## Command Options
@@ -125,19 +125,19 @@ planning_activities:
     - Identify technical constraints
     - Define success criteria
     - Establish acceptance criteria
-    
+
   technology_research:
     - Research current best practices
     - Evaluate framework options
     - Assess security considerations
     - Review performance implications
-    
+
   architecture_design:
     - Design system components
     - Define interfaces and APIs
     - Plan data models
     - Establish testing strategy
-    
+
   development_planning:
     - Break down into tasks
     - Estimate complexity
@@ -153,19 +153,19 @@ development_activities:
     - Follow established patterns
     - Implement error handling
     - Add appropriate logging
-    
+
   testing_integration:
     - Write unit tests
     - Add integration tests
     - Include edge case testing
     - Verify error scenarios
-    
+
   documentation:
     - Add code comments
     - Update API documentation
     - Create usage examples
     - Document configuration
-    
+
   version_control:
     - Make atomic commits
     - Write descriptive messages
@@ -181,19 +181,19 @@ review_dimensions:
     - Performance optimization
     - Error handling completeness
     - Code organization and structure
-    
+
   security_assessment:
     - Vulnerability scanning
     - Input validation review
     - Authentication/authorization
     - Data protection compliance
-    
+
   standards_compliance:
     - Coding standards adherence
     - Framework best practices
     - Industry standard compliance
     - Documentation completeness
-    
+
   functional_verification:
     - Requirements compliance
     - Test coverage adequacy
@@ -296,13 +296,13 @@ research_capabilities:
     - Security advisory checks
     - Performance benchmarking
     - Community best practices
-    
+
   solution_verification:
     - Implementation pattern validation
     - Architecture decision research
     - Alternative approach evaluation
     - Risk assessment analysis
-    
+
   compliance_checking:
     - Industry standard verification
     - Regulatory requirement checks
@@ -318,13 +318,13 @@ build_verification:
     - JavaScript bundling
     - CSS processing
     - Asset optimization
-    
+
   test_execution:
     - Unit test suites
     - Integration tests
     - Linting validation
     - Type checking
-    
+
   deployment_preparation:
     - Production build testing
     - Environment configuration
@@ -340,13 +340,13 @@ quality_criteria:
     lint_compliance: "100%"
     type_safety: "strict"
     documentation: "complete"
-    
+
   security_requirements:
     vulnerability_scan: "pass"
     input_validation: "comprehensive"
     authentication: "secure"
     data_protection: "compliant"
-    
+
   performance_benchmarks:
     load_time: "< 2 seconds"
     bundle_size: "optimized"
@@ -359,7 +359,7 @@ quality_criteria:
 ### Feature Development
 ```bash
 # New feature implementation
-/m-orchestrated-dev "Add user profile management"
+/m-execute "Add user profile management"
 
 # Agent O: Research profile management best practices
 # Agent D: Implement profile CRUD operations
@@ -370,7 +370,7 @@ quality_criteria:
 ### Bug Fixing
 ```bash
 # Bug resolution workflow
-/m-orchestrated-dev "Fix authentication timeout issue" --quick-cycle
+/m-execute "Fix authentication timeout issue" --quick-cycle
 
 # Agent O: Analyze issue and plan fix
 # Agent D: Implement targeted solution
@@ -380,7 +380,7 @@ quality_criteria:
 ### Performance Optimization
 ```bash
 # Performance improvement
-/m-orchestrated-dev "Optimize database queries" --performance-focus
+/m-execute "Optimize database queries" --performance-focus
 
 # Agent O: Research optimization techniques
 # Agent D: Implement optimizations
@@ -390,7 +390,7 @@ quality_criteria:
 ### Security Implementation
 ```bash
 # Security feature
-/m-orchestrated-dev "Implement rate limiting" --security-focus
+/m-execute "Implement rate limiting" --security-focus
 
 # Agent O: Research security patterns and threats
 # Agent D: Implement rate limiting middleware
@@ -407,7 +407,7 @@ git_operations:
     - Clean commit history
     - Merge conflict resolution
     - Pull request preparation
-    
+
   commit_strategy:
     - Atomic commits per iteration
     - Descriptive commit messages
@@ -423,13 +423,13 @@ pipeline_integration:
     - Lint checking
     - Unit test execution
     - Security scanning
-    
+
   build_pipeline:
     - Compilation verification
     - Integration testing
     - Performance testing
     - Deployment preparation
-    
+
   deployment_validation:
     - Smoke testing
     - Health checks
@@ -445,13 +445,13 @@ environment_setup:
     - Database configuration
     - Environment variables
     - Hot reload configuration
-    
+
   testing_environment:
     - Test database setup
     - Mock service configuration
     - Test data preparation
     - Isolation guarantees
-    
+
   staging_environment:
     - Production-like setup
     - Real service integration
@@ -541,12 +541,12 @@ environment_setup:
 
 ### Enhanced Development Phase
 ```
-Agent O → Agent D: 
+Agent O → Agent D:
   - Requirements + Research-backed Development Plan
   - Technology selections with context7 validation
   - Architectural decisions with sequential-thinking analysis
-  
-Agent D → Agent O: 
+
+Agent D → Agent O:
   - Implementation Complete + Change Summary
   - Self-review results using zen:codereview
   - Implementation rationale and trade-offs
@@ -554,11 +554,11 @@ Agent D → Agent O:
 
 ### Enhanced Review Phase
 ```
-Agent O → Agent R: 
+Agent O → Agent R:
   - Review Request + Context + Research Background
   - Technology choice justifications and external validation
-  
-Agent R → Agent O: 
+
+Agent R → Agent O:
   - Comprehensive Review Results using multiple analysis tools
   - Evidence-backed feedback with external benchmarks
   - Security and performance assessments with web validation
