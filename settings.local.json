@@ -33,7 +33,10 @@
       "mcp__filesystem__create_directory",
       "mcp__gemini__gemini-analyze-code",
       "Bash(npm test:*)",
-      "mcp__filesystem__list_directory"
+      "mcp__filesystem__list_directory",
+      "Bash(npm run test:coverage:*)",
+      "Bash(touch:*)",
+      "mcp__filesystem__read_file"
     ],
     "deny": []
   }

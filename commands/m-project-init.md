@@ -1,11 +1,95 @@
-# Project Initialization
+# Project Initialization: Intelligent Development Environment Setup
 
-Initialize a new or existing project with Claude Code shared configuration and development environment.
+**Target:** $ARGUMENTS (Default: auto-detect project type, optional template and project name)
 
-## Usage
+**Scope:** Initialize new or existing projects with Claude Code shared configuration, Nix environment, and development tools
 
+## Overview
+
+Intelligently sets up development environments for new or existing projects by analyzing project structure, applying appropriate templates, and configuring shared Claude Code + Nix environment. Provides a consistent, powerful development experience across different project types and languages.
+
+**Key Benefits:**
+- **Auto-Detection**: Intelligently identifies project type and requirements
+- **Template System**: Pre-configured setups for popular stacks
+- **Shared Environment**: Consistent tools across all projects
+- **Zero-Config**: Works out of the box with sensible defaults
+- **Extensible**: Easy to customize for specific needs
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-project-init --help
 ```
-/m-project-init [template] [project-name]
+
+## Core Features
+
+### 1. Intelligent Project Detection
+- **Language Detection**: Identify primary programming languages
+- **Framework Recognition**: Detect Next.js, React, Node.js, Python, etc.
+- **Dependency Analysis**: Parse package.json, requirements.txt, Cargo.toml
+- **Build Tool Identification**: npm, yarn, pip, cargo, go mod
+
+### 2. Template System
+- **Pre-configured Stacks**: Popular development combinations
+- **Best Practices**: Industry-standard configurations
+- **Security Defaults**: Secure configurations out of the box
+- **Performance Optimized**: Efficient development and build settings
+
+### 3. Shared Environment Integration
+- **Nix Environment**: Consistent tool versions across projects
+- **Claude Code Commands**: Full command suite available
+- **Development Tools**: Linters, formatters, debuggers
+- **Shell Integration**: Automatic environment activation
+
+### 4. Configuration Management
+- **Project-Specific**: Local overrides and customizations
+- **Environment Variables**: Secure environment configuration
+- **Tool Configuration**: Pre-configured development tools
+- **Documentation**: Generated setup and usage documentation
+
+## Usage Examples
+
+### Basic Initialization
+```bash
+# Auto-detect and initialize current project
+/m-project-init
+
+# Initialize with specific template
+/m-project-init nextjs-supabase
+
+# Create new project from template
+/m-project-init nextjs-supabase my-new-app
+
+# Force re-initialization
+/m-project-init --force
+```
+
+### Template-Specific Initialization
+```bash
+# Next.js with Supabase
+/m-project-init nextjs-supabase my-saas-app
+
+# Node.js TypeScript project
+/m-project-init nodejs my-api-server
+
+# Python with Poetry
+/m-project-init python my-data-project
+
+# Rust project
+/m-project-init rust my-cli-tool
+```
+
+### Advanced Options
+```bash
+# Initialize with custom configuration
+/m-project-init --config custom-config.json
+
+# Skip certain setup steps
+/m-project-init --skip-nix --skip-git
+
+# Verbose initialization
+/m-project-init --verbose
 ```
 
 ### Parameters

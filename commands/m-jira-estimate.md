@@ -6,7 +6,21 @@
 
 ## Overview
 
-Transform into a Senior Technical Lead with deep Alunai codebase knowledge to provide comprehensive effort estimation for Jira tickets. This command analyzes tickets, identifies impacted code areas, and provides detailed effort breakdowns using Fibonacci story points (1, 2, 3, 5, 8, 13, 21) with time estimates for different experience levels. Includes full AGILE workflow integration with risk assessment, dependency analysis, and actionable recommendations.
+Transforms Claude into your AI-powered Technical Estimation Specialist, providing enterprise-grade effort analysis with intelligent story point calculation and comprehensive development planning. This command delivers sophisticated Fibonacci-based estimation, multi-level experience analysis, and strategic AGILE workflow integration that ensures accurate project planning and optimal resource allocation.
+
+**Key Benefits:**
+- **AI-Powered Estimation Intelligence**: Machine learning-driven story point calculation with Fibonacci methodology and multi-dimensional complexity analysis
+- **Comprehensive Experience-Based Analysis**: Detailed effort breakdowns for Senior, Mid-Level, and AI-assisted development approaches
+- **Enterprise-Grade Codebase Impact Assessment**: Deep technical analysis of affected systems with architectural consideration and integration complexity
+- **Strategic AGILE Workflow Integration**: Complete sprint planning support with risk assessment, dependency mapping, and delivery forecasting
+- **Intelligent Risk and Dependency Analysis**: Proactive identification of technical risks, blockers, and mitigation strategies
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-estimate --help
+```
 
 **Fibonacci Scale Reference:**
 - **1 point**: Trivial (~0.5-1 day) - Minor fixes, documentation updates
@@ -53,6 +67,32 @@ fi
 - **Risk Assessment**: Technical and timeline risk analysis
 - **Dependency Mapping**: Related work and blocker identification
 
+## Core Features
+
+### 1. AI-Powered Estimation Intelligence Engine
+- **Fibonacci-Based Story Point Calculation**: Sophisticated analysis using standard Fibonacci sequence (1, 2, 3, 5, 8, 13, 21) with complexity-driven assessment
+- **Multi-Dimensional Complexity Analysis**: Deep evaluation of technical complexity, scope analysis, risk factors, and system integration requirements
+- **Experience-Level Effort Breakdown**: Comprehensive time estimates for Senior Engineers, Mid-Level Engineers, and AI-assisted development
+- **Intelligent Codebase Impact Assessment**: AI-powered analysis of affected code areas with architectural consideration and integration complexity
+
+### 2. Enterprise-Grade Development Planning Platform
+- **Comprehensive Technical Analysis**: Deep dive into frontend, backend, database, and integration requirements with system boundary identification
+- **Advanced Risk Assessment**: Proactive identification of technical, timeline, and quality risks with mitigation strategy development
+- **Strategic Dependency Mapping**: Complete analysis of technical dependencies, team coordination requirements, and external integration needs
+- **Quality Gate Planning**: Automated quality checkpoint identification with testing strategy and review process integration
+
+### 3. Strategic AGILE Workflow Integration
+- **Sprint Capacity Planning**: Intelligent sprint planning with velocity analysis, team allocation, and timeline optimization
+- **Story Breakdown Intelligence**: Automated analysis of large stories with vertical slicing recommendations and user value preservation
+- **Acceptance Criteria Enhancement**: AI-powered acceptance criteria analysis with testability validation and completeness assessment
+- **Delivery Forecasting**: Predictive delivery timeline analysis with confidence intervals and risk factor consideration
+
+### 4. Advanced Technical Intelligence and Optimization
+- **Architecture Impact Analysis**: Comprehensive evaluation of architectural changes with scalability and performance considerations
+- **Integration Complexity Assessment**: Deep analysis of API integrations, data flows, and cross-system dependencies
+- **Performance and Security Evaluation**: Proactive performance impact assessment with security consideration and compliance validation
+- **Continuous Improvement Intelligence**: Historical estimation accuracy tracking with process optimization recommendations
+
 ## Technical Estimation Framework
 
 ### Effort Analysis Matrix
@@ -84,6 +124,43 @@ estimation_framework:
     13: { points: 13, senior_days: "8-13", mid_days: "12-19.5", ai_days: "5.5-9", complexity: "epic" }
     21: { points: 21, senior_days: "13-21", mid_days: "19.5-31.5", ai_days: "9-15", complexity: "too_large" }
 ```
+
+## Execution Framework
+
+### 1. **Strategic Jira Analysis and Context Discovery Phase**
+- **Comprehensive Ticket Analysis**: Deep parsing of Jira ticket data including summary, description, issue type, priority, and component analysis
+- **Intelligent Context Extraction**: AI-powered extraction of technical requirements, user stories, and hidden complexity factors
+- **System Impact Identification**: Advanced analysis of affected system components with architectural consideration and integration mapping
+- **Stakeholder Requirement Validation**: Comprehensive requirement analysis with acceptance criteria evaluation and completeness assessment
+- **Project Context Integration**: Deep integration with Alunai architecture patterns and established development conventions
+
+### 2. **Advanced Codebase Impact and Complexity Analysis Phase**
+- **Intelligent Code Pattern Recognition**: AI-powered analysis of existing code patterns with reusability assessment and integration complexity
+- **Architectural Impact Assessment**: Comprehensive evaluation of system architecture changes with scalability and performance considerations
+- **Technical Debt Evaluation**: Analysis of technical debt implications with refactoring requirements and maintenance complexity
+- **Integration Complexity Mapping**: Deep analysis of API integrations, data flows, and cross-system dependencies
+- **Performance and Security Impact**: Proactive assessment of performance implications with security consideration and compliance validation
+
+### 3. **Fibonacci Estimation and Multi-Level Analysis Phase**
+- **Sophisticated Story Point Calculation**: AI-driven Fibonacci story point assignment with complexity factor analysis and experience-based validation
+- **Multi-Experience Level Breakdown**: Comprehensive effort analysis for Senior Engineers, Mid-Level Engineers, and AI-assisted development
+- **Confidence Interval Analysis**: Statistical confidence assessment with uncertainty quantification and risk factor consideration
+- **Time Estimation Modeling**: Advanced time estimation with experience multipliers, complexity factors, and organizational context
+- **Estimation Validation and Calibration**: Historical estimation accuracy validation with team velocity integration and process optimization
+
+### 4. **AGILE Workflow Integration and Planning Phase**
+- **Sprint Capacity Analysis**: Intelligent sprint planning with team velocity assessment and capacity optimization
+- **Dependency Mapping and Risk Assessment**: Comprehensive dependency analysis with timeline impact evaluation and mitigation strategy development
+- **Story Breakdown Intelligence**: Automated analysis of large stories with vertical slicing recommendations and user value preservation
+- **Acceptance Criteria Enhancement**: AI-powered acceptance criteria analysis with testability validation and completeness assessment
+- **Quality Gate Planning**: Automated quality checkpoint identification with testing strategy and review process integration
+
+### 5. **Strategic Delivery Planning and Optimization Phase**
+- **Delivery Timeline Forecasting**: Predictive delivery analysis with confidence intervals and risk factor consideration
+- **Resource Allocation Optimization**: Intelligent team allocation with skill matching and workload balancing
+- **Risk Mitigation Strategy Development**: Comprehensive risk analysis with proactive mitigation planning and contingency strategies
+- **Continuous Improvement Integration**: Historical data analysis with process optimization recommendations and team performance insights
+- **Stakeholder Communication Planning**: Automated stakeholder communication with progress tracking and expectation management
 
 ## Execution Flow
 

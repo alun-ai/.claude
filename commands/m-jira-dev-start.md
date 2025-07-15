@@ -6,53 +6,176 @@
 
 ## Overview
 
-Streamlines the start of development work by integrating Jira issue management with git workflows, development environment setup, and automated progress tracking. Ensures proper development patterns and issue linking from the beginning.
+Transforms Claude into your AI-powered Development Workflow Orchestrator, providing enterprise-grade development initialization with intelligent issue selection and comprehensive environment orchestration. This command delivers seamless Jira-to-code integration, automated environment setup, and strategic development planning that eliminates manual overhead while ensuring optimal developer productivity and project alignment.
+
+**Key Benefits:**
+- **AI-Powered Issue Intelligence**: Machine learning-driven issue selection with priority optimization and skill matching
+- **Automated Environment Orchestration**: Complete development setup including branch creation, tool configuration, and dependency management
+- **Enterprise-Grade Jira Integration**: Real-time status synchronization, automated time tracking, and milestone management
+- **Strategic Development Planning**: Intelligent milestone definition, risk assessment, and capacity optimization
+- **Comprehensive Team Coordination**: Automated stakeholder notifications, collaboration setup, and knowledge sharing
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-dev-start --help
+```
 
 ## Core Features
 
-### Intelligent Issue Selection
-- **Priority-Based Selection**: Automatically suggest highest priority assigned issues
-- **Sprint Context**: Focus on current sprint issues with capacity consideration
-- **Dependency Analysis**: Identify prerequisite issues and blockers
-- **Skill Matching**: Suggest issues matching developer expertise
+### 1. AI-Powered Issue Selection Engine
+- **Priority-Based Intelligence**: Machine learning algorithm for optimal issue prioritization based on business value and dependencies
+- **Sprint Context Awareness**: Advanced sprint planning integration with capacity analysis and velocity considerations
+- **Dependency Resolution**: Automatic identification and validation of prerequisite issues with blocker detection
+- **Developer Skill Matching**: Intelligent matching of issues to developer expertise, recent work, and preferences
 
-### Development Environment Setup
-- **Branch Creation**: Create properly named feature branches with issue linking
-- **Environment Configuration**: Set up development environment for specific issue type
-- **Tool Integration**: Configure IDE, debugging, and testing tools
-- **Documentation Access**: Quick access to relevant technical documentation
+### 2. Comprehensive Development Environment Orchestration
+- **Automated Branch Management**: Intelligent branch creation with standardized naming conventions and base branch selection
+- **Environment Configuration**: Complete development setup with tool integration, dependency installation, and service initialization
+- **IDE Integration**: Seamless integration with VSCode, IntelliJ, and other development environments with project-specific configurations
+- **Documentation Access**: Contextual access to relevant technical documentation, API references, and architectural guidelines
 
-### Progress Tracking Integration
-- **Automatic Status Updates**: Transition issue status to "In Progress"
-- **Time Tracking Initialization**: Start automatic time logging
-- **Milestone Planning**: Set up development checkpoints and goals
-- **Team Notifications**: Alert relevant team members of development start
+### 3. Advanced Progress Tracking and Workflow Integration
+- **Real-Time Status Synchronization**: Automatic Jira status updates with development milestone tracking and progress visualization
+- **Intelligent Time Tracking**: Automated time logging with activity classification, productivity insights, and effort analytics
+- **Milestone Planning**: Strategic development checkpoint planning with success criteria and validation gates
+- **Team Communication**: Automated notifications, collaboration setup, and stakeholder alignment with role-based updates
 
-## Execution Steps
+### 4. Enterprise-Grade Development Standards Enforcement
+- **Consistent Workflow Patterns**: Enforced development standards, naming conventions, and best practice validation
+- **Quality Gate Integration**: Automated code quality checks, security scanning, and compliance validation
+- **Risk Management**: Proactive identification and mitigation of development risks with early warning systems
+- **Audit Trail**: Complete tracking of development activities for compliance, retrospectives, and process optimization
 
-1. **Issue Analysis and Selection**
-   - Analyze assigned issues and sprint context
-   - Evaluate issue dependencies and prerequisites
-   - Assess technical complexity and time estimates
-   - Present prioritized recommendations with reasoning
 
-2. **Development Planning**
-   - Review issue requirements and acceptance criteria
-   - Identify technical approach and implementation strategy
-   - Plan development milestones and checkpoints
-   - Set up tracking and progress monitoring
+## Usage Examples
 
-3. **Environment Initialization**
-   - Create feature branch with proper naming convention
-   - Set up local development environment
-   - Install necessary dependencies and tools
-   - Configure debugging and testing environment
+### Basic Development Start
+```bash
+# Start development on highest priority assigned issue
+/m-jira-dev-start
 
-4. **Workflow Activation**
-   - Update issue status and assign to current user
-   - Initialize time tracking and progress monitoring
-   - Set up automated progress reporting
-   - Configure integration hooks and notifications
+# Start development on specific issue
+/m-jira-dev-start ALUN-123
+
+# Interactive issue selection with recommendations
+/m-jira-dev-start --interactive
+```
+
+### Focused Development
+```bash
+# Start development with specific component focus
+/m-jira-dev-start --component frontend
+
+# Start development for specific sprint
+/m-jira-dev-start --sprint "Sprint 24"
+
+# Start development with capacity consideration
+/m-jira-dev-start --max-effort 8
+```
+
+### Advanced Options
+```bash
+# Start with comprehensive environment setup
+/m-jira-dev-start --full-setup
+
+# Start with team collaboration enabled
+/m-jira-dev-start --team-mode
+
+# Start with advanced tracking and monitoring
+/m-jira-dev-start --comprehensive-tracking
+```
+
+## Command Options
+
+```yaml
+issue_selection:
+  automatic_selection: "Select highest priority assigned issue (default)"
+  interactive_mode: "Present recommendations with detailed analysis"
+  specific_issue: "Start development on specified issue key"
+  smart_recommendations: "AI-powered issue matching based on context"
+
+selection_criteria:
+  --priority-filter: "Filter by issue priority (Critical, High, Medium, Low)"
+  --component: "Focus on specific component or area"
+  --sprint: "Select from specific sprint"
+  --max-effort: "Maximum story points or time estimate"
+  --skill-match: "Match issues to developer skills and expertise"
+
+environment_setup:
+  --full-setup: "Complete development environment initialization"
+  --minimal-setup: "Basic setup with essential tools only"
+  --custom-setup: "Use custom environment configuration"
+  --skip-setup: "Skip environment setup (issue selection only)"
+
+workflow_integration:
+  --auto-status: "Automatically update Jira issue status (default: true)"
+  --time-tracking: "Enable automatic time tracking (default: true)"
+  --team-notifications: "Send notifications to relevant team members"
+  --milestone-planning: "Set up development milestones and checkpoints"
+
+branch_management:
+  --branch-prefix: "Custom branch prefix (default: feature/ALUN-)"
+  --branch-strategy: "Branching strategy (feature, gitflow, github-flow)"
+  --base-branch: "Base branch for new feature branch (default: main)"
+  --clean-checkout: "Ensure clean working directory before branch creation"
+
+team_collaboration:
+  --team-mode: "Enable enhanced team collaboration features"
+  --pair-programming: "Set up pair programming session"
+  --code-review: "Pre-assign code reviewers based on expertise"
+  --knowledge-sharing: "Update team documentation with development plans"
+
+monitoring_and_tracking:
+  --comprehensive-tracking: "Enable detailed progress monitoring"
+  --performance-metrics: "Track development performance and velocity"
+  --risk-monitoring: "Enable risk detection and early warning systems"
+  --productivity-insights: "Generate productivity and efficiency analytics"
+
+integration_options:
+  --ide-integration: "Configure IDE-specific settings and tools"
+  --ci-cd-prep: "Prepare CI/CD pipeline for new branch"
+  --testing-setup: "Initialize testing framework and environment"
+  --documentation-access: "Set up quick access to relevant documentation"
+```
+
+## Execution Framework
+
+### 1. **Strategic Issue Analysis and Selection Phase**
+- **Comprehensive Issue Assessment**: Analyze all assigned issues with priority, complexity, and dependency evaluation
+- **Sprint Context Analysis**: Deep integration with current sprint planning and capacity management
+- **Developer Profile Matching**: Advanced algorithm matching issues to developer skills, experience, and preferences
+- **Dependency Resolution**: Automatic identification and validation of prerequisite issues and blockers
+- **Recommendation Engine**: AI-powered issue ranking with detailed reasoning and selection criteria
+
+### 2. **Development Planning and Strategy Phase**
+- **Requirements Analysis**: Comprehensive review of issue requirements, acceptance criteria, and success metrics
+- **Technical Architecture Planning**: Identification of technical approach, implementation strategy, and design patterns
+- **Milestone Definition**: Strategic development checkpoint planning with progress tracking and validation criteria
+- **Risk Assessment**: Proactive identification of potential development risks and mitigation strategies
+- **Resource Allocation**: Time estimation, capacity planning, and resource requirement analysis
+
+### 3. **Environment Orchestration and Setup Phase**
+- **Intelligent Branch Creation**: Automated branch creation with standardized naming conventions and proper base branch selection
+- **Development Environment Configuration**: Complete local development environment setup with tool integration and dependency management
+- **IDE and Tool Integration**: Seamless configuration of development tools, debuggers, and testing frameworks
+- **Documentation and Resource Access**: Contextual setup of technical documentation, API references, and development guides
+- **Quality Gate Preparation**: Configuration of code quality tools, linting, and automated testing environments
+
+### 4. **Workflow Integration and Activation Phase**
+- **Jira Status Synchronization**: Automatic issue status updates with transition validation and workflow compliance
+- **Time Tracking Initialization**: Automated time logging setup with activity classification and productivity monitoring
+- **Progress Monitoring Configuration**: Real-time progress tracking with milestone monitoring and completion criteria
+- **Team Communication Setup**: Automated notifications to stakeholders with collaboration tool integration
+- **Integration Hook Configuration**: Setup of automated workflows, CI/CD integration, and deployment preparation
+
+### 5. **Quality Assurance and Validation Phase**
+- **Environment Validation**: Comprehensive testing of development environment setup and tool configuration
+- **Workflow Verification**: Validation of Jira integration, status updates, and tracking functionality
+- **Team Coordination Confirmation**: Verification of notifications, assignments, and collaboration setup
+- **Documentation Accuracy**: Validation of issue information, requirements, and acceptance criteria
+- **Risk Mitigation Activation**: Implementation of identified risk mitigation strategies and monitoring systems
 
 ## Issue Selection Strategies
 
@@ -220,6 +343,26 @@ development_milestones:
     success_criteria: ["approved by reviewers", "ready to merge"]
 ```
 
+## Best Practices
+
+### Development Workflow Excellence
+1. **Issue Selection Strategy**: Always start with highest business value and clearest requirements
+2. **Environment Consistency**: Use standardized setup to ensure reproducible development environments
+3. **Progress Tracking**: Maintain regular status updates and milestone tracking for transparency
+4. **Team Communication**: Keep stakeholders informed through automated notifications and updates
+
+### Agile Development Integration
+1. **Sprint Planning Alignment**: Select issues that align with sprint goals and capacity
+2. **Dependency Management**: Always validate and resolve dependencies before starting development
+3. **Incremental Progress**: Break work into measurable milestones for continuous delivery
+4. **Retrospective Learning**: Use tracking data to improve estimation and planning accuracy
+
+### Quality and Standards
+1. **Consistent Branching**: Follow standardized naming conventions for better traceability
+2. **Environment Validation**: Ensure development environment matches production standards
+3. **Documentation Access**: Always have relevant technical documentation readily available
+4. **Risk Mitigation**: Proactively identify and address potential development blockers
+
 ## Configuration Options
 
 ### Project Settings
@@ -356,6 +499,46 @@ development_milestones:
 - **Knowledge Sharing**: Update team documentation with development plans
 - **Pair Programming**: Suggest available team members for collaboration
 - **Review Planning**: Pre-assign code reviewers based on expertise
+
+### Advanced Analytics and Insights
+- **Velocity Tracking**: Monitor development speed and efficiency trends
+- **Quality Metrics**: Track code quality improvements and regression patterns
+- **Team Performance**: Analyze team collaboration effectiveness and bottlenecks
+- **Predictive Analytics**: Forecast completion times and identify potential risks
+
+## Troubleshooting Guide
+
+### Common Development Start Challenges
+
+**Issue Selection Problems**:
+- Verify Jira connectivity and authentication
+- Check user permissions and project access
+- Ensure issues are properly assigned and in correct status
+- Validate sprint and project configuration
+
+**Environment Setup Issues**:
+- Check system requirements and dependencies
+- Verify network connectivity and proxy settings
+- Ensure sufficient disk space and system resources
+- Validate development tool installations
+
+**Branch Creation Failures**:
+- Verify git repository status and permissions
+- Check for uncommitted changes or conflicts
+- Ensure proper remote repository access
+- Validate branch naming conventions and policies
+
+**Jira Integration Problems**:
+- Verify Jira API access and authentication
+- Check issue status transition permissions
+- Ensure proper project and user permissions
+- Validate workflow configuration and rules
+
+**Team Coordination Issues**:
+- Check notification settings and user preferences
+- Verify team member access and permissions
+- Ensure proper role assignments and responsibilities
+- Validate communication channel configurations
 
 ## Error Handling and Recovery
 

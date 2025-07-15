@@ -6,53 +6,164 @@
 
 ## Overview
 
-Provides comprehensive reporting and analytics capabilities for Jira projects, sprints, and team performance. Generates actionable insights through data visualization, trend analysis, and predictive analytics to support data-driven decision making.
+Transforms Claude into your AI-powered Analytics and Reporting Specialist, providing enterprise-grade business intelligence and comprehensive reporting capabilities for Jira projects, teams, and organizational performance. This command delivers intelligent data analysis, predictive insights, and automated reporting that empowers data-driven decision making and continuous improvement across all levels of the organization.
+
+**Key Benefits:**
+- **AI-Powered Analytics Engine**: Machine learning-driven insights with predictive analytics and trend forecasting
+- **Executive Intelligence Dashboard**: Real-time business intelligence with strategic performance indicators
+- **Automated Report Generation**: Comprehensive reporting automation with stakeholder-specific customization
+- **Performance Optimization Intelligence**: Data-driven recommendations for process improvement and team optimization
+- **Enterprise Integration Platform**: Seamless integration with BI tools and enterprise data systems
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-report --help
+```
 
 ## Core Features
 
-### Comprehensive Report Types
-- **Sprint Reports**: Sprint progress, velocity, and burndown analysis
-- **Project Reports**: Project health, milestone tracking, and delivery metrics
-- **Team Reports**: Individual and team performance analytics
-- **Quality Reports**: Bug analysis, testing metrics, and quality trends
+### 1. AI-Powered Analytics and Intelligence Engine
+- **Advanced Data Mining**: Machine learning-powered analysis of historical patterns and performance indicators
+- **Predictive Performance Modeling**: Sophisticated forecasting algorithms for delivery dates, quality metrics, and team capacity
+- **Intelligent Anomaly Detection**: Automated identification of performance deviations and potential risks
+- **Strategic Business Intelligence**: Executive-level insights with KPI tracking and business impact analysis
 
-### Interactive Dashboards
-- **Real-time Monitoring**: Live dashboards with real-time data updates
-- **Customizable Views**: Tailored dashboards for different stakeholder needs
-- **Drill-down Analysis**: Detailed analysis from high-level metrics
-- **Comparative Analysis**: Compare performance across sprints and projects
+### 2. Comprehensive Multi-Dimensional Reporting Framework
+- **Dynamic Sprint Analytics**: Real-time sprint performance with velocity prediction and burndown intelligence
+- **Enterprise Project Dashboards**: Portfolio-level reporting with cross-project analytics and resource optimization
+- **Advanced Team Performance Intelligence**: Individual and team metrics with skill development tracking and collaboration analysis
+- **Quality Intelligence System**: Comprehensive quality metrics with defect prediction and process optimization recommendations
 
-### Data Export and Integration
-- **Multiple Formats**: Export reports in PDF, Excel, CSV, and JSON formats
-- **Automated Distribution**: Schedule and distribute reports automatically
-- **API Integration**: Integrate with other business intelligence tools
-- **Custom Visualizations**: Create custom charts and visualizations
+### 3. Enterprise-Grade Data Integration and Visualization
+- **Real-Time Data Orchestration**: Live data synchronization with advanced caching and performance optimization
+- **Interactive Business Intelligence Dashboards**: Customizable executive dashboards with drill-down capabilities
+- **Advanced Visualization Engine**: Dynamic charts, graphs, and visualizations with responsive design
+- **Multi-Stakeholder Report Distribution**: Automated report generation and distribution with role-based customization
 
-## Execution Steps
+### 4. Strategic Performance Optimization and Continuous Improvement
+- **Performance Benchmarking**: Industry-standard comparison with best practice recommendations
+- **Process Optimization Intelligence**: Data-driven process improvement recommendations with impact analysis
+- **Capacity Planning Analytics**: Advanced capacity forecasting with skill gap analysis and hiring recommendations
+- **ROI and Business Impact Analysis**: Financial impact analysis with project value assessment and optimization strategies
 
-1. **Data Collection and Preparation**
-   - Gather data from Jira, git, and other integrated tools
-   - Clean and normalize data for analysis
-   - Apply filters and date ranges
-   - Validate data quality and completeness
+## Usage Examples
 
-2. **Analysis and Calculation**
-   - Calculate key performance indicators (KPIs)
-   - Perform trend analysis and statistical calculations
-   - Generate predictive insights and forecasts
-   - Identify patterns and anomalies
+### Basic Report Generation
+```bash
+# Generate current sprint report
+/m-jira-report
 
-3. **Visualization and Formatting**
-   - Create charts, graphs, and visualizations
-   - Format reports according to templates
-   - Add narrative explanations and insights
-   - Optimize for different output formats
+# Generate specific project report
+/m-jira-report PROJECT-KEY
 
-4. **Distribution and Presentation**
-   - Generate final reports in requested formats
-   - Distribute to stakeholders via email or dashboards
-   - Schedule recurring report generation
-   - Collect feedback and usage analytics
+# Interactive report with AI guidance
+/m-jira-report --interactive
+```
+
+### Focused Analytics
+```bash
+# Team performance focus
+/m-jira-report --team-analytics
+
+# Quality metrics focus
+/m-jira-report --quality-focus
+
+# Executive dashboard focus
+/m-jira-report --executive-summary
+```
+
+### Advanced Options
+```bash
+# Comprehensive business intelligence report
+/m-jira-report --comprehensive-analytics
+
+# Predictive analytics with forecasting
+/m-jira-report --predictive-insights
+
+# Multi-project portfolio analysis
+/m-jira-report --portfolio-analysis
+```
+
+## Command Options
+
+```yaml
+reporting_scope:
+  current_sprint: "Generate comprehensive report for current or active sprint (default)"
+  project_overview: "Complete project health and performance analysis"
+  team_analytics: "Team performance and productivity analysis"
+  portfolio_analysis: "Multi-project portfolio analytics and insights"
+
+analysis_depth:
+  --quick: "Essential metrics and key performance indicators"
+  --standard: "Comprehensive reporting with detailed analytics (default)"
+  --comprehensive: "Enterprise-grade analytics with predictive insights"
+  --executive: "Executive-level dashboard with strategic business intelligence"
+
+report_focus:
+  --sprint-analytics: "Sprint performance, velocity, and burndown analysis"
+  --team-analytics: "Team performance, collaboration, and productivity metrics"
+  --quality-focus: "Quality metrics, defect analysis, and process optimization"
+  --project-health: "Project health, milestone tracking, and delivery forecasting"
+  --executive-summary: "High-level business intelligence for executive stakeholders"
+
+predictive_analytics:
+  --predictive-insights: "Advanced forecasting and predictive modeling"
+  --trend-analysis: "Historical trend analysis with pattern recognition"
+  --capacity-planning: "Team capacity forecasting and resource optimization"
+  --risk-assessment: "Risk analysis with mitigation recommendations"
+
+visualization_options:
+  --interactive-dashboard: "Generate interactive web-based dashboards"
+  --executive-charts: "Executive-level charts and visualizations"
+  --detailed-graphs: "Comprehensive graphs and detailed analytics"
+  --comparative-analysis: "Multi-period and cross-project comparisons"
+
+delivery_format:
+  --pdf-report: "Professional PDF report with comprehensive analytics"
+  --interactive-html: "Interactive HTML dashboard with drill-down capabilities"
+  --excel-export: "Excel workbook with raw data and pivot tables"
+  --json-api: "JSON format for API integration and custom dashboards"
+  --email-distribution: "Automated email distribution to stakeholders"
+```
+
+## Execution Framework
+
+### 1. **Strategic Data Collection and Integration Phase**
+- **Comprehensive Data Aggregation**: Advanced collection from Jira, Git, CI/CD, and monitoring systems with real-time synchronization
+- **Data Quality Assurance**: Sophisticated data validation, cleansing, and normalization with anomaly detection
+- **Multi-Source Integration**: Seamless integration with enterprise systems, BI tools, and external data sources
+- **Historical Data Analysis**: Deep historical analysis with pattern recognition and trend identification
+- **Context-Aware Filtering**: Intelligent filtering based on user roles, permissions, and stakeholder requirements
+
+### 2. **Advanced Analytics and Intelligence Generation Phase**
+- **Machine Learning Analytics**: AI-powered analysis using regression models, clustering, and predictive algorithms
+- **Key Performance Indicator Calculation**: Comprehensive KPI computation with industry benchmarking and best practice comparison
+- **Predictive Modeling and Forecasting**: Advanced statistical modeling for delivery prediction, capacity planning, and risk assessment
+- **Pattern Recognition and Anomaly Detection**: Intelligent identification of performance patterns, outliers, and potential issues
+- **Business Intelligence Generation**: Strategic insights generation with impact analysis and recommendation development
+
+### 3. **Dynamic Visualization and Presentation Phase**
+- **Intelligent Chart Generation**: AI-powered selection of optimal visualization types based on data characteristics and audience
+- **Interactive Dashboard Creation**: Dynamic dashboard development with drill-down capabilities and real-time updates
+- **Stakeholder-Specific Customization**: Role-based report customization with appropriate detail levels and focus areas
+- **Professional Report Formatting**: Enterprise-grade report formatting with brand consistency and accessibility compliance
+- **Multi-Format Output Generation**: Comprehensive output generation across PDF, HTML, Excel, and API formats
+
+### 4. **Automated Distribution and Communication Phase**
+- **Intelligent Distribution Management**: Automated stakeholder identification and report distribution with personalization
+- **Scheduled Report Generation**: Comprehensive scheduling system with event-triggered and time-based report automation
+- **Feedback Collection and Analysis**: Stakeholder feedback capture with usage analytics and satisfaction tracking
+- **Action Item Generation**: Automated action item creation based on report insights and recommendations
+- **Integration with Communication Tools**: Seamless integration with email, Slack, Teams, and other communication platforms
+
+### 5. **Continuous Improvement and Optimization Phase**
+- **Report Effectiveness Analysis**: Analytics on report usage, engagement, and decision-making impact
+- **Performance Optimization**: Continuous optimization of data processing, visualization, and distribution performance
+- **Recommendation Implementation Tracking**: Monitoring of implemented recommendations with impact assessment
+- **Predictive Accuracy Improvement**: Machine learning model refinement based on actual outcomes and feedback
+- **Strategic Insight Enhancement**: Continuous improvement of analytical depth and business value generation
 
 ## Report Templates
 

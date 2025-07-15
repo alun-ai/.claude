@@ -4,6 +4,133 @@
 
 **Scope:** Analyze code changes, architecture patterns, and implementation quality with AI assistance
 
+## Overview
+
+Transform Claude into a Senior Code Reviewer with deep expertise in software architecture, security, and best practices. This command provides comprehensive code analysis using AI-powered review techniques, focusing on staged changes or recent commits with multi-dimensional assessment covering architecture, security, performance, and code quality.
+
+**Key Benefits:**
+- **AI-Powered Analysis**: Deep code understanding beyond syntax checking
+- **Multi-Dimensional Review**: Architecture, security, performance, quality
+- **Context-Aware**: Understands project patterns and standards
+- **Actionable Feedback**: Specific recommendations with code examples
+- **Security Focus**: Specialized multi-tenant and authentication analysis
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-review-code --help
+```
+
+## Core Features
+
+### 1. Intelligent Change Detection
+- **Staged Analysis**: Review changes ready for commit
+- **Commit Analysis**: Review recent commits and PRs
+- **Diff Intelligence**: Understand context around changes
+- **Pattern Recognition**: Identify architectural patterns and violations
+
+### 2. Multi-Dimensional Assessment
+- **Architecture Review**: Design patterns, structure, dependencies
+- **Security Analysis**: Vulnerabilities, access control, data protection
+- **Performance Review**: Bottlenecks, optimizations, scaling concerns
+- **Quality Assessment**: Code smells, maintainability, best practices
+
+### 3. Specialized Analysis Areas
+- **Multi-Tenant Security**: Data isolation and tenant access control
+- **Authentication/Authorization**: OAuth, session management, permissions
+- **API Security**: Rate limiting, input validation, response handling
+- **Database Security**: Query safety, injection prevention, access patterns
+
+### 4. Comprehensive Reporting
+- **Severity Levels**: Critical, high, medium, low priority issues
+- **Actionable Recommendations**: Specific improvement steps
+- **Code Examples**: Before/after implementation suggestions
+- **Best Practice References**: Links to documentation and standards
+
+## Usage Examples
+
+### Basic Review Operations
+```bash
+# Review staged changes
+/m-review-code
+
+# Review specific commit
+/m-review-code abc123
+
+# Review PR or branch
+/m-review-code origin/feature-branch
+
+# Review last N commits
+/m-review-code --commits 3
+```
+
+### Focused Review Types
+```bash
+# Security-focused review
+/m-review-code --focus security
+
+# Performance optimization review
+/m-review-code --focus performance
+
+# Architecture pattern review
+/m-review-code --focus architecture
+
+# Code quality review
+/m-review-code --focus quality
+```
+
+### Scope-Specific Reviews
+```bash
+# Review specific files
+/m-review-code --files "src/auth/*.ts"
+
+# Review by component
+/m-review-code --component authentication
+
+# Review API changes only
+/m-review-code --api-only
+
+# Full codebase review
+/m-review-code --full-codebase
+```
+
+## Command Options
+
+```yaml
+scope_control:
+  --files: "Specific files or patterns to review"
+  --component: "Focus on specific component/module"
+  --api-only: "Review API changes only"
+  --frontend-only: "Focus on frontend changes"
+  --backend-only: "Focus on backend changes"
+  --full-codebase: "Review entire codebase"
+
+review_focus:
+  --focus: "Primary review focus (security/performance/architecture/quality)"
+  --security-critical: "Enhanced security analysis"
+  --performance-critical: "Deep performance analysis"
+  --breaking-changes: "Focus on breaking change analysis"
+
+analysis_depth:
+  --quick: "Fast review focusing on critical issues"
+  --thorough: "Comprehensive analysis (default)"
+  --deep: "Deep analysis including dependencies"
+  --surface: "Surface-level quick scan"
+
+commit_selection:
+  --commits: "Number of recent commits to review"
+  --since: "Review changes since specific date/commit"
+  --branch: "Compare against specific branch"
+  --staged: "Review only staged changes"
+
+output_control:
+  --format: "Output format (markdown/json/console)"
+  --severity: "Minimum severity level to report"
+  --verbose: "Detailed analysis output"
+  --summary-only: "Brief summary of findings"
+```
+
 ## AI Integration Strategy
 
 ### MCP Gemini Agent Integration
@@ -74,30 +201,425 @@ fi
 
 **Fallback**: Use Claude Code native functionality if Gemini CLI unavailable.
 
-### Enhanced AI Capabilities
-- **Deep Architecture Analysis**: AI-powered pattern recognition and design assessment
-- **Security Vulnerability Detection**: Advanced security analysis beyond traditional tools
-- **Performance Optimization**: Intelligent performance bottleneck identification
-- **Best Practice Enforcement**: Context-aware best practice recommendations
-- **Multi-tenant Security**: Specialized analysis for data isolation and access control
-- **Staged vs Committed Analysis**: Smart detection of what changes to review
+## Review Methodology
 
-## Execution Steps
+### Analysis Dimensions
+```yaml
+architecture_review:
+  design_patterns:
+    - Pattern consistency and appropriateness
+    - SOLID principles adherence
+    - Dependency injection and inversion
+    - Separation of concerns
+    
+  system_design:
+    - Component interactions
+    - API design consistency
+    - Data flow architecture
+    - Scalability considerations
+    
+  code_organization:
+    - Module structure
+    - File organization
+    - Import/export patterns
+    - Namespace management
 
-1. **Architecture & Pattern Analysis**
-   - Review repository patterns, service layers, and migration strategies
-   - Assess system design decisions and structural changes
+security_analysis:
+  authentication:
+    - OAuth implementation security
+    - Session management
+    - Token handling and validation
+    - Multi-factor authentication
+    
+  authorization:
+    - Role-based access control
+    - Permission validation
+    - Resource-level security
+    - Multi-tenant isolation
+    
+  data_protection:
+    - Input validation and sanitization
+    - SQL injection prevention
+    - XSS protection
+    - Data encryption
+    
+  api_security:
+    - Rate limiting implementation
+    - CORS configuration
+    - Request validation
+    - Response security headers
 
-2. **Security & Multi-tenant Validation**
-   - Check authentication, authorization, and tenant isolation
-   - Identify potential security vulnerabilities and access control issues
+performance_review:
+  query_optimization:
+    - Database query efficiency
+    - N+1 query detection
+    - Index usage analysis
+    - Caching strategies
+    
+  resource_management:
+    - Memory usage patterns
+    - CPU utilization
+    - Network optimization
+    - Asset loading
+    
+  scalability:
+    - Load handling capacity
+    - Bottleneck identification
+    - Horizontal scaling readiness
+    - Performance monitoring
 
-3. **Functional Completeness Verification**
-   - Ensure all requirements are implemented with proper edge case handling
-   - Validate input validation, error handling, and boundary conditions
+code_quality:
+  maintainability:
+    - Code readability
+    - Documentation quality
+    - Test coverage
+    - Error handling
+    
+  best_practices:
+    - Language idioms
+    - Framework conventions
+    - Coding standards
+    - Design patterns
+    
+  technical_debt:
+    - Code duplication
+    - Complex functions
+    - Outdated dependencies
+    - TODO/FIXME items
+```
 
-4. **Code Quality Assessment**
-   - Identify code smells, anti-patterns, and duplicated logic
+### Review Process
+```yaml
+review_stages:
+  1_change_analysis:
+    - Identify modified files and functions
+    - Analyze change scope and impact
+    - Detect breaking changes
+    - Assess change complexity
+    
+  2_context_gathering:
+    - Review related code and dependencies
+    - Understand business requirements
+    - Check existing tests and documentation
+    - Analyze integration points
+    
+  3_multi_dimensional_analysis:
+    - Run architecture assessment
+    - Perform security analysis
+    - Execute performance review
+    - Conduct quality evaluation
+    
+  4_synthesis_and_prioritization:
+    - Consolidate findings
+    - Assign severity levels
+    - Prioritize recommendations
+    - Generate actionable feedback
+    
+  5_report_generation:
+    - Create structured report
+    - Include code examples
+    - Provide improvement suggestions
+    - Link to best practices
+```
+
+## Review Focus Areas
+
+### Security-Critical Review
+```yaml
+security_checklist:
+  authentication_security:
+    oauth_implementation:
+      - Token validation and refresh
+      - Scope verification
+      - State parameter usage
+      - Redirect URI validation
+      
+    session_management:
+      - Session timeout handling
+      - Secure session storage
+      - Session fixation prevention
+      - Concurrent session management
+      
+  authorization_controls:
+    access_control:
+      - Role-based permissions
+      - Resource-level authorization
+      - Context-aware permissions
+      - Privilege escalation prevention
+      
+    multi_tenant_isolation:
+      - Tenant data separation
+      - Cross-tenant access prevention
+      - Tenant-specific configurations
+      - Shared resource security
+      
+  data_protection:
+    input_validation:
+      - SQL injection prevention
+      - XSS protection
+      - Command injection prevention
+      - File upload security
+      
+    data_handling:
+      - Encryption at rest and transit
+      - PII data protection
+      - Data retention policies
+      - Secure data deletion
+```
+
+### Performance-Critical Review
+```yaml
+performance_checklist:
+  database_optimization:
+    query_efficiency:
+      - Query plan analysis
+      - Index utilization
+      - Join optimization
+      - Subquery performance
+      
+    scaling_patterns:
+      - Connection pooling
+      - Read replica usage
+      - Caching strategies
+      - Batch operations
+      
+  application_performance:
+    resource_usage:
+      - Memory allocation patterns
+      - CPU-intensive operations
+      - I/O optimization
+      - Garbage collection impact
+      
+    frontend_optimization:
+      - Bundle size analysis
+      - Lazy loading implementation
+      - Image optimization
+      - Caching strategies
+      
+  scalability_assessment:
+    load_handling:
+      - Concurrent request handling
+      - Rate limiting effectiveness
+      - Resource contention
+      - Bottleneck identification
+```
+
+### Architecture Review
+```yaml
+architecture_checklist:
+  design_patterns:
+    pattern_usage:
+      - Appropriate pattern selection
+      - Pattern implementation quality
+      - Consistency across codebase
+      - Anti-pattern avoidance
+      
+    solid_principles:
+      - Single responsibility
+      - Open/closed principle
+      - Liskov substitution
+      - Interface segregation
+      - Dependency inversion
+      
+  system_design:
+    component_architecture:
+      - Loose coupling
+      - High cohesion
+      - Clear interfaces
+      - Proper abstraction
+      
+    api_design:
+      - RESTful principles
+      - Consistent naming
+      - Error handling
+      - Versioning strategy
+```
+
+## Severity Classification
+
+```yaml
+severity_levels:
+  critical:
+    security:
+      - Authentication bypass
+      - Data exposure vulnerabilities
+      - Privilege escalation
+      - Injection vulnerabilities
+      
+    functionality:
+      - System crashes
+      - Data corruption
+      - Complete feature failure
+      - Breaking changes
+      
+  high:
+    security:
+      - Access control weaknesses
+      - Session management issues
+      - Input validation gaps
+      - Cryptographic weaknesses
+      
+    performance:
+      - Significant performance degradation
+      - Resource leaks
+      - Scalability bottlenecks
+      - Database performance issues
+      
+  medium:
+    quality:
+      - Code duplication
+      - Complex functions
+      - Poor error handling
+      - Missing documentation
+      
+    maintainability:
+      - Code organization issues
+      - Inconsistent patterns
+      - Technical debt accumulation
+      - Test coverage gaps
+      
+  low:
+    style:
+      - Formatting inconsistencies
+      - Naming conventions
+      - Comment quality
+      - Code style violations
+      
+    optimization:
+      - Minor performance improvements
+      - Code simplification opportunities
+      - Dependency updates
+      - Documentation enhancements
+```
+
+## Output Format
+
+### Review Report Structure
+```markdown
+# Code Review Report
+
+## Executive Summary
+- Total issues found: X
+- Critical: X, High: X, Medium: X, Low: X
+- Primary concerns: [List top 3 issues]
+- Overall assessment: [Pass/Conditional/Fail]
+
+## Detailed Findings
+
+### Critical Issues
+**[Issue Title]** - Security/Performance/Architecture
+- **File**: path/to/file.js:line
+- **Description**: Detailed explanation
+- **Impact**: Security risk/Performance impact
+- **Recommendation**: Specific fix with code example
+- **References**: Links to best practices
+
+### Architecture Assessment
+- **Pattern Consistency**: Good/Needs Improvement
+- **Design Principles**: SOLID compliance assessment
+- **System Design**: Component interaction analysis
+- **Recommendations**: Architectural improvements
+
+### Security Analysis
+- **Authentication**: Security posture assessment
+- **Authorization**: Access control effectiveness
+- **Data Protection**: Input validation and encryption
+- **Vulnerabilities**: Specific security issues
+
+### Performance Review
+- **Query Performance**: Database optimization opportunities
+- **Resource Usage**: Memory and CPU efficiency
+- **Scalability**: Load handling assessment
+- **Optimization**: Performance improvement suggestions
+
+## Action Items
+1. **Immediate (Critical/High)**
+   - [List critical issues requiring immediate attention]
+   
+2. **Next Sprint (Medium)**
+   - [List issues for next development cycle]
+   
+3. **Future (Low)**
+   - [List improvements for future consideration]
+```
+
+## Integration Examples
+
+### Pre-Commit Review
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+/m-review-code --staged --security-critical
+if [ $? -ne 0 ]; then
+    echo "Code review failed. Please address issues before committing."
+    exit 1
+fi
+```
+
+### Pull Request Review
+```bash
+# Review PR changes
+/m-review-code origin/main..feature-branch --format markdown > review-report.md
+```
+
+### CI/CD Integration
+```yaml
+# .github/workflows/code-review.yml
+name: Automated Code Review
+on: [pull_request]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Code Review
+        run: /m-review-code --thorough --format json > review.json
+```
+
+## Best Practices
+
+### Effective Code Review
+1. **Review Small Changes**: Keep changes focused and reviewable
+2. **Understand Context**: Review with business requirements in mind
+3. **Prioritize Issues**: Focus on critical and high-severity issues first
+4. **Provide Examples**: Include code examples with recommendations
+5. **Check Tests**: Ensure adequate test coverage for changes
+
+### Security Review
+1. **Trust Nothing**: Validate all inputs and assumptions
+2. **Defense in Depth**: Multiple layers of security validation
+3. **Least Privilege**: Ensure minimal necessary permissions
+4. **Data Protection**: Encrypt sensitive data and communications
+
+### Performance Review
+1. **Measure First**: Profile before optimizing
+2. **Identify Bottlenecks**: Focus on actual performance issues
+3. **Consider Scale**: Think about performance at scale
+4. **Monitor Impact**: Track performance metrics over time
+
+## Troubleshooting
+
+### Common Issues
+
+**"No changes detected"**
+- Check git status: `git status`
+- Verify staged changes: `git diff --cached`
+- Try specific commit: `/m-review-code HEAD~1`
+
+**"Review taking too long"**
+- Use quick mode: `--quick`
+- Focus on specific area: `--focus security`
+- Limit scope: `--files "src/auth/*"`
+
+**"Too many false positives"**
+- Adjust severity threshold: `--severity high`
+- Focus review: `--security-critical`
+- Use summary mode: `--summary-only`
+
+**"Missing context"**
+- Use thorough mode: `--thorough`
+- Include full codebase: `--full-codebase`
+- Review larger scope: `--commits 5`
    - Detect potential runtime issues: race conditions, memory leaks, null pointer exceptions
 
 5. **Test Coverage Evaluation**

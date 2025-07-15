@@ -8,6 +8,243 @@
 
 Provides intelligent git commit and push functionality with AI-powered commit message generation. Uses Gemini CLI when available for superior context understanding and conventional commit formatting.
 
+**Key Benefits:**
+- **AI-Powered Messages**: Generate conventional commit messages automatically
+- **Submodule Support**: Handle git submodules intelligently
+- **Context Awareness**: Analyze changes for accurate descriptions
+- **Standards Compliance**: Follow conventional commit format
+- **Batch Operations**: Process multiple repositories efficiently
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-commit-push --help
+```
+
+## Core Features
+
+### 1. Intelligent Commit Messages
+- **Conventional Format**: Automatic type(scope): description formatting
+- **Change Analysis**: AI understands what changed and why
+- **Context Integration**: Consider project structure and patterns
+- **Length Optimization**: Keep messages concise but descriptive
+
+### 2. Submodule Management
+- **Automatic Detection**: Find and process all submodules
+- **Ordered Processing**: Commit submodules before main repo
+- **Reference Updates**: Update submodule pointers correctly
+- **Independent Messages**: Generate appropriate messages per module
+
+### 3. Change Classification
+- **Type Detection**: feat, fix, docs, style, refactor, test, chore
+- **Scope Identification**: Determine affected components
+- **Breaking Changes**: Detect and document API changes
+- **Multi-file Analysis**: Understand related changes across files
+
+### 4. Push Strategies
+- **Branch Detection**: Push to correct remote branch
+- **Force Push Safety**: Prevent accidental force pushes
+- **Remote Verification**: Ensure remote is reachable
+- **Conflict Prevention**: Check for remote changes first
+
+## Usage Examples
+
+### Basic Usage
+```bash
+# Auto-generate commit message and push
+/m-commit-push
+
+# Provide custom commit message
+/m-commit-push "feat: add user authentication"
+
+# Commit without pushing
+/m-commit-push --no-push
+```
+
+### Submodule Workflows
+```bash
+# Process submodules and main repo
+/m-commit-push --with-submodules
+
+# Skip submodule processing
+/m-commit-push --skip-submodules
+
+# Submodules only
+/m-commit-push --submodules-only
+```
+
+### Advanced Options
+```bash
+# Amend previous commit
+/m-commit-push --amend
+
+# Interactive staging
+/m-commit-push --interactive
+
+# Specific files only
+/m-commit-push --files "src/*.js" "docs/*.md"
+```
+
+## Command Options
+
+```yaml
+commit_options:
+  --message, -m: "Custom commit message"
+  --amend: "Amend previous commit"
+  --no-verify: "Skip pre-commit hooks"
+  --sign, -S: "GPG sign the commit"
+
+staging_options:
+  --all, -a: "Stage all changes"
+  --interactive, -i: "Interactive staging"
+  --files: "Specific files to stage"
+  --patch, -p: "Stage hunks interactively"
+
+push_options:
+  --no-push: "Commit only, don't push"
+  --force: "Force push (use with caution)"
+  --upstream, -u: "Set upstream branch"
+  --tags: "Push tags as well"
+
+submodule_options:
+  --with-submodules: "Process submodules (default)"
+  --skip-submodules: "Ignore submodule changes"
+  --submodules-only: "Only process submodules"
+  --recursive: "Process nested submodules"
+
+ai_options:
+  --no-ai: "Don't use AI for message generation"
+  --ai-model: "Specify AI model (pro/flash)"
+  --context: "Additional context for AI"
+  --conventional: "Enforce conventional format"
+```
+
+## Workflow Details
+
+### Pre-Commit Checks
+1. Verify git repository status
+2. Check for uncommitted changes
+3. Ensure branch is up-to-date
+4. Validate remote connectivity
+
+### Submodule Processing
+1. Detect all submodules via .gitmodules
+2. Check each submodule for changes
+3. Generate appropriate commit messages
+4. Commit and push submodules first
+5. Update parent repository references
+
+### Message Generation Process
+1. Analyze staged changes
+2. Identify change patterns
+3. Determine commit type and scope
+4. Generate descriptive message
+5. Validate message format
+
+### Commit Execution
+1. Stage specified or all changes
+2. Apply commit with message
+3. Run post-commit hooks
+4. Push to remote if requested
+5. Report success/failure
+
+## Best Practices
+
+### Commit Message Guidelines
+- **Be Specific**: "fix: resolve null pointer in user service" not "fix bug"
+- **Use Present Tense**: "add feature" not "added feature"
+- **Limit Scope**: One logical change per commit
+- **Reference Issues**: Include issue numbers when relevant
+
+### Submodule Best Practices
+- **Commit Order**: Always commit submodules first
+- **Test Together**: Ensure main + submodules work together
+- **Document Dependencies**: Note submodule version requirements
+- **Atomic Updates**: Keep related changes together
+
+### Push Safety
+- **Pull First**: Avoid conflicts by pulling before pushing
+- **Review Changes**: Check diff before committing
+- **Branch Protection**: Never force push to main/master
+- **CI/CD Awareness**: Ensure builds will pass
+
+## AI Message Examples
+
+### Feature Addition
+```
+feat(auth): implement OAuth2 login flow
+
+- Add Google OAuth2 provider
+- Implement token refresh mechanism
+- Add user session management
+```
+
+### Bug Fix
+```
+fix(api): handle null response in user endpoint
+
+- Add null check before parsing response
+- Return appropriate error status
+- Add unit test for edge case
+```
+
+### Refactoring
+```
+refactor(database): optimize query performance
+
+- Replace N+1 queries with single join
+- Add database indexes
+- Reduce query execution time by 60%
+```
+
+## Integration Examples
+
+### With Pre-commit Hooks
+```bash
+# .git/hooks/pre-commit
+/m-commit-push --no-push --validate-only
+```
+
+### In CI/CD Pipeline
+```bash
+# Auto-commit build artifacts
+/m-commit-push "build: update distribution files" \
+  --files "dist/*" --no-verify
+```
+
+### With Other Commands
+```bash
+# Complete workflow
+/m-test-all
+/m-commit-push
+/m-pr-create
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**"Nothing to commit"**
+- Check: `git status`
+- Stage files: `git add .`
+- Use: `--all` flag
+
+**"Failed to push"**
+- Pull latest: `git pull`
+- Check remote: `git remote -v`
+- Verify credentials: `git config --list`
+
+**"Submodule errors"**
+- Update submodules: `git submodule update --init`
+- Check status: `git submodule status`
+- Fix references: `git submodule sync`
+
+**"AI generation failed"**
+- Check API key: `echo $GEMINI_API_KEY`
+- Use fallback: `--no-ai` flag
+- Provide manual message
+
 ## AI Integration Strategy
 
 ### MCP Gemini Agent Integration

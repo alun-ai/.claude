@@ -1,14 +1,141 @@
-# Collaborative Code Debate: Dual-AI Tactical Review
+# Collaborative Code Debate: Advanced Dual-AI Tactical Review
 
 **Review target:** $ARGUMENTS (Default: recent changes or staged files)
 
-**Scope:** Comprehensive code-level analysis using collaborative Gemini-Claude debate process with detailed findings
+**Scope:** Enterprise-grade code-level analysis using collaborative Gemini-Claude debate process with actionable tactical insights
 
 ## Overview
 
-Conducts tactical code review through collaborative debate between Gemini CLI and Claude Code. This dual-AI approach provides comprehensive evaluation of code quality, implementation patterns, security vulnerabilities, and performance considerations through comparative analysis.
+Transforms Claude into a Senior Code Review Specialist collaborating with Gemini AI to conduct tactical code review through sophisticated dual-AI debate process. This approach provides comprehensive evaluation of code quality, implementation patterns, security vulnerabilities, and performance considerations through comparative analysis and expert synthesis.
 
-## Dual-AI Collaboration Strategy
+**Key Benefits:**
+- **Dual-AI Code Intelligence**: Leverage both Gemini and Claude for comprehensive code analysis
+- **Tactical Precision**: Line-by-line code quality assessment with specific recommendations
+- **Security-First Approach**: Advanced vulnerability detection and remediation guidance
+- **Performance Optimization**: Detailed bottleneck analysis and optimization strategies
+- **Collaborative Insights**: Multi-perspective code review for robust quality assurance
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-debate-code --help
+```
+
+## Core Features
+
+### 1. Advanced Dual-AI Code Analysis
+- **Gemini CLI Tactical Analysis**: Deep code pattern recognition and technical assessment
+- **Claude Code Review**: Critical evaluation and alternative implementation suggestions
+- **Collaborative Synthesis**: Integrated findings with consensus-based recommendations
+- **Cross-Validation**: Multiple AI perspectives for comprehensive code quality assurance
+
+### 2. Comprehensive Code Quality Assessment
+- **Implementation Pattern Analysis**: Design pattern usage and best practices compliance
+- **Algorithm Efficiency Evaluation**: Performance bottleneck identification and optimization
+- **Error Handling Review**: Robustness assessment and edge case coverage
+- **Code Maintainability**: Readability, organization, and long-term sustainability analysis
+
+### 3. Advanced Security Analysis
+- **Vulnerability Detection**: Comprehensive security flaw identification
+- **Input Validation Review**: Data sanitization and validation assessment
+- **Authentication Security**: Access control and authorization pattern analysis
+- **OWASP Compliance**: Industry standard security framework validation
+
+### 4. Performance and Optimization Focus
+- **Bottleneck Identification**: Resource usage and performance constraint analysis
+- **Algorithm Optimization**: Time and space complexity improvements
+- **Database Query Efficiency**: Query optimization and database interaction review
+- **Caching Strategy**: Performance enhancement through intelligent caching
+
+## Usage Examples
+
+### Basic Code Review
+```bash
+# Review staged changes
+/m-debate-code
+
+# Review specific file or directory
+/m-debate-code "src/auth/oauth.ts"
+
+# Review recent commits
+/m-debate-code "last 3 commits"
+```
+
+### Focused Analysis
+```bash
+# Security-focused review
+/m-debate-code --security-focus
+
+# Performance optimization review
+/m-debate-code --performance-focus
+
+# Code quality and maintainability review
+/m-debate-code --quality-focus
+```
+
+### Advanced Options
+```bash
+# Include comprehensive documentation analysis
+/m-debate-code --include-docs
+
+# Generate executable improvement plan
+/m-debate-code --action-plan
+
+# Deep technical analysis with benchmarks
+/m-debate-code --deep-analysis
+```
+
+## Command Options
+
+```yaml
+review_scope:
+  staged_changes: "Review currently staged git changes (default)"
+  recent_commits: "Analyze recent commit history"
+  specific_files: "Focus on particular files or directories"
+  modified_files: "Review all modified files since last commit"
+  full_diff: "Comprehensive analysis of all changes"
+
+analysis_focus:
+  --security-focus: "Emphasize security vulnerability detection"
+  --performance-focus: "Prioritize performance optimization opportunities"
+  --quality-focus: "Focus on code quality and maintainability"
+  --compliance-focus: "Ensure coding standards and best practices compliance"
+  --testing-focus: "Analyze test coverage and test quality"
+
+review_depth:
+  --quick: "Fast review focusing on critical issues"
+  --standard: "Comprehensive code analysis (default)"
+  --deep-analysis: "Detailed line-by-line analysis with benchmarks"
+  --enterprise: "Enterprise-grade review with compliance checks"
+
+ai_collaboration_mode:
+  --gemini-lead: "Gemini performs primary analysis with Claude review"
+  --claude-lead: "Claude leads analysis with Gemini validation"
+  --balanced: "Equal collaboration between both AIs (default)"
+  --consensus-focus: "Emphasize areas of agreement and synthesis"
+
+severity_filtering:
+  --critical-only: "Show only critical security and functionality issues"
+  --high-and-above: "Include high and critical severity issues"
+  --all-issues: "Show all identified issues (default)"
+  --with-suggestions: "Include improvement suggestions for all levels"
+
+output_format:
+  --full-report: "Comprehensive debate document (default)"
+  --summary: "Executive summary with key findings"
+  --action-plan: "Implementation-focused improvement roadmap"
+  --technical-details: "Detailed technical analysis with code examples"
+
+code_languages:
+  --typescript: "TypeScript-specific analysis patterns"
+  --javascript: "JavaScript best practices and patterns"
+  --react: "React component and hook analysis"
+  --node: "Node.js backend and API analysis"
+  --sql: "Database query and schema analysis"
+```
+
+## Advanced Dual-AI Collaboration Framework
 
 ### Phase 1: Gemini CLI Tactical Analysis
 **Primary Code Analysis Engine**: Gemini CLI performs detailed code-level assessment
@@ -71,30 +198,42 @@ fi
 ### Phase 3: Collaborative Synthesis
 **Final Output**: Generate comprehensive debate document in `/docs/code-debate-YYYYMMDD.md`
 
-## Execution Steps
+## Execution Framework
 
-1. **Environment Setup**
-   - Verify both Gemini CLI and Claude Code availability
-   - Determine review target (staged changes, recent commits, specific files)
-   - Create timestamped output file in `/docs/`
+### 1. **Strategic Setup and Target Analysis**
+- **AI Environment Validation**: Verify Gemini CLI and Claude Code integration status
+- **Review Scope Definition**: Determine analysis target (staged, commits, files, or custom scope)
+- **Code Context Assessment**: Analyze project structure, language stack, and framework patterns
+- **Documentation Infrastructure**: Create timestamped analysis output in `/docs/`
+- **Quality Standards Alignment**: Establish project-specific coding standards and requirements
 
-2. **Gemini Tactical Analysis**
-   - Line-by-line code quality assessment
-   - Security vulnerability identification
-   - Performance optimization analysis
-   - Best practices compliance review
+### 2. **Gemini CLI Comprehensive Tactical Analysis**
+- **Line-by-Line Quality Assessment**: Detailed code implementation pattern analysis
+- **Security Vulnerability Scanning**: Comprehensive threat detection and risk assessment
+- **Performance Bottleneck Identification**: Algorithm efficiency and resource optimization analysis
+- **Best Practices Compliance**: Framework-specific standards and convention validation
+- **Test Coverage Evaluation**: Testing adequacy and quality assessment
 
-3. **Claude Review and Debate**
-   - Critical review of Gemini's findings
-   - Alternative implementation suggestions
-   - Additional security considerations
-   - Practical implementation feedback
+### 3. **Claude Code Critical Review and Alternative Analysis**
+- **Analytical Validation**: Critical assessment of Gemini's findings and methodology
+- **Implementation Alternative Development**: Present different coding approaches and solutions
+- **Security Deep-Dive**: Additional security considerations and threat modeling
+- **Practical Implementation Assessment**: Real-world applicability and maintainability review
+- **Business Logic Validation**: Ensure code aligns with business requirements and constraints
 
-4. **Synthesis and Documentation**
-   - Create comprehensive debate document
-   - Prioritize findings by severity and impact
-   - Generate actionable improvement roadmap
-   - Include code examples and fixes
+### 4. **Collaborative Synthesis and Consensus Building**
+- **Finding Correlation**: Identify areas of AI consensus and conflicting recommendations
+- **Priority Matrix Development**: Rank issues by severity, impact, and implementation complexity
+- **Solution Integration**: Synthesize best recommendations from both AI perspectives
+- **Risk Assessment**: Evaluate implementation risks and provide mitigation strategies
+- **Implementation Roadmap**: Create step-by-step improvement plan with timelines
+
+### 5. **Comprehensive Documentation and Action Planning**
+- **Technical Report Generation**: Detailed findings with code examples and explanations
+- **Executive Summary Creation**: High-level overview for stakeholder communication
+- **Implementation Guide Development**: Practical steps for addressing identified issues
+- **Quality Metrics Tracking**: Establish baselines and improvement measurement criteria
+- **Continuous Improvement Framework**: Setup for ongoing code quality monitoring
 
 ## Debate Framework
 
@@ -248,19 +387,97 @@ severity_classification:
 }
 ```
 
+## Integration Features
+
+### Development Environment Integration
+- **IDE Integration**: Seamless integration with VS Code, JetBrains, and other popular IDEs
+- **Git Workflow Integration**: Automatic analysis of pull requests and commit workflows
+- **CI/CD Pipeline Integration**: Automated code review as part of deployment pipelines
+- **Code Review Platform Integration**: GitHub, GitLab, and Bitbucket review enhancement
+
+### Quality Assurance and Monitoring
+- **Continuous Quality Tracking**: Long-term code quality trend analysis and improvement monitoring
+- **Regression Detection**: Automated identification of quality regressions in new changes
+- **Baseline Establishment**: Code quality baseline creation and improvement measurement
+- **Team Performance Analytics**: Team coding pattern analysis and improvement recommendations
+
+### Enterprise-Grade Features
+- **Compliance Reporting**: Automated compliance validation with industry standards
+- **Security Policy Enforcement**: Custom security rule implementation and validation
+- **Multi-Project Analysis**: Cross-project code quality comparison and standardization
+- **Audit Trail**: Comprehensive review history and decision tracking
+
+## Best Practices
+
+### Code Review Excellence
+1. **Comprehensive Coverage**: Ensure all critical code paths are analyzed
+2. **Security Priority**: Always prioritize security issues over style concerns
+3. **Performance Awareness**: Consider long-term performance implications
+4. **Maintainability Focus**: Emphasize code readability and maintainability
+
+### Dual-AI Collaboration
+1. **Complementary Analysis**: Leverage each AI's unique strengths for comprehensive review
+2. **Critical Evaluation**: Use AI disagreement to identify complex or ambiguous issues
+3. **Consensus Building**: Focus on synthesizing the best insights from both perspectives
+4. **Continuous Learning**: Apply collaborative insights to improve future code reviews
+
+### Implementation Strategy
+1. **Priority-Based Fixing**: Address critical and high-severity issues first
+2. **Incremental Improvement**: Implement fixes gradually to minimize disruption
+3. **Testing Validation**: Ensure all fixes are properly tested and validated
+4. **Documentation**: Document changes and improvements for team knowledge sharing
+
+### Team Collaboration
+1. **Shared Standards**: Establish and maintain consistent coding standards across team
+2. **Knowledge Transfer**: Use review findings for team learning and skill development
+3. **Process Integration**: Integrate code debate into regular development workflows
+4. **Feedback Loop**: Create feedback mechanisms for continuous process improvement
+
 ## Advanced Features
 
-### Multi-Language Support
-- **Language-Specific Analysis**: Tailored review criteria for different programming languages
-- **Framework Awareness**: Framework-specific best practices and patterns
-- **Ecosystem Integration**: Language-specific tooling and conventions
+### Multi-Language Intelligence
+- **Language-Specific Analysis**: Tailored review criteria for TypeScript, JavaScript, Python, Java, Go
+- **Framework-Aware Review**: Next.js, React, Node.js, Express-specific best practices
+- **Ecosystem Integration**: Language-specific tooling, package managers, and conventions
+- **Cross-Language Patterns**: Identify patterns and anti-patterns across different languages
 
-### Continuous Code Quality
-- **Baseline Tracking**: Track code quality improvements over time
-- **Regression Detection**: Identify quality regressions in new changes
-- **Team Learning**: Extract patterns for team coding standards
+### Intelligent Quality Evolution
+- **Historical Analysis**: Track code quality evolution and improvement trends over time
+- **Pattern Recognition**: Learn from past reviews to improve future analysis accuracy
+- **Predictive Insights**: Forecast potential quality issues based on current trends
+- **Team Learning**: Extract and share coding patterns for team standardization
 
-### Integration Capabilities
-- **IDE Integration**: Display findings directly in development environment
-- **CI/CD Pipeline**: Automated code debate as part of build process
-- **Code Review Tools**: Integration with GitHub/GitLab review systems
+### Enterprise Integration Capabilities
+- **Development Tool Integration**: Native integration with popular development environments
+- **Automated Pipeline Integration**: Seamless CI/CD pipeline integration with quality gates
+- **Review Platform Enhancement**: Advanced integration with GitHub, GitLab, and Azure DevOps
+- **Compliance and Audit**: Enterprise-grade compliance reporting and audit trail maintenance
+
+## Troubleshooting Guide
+
+### Common Code Review Challenges
+
+**Large Codebase Analysis**:
+- Break review into manageable chunks focused on critical areas
+- Use incremental analysis to focus on recent changes and hotspots
+- Prioritize high-impact areas like security-critical and performance-sensitive code
+
+**Conflicting AI Recommendations**:
+- Analyze the context and reasoning behind each recommendation
+- Consider project-specific constraints and requirements
+- Test proposed solutions when recommendations conflict significantly
+
+**Performance Impact Concerns**:
+- Focus on critical path optimizations first
+- Validate performance improvements with benchmarks
+- Consider trade-offs between performance and maintainability
+
+**Security False Positives**:
+- Validate security findings with additional testing
+- Consider context-specific security requirements
+- Document accepted risks with proper justification
+
+**Implementation Complexity**:
+- Break complex improvements into smaller, manageable tasks
+- Prioritize fixes by impact and implementation difficulty
+- Create detailed implementation plans with clear steps and validation criteria

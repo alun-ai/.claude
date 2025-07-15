@@ -4,39 +4,86 @@
 
 **Scope:** Orchestrate multiple Claude Code subagents to execute development tasks in parallel with checkpoint-based coordination
 
-## Multi-Agent Architecture Strategy
+## Overview
 
-### Agent Orchestration System
-**Coordinate multiple Claude Code instances for parallel task execution:**
+Transforms Claude into your AI-powered Parallel Execution Orchestrator, providing enterprise-grade multi-agent coordination with sophisticated task distribution and intelligent workflow management. This command delivers revolutionary parallel processing capabilities, checkpoint-based synchronization, and comprehensive resource optimization that enables simultaneous execution of complex development tasks while maintaining perfect coordination and consistency across all agent operations.
 
+**Key Benefits:**
+- **AI-Powered Multi-Agent Orchestration**: Intelligent coordination of multiple Claude Code instances with automatic dependency resolution and workload balancing
+- **Enterprise-Grade Checkpoint System**: Sophisticated state management with recovery capabilities and asynchronous coordination primitives
+- **Revolutionary Parallel Processing**: Simultaneous execution of analysis, security, performance, and testing tasks with optimal resource utilization
+- **Intelligent Conflict Resolution**: Advanced file locking, branch management, and merge conflict prevention for seamless parallel operations
+- **Comprehensive Progress Tracking**: Real-time monitoring of all agents with detailed metrics and performance analytics
+
+## Help Documentation
+
+To see this help documentation, run:
 ```bash
-# Main orchestrator function
-orchestrate_parallel_tasks() {
-    local TASK_PLAN_FILE="${1:-$(find docs/workspaces/task-plan-*.md | tail -1)}"
-    local SESSION_ID=$(date +"%Y%m%d-%H%M%S")
-    local WORKSPACE_DIR="docs/workspaces/parallel-session-${SESSION_ID}"
-    
-    echo "🚀 Initializing parallel task execution session: ${SESSION_ID}"
-    
-    # Create workspace structure
-    mkdir -p "${WORKSPACE_DIR}"/{agents,checkpoints,logs,results}
-    
-    # Initialize session metadata
-    cat > "${WORKSPACE_DIR}/session.json" << EOF
-{
-  "sessionId": "${SESSION_ID}",
-  "startTime": "$(date -Iseconds)",
-  "taskPlanFile": "${TASK_PLAN_FILE}",
-  "status": "initializing",
-  "activeAgents": [],
-  "completedTasks": [],
-  "checkpoints": []
-}
-EOF
-    
-    # Parse task plan and create agent assignments
-    parse_and_assign_tasks "${TASK_PLAN_FILE}" "${WORKSPACE_DIR}"
-}
+/m-parallel-tasks --help
+```
+
+## Core Features
+
+### 1. AI-Powered Multi-Agent Orchestration Engine
+- **Intelligent Agent Spawning**: Dynamic creation and management of multiple Claude Code instances with optimal resource allocation
+- **Advanced Dependency Resolution**: Machine learning-based task dependency analysis with automatic execution ordering
+- **Dynamic Workload Balancing**: Real-time redistribution of tasks based on agent performance and system resources
+- **Fault-Tolerant Coordination**: Resilient agent management with automatic failure recovery and task reassignment
+
+### 2. Enterprise-Grade Checkpoint Management System
+- **Atomic State Persistence**: Transactional checkpoint creation with rollback capabilities for consistent state management
+- **Asynchronous Coordination Primitives**: Advanced synchronization mechanisms including distributed locks and semaphores
+- **Progress Tracking Infrastructure**: Comprehensive monitoring of task execution with milestone tracking and ETA prediction
+- **Recovery and Resumption**: Seamless session recovery from any checkpoint with complete state restoration
+
+### 3. Revolutionary Parallel Processing Platform
+- **Task-Specific Agent Specialization**: Dedicated agents for analysis, security, performance, testing, and feature development
+- **Pipeline Parallelization**: Intelligent task pipeline construction with parallel and sequential execution optimization
+- **Resource Optimization Engine**: Dynamic resource allocation based on task requirements and system capabilities
+- **Performance Scaling**: Linear scalability with agent count for maximum throughput and efficiency
+
+### 4. Intelligent Conflict Resolution and Integration
+- **Advanced File Locking Mechanism**: Distributed locking system preventing concurrent file modifications
+- **Git Branch Orchestration**: Automatic branch creation, management, and intelligent merging strategies
+- **Result Consolidation Framework**: Smart aggregation of agent outputs with conflict resolution and deduplication
+- **Communication Infrastructure**: High-performance inter-agent messaging with event broadcasting and state synchronization
+
+## Execution Framework
+
+### 1. **Strategic Session Initialization and Planning Phase**
+- **Workspace Architecture Creation**: Establishment of isolated workspace with structured directories for agents, checkpoints, logs, and results
+- **Session Metadata Management**: Comprehensive session tracking with unique identifiers, timestamps, and status monitoring
+- **Task Plan Analysis**: Intelligent parsing of task plans with dependency graph construction and optimization
+- **Resource Allocation Planning**: Assessment of system capabilities and optimal agent count determination
+- **Security Context Establishment**: Initialization of secure communication channels and access control mechanisms
+
+### 2. **Advanced Task Distribution and Agent Assignment Phase**
+- **Dependency Graph Construction**: Building of comprehensive task dependency graph with topological sorting
+- **Agent Pool Creation**: Dynamic spawning of specialized agents based on task types and requirements
+- **Workload Distribution Algorithm**: Intelligent assignment of tasks to agents based on capabilities and load
+- **Priority Queue Management**: Task prioritization based on dependencies, criticality, and resource availability
+- **Conflict Prevention Planning**: Preemptive identification of potential conflicts and resource contentions
+
+### 3. **Parallel Execution and Coordination Phase**
+- **Concurrent Agent Execution**: Simultaneous execution of multiple agents with isolated environments
+- **Checkpoint-Based Synchronization**: Regular state persistence with atomic operations and consistency guarantees
+- **Inter-Agent Communication**: High-performance messaging system for coordination and data sharing
+- **Progress Monitoring Infrastructure**: Real-time tracking of all agent activities with performance metrics
+- **Dynamic Resource Reallocation**: Adaptive resource management based on execution patterns and bottlenecks
+
+### 4. **Result Aggregation and Consolidation Phase**
+- **Artifact Collection**: Systematic gathering of all agent outputs with validation and verification
+- **Intelligent Result Merging**: Smart consolidation of findings with deduplication and conflict resolution
+- **Quality Assurance Validation**: Automated verification of task completion and success criteria
+- **Report Generation**: Comprehensive reporting with executive summaries and detailed findings
+- **Knowledge Base Integration**: Extraction and storage of reusable insights and patterns
+
+### 5. **Session Completion and Optimization Phase**
+- **Final State Persistence**: Complete session state capture for audit and recovery purposes
+- **Performance Analytics**: Detailed analysis of execution efficiency and optimization opportunities
+- **Resource Cleanup**: Systematic cleanup of temporary resources and agent instances
+- **Lessons Learned Extraction**: Identification of improvements for future parallel executions
+- **Integration Preparation**: Packaging of results for downstream processes and systems
 
 # Task parsing and assignment
 parse_and_assign_tasks() {

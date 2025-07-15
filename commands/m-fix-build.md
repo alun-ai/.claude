@@ -4,6 +4,131 @@
 
 **Scope:** Comprehensive build error detection and fixing across local development, production builds, and CircleCI environments
 
+## Overview
+
+Transforms Claude into an expert Build Engineer with comprehensive knowledge of Next.js, TypeScript, Node.js, and CI/CD systems. This command provides intelligent build error detection, analysis, and fixing across local development, production builds, and CircleCI environments using advanced MCP integrations.
+
+**Key Benefits:**
+- **Multi-Environment Support**: Local dev, production, and CI/CD build fixing
+- **AI-Powered Analysis**: Intelligent error analysis with Gemini AI integration
+- **CircleCI Integration**: Advanced CI/CD build failure analysis via MCP agent
+- **Progressive Fixing**: Systematic approach from quick fixes to deep analysis
+- **Comprehensive Verification**: Multi-level testing to ensure fixes work
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-fix-build --help
+```
+
+## Core Features
+
+### 1. Intelligent Build Detection
+- **Environment Recognition**: Auto-detect local, production, or CI build context
+- **Tool Identification**: Recognize Next.js, npm, yarn, TypeScript build systems
+- **Error Classification**: Categorize build errors by type and severity
+- **Context Analysis**: Understand project structure and build requirements
+
+### 2. Multi-Platform Error Analysis
+- **Local Development**: Next.js dev server, hot reload, and dependency issues
+- **Production Builds**: Optimization, bundling, and deployment preparation
+- **CircleCI Integration**: CI/CD pipeline failures and environment issues
+- **Cross-Platform**: Consistent error patterns across different environments
+
+### 3. Advanced MCP Integration
+- **CircleCI MCP Agent**: Real-time CI build failure logs and analysis
+- **Gemini AI Analysis**: Intelligent error interpretation and fix suggestions
+- **Filesystem Operations**: Automated file system cleanup and optimization
+- **Configuration Validation**: YAML and JSON configuration file analysis
+
+### 4. Progressive Fix Strategy
+- **Quick Fixes**: Immediate cache clearing and dependency refresh
+- **Configuration Fixes**: Package.json, tsconfig.json, and build config updates
+- **Dependency Management**: Version conflicts and compatibility resolution
+- **Deep Analysis**: AI-powered comprehensive error analysis and solutions
+
+## Usage Examples
+
+### Basic Build Fixing
+```bash
+# Auto-detect and fix build issues
+/m-fix-build
+
+# Fix specific build type
+/m-fix-build local
+/m-fix-build production
+/m-fix-build circleci
+
+# Force full clean and rebuild
+/m-fix-build --full-clean
+```
+
+### Environment-Specific Fixes
+```bash
+# Local development issues
+/m-fix-build --dev-server
+
+# Production build optimization
+/m-fix-build --production --optimize
+
+# CircleCI pipeline fixes
+/m-fix-build --ci --config-fix
+```
+
+### Advanced Options
+```bash
+# Skip certain fix types
+/m-fix-build --skip-cache-clear
+/m-fix-build --skip-dependencies
+
+# Focus on specific error types
+/m-fix-build --typescript-only
+/m-fix-build --eslint-only
+/m-fix-build --memory-issues
+```
+
+## Command Options
+
+```yaml
+build_scope:
+  local: "Fix local development server issues"
+  production: "Fix production build problems"
+  circleci: "Fix CircleCI pipeline failures"
+  all: "Comprehensive fix across all environments (default)"
+
+fix_intensity:
+  --quick: "Quick fixes only (cache, restart)"
+  --standard: "Standard fix process (default)"
+  --deep: "Deep analysis with AI and comprehensive fixes"
+  --full-clean: "Complete environment reset and rebuild"
+
+error_focus:
+  --typescript-only: "Focus on TypeScript compilation errors"
+  --eslint-only: "Focus on linting and code quality issues"
+  --dependency-only: "Focus on package and dependency conflicts"
+  --memory-issues: "Focus on memory and performance problems"
+  --config-only: "Focus on configuration file issues"
+
+skip_options:
+  --skip-cache-clear: "Skip cache clearing operations"
+  --skip-dependencies: "Skip dependency reinstallation"
+  --skip-verification: "Skip post-fix verification tests"
+  --skip-ai-analysis: "Skip AI-powered error analysis"
+
+ci_options:
+  --config-fix: "Fix CircleCI configuration issues"
+  --env-vars: "Check and fix environment variable issues"
+  --flaky-tests: "Analyze and fix flaky test patterns"
+  --pipeline-optimize: "Optimize CI pipeline performance"
+
+output_control:
+  --verbose: "Detailed progress and error information"
+  --quiet: "Minimal output, focus on results"
+  --report-only: "Generate analysis report without fixes"
+  --json-output: "Output results in JSON format"
+```
+
 ## Build Error Detection Strategy
 
 ### Automatic Build Context Detection

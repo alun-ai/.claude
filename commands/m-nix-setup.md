@@ -1,47 +1,238 @@
-# Shared Nix Development Environment Setup
+# Shared Nix Development Environment Setup: Unified Development Infrastructure
 
-Set up the shared Nix-based development environment that works across all projects with intelligent project detection, performance optimization, security scanning, and advanced command management.
+**Mode:** $ARGUMENTS (Default: status check and guided setup)
 
-## Usage
+**Scope:** Comprehensive Nix-based development environment with intelligent project detection, performance optimization, and cross-project tooling
 
-```
-/m-nix-setup [mode]
-```
+## Overview
 
-### Parameters
+Transforms Claude into a Senior DevOps Engineer specializing in Nix ecosystem management and development environment optimization. This command creates and manages a unified, shared development environment that works seamlessly across all projects while providing intelligent project detection, performance optimization, security scanning, and advanced command management.
 
-- `mode` (optional): Setup mode
-  - `install` - Install Nix and configure shared environment
-  - `init` - Initialize project with shared Nix setup
-  - `update` - Update shared Nix configuration
-  - `status` - Check current Nix environment status
-  - `link` - Link current project to shared configuration
+**Key Benefits:**
+- **Unified Environment**: One Nix environment serves all projects with consistent tooling
+- **Intelligent Detection**: Automatically detects and configures for multiple programming languages
+- **Performance Optimization**: Parallel processing, intelligent caching, and incremental builds
+- **Security Integration**: Automated vulnerability scanning with comprehensive security tools
+- **Cross-Project Benefits**: Shared caching, unified metrics, and consistent development experience
 
-## Features
+## Help Documentation
 
-- **Shared Configuration**: One Nix environment serves all projects
-- **Smart Project Detection**: Automatically detects and configures for Node.js, Python, Rust, Go, Java, Docker
-- **Performance Optimization**: Parallel processing, intelligent caching, incremental builds
-- **Security Integration**: Automated vulnerability scanning with multiple tools
-- **Command Intelligence**: AI-powered command suggestions and metrics
-- **Workflow Automation**: Predefined development workflows
-- **Comprehensive Testing**: Automated configuration validation and monitoring
-
-## Examples
-
+To see this help documentation, run:
 ```bash
-# Install shared Nix environment (run once)
+/m-nix-setup --help
+```
+
+## Core Features
+
+### 1. Unified Development Environment
+- **Shared Configuration**: Single Nix environment configuration for all projects
+- **Automatic Project Linking**: Seamless integration with existing and new projects
+- **Consistent Tooling**: Same development tools and versions across all projects
+- **Environment Isolation**: Project-specific variables within shared environment
+
+### 2. Intelligent Multi-Language Support
+- **Smart Project Detection**: Automatically detects Node.js, Python, Rust, Go, Java, Docker projects
+- **Language-Specific Tooling**: Optimized tool selection for each programming language
+- **Version Management**: Intelligent version selection and compatibility management
+- **Development Workflow Integration**: Language-specific development and testing workflows
+
+### 3. Advanced Performance Optimization
+- **Intelligent Caching**: Shared dependency caching across all projects
+- **Parallel Processing**: Optimized build and test execution
+- **Incremental Builds**: Smart build optimization and dependency tracking
+- **Resource Management**: Efficient memory and CPU usage across projects
+
+### 4. Comprehensive Security and Quality
+- **Automated Security Scanning**: Built-in vulnerability scanning with multiple tools
+- **Code Quality Tools**: Integrated linting, formatting, and analysis tools
+- **Dependency Auditing**: Continuous monitoring of package vulnerabilities
+- **Security Policy Enforcement**: Consistent security standards across projects
+
+## Usage Examples
+
+### Basic Setup Operations
+```bash
+# Check current status
+/m-nix-setup
+/m-nix-setup status
+
+# Install shared environment (one-time setup)
 /m-nix-setup install
 
 # Link current project to shared environment
 /m-nix-setup link
+```
 
-# Check status from any project
-/m-nix-setup status
+### Environment Management
+```bash
+# Initialize new project with shared setup
+/m-nix-setup init
 
 # Update shared configuration
 /m-nix-setup update
+
+# Validate environment setup
+/m-nix-setup validate
 ```
+
+### Advanced Operations
+```bash
+# Force complete reinstallation
+/m-nix-setup install --force
+
+# Update with latest tools
+/m-nix-setup update --latest
+
+# Diagnostics and troubleshooting
+/m-nix-setup diagnose
+```
+
+## Command Options
+
+```yaml
+setup_modes:
+  install: "Install Nix and configure shared environment"
+  init: "Initialize project with shared Nix setup"
+  update: "Update shared Nix configuration and tools"
+  status: "Check current Nix environment status (default)"
+  link: "Link current project to shared configuration"
+  validate: "Validate environment setup and configuration"
+  diagnose: "Run comprehensive diagnostics"
+  uninstall: "Remove shared environment (with confirmation)"
+
+installation_options:
+  --force: "Force reinstallation even if Nix exists"
+  --minimal: "Install minimal environment only"
+  --full: "Install comprehensive development environment (default)"
+  --custom: "Interactive custom installation"
+  --system-wide: "Install for all users on system"
+  --user-only: "Install for current user only"
+
+update_options:
+  --latest: "Update to latest available tool versions"
+  --security: "Priority updates for security patches"
+  --incremental: "Incremental updates preserving compatibility (default)"
+  --rollback: "Rollback to previous configuration"
+  --sync-projects: "Sync all linked projects after update"
+
+project_options:
+  --auto-detect: "Automatically detect project type and configure (default)"
+  --manual-config: "Manual project configuration"
+  --preserve-existing: "Preserve existing project configuration"
+  --force-override: "Override existing configuration"
+  --template: "Use specific project template"
+
+validation_options:
+  --quick: "Quick validation of essential components"
+  --comprehensive: "Full validation including all tools (default)"
+  --performance: "Performance benchmarking and optimization"
+  --security: "Security configuration validation"
+  --compatibility: "Cross-project compatibility check"
+
+diagnostic_options:
+  --environment: "Environment variable and path diagnostics"
+  --permissions: "File and directory permission checks"
+  --network: "Network connectivity and package access"
+  --integration: "IDE and tool integration diagnostics"
+  --performance: "Performance analysis and bottleneck detection"
+  --all: "Run all diagnostic checks"
+
+shared_environment_options:
+  --cache-optimization: "Optimize shared caching strategies"
+  --resource-monitoring: "Enable resource usage monitoring"
+  --parallel-builds: "Configure parallel build optimization"
+  --security-hardening: "Apply security hardening configurations"
+```
+
+## Execution Framework
+
+### 1. **Environment Assessment and Planning**
+- **System Analysis**: Detect operating system, architecture, and existing tools
+- **Compatibility Check**: Verify system requirements and potential conflicts
+- **Resource Planning**: Assess disk space, network connectivity, and system resources
+- **Security Assessment**: Evaluate security implications and hardening requirements
+
+### 2. **Nix Installation and Configuration**
+- **Package Manager Setup**: Install or update Nix package manager
+- **Channel Configuration**: Configure appropriate Nix channels and repositories
+- **Security Hardening**: Apply security configurations and access controls
+- **Performance Optimization**: Configure parallel builds and caching strategies
+
+### 3. **Shared Environment Creation**
+- **Tool Selection**: Install comprehensive development toolchain
+- **Language Support**: Configure multi-language development environments
+- **Security Tools**: Install vulnerability scanners and security analysis tools
+- **Performance Tools**: Setup monitoring and profiling capabilities
+
+### 4. **Project Integration and Linking**
+- **Project Detection**: Automatically detect project types and requirements
+- **Configuration Generation**: Create project-specific configuration files
+- **Environment Linking**: Link projects to shared Nix environment
+- **Validation Testing**: Test environment activation and tool availability
+
+### 5. **Cross-Project Optimization**
+- **Shared Caching**: Implement intelligent dependency caching
+- **Resource Pooling**: Optimize shared resource utilization
+- **Performance Monitoring**: Setup metrics collection and analysis
+- **Automation Integration**: Connect with existing development workflows
+
+### 6. **Quality Assurance and Validation**
+- **Comprehensive Testing**: Validate all tools and configurations
+- **Performance Benchmarking**: Measure environment performance
+- **Security Validation**: Verify security configurations
+- **Documentation Generation**: Create setup documentation and troubleshooting guides
+
+## Integration Features
+
+### Development Environment Integration
+- **IDE Support**: Seamless integration with VS Code, JetBrains, Vim, and Emacs
+- **Shell Integration**: Enhanced bash, zsh, and fish shell support
+- **Editor Plugins**: Automatic configuration for popular editor plugins
+- **Debugger Support**: Integrated debugging tools for multiple languages
+
+### CI/CD Pipeline Integration
+- **GitHub Actions**: Pre-configured workflows for Nix environments
+- **CircleCI Integration**: Optimized CircleCI configurations
+- **Docker Compatibility**: Container-based development support
+- **Build Optimization**: Cached builds across CI/CD pipelines
+
+### Team Collaboration Features
+- **Environment Consistency**: Identical environments across team members
+- **Shared Tool Versions**: Consistent tool versions and configurations
+- **Collaborative Caching**: Team-wide dependency caching
+- **Knowledge Sharing**: Shared documentation and best practices
+
+### Security and Compliance
+- **Vulnerability Scanning**: Automated security scanning integration
+- **Compliance Checking**: Industry standard compliance validation
+- **Access Control**: Role-based access to development tools
+- **Audit Logging**: Comprehensive environment usage logging
+
+## Best Practices
+
+### Environment Management
+1. **Regular Updates**: Update shared environment weekly or bi-weekly
+2. **Validation Testing**: Test environment after updates across all projects
+3. **Backup Strategies**: Maintain rollback capabilities for environment changes
+4. **Performance Monitoring**: Track environment performance and resource usage
+
+### Project Integration
+1. **Consistent Linking**: Ensure all team projects use shared environment
+2. **Custom Overrides**: Use project-specific overrides sparingly and document them
+3. **Environment Variables**: Manage project-specific variables properly
+4. **Dependency Management**: Leverage shared dependencies while maintaining project isolation
+
+### Team Collaboration
+1. **Environment Standards**: Establish team standards for environment configuration
+2. **Documentation**: Maintain current documentation for environment setup
+3. **Training**: Ensure team members understand Nix concepts and workflows
+4. **Troubleshooting**: Develop team troubleshooting procedures and knowledge base
+
+### Security and Maintenance
+1. **Security Updates**: Prioritize security patches in environment updates
+2. **Access Control**: Implement proper access controls for shared configurations
+3. **Audit Trails**: Maintain logs of environment changes and access
+4. **Compliance**: Ensure environment meets organizational security requirements
 
 ## Shared Architecture
 

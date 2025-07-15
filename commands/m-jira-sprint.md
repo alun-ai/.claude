@@ -6,53 +6,164 @@
 
 ## Overview
 
-Provides comprehensive sprint management capabilities integrated with Jira workflows. Enables effective sprint planning, real-time execution monitoring, capacity management, and retrospective analysis to improve team performance and delivery predictability.
+Transforms Claude into your AI-powered Agile Sprint Master, providing enterprise-grade sprint management capabilities seamlessly integrated with Jira workflows. This command enables intelligent sprint planning, real-time execution monitoring, advanced capacity management, and data-driven retrospective analysis to dramatically improve team performance, delivery predictability, and agile maturity.
+
+**Key Benefits:**
+- **Intelligent Sprint Planning**: AI-powered capacity planning with velocity prediction and risk assessment
+- **Real-Time Sprint Intelligence**: Advanced monitoring with predictive analytics and early warning systems
+- **Team Performance Optimization**: Data-driven insights for workload balancing and skill-based assignments
+- **Agile Ceremony Facilitation**: Structured guidance for sprint planning, standups, reviews, and retrospectives
+- **Continuous Improvement Analytics**: Historical analysis with actionable recommendations for sprint optimization
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-sprint --help
+```
 
 ## Core Features
 
-### Intelligent Sprint Planning
-- **Capacity Planning**: Calculate team capacity based on availability and historical velocity
-- **Story Estimation**: Facilitate story point estimation and planning poker sessions
-- **Dependency Management**: Identify and resolve inter-sprint dependencies
-- **Risk Assessment**: Evaluate sprint risks and mitigation strategies
+### 1. AI-Powered Sprint Planning Intelligence
+- **Advanced Capacity Planning**: Machine learning-based capacity calculation using historical velocity, availability, and productivity patterns
+- **Intelligent Story Estimation**: AI-assisted story point estimation with complexity analysis and historical comparison
+- **Dependency Resolution**: Automated identification and optimization of inter-sprint dependencies and critical path analysis
+- **Risk Assessment and Mitigation**: Comprehensive sprint risk evaluation with predictive modeling and automated mitigation strategies
 
-### Real-time Sprint Monitoring
-- **Burndown Tracking**: Monitor sprint progress with advanced burndown charts
-- **Velocity Analysis**: Track team velocity trends and patterns
-- **Impediment Management**: Identify and track sprint impediments
-- **Quality Metrics**: Monitor bug rates and quality indicators
+### 2. Real-Time Sprint Execution Intelligence
+- **Predictive Burndown Analytics**: Advanced burndown tracking with predictive completion analysis and early warning systems
+- **Velocity Trend Analysis**: Multi-dimensional velocity analysis with pattern recognition and performance optimization insights
+- **Intelligent Impediment Management**: Automated impediment detection, categorization, and escalation with resolution tracking
+- **Quality Metrics Dashboard**: Real-time quality monitoring with defect prediction and quality gate enforcement
 
-### Team Collaboration
-- **Sprint Ceremonies**: Facilitate sprint planning, daily standups, and retrospectives
-- **Workload Balancing**: Distribute work evenly across team members
-- **Skill-based Assignment**: Match tasks to team member expertise
-- **Cross-functional Coordination**: Coordinate between development, QA, and design
+### 3. Team Performance Optimization Engine
+- **Dynamic Workload Balancing**: Real-time work distribution optimization based on capacity, skills, and performance metrics
+- **Skill-Based Task Assignment**: AI-powered matching of tasks to team member expertise with skill development recommendations
+- **Cross-Functional Coordination**: Intelligent coordination between development, QA, design, and product teams
+- **Performance Analytics**: Individual and team performance insights with personalized improvement recommendations
 
-## Execution Steps
+### 4. Agile Ceremony Orchestration
+- **Sprint Planning Facilitation**: Structured guidance for effective sprint planning with AI-powered recommendations
+- **Daily Standup Intelligence**: Smart standup facilitation with impediment detection and collaboration optimization
+- **Sprint Review Optimization**: Comprehensive review preparation with stakeholder engagement and feedback analysis
+- **Retrospective Analytics**: Data-driven retrospective insights with actionable improvement plans and trend analysis
 
-1. **Sprint Planning Preparation**
-   - Analyze team capacity and availability
-   - Review backlog and prioritize stories
-   - Identify dependencies and blockers
-   - Prepare estimation materials and tools
+## Usage Examples
 
-2. **Sprint Planning Execution**
-   - Facilitate story estimation sessions
-   - Plan sprint commitment and goals
-   - Assign initial story ownership
-   - Set up sprint tracking and monitoring
+### Basic Sprint Management
+```bash
+# Manage current sprint
+/m-jira-sprint
 
-3. **Sprint Execution Monitoring**
-   - Track daily progress and burndown
-   - Monitor impediments and blockers
-   - Facilitate daily standup meetings
-   - Adjust plans based on progress
+# Manage specific sprint
+/m-jira-sprint "Sprint 24"
 
-4. **Sprint Completion and Review**
-   - Conduct sprint review and demonstration
-   - Analyze sprint metrics and outcomes
-   - Gather feedback and lessons learned
-   - Plan improvements for next sprint
+# Interactive sprint planning and management
+/m-jira-sprint --interactive
+```
+
+### Sprint Planning Focus
+```bash
+# Sprint planning preparation
+/m-jira-sprint --planning-prep
+
+# Capacity planning and estimation
+/m-jira-sprint --capacity-planning
+
+# Risk assessment and mitigation
+/m-jira-sprint --risk-assessment
+```
+
+### Advanced Options
+```bash
+# Comprehensive sprint analytics
+/m-jira-sprint --analytics
+
+# Team performance optimization
+/m-jira-sprint --team-optimization
+
+# Sprint retrospective analysis
+/m-jira-sprint --retrospective
+```
+
+## Command Options
+
+```yaml
+sprint_management_scope:
+  current_sprint: "Manage current active sprint (default)"
+  specific_sprint: "Manage specific sprint by name or ID"
+  sprint_planning: "Focus on sprint planning activities"
+  sprint_execution: "Active sprint monitoring and management"
+  sprint_retrospective: "Sprint completion and retrospective analysis"
+
+analysis_depth:
+  --quick: "Essential sprint status and critical metrics"
+  --standard: "Comprehensive sprint management with full tracking (default)"
+  --analytics: "Advanced analytics with predictive insights and optimization"
+  --enterprise: "Enterprise-grade sprint management with full team analytics"
+
+sprint_focus:
+  --planning-prep: "Sprint planning preparation and backlog readiness"
+  --capacity-planning: "Team capacity analysis and workload optimization"
+  --execution-monitoring: "Real-time sprint progress and impediment tracking"
+  --team-optimization: "Team performance analysis and skill-based optimization"
+  --risk-assessment: "Sprint risk analysis and mitigation planning"
+
+ceremony_facilitation:
+  --sprint-planning: "Facilitate sprint planning sessions with AI guidance"
+  --daily-standups: "Smart daily standup facilitation and tracking"
+  --sprint-review: "Sprint review preparation and stakeholder engagement"
+  --retrospective: "Data-driven retrospective analysis and improvement planning"
+
+team_analytics:
+  --velocity-analysis: "Team velocity trends and predictive modeling"
+  --performance-metrics: "Individual and team performance insights"
+  --workload-balancing: "Dynamic workload distribution optimization"
+  --skill-development: "Skill gap analysis and development recommendations"
+
+integration_options:
+  --jira-sync: "Comprehensive Jira sprint board synchronization"
+  --burndown-charts: "Advanced burndown chart generation and analysis"
+  --quality-tracking: "Quality metrics integration and monitoring"
+  --stakeholder-reports: "Executive sprint reports for stakeholder communication"
+```
+
+## Execution Framework
+
+### 1. **Strategic Sprint Planning and Preparation Phase**
+- **Comprehensive Capacity Analysis**: Deep analysis of team availability, historical velocity, and productivity patterns
+- **Intelligent Backlog Assessment**: AI-powered analysis of backlog readiness, story completeness, and estimation accuracy
+- **Dependency Resolution and Critical Path Analysis**: Automated identification and optimization of dependencies and blockers
+- **Risk Assessment and Mitigation Planning**: Comprehensive sprint risk evaluation with predictive modeling and mitigation strategies
+- **Stakeholder Alignment and Goal Setting**: Clear sprint goal definition with stakeholder communication and expectation management
+
+### 2. **Intelligent Sprint Planning Facilitation Phase**
+- **AI-Assisted Story Estimation**: Smart story point estimation with complexity analysis and historical comparison
+- **Dynamic Capacity Allocation**: Real-time capacity planning with workload optimization and skill-based assignment
+- **Sprint Commitment Optimization**: Data-driven sprint commitment with confidence intervals and stretch goal identification
+- **Team Coordination and Assignment**: Intelligent task assignment based on skills, availability, and development goals
+- **Sprint Infrastructure Setup**: Automated sprint board creation, tracking configuration, and monitoring setup
+
+### 3. **Real-Time Sprint Execution and Monitoring Phase**
+- **Predictive Burndown Analytics**: Advanced progress tracking with completion prediction and early warning systems
+- **Intelligent Impediment Detection**: Automated identification of blockers, delays, and performance issues
+- **Daily Standup Facilitation**: Smart standup guidance with collaboration optimization and impediment resolution
+- **Quality Metrics Monitoring**: Real-time quality tracking with defect prediction and quality gate enforcement
+- **Dynamic Sprint Adjustment**: Data-driven sprint scope and resource adjustments based on progress and capacity changes
+
+### 4. **Sprint Review and Stakeholder Engagement Phase**
+- **Comprehensive Sprint Review Preparation**: Demo environment setup, stakeholder coordination, and feedback collection preparation
+- **Feature Demonstration Orchestration**: Structured demo sessions with stakeholder engagement and feedback capture
+- **Sprint Metrics Analysis**: Complete sprint performance analysis with velocity, quality, and delivery metrics
+- **Stakeholder Feedback Integration**: Comprehensive feedback analysis with backlog prioritization and requirement updates
+- **Success Measurement and Reporting**: Executive sprint summaries with business impact assessment and trend analysis
+
+### 5. **Data-Driven Retrospective and Continuous Improvement Phase**
+- **Sprint Performance Analytics**: Comprehensive analysis of team performance, velocity trends, and improvement opportunities
+- **Process Optimization Recommendations**: Data-driven insights for sprint process improvements and team efficiency
+- **Team Development Planning**: Individual and team skill development recommendations based on sprint performance
+- **Continuous Improvement Implementation**: Actionable improvement plans with tracking and measurement frameworks
+- **Knowledge Transfer and Documentation**: Sprint learnings capture and team knowledge base updates for future sprint optimization
 
 ## Sprint Planning Framework
 

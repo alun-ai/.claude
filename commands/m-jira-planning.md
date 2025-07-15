@@ -6,53 +6,163 @@
 
 ## Overview
 
-Provides comprehensive planning capabilities for epics, features, and strategic initiatives. Enables effective roadmap planning, dependency management, resource allocation, and progress tracking across multiple sprints and teams.
+Transforms Claude into your AI-powered Strategic Planning Architect, providing enterprise-grade planning capabilities for epics, features, and strategic initiatives. This command enables intelligent roadmap planning, advanced dependency management, optimized resource allocation, and predictive progress tracking across multiple sprints, teams, and organizational boundaries.
+
+**Key Benefits:**
+- **Strategic Epic Planning**: AI-powered epic decomposition with intelligent story mapping and complexity analysis
+- **Intelligent Roadmap Management**: Predictive roadmap planning with risk assessment and timeline optimization
+- **Cross-Team Coordination**: Advanced resource allocation with skill gap analysis and capacity optimization
+- **Dependency Intelligence**: Automated dependency detection and critical path analysis with mitigation strategies
+- **Stakeholder Alignment**: Executive-level reporting with business impact analysis and strategic alignment validation
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-planning --help
+```
 
 ## Core Features
 
-### Strategic Planning
-- **Epic Planning**: Break down large initiatives into manageable epics
-- **Feature Roadmapping**: Create and maintain feature roadmaps
-- **Dependency Management**: Identify and manage cross-team dependencies
-- **Resource Allocation**: Plan resource needs across teams and timeframes
+### 1. AI-Powered Strategic Epic Planning
+- **Intelligent Epic Decomposition**: Machine learning-assisted breakdown of large initiatives into optimally-sized epics and features
+- **Advanced Story Mapping**: AI-enhanced user journey analysis with automated story generation and prioritization
+- **Complexity Analysis and Estimation**: Sophisticated three-point estimation with confidence intervals and risk-adjusted timelines
+- **Strategic Alignment Validation**: Automated alignment checking between epics, business objectives, and organizational strategy
 
-### Roadmap Management
-- **Timeline Planning**: Create realistic delivery timelines
-- **Milestone Tracking**: Define and track key project milestones
-- **Risk Assessment**: Identify and mitigate project risks
-- **Stakeholder Alignment**: Ensure alignment with business objectives
+### 2. Predictive Roadmap Management and Optimization
+- **Intelligent Timeline Planning**: AI-powered timeline generation with capacity-based scheduling and risk-adjusted delivery dates
+- **Dynamic Milestone Orchestration**: Adaptive milestone planning with automatic adjustment based on progress and capacity changes
+- **Advanced Risk Assessment**: Comprehensive risk modeling with impact analysis, probability assessment, and mitigation planning
+- **Stakeholder Communication Automation**: Executive-level reporting with business impact visualization and strategic progress tracking
 
-### Cross-team Coordination
-- **Team Capacity Planning**: Plan work across multiple teams
-- **Skill Gap Analysis**: Identify skill requirements and gaps
-- **Integration Planning**: Plan integration between team deliverables
-- **Communication Management**: Facilitate cross-team communication
+### 3. Enterprise-Grade Cross-Team Coordination
+- **Multi-Team Capacity Optimization**: Intelligent resource allocation across teams with skill-based assignment and workload balancing
+- **Comprehensive Skill Gap Analysis**: Advanced skill requirement assessment with training recommendations and hiring guidance
+- **Integration Planning Intelligence**: Automated dependency detection with critical path analysis and integration timeline optimization
+- **Communication Orchestration**: Structured cross-team communication with automated updates and dependency notifications
 
-## Execution Steps
+### 4. Advanced Dependency and Resource Intelligence
+- **Automated Dependency Detection**: AI-powered identification of internal and external dependencies with impact assessment
+- **Critical Path Analysis**: Dynamic critical path calculation with bottleneck identification and optimization recommendations
+- **Resource Allocation Optimization**: Multi-dimensional resource planning with capacity, skills, and timeline optimization
+- **Predictive Planning Analytics**: Historical analysis with predictive modeling for improved planning accuracy and delivery confidence
 
-1. **Strategic Analysis**
-   - Analyze business objectives and requirements
-   - Identify key stakeholders and success criteria
-   - Assess technical constraints and dependencies
-   - Evaluate resource availability and skills
+## Usage Examples
 
-2. **Epic Planning**
-   - Break down initiatives into manageable epics
-   - Define epic scope and acceptance criteria
-   - Estimate effort and timeline requirements
-   - Identify dependencies and risks
+### Basic Epic and Roadmap Planning
+```bash
+# Plan current epic or initiative
+/m-jira-planning
 
-3. **Roadmap Development**
-   - Create feature roadmap with priorities
-   - Plan delivery timeline and milestones
-   - Allocate resources and assign ownership
-   - Define success metrics and monitoring
+# Plan specific epic
+/m-jira-planning ALUN-100
 
-4. **Execution Monitoring**
-   - Track progress against roadmap
-   - Monitor dependencies and blockers
-   - Adjust plans based on feedback
-   - Communicate status to stakeholders
+# Interactive strategic planning with AI guidance
+/m-jira-planning --interactive
+```
+
+### Strategic Planning Focus
+```bash
+# Epic decomposition and story mapping
+/m-jira-planning --epic-planning
+
+# Roadmap development and timeline planning
+/m-jira-planning --roadmap-planning
+
+# Resource allocation and capacity planning
+/m-jira-planning --resource-planning
+```
+
+### Advanced Options
+```bash
+# Comprehensive strategic analysis
+/m-jira-planning --strategic-analysis
+
+# Cross-team coordination planning
+/m-jira-planning --cross-team
+
+# Executive roadmap reporting
+/m-jira-planning --executive-report
+```
+
+## Command Options
+
+```yaml
+planning_scope:
+  current_epic: "Plan current or specified epic with comprehensive analysis (default)"
+  strategic_initiative: "High-level strategic initiative planning across multiple epics"
+  roadmap_planning: "Comprehensive roadmap development and timeline planning"
+  cross_team_planning: "Multi-team coordination and resource allocation planning"
+
+analysis_depth:
+  --quick: "Essential epic planning with basic timeline and resource estimates"
+  --standard: "Comprehensive planning with dependency analysis and risk assessment (default)"
+  --strategic: "Strategic-level planning with business alignment and executive reporting"
+  --enterprise: "Enterprise-grade planning with full stakeholder and portfolio analysis"
+
+planning_focus:
+  --epic-planning: "Epic decomposition, story mapping, and feature breakdown"
+  --roadmap-planning: "Timeline development, milestone planning, and delivery scheduling"
+  --resource-planning: "Team capacity, skill analysis, and resource optimization"
+  --dependency-analysis: "Cross-team dependency mapping and critical path analysis"
+  --risk-assessment: "Comprehensive risk analysis and mitigation planning"
+
+stakeholder_engagement:
+  --business-alignment: "Business objective alignment and strategic validation"
+  --executive-reporting: "Executive-level roadmap summaries and progress reporting"
+  --stakeholder-communication: "Stakeholder update generation and communication planning"
+  --portfolio-integration: "Portfolio-level planning and multi-project coordination"
+
+delivery_optimization:
+  --timeline-optimization: "Delivery timeline optimization with capacity-based scheduling"
+  --capacity-planning: "Multi-team capacity analysis and workload optimization"
+  --skill-gap-analysis: "Skill requirement assessment and development planning"
+  --integration-planning: "Cross-team integration planning and coordination"
+
+delivery_format:
+  --jira-integration: "Create and update epics, features, and roadmaps in Jira"
+  --roadmap-visualization: "Generate visual roadmap and timeline charts"
+  --executive-dashboard: "Executive summary dashboard for stakeholder communication"
+  --confluence-docs: "Comprehensive planning documentation for Confluence"
+```
+
+## Execution Framework
+
+### 1. **Strategic Analysis and Business Alignment Phase**
+- **Comprehensive Business Objective Analysis**: Deep analysis of business goals, strategic initiatives, and success criteria
+- **Stakeholder Identification and Engagement**: Complete stakeholder mapping with communication planning and alignment validation
+- **Technical Constraint Assessment**: Thorough analysis of technical limitations, dependencies, and architectural considerations
+- **Resource and Skill Evaluation**: Comprehensive assessment of available resources, skill gaps, and capacity constraints
+- **Strategic Context Establishment**: Clear understanding of organizational strategy, market conditions, and competitive landscape
+
+### 2. **Intelligent Epic Planning and Decomposition Phase**
+- **AI-Powered Epic Breakdown**: Machine learning-assisted decomposition of large initiatives into manageable epics and features
+- **Advanced Story Mapping**: User journey analysis with automated story generation, prioritization, and acceptance criteria definition
+- **Sophisticated Estimation**: Three-point estimation with complexity analysis, historical comparison, and confidence interval calculation
+- **Dependency Identification**: Automated detection of internal and external dependencies with impact and timeline analysis
+- **Risk Assessment Integration**: Comprehensive risk identification with probability assessment and mitigation strategy development
+
+### 3. **Predictive Roadmap Development and Timeline Optimization Phase**
+- **Intelligent Feature Roadmap Creation**: AI-powered roadmap generation with priority optimization and strategic alignment validation
+- **Dynamic Timeline Planning**: Capacity-based scheduling with realistic delivery dates and risk-adjusted timelines
+- **Milestone Definition and Tracking**: Strategic milestone identification with success criteria and measurement frameworks
+- **Resource Allocation Optimization**: Multi-dimensional resource planning with skill-based assignment and capacity optimization
+- **Success Metrics and Monitoring Setup**: KPI definition with measurement frameworks and progress tracking automation
+
+### 4. **Cross-Team Coordination and Integration Planning Phase**
+- **Multi-Team Capacity Analysis**: Comprehensive analysis of team capacity, availability, and workload distribution
+- **Skill Gap Analysis and Development Planning**: Detailed skill requirement assessment with training and hiring recommendations
+- **Integration Timeline Orchestration**: Cross-team integration planning with coordination points and handoff management
+- **Communication Framework Setup**: Structured communication planning with automated updates and stakeholder notifications
+- **Dependency Management System**: Critical path analysis with bottleneck identification and resolution strategies
+
+### 5. **Execution Monitoring and Continuous Optimization Phase**
+- **Real-Time Progress Tracking**: Continuous monitoring of roadmap progress with predictive analytics and early warning systems
+- **Dynamic Plan Adjustment**: Automated plan updates based on progress, capacity changes, and stakeholder feedback
+- **Stakeholder Communication Automation**: Regular stakeholder updates with executive summaries and business impact analysis
+- **Continuous Improvement Analytics**: Historical analysis with lessons learned and planning accuracy improvement recommendations
+- **Portfolio Integration and Optimization**: Multi-project coordination with resource optimization and strategic alignment validation
 
 ## Epic Planning Framework
 

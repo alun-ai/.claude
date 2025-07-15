@@ -4,6 +4,157 @@
 
 **Scope:** Advanced security vulnerability detection with AI-powered analysis and threat modeling
 
+## Overview
+
+Transforms Claude into an expert Security Engineer with comprehensive knowledge of application security, threat modeling, and compliance frameworks. This command provides advanced security vulnerability detection using AI-powered analysis, OWASP standards, and specialized multi-tenant security assessments.
+
+**Key Benefits:**
+- **AI-Powered Analysis**: Advanced security vulnerability detection with Gemini CLI integration
+- **Comprehensive Coverage**: Authentication, data protection, infrastructure, and compliance
+- **Multi-Tenant Security**: Specialized analysis for SaaS security patterns
+- **OWASP Standards**: Classification using OWASP Top 10 and CWE standards
+- **Actionable Reports**: Detailed remediation steps with priority levels
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-security-scan --help
+```
+
+## Core Features
+
+### 1. Multi-Domain Security Analysis
+- **Authentication Security**: OAuth, session management, multi-factor authentication
+- **Data Protection**: Input validation, encryption, sensitive data handling
+- **Authorization Controls**: RBAC, privilege escalation, access control validation
+- **Infrastructure Security**: Configuration, secrets management, API security
+
+### 2. Advanced Threat Detection
+- **Vulnerability Classification**: OWASP Top 10 and CWE standard classification
+- **Risk Assessment**: Business impact and exploitability analysis
+- **Pattern Recognition**: AI-powered detection of security anti-patterns
+- **Supply Chain Security**: Dependency and third-party risk assessment
+
+### 3. Compliance Framework Integration
+- **GDPR Compliance**: Data protection and privacy regulation compliance
+- **SOC 2 Controls**: Security control implementation verification
+- **OWASP Standards**: Top 10 and security best practices validation
+- **Multi-Tenant Requirements**: SaaS-specific security pattern analysis
+
+### 4. Intelligent Remediation Guidance
+- **Severity Prioritization**: Critical, High, Medium, Low severity classification
+- **Remediation Roadmap**: Prioritized action plan with timelines
+- **Code Examples**: Specific fix implementations with code samples
+- **Compliance Alignment**: Remediation steps aligned with compliance requirements
+
+## Usage Examples
+
+### Basic Security Scans
+```bash
+# Comprehensive security audit
+/m-security-scan
+
+# Full codebase analysis
+/m-security-scan full
+
+# Quick security assessment
+/m-security-scan --quick
+```
+
+### Focused Security Analysis
+```bash
+# Authentication security audit
+/m-security-scan auth
+/m-security-scan authentication
+
+# Data handling security
+/m-security-scan data
+/m-security-scan data-handling
+
+# Infrastructure security
+/m-security-scan infra
+/m-security-scan infrastructure
+
+# Dependency security scan
+/m-security-scan deps
+/m-security-scan dependencies
+```
+
+### Compliance-Focused Scans
+```bash
+# GDPR compliance check
+/m-security-scan --gdpr
+
+# SOC 2 control validation
+/m-security-scan --soc2
+
+# OWASP Top 10 assessment
+/m-security-scan --owasp
+
+# Multi-tenant security audit
+/m-security-scan --multi-tenant
+```
+
+### Advanced Options
+```bash
+# Include penetration testing guidance
+/m-security-scan --pentest
+
+# Focus on high-severity issues only
+/m-security-scan --severity high
+
+# Generate executive summary
+/m-security-scan --executive-summary
+
+# Include remediation code examples
+/m-security-scan --with-fixes
+```
+
+## Command Options
+
+```yaml
+scan_scope:
+  full: "Comprehensive security audit (default)"
+  auth: "Authentication and authorization security"
+  data: "Data protection and privacy analysis"
+  deps: "Dependency and supply chain security"
+  infra: "Infrastructure and configuration security"
+  api: "API security and endpoint analysis"
+
+compliance_focus:
+  --gdpr: "GDPR compliance assessment"
+  --soc2: "SOC 2 control validation"
+  --owasp: "OWASP Top 10 vulnerability assessment"
+  --cwe: "CWE weakness analysis"
+  --multi-tenant: "Multi-tenant security patterns"
+
+severity_filtering:
+  --severity: "Filter by severity level (critical/high/medium/low)"
+  --critical-only: "Show only critical vulnerabilities"
+  --exclude-low: "Exclude low-severity findings"
+  --all-findings: "Include all severity levels"
+
+analysis_depth:
+  --quick: "Fast security scan focusing on critical issues"
+  --standard: "Standard comprehensive analysis (default)"
+  --deep: "Deep analysis with AI-powered threat modeling"
+  --pentest: "Include penetration testing guidance"
+
+output_options:
+  --executive-summary: "Generate executive summary report"
+  --detailed-report: "Comprehensive technical report"
+  --json-output: "Output results in JSON format"
+  --with-fixes: "Include remediation code examples"
+  --compliance-report: "Focus on compliance status"
+
+integration_options:
+  --ci-friendly: "CI/CD pipeline compatible output"
+  --sarif-output: "SARIF format for security tools"
+  --github-security: "GitHub Security Advisory format"
+  --jira-tickets: "Generate Jira ticket format for findings"
+```
+
 ## AI Integration Strategy
 
 ### Primary: Gemini CLI Integration

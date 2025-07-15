@@ -6,7 +6,106 @@
 
 ## Overview
 
-Provides comprehensive technical specification management capabilities integrated with Jira development workflows. Enables creation of detailed technical specifications, architecture documentation, and design decisions that align with project requirements and facilitate effective development.
+Transforms Claude into your AI-powered Technical Specification Architect, providing enterprise-grade technical documentation and intelligent specification management capabilities seamlessly integrated with development workflows. This command delivers comprehensive architecture documentation, automated API specification generation, and intelligent design decision support that ensures technical excellence and facilitates effective development collaboration.
+
+**Key Benefits:**
+- **AI-Powered Specification Generation**: Intelligent analysis of requirements to create comprehensive technical specifications
+- **Advanced Architecture Documentation**: Automated generation of system architecture, API contracts, and database schemas
+- **Intelligent Code-to-Spec Conversion**: Reverse engineering existing code into professional technical documentation
+- **Enterprise Specification Management**: Version control, collaboration workflows, and quality assurance for technical documentation
+- **Living Documentation Intelligence**: Automated synchronization between code changes and specification updates
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-tech-spec --help
+```
+
+## Usage Examples
+
+### Basic Technical Specification
+```bash
+# Generate tech spec for current Jira issue
+/m-jira-tech-spec
+
+# Generate tech spec for specific issue
+/m-jira-tech-spec ALUN-123
+
+# Interactive specification with AI guidance
+/m-jira-tech-spec --interactive
+```
+
+### Focused Specification Types
+```bash
+# API specification focus
+/m-jira-tech-spec --api-focus
+
+# Database schema focus
+/m-jira-tech-spec --database-focus
+
+# Architecture documentation focus
+/m-jira-tech-spec --architecture-focus
+```
+
+### Advanced Options
+```bash
+# Generate from existing code
+/m-jira-tech-spec --code-to-spec
+
+# Comprehensive specification with AI analysis
+/m-jira-tech-spec --comprehensive-analysis
+
+# Living documentation update
+/m-jira-tech-spec --living-docs-update
+```
+
+## Command Options
+
+```yaml
+specification_scope:
+  current_issue: "Generate technical specification for current or specified Jira issue (default)"
+  architecture_design: "Comprehensive system architecture and design documentation"
+  api_specification: "Detailed API contracts and interface documentation"
+  database_design: "Database schema and data model specifications"
+
+analysis_depth:
+  --quick: "Essential technical requirements and basic design"
+  --standard: "Comprehensive technical specification with detailed design (default)"
+  --comprehensive: "Enterprise-grade specification with full analysis and validation"
+  --architectural: "Deep architectural analysis with design patterns and scalability"
+
+specification_type:
+  --architecture-focus: "System architecture, component design, and integration patterns"
+  --api-focus: "API contracts, endpoints, and service interface specifications"
+  --database-focus: "Database schema, data models, and migration strategies"
+  --security-focus: "Security requirements, threat analysis, and compliance specifications"
+  --performance-focus: "Performance requirements, scalability, and optimization strategies"
+
+generation_mode:
+  --requirements-driven: "Generate specifications from requirements analysis (default)"
+  --code-to-spec: "Reverse engineer specifications from existing codebase"
+  --hybrid-approach: "Combine requirements analysis with code analysis"
+  --template-based: "Use predefined templates for consistent documentation"
+
+collaboration_features:
+  --review-workflow: "Enable structured review and approval process"
+  --collaborative-editing: "Multi-author collaborative specification editing"
+  --stakeholder-validation: "Include stakeholder review and feedback collection"
+  --approval-tracking: "Track approval status and change management"
+
+integration_options:
+  --jira-integration: "Deep integration with Jira issues and workflows"
+  --code-generation: "Generate code stubs and boilerplate from specifications"
+  --living-docs-update: "Automatically update documentation with code changes"
+  --api-contract-validation: "Validate implementation against API specifications"
+
+delivery_format:
+  --markdown-spec: "Professional markdown technical specification (default)"
+  --confluence-export: "Confluence-compatible documentation format"
+  --pdf-documentation: "PDF technical specification for formal documentation"
+  --interactive-docs: "Interactive documentation with embedded examples"
+```
 
 ## AI Integration Strategy
 
@@ -40,51 +139,68 @@ fi
 
 ## Core Features
 
-### Intelligent Spec Generation
-- **Requirement Analysis**: Extract technical requirements from user stories and epics
-- **Architecture Planning**: Generate system architecture and design specifications
-- **API Documentation**: Create detailed API specifications and contracts
-- **Database Design**: Document data models and database schemas
+### 1. AI-Powered Technical Specification Intelligence
+- **Advanced Requirement Analysis**: Machine learning-driven extraction and analysis of technical requirements from user stories and epics
+- **Intelligent Architecture Planning**: AI-assisted system architecture generation with design pattern recommendations and scalability analysis
+- **Comprehensive API Documentation**: Automated generation of detailed API specifications, contracts, and interactive documentation
+- **Database Design Intelligence**: Intelligent data model generation with normalization recommendations and performance optimization
 
-### Template-Based Documentation
-- **Standard Templates**: Use predefined templates for consistent documentation
-- **Custom Templates**: Create project-specific documentation templates
-- **Interactive Forms**: Guided specification creation with smart suggestions
-- **Version Control**: Track specification changes and evolution
+### 2. Enterprise-Grade Documentation Generation and Management
+- **Template-Based Professional Documentation**: Advanced template system with customizable formats and industry-standard compliance
+- **Interactive Specification Creation**: Guided documentation creation with AI-powered suggestions and best practice recommendations
+- **Version Control and Change Management**: Sophisticated versioning system with automated change tracking and approval workflows
+- **Quality Assurance and Validation**: Comprehensive quality checking with completeness validation and technical accuracy assessment
 
-### Integration with Development
-- **Code-First Documentation**: Generate specs from existing code
-- **Spec-First Development**: Create specifications before implementation
-- **Validation Tools**: Ensure implementation matches specifications
-- **Living Documentation**: Keep specs updated with code changes
+### 3. Advanced Code-Specification Integration Platform
+- **Intelligent Code-First Documentation**: Reverse engineering existing codebases into professional technical specifications
+- **Specification-Driven Development**: AI-powered code stub generation and implementation guidance from specifications
+- **Real-Time Validation and Compliance**: Automated validation ensuring implementation matches specifications with deviation alerts
+- **Living Documentation Synchronization**: Intelligent synchronization between code changes and specification updates
 
-## Execution Steps
+### 4. Collaborative Technical Excellence and Knowledge Management
+- **Advanced Review and Collaboration Workflows**: Sophisticated peer review system with role-based access and approval tracking
+- **Technical Knowledge Management**: Centralized repository of technical decisions, patterns, and architectural knowledge
+- **Cross-Project Specification Analytics**: Analysis of specification patterns across projects with reusability recommendations
+- **Automated Quality Metrics and Improvement**: Continuous assessment of specification quality with improvement recommendations
 
-1. **Requirement Analysis**
-   - Extract technical requirements from Jira issue
-   - Identify system components and dependencies
-   - Analyze technical constraints and assumptions
-   - Define success criteria and acceptance tests
+## Execution Framework
 
-2. **Architecture Planning**
-   - Design system architecture and component interactions
-   - Define data models and database schemas
-   - Plan API endpoints and service interfaces
-   - Identify security and performance requirements
+### 1. **Strategic Requirement Analysis and Planning Phase**
+- **Comprehensive Requirement Extraction**: AI-powered analysis of Jira issues, user stories, and acceptance criteria with technical requirement identification
+- **System Component Analysis**: Intelligent identification of system components, dependencies, and integration points
+- **Technical Constraint Assessment**: Deep analysis of technical constraints, assumptions, and architectural limitations
+- **Success Criteria Definition**: Clear definition of technical success criteria, acceptance tests, and validation requirements
+- **Stakeholder Alignment**: Technical requirement validation with business stakeholders and technical teams
 
-3. **Specification Creation**
-   - Generate detailed technical specifications
-   - Create architecture diagrams and flowcharts
-   - Document API contracts and data schemas
-   - Define implementation guidelines and standards
+### 2. **Advanced Architecture Design and Planning Phase**
+- **Intelligent System Architecture Design**: AI-assisted architecture planning with design pattern recommendations and scalability analysis
+- **Comprehensive Data Model Design**: Advanced database schema design with normalization recommendations and performance optimization
+- **API Contract Planning**: Detailed API endpoint design with RESTful principles and service interface specifications
+- **Security and Performance Architecture**: Comprehensive security requirements analysis and performance optimization planning
+- **Integration Strategy Development**: Complete integration planning with external systems and service dependencies
 
-4. **Review and Validation**
-   - Technical peer review of specifications
-   - Stakeholder validation and approval
-   - Implementation feasibility assessment
-   - Risk analysis and mitigation planning
+### 3. **Professional Specification Creation and Documentation Phase**
+- **AI-Powered Specification Generation**: Intelligent creation of detailed technical specifications using advanced language models
+- **Dynamic Architecture Diagram Creation**: Automated generation of architecture diagrams, flowcharts, and system visualizations
+- **Comprehensive API Contract Documentation**: Complete API documentation with OpenAPI specifications and interactive examples
+- **Implementation Guideline Development**: Detailed implementation guidelines, coding standards, and best practice recommendations
+- **Quality Assurance and Validation**: Comprehensive quality checking with completeness validation and technical accuracy assessment
 
-## Technical Specification Templates
+### 4. **Collaborative Review and Validation Phase**
+- **Structured Technical Peer Review**: Sophisticated peer review system with role-based access and expertise matching
+- **Stakeholder Validation and Approval**: Business and technical stakeholder validation with feedback collection and resolution
+- **Implementation Feasibility Assessment**: Technical feasibility analysis with effort estimation and resource planning
+- **Risk Analysis and Mitigation Planning**: Comprehensive risk assessment with mitigation strategies and contingency planning
+- **Final Approval and Documentation**: Complete approval workflow with version control and change management
+
+### 5. **Implementation Support and Living Documentation Phase**
+- **Code Stub Generation**: Automated generation of implementation stubs and boilerplate code from specifications
+- **Implementation Validation**: Continuous validation of implementation against specifications with deviation alerts
+- **Living Documentation Maintenance**: Automated synchronization between code changes and specification updates
+- **Continuous Quality Monitoring**: Ongoing monitoring of specification quality and implementation compliance
+- **Knowledge Management Integration**: Integration with organizational knowledge base and technical decision repository
+
+## Advanced Technical Specification Templates
 
 ### System Architecture Specification
 ```yaml

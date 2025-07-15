@@ -6,54 +6,84 @@
 
 ## Overview
 
-Provides a streamlined interface to Google Gemini AI specifically optimized for development workflows. Offers context-aware assistance for code review, debugging, architecture decisions, documentation, and technical problem-solving directly within the Claude Code environment.
+Transforms Claude into your AI-powered Development Intelligence Partner, providing enterprise-grade Google Gemini integration with sophisticated context management and intelligent development assistance. This command delivers seamless AI collaboration, advanced code analysis, and strategic technical consultation that amplifies developer productivity while maintaining the highest standards of code quality and architectural excellence.
+
+**Key Benefits:**
+- **AI-Powered Development Intelligence**: Direct access to Google Gemini's advanced AI capabilities with context-aware analysis and intelligent recommendations
+- **Enterprise-Grade Code Analysis**: Sophisticated code review, security assessment, and performance optimization with actionable insights
+- **Seamless MCP Integration**: Native Claude Code integration requiring no external dependencies or API key management
+- **Strategic Architecture Guidance**: Expert-level system design consultation with best practice recommendations and pattern recognition
+- **Intelligent Context Management**: Smart context selection with project-aware analysis and optimal information inclusion
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-ask-gemini --help
+```
 
 ## Core Features
 
-### Intelligent Context Management
-- **Project-Aware**: Automatically includes relevant project context
-- **File-Specific Analysis**: Analyze current file or specific code sections
-- **Git Integration**: Analyze diffs, commits, and branch changes
-- **Smart Context Selection**: Choose optimal context size for different queries
+### 1. AI-Powered Development Intelligence Engine
+- **Advanced Context-Aware Analysis**: Machine learning-driven context management with intelligent project understanding and optimal information selection
+- **Multi-Model Orchestration**: Automatic model selection between Gemini Flash and Pro based on query complexity and context requirements
+- **Intelligent Query Routing**: Smart routing to specialized MCP tools (gemini-query, gemini-analyze-code, gemini-brainstorm) for optimal results
+- **Real-Time Collaboration**: Interactive AI partnership with streaming responses and progressive refinement capabilities
 
-### Specialized Development Assistance
-- **Code Review**: AI-powered code analysis and improvement suggestions
-- **Debugging Help**: Analyze errors, stack traces, and failed tests
-- **Architecture Guidance**: System design and architectural decision support
-- **Documentation**: Generate and improve technical documentation
+### 2. Enterprise-Grade Code Analysis Platform
+- **Comprehensive Code Review**: AI-powered analysis with security vulnerability detection, performance optimization, and best practice validation
+- **Advanced Debugging Intelligence**: Sophisticated error analysis with root cause identification, fix suggestions, and preventive recommendations
+- **Performance Optimization Engine**: Deep performance analysis with bottleneck detection, optimization strategies, and scalability assessment
+- **Security Assessment Framework**: Automated vulnerability scanning with OWASP compliance checking and remediation guidance
 
-### Multi-Modal Interactions
-- **Interactive Mode**: Conversational interface for complex discussions
-- **Batch Processing**: Process multiple files or queries efficiently
-- **Pipeline Integration**: Use with other CLI tools and workflows
-- **Output Formatting**: Structured output for different use cases
+### 3. Strategic Architecture and Design Consultation
+- **System Design Intelligence**: Expert-level architectural guidance with pattern recognition and best practice recommendations
+- **Technology Stack Analysis**: Intelligent technology selection with compatibility assessment and future-proofing considerations
+- **Database Design Optimization**: Schema analysis with performance tuning, normalization validation, and scalability planning
+- **API Design Excellence**: RESTful and GraphQL API design validation with contract testing and documentation generation
 
-## Execution Steps
+### 4. Intelligent Documentation and Knowledge Management
+- **Automated Documentation Generation**: AI-powered documentation creation with code analysis and usage example generation
+- **Smart Comment Enhancement**: Intelligent code commenting with context-aware explanations and maintainability improvements
+- **Knowledge Base Integration**: Seamless integration with project documentation and organizational knowledge repositories
+- **Learning and Explanation Engine**: Interactive learning sessions with concept explanation and skill development support
 
-1. **Context Analysis**
-   - Determine optimal context based on query type
-   - Analyze current working directory and project structure
-   - Identify relevant files and code sections
-   - Prepare context with appropriate scope
+## Execution Framework
 
-2. **Query Processing**
-   - Parse user prompt and intent
-   - Route to appropriate MCP Gemini tool based on query type
-   - Format prompt with development-specific context
-   - Apply best practices for technical queries
+### 1. **Strategic Context Analysis and Optimization Phase**
+- **Intelligent Query Understanding**: AI-powered intent recognition with query classification and optimal routing determination
+- **Project-Aware Context Building**: Sophisticated project analysis with dependency mapping, structure understanding, and relevance scoring
+- **Smart File Selection**: Machine learning-based file relevance scoring with import graph analysis and change correlation
+- **Context Size Optimization**: Dynamic context sizing with information density analysis and token efficiency optimization
+- **Security and Privacy Filtering**: Automated sensitive data detection with redaction and compliance verification
 
-3. **MCP Integration**
-   - Use MCP Gemini agent through Claude Code's native integration
-   - Leverage `/gemini-query` for general questions
-   - Use `/gemini-analyze-code` for code analysis
-   - Use `/gemini-brainstorm` for collaborative problem-solving
-   - Handle streaming responses and error conditions
+### 2. **Advanced Query Processing and Routing Phase**
+- **Intent Classification Engine**: Deep learning-based query categorization with confidence scoring and fallback strategies
+- **Optimal Tool Selection**: Intelligent routing between gemini-query, gemini-analyze-code, and gemini-brainstorm based on query characteristics
+- **Prompt Engineering Excellence**: Sophisticated prompt construction with context injection and response optimization techniques
+- **Model Selection Intelligence**: Automatic selection between Gemini Flash and Pro based on complexity analysis and performance requirements
+- **Query Enhancement**: AI-powered query expansion with clarification detection and ambiguity resolution
 
-4. **Result Integration**
-   - Format response for CLI consumption
-   - Provide actionable insights and suggestions
-   - Integrate with development workflows
-   - No external dependencies required (MCP handles authentication)
+### 3. **MCP Integration and Execution Phase**
+- **Native MCP Orchestration**: Seamless integration with Claude Code's MCP framework for zero-configuration operation
+- **Streaming Response Management**: Real-time response streaming with progressive rendering and cancellation support
+- **Error Handling and Recovery**: Comprehensive error detection with graceful degradation and intelligent retry strategies
+- **Performance Optimization**: Request batching, caching, and parallel processing for optimal response times
+- **Multi-Tool Coordination**: Orchestration of multiple MCP tools for complex queries requiring diverse capabilities
+
+### 4. **Result Processing and Integration Phase**
+- **Response Enhancement**: AI-powered response formatting with code highlighting, example generation, and clarity improvements
+- **Actionable Insight Generation**: Conversion of AI responses into concrete development actions with priority scoring
+- **Workflow Integration**: Seamless integration with git, testing frameworks, and development tools for immediate application
+- **Knowledge Persistence**: Intelligent conversation history management with searchable archives and learning extraction
+- **Feedback Loop Integration**: Continuous improvement through response quality tracking and user satisfaction metrics
+
+### 5. **Continuous Learning and Optimization Phase**
+- **Usage Pattern Analysis**: Machine learning-based analysis of query patterns for personalized optimization
+- **Context Strategy Refinement**: Continuous improvement of context selection algorithms based on response effectiveness
+- **Model Performance Tracking**: Monitoring of model selection decisions with accuracy validation and optimization
+- **Knowledge Base Enhancement**: Automated extraction of valuable insights for team knowledge sharing
+- **Developer Productivity Metrics**: Comprehensive tracking of time savings and quality improvements from AI assistance
 
 ## Usage Patterns
 

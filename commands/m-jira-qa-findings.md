@@ -6,53 +6,163 @@
 
 ## Overview
 
-Provides comprehensive quality assurance documentation and bug tracking capabilities integrated with Jira workflows. Streamlines the process of documenting test results, creating detailed bug reports, and maintaining quality metrics throughout the development lifecycle.
+Transforms Claude into your AI-powered QA Documentation Specialist, providing enterprise-grade quality assurance documentation and intelligent bug tracking capabilities integrated seamlessly with Jira workflows. This command streamlines the entire QA process from test result analysis to comprehensive bug reporting, ensuring thorough quality documentation and continuous improvement throughout the development lifecycle.
+
+**Key Benefits:**
+- **Intelligent Bug Analysis**: AI-powered detection and classification of bugs with automated severity assessment
+- **Comprehensive Evidence Collection**: Systematic capture of screenshots, logs, recordings, and reproduction steps
+- **Quality Metrics Dashboard**: Real-time quality tracking with trend analysis and predictive insights
+- **Automated Report Generation**: Professional QA documentation with detailed findings and recommendations
+- **Continuous Process Improvement**: Data-driven insights for QA process optimization and team efficiency
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-qa-findings --help
+```
 
 ## Core Features
 
-### Intelligent Bug Report Generation
-- **Automated Bug Detection**: Identify potential bugs from test failures
-- **Detailed Bug Documentation**: Generate comprehensive bug reports with reproduction steps
-- **Severity and Priority Assessment**: Intelligent classification based on impact
-- **Root Cause Analysis**: Provide insights into potential causes and fixes
+### 1. Advanced Bug Intelligence and Classification System
+- **AI-Powered Bug Detection**: Intelligent analysis of test failures to identify potential bugs and their root causes
+- **Automated Severity Assessment**: Machine learning-based classification of bug severity and business impact
+- **Comprehensive Bug Documentation**: Detailed bug reports with reproduction steps, evidence, and fix recommendations
+- **Duplicate Bug Detection**: Automated identification and consolidation of duplicate bug reports
 
-### Test Result Documentation
-- **Test Execution Tracking**: Document test case execution results
-- **Evidence Collection**: Capture screenshots, logs, and error messages
-- **Regression Analysis**: Track regression issues and their resolution
-- **Quality Metrics**: Generate quality dashboards and reports
+### 2. Comprehensive Test Result Analysis and Documentation
+- **Intelligent Test Execution Tracking**: Automated documentation of test case execution with pattern recognition
+- **Evidence Collection Orchestration**: Systematic capture of screenshots, logs, recordings, and network traces
+- **Regression Analysis Framework**: Advanced tracking of regression issues with impact assessment and trending
+- **Quality Metrics Dashboard**: Real-time quality indicators with predictive analytics and improvement recommendations
 
-### QA Workflow Integration
-- **Test Case Management**: Link findings to specific test cases
-- **Defect Lifecycle**: Track bug resolution from creation to closure
-- **Release Readiness**: Assess quality gates and release criteria
-- **Continuous Improvement**: Identify testing process improvements
+### 3. Enterprise-Grade QA Workflow Integration
+- **Test Case Lifecycle Management**: Complete traceability from test cases to findings to resolution
+- **Defect Lifecycle Orchestration**: Automated tracking of bug resolution with stakeholder notifications
+- **Release Readiness Assessment**: Comprehensive quality gate evaluation with go/no-go recommendations
+- **Continuous Improvement Analytics**: Data-driven insights for QA process optimization and team performance
 
-## Execution Steps
+### 4. Professional QA Documentation and Reporting
+- **Executive QA Summaries**: High-level quality reports for stakeholder communication
+- **Technical Bug Analysis**: Detailed technical findings with code impact assessment
+- **Quality Trend Analysis**: Historical quality metrics with predictive insights and recommendations
+- **Compliance Documentation**: Audit-ready QA documentation with complete traceability
 
-1. **Test Result Analysis**
-   - Analyze test execution results and failures
-   - Identify patterns and recurring issues
-   - Classify findings by severity and impact
-   - Generate preliminary bug reports
+## Usage Examples
 
-2. **Bug Report Creation**
-   - Create detailed bug reports with reproduction steps
-   - Collect supporting evidence (screenshots, logs, recordings)
-   - Assess bug severity and priority
-   - Assign bugs to appropriate team members
+### Basic QA Findings Documentation
+```bash
+# Document QA findings for current issue
+/m-jira-qa-findings
 
-3. **Quality Assessment**
-   - Evaluate overall quality metrics
-   - Assess release readiness criteria
-   - Identify quality trends and patterns
-   - Generate quality assurance reports
+# Document findings for specific issue
+/m-jira-qa-findings ALUN-123
 
-4. **Process Improvement**
-   - Analyze testing effectiveness
-   - Identify areas for process improvement
-   - Update test strategies based on findings
-   - Share knowledge with development team
+# Interactive QA findings with AI guidance
+/m-jira-qa-findings --interactive
+```
+
+### Focused QA Analysis
+```bash
+# Critical bug analysis focus
+/m-jira-qa-findings --critical-bugs
+
+# Regression testing focus
+/m-jira-qa-findings --regression-analysis
+
+# Performance issue documentation
+/m-jira-qa-findings --performance-focus
+```
+
+### Advanced Options
+```bash
+# Generate comprehensive QA report
+/m-jira-qa-findings --comprehensive-report
+
+# Include quality metrics analysis
+/m-jira-qa-findings --quality-metrics
+
+# Executive summary for stakeholders
+/m-jira-qa-findings --executive-summary
+```
+
+## Command Options
+
+```yaml
+qa_analysis_scope:
+  current_issue: "Document QA findings for current or specified Jira issue (default)"
+  sprint_analysis: "Comprehensive QA analysis for entire sprint"
+  epic_quality_review: "Quality assessment for complete epic"
+  release_readiness: "Release quality assessment and go/no-go recommendation"
+
+analysis_depth:
+  --quick: "Essential bug documentation and critical findings"
+  --standard: "Comprehensive QA analysis with detailed findings (default)"
+  --comprehensive: "Enterprise-grade QA documentation with full metrics"
+  --executive: "Executive-level quality summary with business impact"
+
+finding_focus:
+  --critical-bugs: "Focus on critical and high-severity bug documentation"
+  --regression-analysis: "Emphasis on regression testing and issue tracking"
+  --performance-focus: "Performance testing results and optimization findings"
+  --security-findings: "Security testing results and vulnerability assessment"
+  --accessibility-review: "Accessibility compliance testing and findings"
+
+bug_reporting:
+  --auto-create-bugs: "Automatically create Jira bugs from test failures"
+  --evidence-collection: "Comprehensive evidence gathering and attachment"
+  --severity-assessment: "AI-powered severity and priority classification"
+  --root-cause-analysis: "Detailed root cause analysis and fix recommendations"
+
+quality_metrics:
+  --quality-metrics: "Include comprehensive quality metrics and trends"
+  --release-criteria: "Assess against release readiness criteria"
+  --team-performance: "QA team performance analysis and insights"
+  --process-improvement: "Process optimization recommendations"
+
+delivery_format:
+  --jira-integration: "Create and link bugs directly in Jira"
+  --markdown-report: "Generate detailed markdown QA report (default)"
+  --executive-summary: "High-level summary for stakeholder communication"
+  --confluence-docs: "Generate Confluence-compatible documentation"
+```
+
+## Execution Framework
+
+### 1. **Comprehensive Test Result Analysis Phase**
+- **Intelligent Test Execution Analysis**: Deep analysis of test execution results with pattern recognition and trend identification
+- **Failure Classification and Categorization**: AI-powered classification of test failures by type, severity, and business impact
+- **Evidence Collection and Organization**: Systematic gathering of screenshots, logs, recordings, and supporting documentation
+- **Quality Pattern Recognition**: Identification of recurring issues, regression patterns, and quality trends
+- **Impact Assessment**: Business and technical impact analysis of identified issues and quality gaps
+
+### 2. **Advanced Bug Documentation and Reporting Phase**
+- **Intelligent Bug Report Generation**: AI-powered creation of comprehensive bug reports with detailed reproduction steps
+- **Automated Severity and Priority Assessment**: Machine learning-based classification using impact analysis and business criteria
+- **Evidence Integration and Documentation**: Professional attachment and organization of supporting evidence and documentation
+- **Root Cause Analysis**: Deep technical analysis of bug causes with fix recommendations and prevention strategies
+- **Duplicate Detection and Consolidation**: Automated identification and merging of duplicate bug reports
+
+### 3. **Quality Metrics Analysis and Dashboard Generation Phase**
+- **Comprehensive Quality Metrics Calculation**: Real-time calculation of defect density, test coverage, and quality indicators
+- **Trend Analysis and Predictive Insights**: Historical quality trend analysis with predictive modeling for future quality
+- **Release Readiness Assessment**: Complete evaluation against quality gates and release criteria
+- **Quality Benchmark Comparison**: Comparison against industry standards and historical project performance
+- **Risk Assessment and Mitigation**: Identification of quality risks with recommended mitigation strategies
+
+### 4. **Stakeholder Communication and Documentation Phase**
+- **Executive Summary Generation**: High-level quality reports for management and stakeholder communication
+- **Technical Documentation Creation**: Detailed technical findings for development teams and technical stakeholders
+- **Process Improvement Recommendations**: Data-driven insights for QA process optimization and team efficiency
+- **Knowledge Transfer Documentation**: Comprehensive documentation for team learning and continuous improvement
+- **Compliance and Audit Documentation**: Audit-ready documentation with complete traceability and evidence
+
+### 5. **Continuous Improvement and Integration Phase**
+- **QA Process Analytics**: Analysis of QA effectiveness, efficiency, and process improvement opportunities
+- **Team Performance Insights**: Individual and team performance analysis with skill development recommendations
+- **Tool Optimization Recommendations**: Assessment of testing tools and workflow optimization opportunities
+- **Best Practice Documentation**: Capture and documentation of QA best practices and lessons learned
+- **Integration Workflow Enhancement**: Continuous improvement of Jira integration and workflow automation
 
 ## Bug Report Templates
 

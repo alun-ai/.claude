@@ -6,55 +6,173 @@
 
 ## Overview
 
-Provides advanced metrics and analytics capabilities for development teams, focusing on actionable insights that drive continuous improvement. Combines traditional Agile metrics with modern development analytics to provide a holistic view of team performance and project health.
+Transforms Claude into your AI-powered Metrics and Analytics Specialist, providing enterprise-grade development intelligence and comprehensive performance analytics for teams, projects, and organizational excellence. This command delivers advanced machine learning-driven insights, predictive analytics, and automated performance optimization that empowers data-driven decision making and continuous improvement across all levels of software development.
+
+**Key Benefits:**
+- **AI-Powered Performance Intelligence**: Machine learning-driven analysis with predictive modeling and trend forecasting
+- **Comprehensive Development Analytics**: Multi-dimensional metrics covering productivity, quality, collaboration, and innovation
+- **Enterprise-Grade Business Intelligence**: Strategic insights with industry benchmarking and organizational optimization
+- **Automated Continuous Improvement**: Data-driven recommendations with impact tracking and success measurement
+- **Advanced Predictive Capabilities**: Sophisticated forecasting for capacity planning, quality prediction, and risk assessment
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-metrics --help
+```
 
 ## Core Features
 
-### Development Metrics
-- **Code Quality Metrics**: Code coverage, complexity, and maintainability
-- **Performance Metrics**: Velocity, cycle time, and throughput
-- **Collaboration Metrics**: Code review participation and knowledge sharing
-- **Deployment Metrics**: Deployment frequency and success rates
+### 1. AI-Powered Development Intelligence Engine
+- **Advanced Performance Analytics**: Machine learning-driven analysis of velocity, throughput, cycle time, and productivity patterns
+- **Intelligent Quality Metrics**: Sophisticated defect prediction, code quality assessment, and test effectiveness analysis
+- **Comprehensive Collaboration Intelligence**: Advanced team dynamics analysis with communication patterns and knowledge sharing optimization
+- **Strategic DORA Metrics Integration**: Complete DevOps Research and Assessment metrics with industry benchmarking
 
-### Team Analytics
-- **Individual Performance**: Personal productivity and growth metrics
-- **Team Dynamics**: Collaboration patterns and team health indicators
-- **Skill Development**: Learning progress and expertise growth
-- **Workload Analysis**: Capacity utilization and distribution
+### 2. Enterprise-Grade Predictive Analytics Platform
+- **Advanced Delivery Forecasting**: Monte Carlo simulation-based delivery prediction with confidence intervals and risk assessment
+- **Quality Intelligence Prediction**: Machine learning-powered defect prediction and quality trend forecasting
+- **Capacity Planning Optimization**: Sophisticated resource forecasting with skill gap analysis and hiring recommendations
+- **Risk Assessment and Mitigation**: Comprehensive risk modeling with impact analysis and automated mitigation strategies
 
-### Predictive Analytics
-- **Delivery Forecasting**: Predict delivery dates and completion probability
-- **Quality Prediction**: Forecast defect rates and quality trends
-- **Capacity Planning**: Predict future resource needs and capacity
-- **Risk Assessment**: Identify potential risks and mitigation strategies
+### 3. Comprehensive Team Performance and Individual Excellence Analytics
+- **Individual Performance Intelligence**: Personal productivity tracking with skill development and career growth insights
+- **Advanced Team Dynamics Analysis**: Collaboration patterns, team health indicators, and performance optimization recommendations
+- **Skill Development Tracking**: Learning progress monitoring with competency mapping and development pathway guidance
+- **Workload Optimization Analytics**: Intelligent capacity utilization analysis with workload balancing and efficiency recommendations
 
-## Execution Steps
+### 4. Strategic Business Intelligence and Organizational Excellence
+- **Executive Performance Dashboards**: High-level KPIs with strategic business impact analysis and organizational performance insights
+- **Industry Benchmarking Intelligence**: Comprehensive comparison against industry standards with best practice recommendations
+- **Continuous Improvement Analytics**: Data-driven process optimization with impact tracking and success measurement
+- **Innovation and Growth Metrics**: Technology adoption, learning velocity, and organizational capability development tracking
 
-1. **Data Collection and Aggregation**
-   - Collect data from multiple sources (Jira, Git, CI/CD, etc.)
-   - Aggregate and normalize data for analysis
-   - Apply quality filters and validation rules
-   - Store data in analytics data warehouse
+## Usage Examples
 
-2. **Metric Calculation and Analysis**
-   - Calculate key performance indicators (KPIs)
-   - Perform statistical analysis and trend identification
-   - Generate comparative analysis across teams and projects
-   - Create predictive models and forecasts
+### Basic Metrics Analysis
+```bash
+# Generate current team metrics
+/m-jira-metrics
 
-3. **Insight Generation and Visualization**
-   - Generate actionable insights from metric analysis
-   - Create visualizations and dashboards
-   - Identify patterns, anomalies, and opportunities
-   - Format insights for different stakeholder audiences
+# Generate metrics for specific team
+/m-jira-metrics TEAM-NAME
 
-4. **Reporting and Action Planning**
-   - Generate comprehensive metric reports
-   - Provide recommendations for improvement
-   - Create action plans based on insights
-   - Monitor progress and impact of changes
+# Interactive metrics with AI guidance
+/m-jira-metrics --interactive
+```
+
+### Focused Analytics
+```bash
+# Team performance focus
+/m-jira-metrics --team-performance
+
+# Quality metrics focus
+/m-jira-metrics --quality-analytics
+
+# DORA metrics focus
+/m-jira-metrics --dora-metrics
+```
+
+### Advanced Options
+```bash
+# Comprehensive analytics with predictions
+/m-jira-metrics --predictive-analytics
+
+# Industry benchmarking analysis
+/m-jira-metrics --benchmarking
+
+# Executive dashboard metrics
+/m-jira-metrics --executive-dashboard
+```
+
+## Command Options
+
+```yaml
+metrics_scope:
+  current_team: "Generate comprehensive metrics for current or specified team (default)"
+  project_analytics: "Project-level performance and delivery analytics"
+  individual_performance: "Individual developer performance and growth metrics"
+  organizational_intelligence: "Organization-wide performance and strategic insights"
+
+analysis_depth:
+  --quick: "Essential KPIs and critical performance indicators"
+  --standard: "Comprehensive metrics analysis with trend analysis (default)"
+  --advanced: "Advanced analytics with predictive modeling and forecasting"
+  --enterprise: "Enterprise-grade intelligence with industry benchmarking"
+
+metrics_focus:
+  --team-performance: "Team velocity, collaboration, and productivity metrics"
+  --quality-analytics: "Quality metrics, defect analysis, and test effectiveness"
+  --dora-metrics: "DevOps Research and Assessment metrics and benchmarking"
+  --individual-analytics: "Individual performance, growth, and skill development"
+  --collaboration-insights: "Team dynamics, knowledge sharing, and communication patterns"
+
+predictive_analytics:
+  --predictive-analytics: "Advanced forecasting and predictive modeling"
+  --capacity-planning: "Resource forecasting and capacity optimization"
+  --risk-assessment: "Risk analysis with mitigation recommendations"
+  --trend-forecasting: "Historical trend analysis with future projections"
+
+benchmarking_options:
+  --industry-benchmarking: "Compare performance against industry standards"
+  --peer-comparison: "Compare with similar teams and projects"
+  --best-practices: "Identify best practices and improvement opportunities"
+  --maturity-assessment: "Organizational maturity assessment and roadmap"
+
+visualization_options:
+  --executive-dashboard: "High-level executive dashboards and KPIs"
+  --team-dashboard: "Detailed team performance and collaboration metrics"
+  --individual-reports: "Personal performance reports and development insights"
+  --comparative-analysis: "Multi-team and cross-project comparative analytics"
+
+delivery_format:
+  --interactive-dashboard: "Interactive web-based analytics dashboard"
+  --pdf-report: "Comprehensive PDF report with detailed analytics"
+  --excel-export: "Excel workbook with raw data and pivot tables"
+  --api-integration: "JSON API format for custom dashboard integration"
+```
+
+## Execution Framework
+
+### 1. **Strategic Data Collection and Integration Phase**
+- **Multi-Source Data Aggregation**: Advanced collection from Jira, Git, CI/CD, monitoring systems, and external tools with real-time synchronization
+- **Data Quality Assurance and Validation**: Sophisticated data cleansing, normalization, and validation with anomaly detection and quality scoring
+- **Enterprise System Integration**: Seamless integration with data warehouses, BI tools, and organizational systems
+- **Historical Data Analysis**: Deep historical pattern analysis with trend identification and statistical significance testing
+- **Context-Aware Data Processing**: Intelligent data processing with organizational context and business logic application
+
+### 2. **Advanced Analytics and Intelligence Generation Phase**
+- **Machine Learning-Powered Analysis**: AI-driven analysis using regression, clustering, and predictive algorithms for performance optimization
+- **Comprehensive KPI Calculation**: Advanced performance indicator computation with statistical significance and confidence intervals
+- **Predictive Modeling and Forecasting**: Sophisticated statistical modeling for delivery prediction, quality forecasting, and capacity planning
+- **Pattern Recognition and Anomaly Detection**: Intelligent identification of performance patterns, outliers, and improvement opportunities
+- **Business Intelligence Generation**: Strategic insights development with impact analysis and actionable recommendations
+
+### 3. **Performance Optimization and Insight Development Phase**
+- **Actionable Insight Generation**: AI-powered insight development with prioritized recommendations and implementation guidance
+- **Comparative Analysis and Benchmarking**: Comprehensive performance comparison across teams, projects, and industry standards
+- **Trend Analysis and Future Projection**: Advanced trend identification with statistical forecasting and scenario analysis
+- **Risk Assessment and Mitigation**: Comprehensive risk modeling with probability assessment and mitigation strategy development
+- **Optimization Opportunity Identification**: Data-driven identification of performance improvement opportunities with ROI analysis
+
+### 4. **Visualization and Communication Phase**
+- **Dynamic Dashboard Creation**: Interactive dashboard development with drill-down capabilities and real-time updates
+- **Stakeholder-Specific Reporting**: Role-based report customization with appropriate detail levels and focus areas
+- **Executive Summary Generation**: High-level business intelligence summaries for leadership communication
+- **Professional Report Formatting**: Enterprise-grade report formatting with brand consistency and accessibility compliance
+- **Multi-Format Output Generation**: Comprehensive output across interactive dashboards, PDF reports, and API formats
+
+### 5. **Continuous Improvement and Action Planning Phase**
+- **Implementation Roadmap Development**: Detailed action plan creation with prioritized recommendations and success metrics
+- **Progress Monitoring and Tracking**: Continuous monitoring of implemented improvements with impact assessment
+- **Feedback Integration and Learning**: Stakeholder feedback incorporation with machine learning model refinement
+- **Success Measurement and Validation**: Comprehensive measurement of improvement impact with ROI analysis
+- **Knowledge Management and Best Practice Development**: Capture and documentation of successful strategies and organizational learning
 
 ## Core Metrics Framework
+
+## Advanced Metrics Framework
 
 ### Velocity and Throughput Metrics
 ```yaml

@@ -6,7 +6,107 @@
 
 ## Overview
 
-Provides comprehensive documentation management capabilities integrated with Jira development workflows. Enables creation and maintenance of user documentation, technical guides, API references, and knowledge base articles that evolve with project development.
+Transforms Claude into your AI-powered Documentation Specialist, providing enterprise-grade documentation management and intelligent content creation capabilities seamlessly integrated with development workflows. This command delivers comprehensive documentation automation, multi-platform publishing, and advanced content optimization that ensures high-quality, accessible, and maintainable documentation throughout the entire development lifecycle.
+
+**Key Benefits:**
+- **AI-Powered Content Generation**: Intelligent documentation creation from code, requirements, and specifications with automated quality enhancement
+- **Comprehensive Documentation Ecosystem**: Multi-format documentation including user guides, API references, technical specifications, and knowledge bases
+- **Advanced Multi-Platform Publishing**: Automated distribution across Confluence, documentation sites, API portals, and help centers
+- **Intelligent Content Optimization**: AI-driven content enhancement with accessibility compliance and user experience optimization
+- **Living Documentation Intelligence**: Automated synchronization with code changes and continuous content maintenance
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-docs --help
+```
+
+## Usage Examples
+
+### Basic Documentation Creation
+```bash
+# Generate documentation for current Jira issue
+/m-jira-docs
+
+# Generate documentation for specific issue
+/m-jira-docs ALUN-123
+
+# Interactive documentation with AI guidance
+/m-jira-docs --interactive
+```
+
+### Focused Documentation Types
+```bash
+# User guide focus
+/m-jira-docs --user-guide
+
+# API documentation focus
+/m-jira-docs --api-docs
+
+# Technical guide focus
+/m-jira-docs --technical-guide
+```
+
+### Advanced Options
+```bash
+# Comprehensive documentation suite
+/m-jira-docs --comprehensive-suite
+
+# Multi-platform publishing
+/m-jira-docs --multi-platform
+
+# Living documentation update
+/m-jira-docs --living-docs-sync
+```
+
+## Command Options
+
+```yaml
+documentation_scope:
+  current_issue: "Generate documentation for current or specified Jira issue (default)"
+  user_documentation: "Comprehensive end-user guides and tutorials"
+  technical_documentation: "Developer guides and technical references"
+  api_documentation: "Complete API reference and integration guides"
+  knowledge_base: "Troubleshooting guides and institutional knowledge"
+
+analysis_depth:
+  --quick: "Essential documentation with key information"
+  --standard: "Comprehensive documentation with detailed content (default)"
+  --comprehensive: "Enterprise-grade documentation with full coverage"
+  --suite: "Complete documentation suite across all formats"
+
+documentation_type:
+  --user-guide: "End-user guides, tutorials, and help articles"
+  --technical-guide: "Developer guides, architecture docs, and technical references"
+  --api-docs: "API documentation, reference guides, and integration examples"
+  --process-docs: "Workflow guides, procedures, and best practices"
+  --troubleshooting: "Problem-solving guides, FAQs, and support documentation"
+
+content_generation:
+  --code-to-docs: "Generate documentation from existing codebase analysis"
+  --requirements-driven: "Create documentation from requirements and specifications"
+  --template-based: "Use standardized templates for consistent documentation"
+  --ai-enhanced: "AI-powered content generation with optimization (default)"
+
+publishing_options:
+  --confluence-publish: "Publish to Confluence with automated formatting"
+  --docs-site-deploy: "Deploy to documentation website with static generation"
+  --api-portal-sync: "Synchronize with API documentation portal"
+  --multi-platform: "Publish across all configured platforms"
+
+quality_assurance:
+  --accessibility-check: "Comprehensive accessibility compliance validation"
+  --content-optimization: "AI-powered content enhancement and optimization"
+  --review-workflow: "Enable structured review and approval process"
+  --analytics-tracking: "Enable usage analytics and performance monitoring"
+
+integration_features:
+  --jira-integration: "Deep integration with Jira issues and workflows"
+  --code-sync: "Automatic synchronization with code changes"
+  --living-docs-sync: "Continuous documentation updates with development"
+  --version-control: "Advanced version control and change tracking"
+```
 
 ## AI Integration Strategy
 
@@ -27,51 +127,68 @@ fi
 
 ## Core Features
 
-### Intelligent Documentation Generation
-- **Automatic Content Generation**: Generate documentation from code, specs, and requirements
-- **Template-Based Creation**: Use standardized templates for consistent documentation
-- **Multi-Format Support**: Create documentation in various formats (Markdown, HTML, PDF)
-- **Content Suggestions**: AI-powered content recommendations and improvements
+### 1. AI-Powered Intelligent Documentation Generation Engine
+- **Advanced Automatic Content Creation**: Machine learning-driven documentation generation from code analysis, requirements extraction, and specification interpretation
+- **Template-Based Professional Documentation**: Sophisticated template system with customizable formats and industry-standard compliance
+- **Multi-Format Publishing Intelligence**: Automated content optimization for web, mobile, print, and API documentation formats
+- **Content Enhancement and Optimization**: AI-powered content suggestions with readability analysis and accessibility improvements
 
-### Documentation Types
-- **User Documentation**: End-user guides, tutorials, and help articles
-- **Technical Documentation**: Developer guides, API references, and architecture docs
-- **Process Documentation**: Workflow guides, procedures, and best practices
-- **Knowledge Base**: Troubleshooting guides, FAQs, and institutional knowledge
+### 2. Comprehensive Multi-Type Documentation Platform
+- **User Experience Documentation**: End-user guides, interactive tutorials, and contextual help systems with user journey optimization
+- **Technical Reference Documentation**: Developer guides, comprehensive API references, architecture documentation, and code examples
+- **Process and Workflow Documentation**: Detailed workflow guides, standard operating procedures, and best practice documentation
+- **Knowledge Management System**: Advanced troubleshooting guides, comprehensive FAQs, and institutional knowledge preservation
 
-### Integration with Development
-- **Code-Synchronized Docs**: Keep documentation updated with code changes
-- **Issue-Driven Updates**: Update documentation based on Jira issue completion
-- **Version Control**: Track documentation changes alongside code
-- **Automated Publishing**: Publish documentation to various platforms
+### 3. Advanced Development Integration and Synchronization
+- **Intelligent Code-Documentation Synchronization**: Real-time documentation updates with code changes and automated content validation
+- **Issue-Driven Documentation Automation**: Automatic documentation updates based on Jira issue completion and feature development
+- **Comprehensive Version Control Integration**: Advanced change tracking with documentation versioning and collaboration workflows
+- **Multi-Platform Automated Publishing**: Seamless distribution across Confluence, documentation sites, API portals, and help centers
 
-## Execution Steps
+### 4. Enterprise-Grade Content Management and Optimization
+- **Advanced Content Analytics and Optimization**: User behavior analysis with content performance optimization and engagement tracking
+- **Accessibility and Compliance Intelligence**: Automated accessibility compliance checking with international standards adherence
+- **Collaborative Review and Approval Workflows**: Sophisticated peer review system with stakeholder validation and approval tracking
+- **Continuous Content Improvement**: AI-driven content optimization with user feedback integration and quality enhancement recommendations
 
-1. **Documentation Planning**
-   - Analyze issue requirements for documentation needs
-   - Identify target audience and documentation type
-   - Plan documentation structure and organization
-   - Define content creation and review workflow
+## Execution Framework
 
-2. **Content Creation**
-   - Generate documentation from templates and requirements
-   - Create user guides, technical references, and tutorials
-   - Include code examples, screenshots, and diagrams
-   - Ensure accessibility and internationalization compliance
+### 1. **Strategic Documentation Analysis and Planning Phase**
+- **Comprehensive Requirement Analysis**: AI-powered analysis of Jira issues, user stories, and technical specifications for documentation needs identification
+- **Target Audience Intelligence**: Advanced user persona analysis with content customization for different stakeholder groups
+- **Documentation Architecture Planning**: Sophisticated content structure design with information architecture optimization
+- **Content Creation Workflow Design**: Comprehensive workflow planning with resource allocation and timeline optimization
+- **Quality Standards Definition**: Establishment of content quality criteria, accessibility standards, and compliance requirements
 
-3. **Review and Validation**
-   - Technical accuracy review by subject matter experts
-   - User experience review for clarity and usability
-   - Content validation against requirements
-   - Compliance and accessibility testing
+### 2. **AI-Powered Content Creation and Generation Phase**
+- **Intelligent Content Generation**: Advanced AI-driven content creation from code analysis, requirement extraction, and specification interpretation
+- **Multi-Format Content Development**: Comprehensive creation of user guides, technical references, API documentation, and interactive tutorials
+- **Visual Content Integration**: Automated integration of code examples, screenshots, diagrams, and interactive elements
+- **Accessibility and Internationalization**: Comprehensive accessibility compliance with multi-language support and cultural adaptation
+- **Content Enhancement and Optimization**: AI-powered content improvement with readability analysis and user experience optimization
 
-4. **Publication and Maintenance**
-   - Publish documentation to appropriate platforms
-   - Set up automated updates and maintenance
-   - Monitor documentation usage and feedback
-   - Plan regular reviews and updates
+### 3. **Comprehensive Review and Quality Validation Phase**
+- **Technical Accuracy Validation**: Subject matter expert review with automated fact-checking and technical validation
+- **User Experience and Usability Testing**: Comprehensive UX review with user testing and feedback collection
+- **Content Quality Assessment**: Multi-dimensional quality analysis including clarity, completeness, and effectiveness
+- **Compliance and Accessibility Audit**: Comprehensive accessibility testing with international standards compliance validation
+- **Stakeholder Approval and Sign-off**: Structured approval workflow with stakeholder validation and change management
 
-## Documentation Templates
+### 4. **Multi-Platform Publication and Distribution Phase**
+- **Intelligent Platform Optimization**: AI-powered content adaptation for different publishing platforms and formats
+- **Automated Publishing Pipeline**: Comprehensive automation for Confluence, documentation sites, API portals, and help centers
+- **Quality Assurance and Testing**: Complete testing of published content with link validation and formatting verification
+- **Performance Optimization**: Content delivery optimization with loading speed and accessibility performance enhancement
+- **Launch Coordination and Communication**: Stakeholder communication with launch announcements and training provision
+
+### 5. **Continuous Maintenance and Improvement Phase**
+- **Advanced Usage Analytics**: Comprehensive analysis of documentation usage patterns with user behavior insights
+- **Automated Content Maintenance**: Intelligent content updates with code synchronization and automated quality monitoring
+- **User Feedback Integration**: Systematic feedback collection with AI-powered content improvement recommendations
+- **Performance Monitoring and Optimization**: Continuous monitoring of content effectiveness with optimization recommendations
+- **Knowledge Management and Evolution**: Long-term knowledge preservation with content evolution and organizational learning integration
+
+## Advanced Documentation Templates
 
 ### User Guide Template
 ```yaml

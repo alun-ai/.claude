@@ -6,7 +6,21 @@
 
 ## Overview
 
-Unified command for all Jira issue operations that intelligently determines whether to create a new issue or update an existing one. Supports smart templates, AI-powered field population, automated workflows, and seamless development integration.
+Transforms Claude into your AI-powered Issue Management Specialist, providing enterprise-grade Jira integration with intelligent issue lifecycle management and automated development workflow orchestration. This command delivers unified issue operations, smart context detection, and comprehensive automation that eliminates manual overhead while ensuring project alignment and development efficiency.
+
+**Key Benefits:**
+- **AI-Powered Issue Intelligence**: Machine learning-driven issue creation, duplicate detection, and intelligent field population based on development context
+- **Unified Operation Management**: Single command interface for all issue operations with intelligent context detection and smart workflow automation
+- **Enterprise-Grade Development Integration**: Seamless Git integration with automated branch creation, commit linking, and CI/CD pipeline coordination
+- **Smart Template System**: Intelligent template application with role-based customization and automated field validation
+- **Comprehensive Workflow Automation**: Advanced workflow orchestration with automated transitions, notifications, and quality gate enforcement
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-issue --help
+```
 
 ## AI Integration Strategy
 
@@ -37,23 +51,29 @@ fi
 
 ## Core Features
 
-### Intelligent Operation Detection
-- **Branch Analysis**: Extract issue key from current branch name
-- **Context Detection**: Determine if creating or updating based on git state
-- **Duplicate Prevention**: Search for similar issues before creating new ones
-- **Smart Defaults**: Apply appropriate defaults based on operation type
+### 1. AI-Powered Issue Intelligence Engine
+- **Smart Context Detection**: Intelligent analysis of development context to determine optimal issue operations and field population
+- **Advanced Duplicate Prevention**: Machine learning-powered duplicate detection with similarity scoring and merge recommendations
+- **Intelligent Field Population**: AI-driven field completion based on code changes, commit history, and project patterns
+- **Automated Categorization**: Smart component, label, and priority assignment based on development context and organizational patterns
 
-### Unified Issue Operations
-- **Create or Update**: Single command handles both operations intelligently
-- **Template System**: Shared templates for both creation and updates
-- **Field Management**: Consistent field handling across operations
-- **Workflow Automation**: Automatic status progression and field updates
+### 2. Unified Issue Operation Management
+- **Context-Aware Operation Selection**: Intelligent determination of create vs. update operations based on branch analysis and development state
+- **Smart Template Application**: Dynamic template selection and customization based on issue type, project context, and user role
+- **Comprehensive Field Management**: Unified field handling across creation and update operations with validation and consistency checking
+- **Workflow Orchestration**: Advanced workflow management with automated transitions, approval processes, and quality gates
 
-### Development Integration
-- **Git-Aware Operations**: Automatic issue linking with branches and commits
-- **PR Integration**: Update issues based on pull request events
-- **Time Tracking**: Automatic work logging based on development activity
-- **Quality Gates**: Update status based on CI/CD pipeline results
+### 3. Enterprise-Grade Development Integration
+- **Git-Aware Operations**: Seamless integration with Git workflows including automatic branch creation, commit linking, and PR management
+- **CI/CD Pipeline Integration**: Automated pipeline triggers with build status updates, test result integration, and deployment coordination
+- **Time Tracking Automation**: Intelligent work logging based on development activity with automatic time allocation and reporting
+- **Quality Gate Management**: Automated quality checkpoint enforcement with code review integration and testing validation
+
+### 4. Advanced Automation and Intelligence
+- **Bulk Operation Management**: Efficient batch processing with intelligent error handling and rollback capabilities
+- **Smart Workflow Transitions**: AI-powered status progression based on development milestones and quality metrics
+- **Automated Notification System**: Intelligent stakeholder communication with role-based notifications and escalation procedures
+- **Audit Trail and Compliance**: Complete operation history with regulatory compliance support and change tracking
 
 ## Execution Flow
 

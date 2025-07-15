@@ -6,53 +6,170 @@
 
 ## Overview
 
-Creates comprehensive testing strategies for Jira issues by analyzing requirements, generating test cases, and integrating with automated testing frameworks. Provides structured test planning that aligns with development workflows and quality assurance processes.
+Transforms Claude into your AI-powered QA Test Architect, creating comprehensive testing strategies for Jira issues through intelligent requirement analysis, automated test case generation, and seamless integration with modern testing frameworks. This command provides enterprise-grade test planning that bridges development workflows with quality assurance processes, ensuring robust and maintainable test coverage.
+
+**Key Benefits:**
+- **Intelligent Test Case Generation**: AI-powered analysis of requirements to create comprehensive test scenarios
+- **Multi-Level Testing Strategy**: Coordinated unit, integration, end-to-end, and performance testing plans
+- **Automated Framework Integration**: Seamless integration with Jest, Cypress, Playwright, and CI/CD pipelines
+- **Risk-Based Testing**: Prioritized test planning based on complexity, risk assessment, and business impact
+- **Comprehensive Coverage Analysis**: Automated traceability from requirements to test cases and execution
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-jira-test-plan --help
+```
 
 ## Core Features
 
-### Intelligent Test Case Generation
-- **Requirement Analysis**: Extract testable requirements from issue descriptions
-- **Acceptance Criteria Mapping**: Convert acceptance criteria into test scenarios
-- **Edge Case Identification**: Automatically identify boundary conditions and error cases
-- **Risk-Based Testing**: Prioritize test cases based on risk and complexity
+### 1. AI-Powered Test Strategy Intelligence
+- **Intelligent Requirement Decomposition**: Advanced parsing of Jira issues to extract testable components and hidden requirements
+- **Acceptance Criteria Transformation**: Automated conversion of business requirements into comprehensive test scenarios with edge cases
+- **Risk-Based Test Prioritization**: Machine learning-powered assessment of complexity, business impact, and testing effort
+- **Test Case Relationship Mapping**: Automated identification of test dependencies and execution order optimization
 
-### Multi-Level Testing Strategy
-- **Unit Test Planning**: Component-level testing strategies
-- **Integration Test Design**: API and service integration testing
-- **End-to-End Test Scenarios**: Complete user workflow testing
-- **Performance Test Planning**: Load and stress testing requirements
+### 2. Enterprise-Grade Multi-Level Testing Framework
+- **Comprehensive Test Pyramid Design**: Strategic distribution of testing effort across unit, integration, and end-to-end levels
+- **Performance Testing Integration**: Automated load, stress, and scalability test planning with realistic performance thresholds
+- **Security Testing Inclusion**: Comprehensive security test planning including authentication, authorization, and data validation
+- **Accessibility Testing Strategy**: Complete accessibility compliance testing with WCAG guidelines and screen reader compatibility
 
-### Automated Test Framework Integration
-- **Test Code Generation**: Generate test templates and boilerplate
-- **Framework Integration**: Support for Jest, Cypress, Playwright, etc.
-- **CI/CD Integration**: Automated test execution in pipelines
-- **Coverage Analysis**: Test coverage tracking and reporting
+### 3. Advanced Test Automation Orchestration
+- **Framework-Agnostic Code Generation**: Intelligent test code generation for Jest, Cypress, Playwright, Vitest, and custom frameworks
+- **CI/CD Pipeline Integration**: Seamless integration with GitHub Actions, CircleCI, Jenkins, and Azure DevOps
+- **Test Data Management**: Automated test data generation, management, and cleanup strategies
+- **Coverage Analytics**: Real-time test coverage analysis with gap identification and improvement recommendations
 
-## Execution Steps
+### 4. Comprehensive Quality Assurance Workflow
+- **Traceability Matrix Generation**: Complete requirement-to-test-case mapping with bidirectional traceability
+- **Test Environment Orchestration**: Automated test environment setup and configuration management
+- **Defect Integration**: Seamless bug tracking and resolution workflow integration with test execution
+- **Quality Metrics Dashboard**: Real-time quality metrics with trend analysis and predictive insights
 
-1. **Requirement Analysis**
-   - Parse issue description and acceptance criteria
-   - Identify functional and non-functional requirements
-   - Extract user stories and business rules
-   - Map requirements to testable scenarios
+## Usage Examples
 
-2. **Test Strategy Development**
-   - Determine appropriate testing levels and types
-   - Identify testing tools and frameworks
-   - Plan test environment requirements
-   - Estimate testing effort and timeline
+### Basic Test Plan Generation
+```bash
+# Generate test plan for current Jira issue
+/m-jira-test-plan
 
-3. **Test Case Generation**
-   - Create detailed test scenarios with steps
-   - Generate positive and negative test cases
-   - Include boundary value and error condition tests
-   - Map test cases to requirements and acceptance criteria
+# Generate test plan for specific issue
+/m-jira-test-plan ALUN-123
 
-4. **Test Automation Planning**
-   - Identify automatable test scenarios
-   - Generate test code templates and examples
-   - Plan integration with CI/CD pipelines
-   - Set up test data and environment requirements
+# Interactive test planning with AI guidance
+/m-jira-test-plan --interactive
+```
+
+### Focused Test Planning
+```bash
+# Security-focused test planning
+/m-jira-test-plan --security-focus
+
+# Performance testing emphasis
+/m-jira-test-plan --performance-focus
+
+# API and integration testing focus
+/m-jira-test-plan --api-focus
+```
+
+### Advanced Options
+```bash
+# Generate with automated test code
+/m-jira-test-plan --generate-code
+
+# Include comprehensive coverage analysis
+/m-jira-test-plan --coverage-analysis
+
+# Enterprise-grade test planning
+/m-jira-test-plan --enterprise-level
+```
+
+## Command Options
+
+```yaml
+test_planning_scope:
+  current_issue: "Generate test plan for current or specified Jira issue (default)"
+  epic_testing: "Comprehensive test planning for entire epic"
+  sprint_testing: "Test planning for all issues in current sprint"
+  integration_testing: "Focus on cross-component integration testing"
+
+analysis_depth:
+  --quick: "Essential test cases focusing on critical paths"
+  --standard: "Comprehensive test planning with full coverage (default)"
+  --enterprise: "Enterprise-grade testing with compliance and security focus"
+  --exhaustive: "Maximum coverage including edge cases and performance testing"
+
+testing_focus:
+  --functional-focus: "Emphasize functional testing and user workflows"
+  --security-focus: "Prioritize security testing and vulnerability assessment"
+  --performance-focus: "Focus on performance, load, and stress testing"
+  --api-focus: "API testing and service integration emphasis"
+  --accessibility-focus: "Accessibility compliance and usability testing"
+
+framework_integration:
+  --jest: "Generate Jest unit test templates and examples"
+  --cypress: "Create Cypress end-to-end test scenarios"
+  --playwright: "Playwright browser testing integration"
+  --postman: "API testing with Postman collection generation"
+  --k6: "Performance testing with k6 scenarios"
+
+test_automation:
+  --generate-code: "Generate actual test code templates and examples"
+  --ci-cd-integration: "Include CI/CD pipeline configuration"
+  --test-data-generation: "Create test data management strategies"
+  --mock-service-setup: "Generate mock service configurations"
+
+coverage_analysis:
+  --coverage-analysis: "Comprehensive coverage gap analysis"
+  --traceability-matrix: "Generate requirement-to-test traceability"
+  --risk-assessment: "Include risk-based testing prioritization"
+  --quality-metrics: "Define quality gates and success criteria"
+
+delivery_format:
+  --jira-integration: "Create linked test cases in Jira"
+  --markdown-report: "Generate detailed markdown test plan (default)"
+  --test-suite-files: "Create actual test framework files"
+  --confluence-docs: "Generate Confluence-compatible documentation"
+```
+
+## Execution Framework
+
+### 1. **Strategic Test Analysis and Planning Phase**
+- **Comprehensive Requirement Analysis**: Deep parsing of Jira issue descriptions, acceptance criteria, and linked requirements
+- **Risk Assessment and Prioritization**: Advanced analysis of business impact, technical complexity, and testing effort
+- **Test Strategy Development**: Strategic determination of testing approaches, frameworks, and coverage targets
+- **Stakeholder Alignment**: Validation of testing objectives with business requirements and quality standards
+- **Resource Planning**: Estimation of testing effort, timeline, and required testing environments
+
+### 2. **Multi-Level Test Design and Architecture Phase**
+- **Test Pyramid Construction**: Strategic distribution of testing effort across unit, integration, and end-to-end levels
+- **Comprehensive Test Case Generation**: AI-powered creation of functional, non-functional, and edge case scenarios
+- **Test Data Strategy Development**: Design of test data management, generation, and cleanup strategies
+- **Environment Architecture Planning**: Complete test environment setup and configuration requirements
+- **Automation Strategy Design**: Identification of automation candidates and framework selection
+
+### 3. **Test Framework Integration and Code Generation Phase**
+- **Framework-Specific Code Generation**: Automated creation of test templates for Jest, Cypress, Playwright, and other frameworks
+- **CI/CD Pipeline Integration**: Complete integration planning with GitHub Actions, CircleCI, and deployment workflows
+- **Mock Service Configuration**: Setup of mock services, test doubles, and external dependency simulation
+- **Performance Testing Setup**: Configuration of load testing, stress testing, and performance monitoring
+- **Security Testing Integration**: Implementation of security testing workflows and vulnerability assessment
+
+### 4. **Quality Assurance and Traceability Phase**
+- **Traceability Matrix Generation**: Complete mapping from requirements to test cases to execution results
+- **Coverage Analysis and Gap Identification**: Comprehensive analysis of test coverage with improvement recommendations
+- **Quality Gate Definition**: Establishment of quality criteria, success thresholds, and acceptance standards
+- **Defect Management Integration**: Setup of bug tracking, resolution workflows, and regression testing
+- **Metrics and Reporting Framework**: Implementation of quality metrics, trend analysis, and continuous improvement
+
+### 5. **Implementation Planning and Documentation Phase**
+- **Execution Roadmap Development**: Detailed implementation plan with phases, milestones, and dependencies
+- **Team Training and Knowledge Transfer**: Documentation and training materials for test execution teams
+- **Maintenance Strategy**: Long-term test maintenance, updates, and continuous improvement planning
+- **Compliance and Audit Preparation**: Documentation for regulatory compliance and audit requirements
+- **Success Measurement Framework**: Definition of KPIs, success metrics, and continuous improvement processes
 
 ## Test Planning Framework
 

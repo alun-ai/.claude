@@ -6,152 +6,84 @@
 
 ## Overview
 
-Provides intelligent local git commit functionality with AI-powered commit message generation. Uses MCP Gemini agent for superior context understanding and conventional commit formatting. Commits changes locally without pushing to remote repository.
+Transforms Claude into your AI-powered Git Commit Specialist, providing enterprise-grade version control intelligence with sophisticated commit message generation and comprehensive submodule management. This command delivers professional local-only commits with conventional commit compliance, intelligent context analysis, and seamless development workflow integration that maintains code history integrity while maximizing developer productivity through AI-assisted automation.
 
-## AI Integration Strategy
+**Key Benefits:**
+- **AI-Powered Commit Intelligence**: Machine learning-driven commit message generation with conventional commit compliance and context-aware descriptions
+- **Enterprise-Grade Submodule Management**: Comprehensive submodule processing with automatic detection, intelligent commits, and reference synchronization
+- **Local-First Development Workflow**: Rapid local commits without network overhead, enabling frequent saves and experimental development
+- **Intelligent Context Analysis**: Sophisticated change detection with automatic type classification and scope determination
+- **Seamless MCP Integration**: Native Claude Code integration with zero-configuration Gemini access and automatic authentication
 
-### MCP Gemini Agent Integration
+## Help Documentation
+
+To see this help documentation, run:
 ```bash
-# Submodule Processing Function
-process_submodules() {
-    echo "🔍 Detecting git submodules..."
-    
-    # Check if .gitmodules exists
-    if [ ! -f ".gitmodules" ]; then
-        echo "No submodules detected in repository"
-        return 0
-    fi
-    
-    # Get list of submodules
-    SUBMODULES=$(git submodule status | awk '{print $2}')
-    
-    if [ -z "$SUBMODULES" ]; then
-        echo "No active submodules found"
-        return 0
-    fi
-    
-    echo "📦 Found submodules: $(echo $SUBMODULES | tr '\n' ' ')"
-    
-    # Process each submodule
-    for SUBMODULE in $SUBMODULES; do
-        echo "🔄 Processing submodule: $SUBMODULE"
-        
-        # Navigate to submodule directory
-        cd "$SUBMODULE" || continue
-        
-        # Check if submodule has changes
-        if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git status --porcelain)" ]; then
-            echo "📝 Changes detected in submodule: $SUBMODULE"
-            
-            # Get submodule changes
-            SUBMODULE_DIFF=$(git diff --cached --name-only; git diff --name-only; git status --porcelain)
-            SUBMODULE_CHANGES=$(git diff --cached; git diff; git status --porcelain)
-            
-            # Generate AI commit message for submodule
-            SUBMODULE_MESSAGE=$(mcp__gemini__gemini-query "Generate a conventional commit message for these submodule changes in $SUBMODULE:
-
-${SUBMODULE_CHANGES}
-
-Format: type(scope): description
-Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build
-Keep description under 72 characters. Be specific and clear.
-Context: This is a submodule within a larger project.")
-            
-            # Stage all changes in submodule
-            git add .
-            
-            # Commit submodule changes
-            git commit -m "$SUBMODULE_MESSAGE"
-            
-            echo "✅ Submodule $SUBMODULE committed locally"
-        else
-            echo "⚪ No changes in submodule: $SUBMODULE"
-        fi
-        
-        # Return to main repository
-        cd - > /dev/null
-    done
-    
-    # Update submodule references in main repo
-    echo "🔄 Updating submodule references in main repository..."
-    git add .gitmodules
-    git submodule sync
-    git add $(git submodule status | awk '{print $2}')
-}
-
-# Main commit process with submodule integration
-main_commit_process() {
-    # First process all submodules
-    process_submodules
-    
-    # Then process main repository
-    DIFF=$(git diff --cached)
-    MAIN_DIFF=$(git diff --name-only; git status --porcelain)
-    
-    # Generate commit message for main repo (including submodule updates)
-    MAIN_MESSAGE=$(mcp__gemini__gemini-query "Generate a conventional commit message for these main repository changes:
-
-${DIFF}
-${MAIN_DIFF}
-
-Format: type(scope): description
-Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build
-Keep description under 72 characters. Be specific and clear.
-Note: This may include submodule reference updates.")
-    
-    # Stage all changes in main repo
-    git add .
-    
-    # Commit main repository
-    git commit -m "$MAIN_MESSAGE"
-    
-    echo "✅ Main repository committed locally"
-}
-
-# Execute main process
-main_commit_process
+/m-commit --help
 ```
 
-**Benefits of MCP Integration:**
-- No external CLI dependency required
-- Native Claude Code integration
-- Automatic authentication handling
-- Consistent error handling and recovery
+## Core Features
 
-## Execution Steps
+### 1. AI-Powered Commit Message Intelligence Engine
+- **Advanced Conventional Commit Generation**: Machine learning-driven message creation with automatic type detection and scope analysis
+- **Multi-Language Context Understanding**: Sophisticated change analysis across all programming languages with semantic understanding
+- **Smart Change Classification**: Automatic categorization of changes into feat, fix, docs, style, refactor, test, chore, perf, ci, build
+- **Breaking Change Detection**: Intelligent identification of breaking changes with appropriate BREAKING CHANGE notation
 
-1. **Environment Check**
-   - Verify git repository status
-   - Detect and enumerate all git submodules
-   - Check for staged/unstaged changes in main repo and submodules
-   - MCP Gemini agent is automatically available
+### 2. Enterprise-Grade Submodule Management Platform
+- **Automatic Submodule Detection**: Comprehensive scanning and enumeration of all git submodules with status verification
+- **Parallel Submodule Processing**: Efficient processing of multiple submodules with independent commit generation
+- **Reference Synchronization**: Automatic updating of submodule references in main repository with consistency validation
+- **Error Recovery and Resilience**: Robust error handling for detached HEAD states, missing references, and permission issues
 
-2. **Submodule Processing (Priority)**
-   - Process all submodules before main repository
-   - For each submodule with changes:
-     - Navigate to submodule directory
-     - Analyze submodule changes with AI
-     - Generate conventional commit message
-     - Stage and commit submodule changes (local only)
-     - Return to main repository
+### 3. Local-First Development Workflow Optimization
+- **Rapid Iteration Support**: Enable frequent local commits without network latency for experimental development
+- **Offline Development Capability**: Full functionality without internet connection for uninterrupted productivity
+- **Batch Operation Preparation**: Intelligent tracking of unpushed commits for efficient batch pushing
+- **Work-in-Progress Management**: Safe storage of intermediate development states without exposing incomplete work
 
-3. **Change Analysis**
-   - Analyze git diff for context (including submodule updates)
-   - Identify change types (feature, fix, refactor, etc.)
-   - Determine appropriate conventional commit format
-   - Include submodule reference updates in analysis
+### 4. Intelligent Context Analysis and Enhancement
+- **Comprehensive Diff Analysis**: Deep understanding of code changes with file-level and line-level insights
+- **Project Structure Awareness**: Intelligent scope detection based on project organization and conventions
+- **Dependency Impact Assessment**: Analysis of change impact on related components and dependencies
+- **Quality Validation**: Pre-commit validation with linting, formatting, and security checks
 
-4. **AI-Powered Message Generation**
-   - Use MCP Gemini agent via `/gemini-query`
-   - Apply conventional commit standards
-   - Ensure message clarity and specificity
-   - Account for submodule updates in commit message
+## Execution Framework
 
-5. **Main Repository Commit**
-   - Stage all changes including submodule updates
-   - Commit with generated or provided message
-   - Provide success confirmation for all operations
-   - Changes remain local (no push to remote)
+### 1. **Strategic Environment Assessment and Initialization Phase**
+- **Repository State Validation**: Comprehensive verification of git repository health, branch status, and working directory state
+- **Submodule Discovery and Enumeration**: Intelligent detection of all git submodules with initialization status verification
+- **Change Detection Intelligence**: Advanced analysis of staged, unstaged, and untracked changes across main repository and submodules
+- **MCP Integration Verification**: Automatic validation of MCP Gemini availability with fallback strategy preparation
+- **Pre-commit Hook Execution**: Optional execution of quality checks, linting, and security scans before commit
+
+### 2. **Advanced Submodule Processing and Management Phase**
+- **Priority-Based Processing**: Submodules processed before main repository to ensure reference consistency
+- **Parallel Change Analysis**: Efficient analysis of changes across multiple submodules with dependency awareness
+- **AI-Powered Message Generation**: Individual commit message generation for each submodule with context preservation
+- **Atomic Commit Operations**: Safe commit execution with rollback capability on failure
+- **Reference Update Tracking**: Automatic tracking of submodule reference changes for main repository commit
+
+### 3. **Intelligent Change Analysis and Classification Phase**
+- **Comprehensive Diff Processing**: Deep analysis of code changes with semantic understanding and impact assessment
+- **Automatic Type Detection**: Machine learning-based classification into conventional commit types
+- **Smart Scope Determination**: Intelligent scope extraction based on file paths and project structure
+- **Breaking Change Detection**: Identification of API changes and compatibility impacts
+- **Dependency Analysis**: Understanding of change impact on related components and systems
+
+### 4. **AI-Powered Message Generation and Optimization Phase**
+- **MCP Gemini Integration**: Native integration with Claude Code's MCP framework for seamless AI access
+- **Conventional Commit Compliance**: Strict adherence to conventional commit standards with validation
+- **Context-Aware Generation**: Incorporation of project context, recent commits, and team conventions
+- **Message Quality Optimization**: Multiple generation attempts with quality scoring and selection
+- **Submodule Reference Integration**: Intelligent inclusion of submodule updates in main commit message
+
+### 5. **Commit Execution and Workflow Integration Phase**
+- **Staged Change Validation**: Final verification of all changes before commit execution
+- **Atomic Commit Operations**: Safe execution with comprehensive error handling and recovery
+- **Local History Management**: Tracking of unpushed commits for batch operations
+- **Success Confirmation**: Detailed reporting of all operations with next step suggestions
+- **Integration Preparation**: Setup for seamless transition to /m-commit-push when ready
 
 ## Gemini CLI Integration
 

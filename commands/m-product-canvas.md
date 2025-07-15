@@ -109,163 +109,42 @@ canvas_template_sections:
 
 ## Execution Flow (Template-Driven)
 
-### 1. **Template Foundation Setup**
-```bash
-# Load canvas template as starting point
-load_canvas_template() {
-    TEMPLATE_PATH="templates/product/canvas.md"
-    CANVAS_TEMPLATE=$(cat "$TEMPLATE_PATH")
-    
-    echo "📋 Loading standardized product canvas template..."
-    echo "🎯 Template sections: Headline → Problem → Audience → Goals → Metrics → Validation → Competition → Big Picture → Scope → Readiness"
-    
-    # Determine operation mode
-    if [[ "$INPUT" =~ ^https://www\.notion\.so ]]; then
-        PAGE_ID=$(echo "$INPUT" | grep -oE '[a-f0-9]{32}' | tail -1)
-        EXISTING_CANVAS=$(/notion_retrieve_page "$PAGE_ID")
-        OPERATION_MODE="analyze_existing_against_template"
-        echo "🔍 Analyzing existing canvas against template structure..."
-    else
-        PRODUCT_CONCEPT="$INPUT"
-        OPERATION_MODE="create_from_template"
-        echo "🚀 Creating new canvas using template structure..."
-    fi
-}
+## Implementation Details
+
+### Canvas Template Structure
+```yaml
+canvas_template:
+  sections:
+    - headline: "Market positioning statement"
+    - problem_statement: "Core problems being solved"
+    - target_audience: "User segments and needs"
+    - goals: "Project objectives"
+    - success_metrics: "Measurement framework"
+    - validation: "Evidence and research"
+    - competitive_analysis: "Market landscape"
+    - big_picture: "Solution overview"
+    - not_doing: "Scope boundaries"
+    - readiness_checklist: "Prerequisites"
 ```
+
+### AI-Powered Analysis
+```bash
+# MCP Integration for comprehensive analysis
+mcp__gemini__gemini-brainstorm \
+  --prompt "Product strategy analysis" \
+  --claudeThoughts "Canvas development guidance" \
+  --maxRounds 3
+
+mcp__gemini__gemini-analyze-text \
+  --text "$PRODUCT_CONCEPT" \
+  --type "general"
+```
+
+### 1. **Template Foundation Setup**
 
 ### 2. **Template-Driven AI Analysis & Discovery**
-```bash
-# Systematic analysis through each template section
-conduct_template_driven_analysis() {
-    echo "🧠 Starting template-driven discovery process..."
-    echo "📚 Guidance designed for junior/mid-level product managers"
-    
-    # Section 1: Headline Development
-    HEADLINE_ANALYSIS=$(/gemini-query "As an experienced product mentor working with a junior PM, help develop a compelling headline for this product concept: $PRODUCT_CONCEPT
-
-    Template Section: HEADLINE
-    Purpose: Marketing announcement positioning
-    
-    Junior PM Guidance Needed:
-    1. How to write compelling headlines that capture value
-    2. Common mistakes junior PMs make in positioning
-    3. Examples of great product headlines from similar products
-    4. How to test and validate headline effectiveness
-    
-    Provide step-by-step guidance with specific examples.")
-
-    # Section 2: Problem Statement Deep Dive
-    PROBLEM_ANALYSIS=$(/gemini-query "As a senior product mentor, guide problem statement development for: $PRODUCT_CONCEPT
-
-    Template Section: PROBLEM STATEMENT
-    Purpose: Define core problems being solved
-    
-    Junior PM Development Focus:
-    1. How to identify and articulate user pain points
-    2. Techniques for validating problem importance
-    3. Framework for prioritizing multiple problems
-    4. Common pitfalls in problem definition
-    5. How to connect user problems to business problems
-    
-    Include specific questioning techniques and validation methods.")
-
-    # Section 3: Target Audience Analysis
-    AUDIENCE_ANALYSIS=$(/gemini-query "As a user research and product strategy expert, guide target audience definition for: $PRODUCT_CONCEPT
-
-    Template Section: TARGET AUDIENCE
-    Purpose: Specific user segments and unique needs
-    
-    Junior PM Skill Building:
-    1. Persona development best practices
-    2. Market segmentation techniques
-    3. How to avoid 'everyone is our user' trap
-    4. User needs analysis frameworks
-    5. Validation methods for persona accuracy
-    
-    Provide actionable frameworks and templates.")
-}
-```
 
 ### 3. **Guided Canvas Development for Junior/Mid-Level PMs**
-```bash
-# Systematic template-driven canvas completion
-guide_template_canvas_development() {
-    echo "🎯 Product Canvas Development Workshop"
-    echo "👨‍🏫 Your AI Product Mentor - designed for junior/mid-level PMs"
-    echo "📋 Following standardized canvas template structure"
-    echo ""
-    echo "We'll work through each section systematically with:"
-    echo "• Detailed explanations of each section's purpose"
-    echo "• Common mistakes to avoid"
-    echo "• Best practices and frameworks"
-    echo "• Real examples and templates"
-    echo "• Validation techniques"
-    
-    # Template-driven section development
-    develop_headline_section
-    develop_problem_statement_section  
-    develop_target_audience_section
-    develop_goals_section
-    develop_success_metrics_section
-    develop_validation_section
-    develop_competitive_analysis_section
-    develop_big_picture_section
-    develop_not_doing_section
-    develop_readiness_checklist_section
-    
-    # Generate comprehensive final canvas
-    generate_template_based_canvas
-}
-
-# Individual section development with junior PM guidance
-develop_headline_section() {
-    echo "📰 SECTION 1: HEADLINE"
-    echo "Purpose: What would a marketing announcement say about this?"
-    echo ""
-    echo "🎓 Junior PM Learning Objectives:"
-    echo "• Craft compelling value propositions"
-    echo "• Understand positioning vs. features"
-    echo "• Write customer-focused messaging"
-    
-    HEADLINE_GUIDANCE=$(/gemini-query "As a product mentor, provide comprehensive headline development guidance for: $PRODUCT_CONCEPT
-
-    Target: Junior/Mid-level Product Manager
-    
-    Provide:
-    1. FRAMEWORK: Step-by-step headline creation process
-    2. EXAMPLES: 3-5 headline variations with explanations
-    3. COMMON MISTAKES: What junior PMs typically get wrong
-    4. VALIDATION: How to test headline effectiveness
-    5. TEMPLATES: Fill-in-the-blank headline templates
-    6. BEST PRACTICES: Industry standards and proven patterns
-    
-    Make guidance actionable and specific.")
-}
-
-develop_problem_statement_section() {
-    echo "🎯 SECTION 2: PROBLEM STATEMENT" 
-    echo "Purpose: What problems are we solving and why do they matter?"
-    echo ""
-    echo "🎓 Junior PM Learning Objectives:"
-    echo "• Identify and validate real user problems"
-    echo "• Distinguish symptoms from root causes"
-    echo "• Quantify problem importance"
-    
-    PROBLEM_GUIDANCE=$(/gemini-query "As a product strategy mentor, guide problem statement development for: $PRODUCT_CONCEPT
-
-    Target: Junior/Mid-level Product Manager
-    
-    Provide:
-    1. PROBLEM IDENTIFICATION: Techniques for finding real problems
-    2. VALIDATION METHODS: How to prove problems exist and matter
-    3. PRIORITIZATION: Framework for ranking multiple problems
-    4. PITFALL AVOIDANCE: Common problem definition mistakes
-    5. EXAMPLES: Well-crafted problem statements from similar products
-    6. TEMPLATES: Problem statement structures and formats
-    
-    Include specific questioning techniques and research methods.")
-}
-```
 
 ## AI Product Mentor Persona (Junior/Mid-Level PM Focus)
 
@@ -412,48 +291,6 @@ learning_framework_per_section:
 ```
 
 ### Template-Driven Discovery Process
-```bash
-# Complete template-based canvas development
-guide_systematic_canvas_completion() {
-    echo "📚 JUNIOR PM CANVAS DEVELOPMENT WORKSHOP"
-    echo "🎯 Systematic progression through standardized template"
-    echo ""
-    
-    for SECTION in headline problem_statement target_audience goals success_metrics validation competitive_analysis big_picture not_doing readiness_checklist; do
-        echo "📍 Starting Section: $(echo $SECTION | tr '_' ' ' | tr '[:lower:]' '[:upper:]')"
-        
-        # Section-specific guidance and development
-        develop_section_with_mentoring "$SECTION"
-        
-        # Validate section completion before moving forward
-        validate_section_completion "$SECTION"
-        
-        echo "✅ Section completed. Moving to next..."
-        echo ""
-    done
-    
-    # Generate final comprehensive canvas
-    generate_final_template_canvas
-}
-
-# Develop individual section with comprehensive PM mentoring
-develop_section_with_mentoring() {
-    local SECTION=$1
-    
-    case $SECTION in
-        "headline")
-            develop_headline_with_guidance
-            ;;
-        "problem_statement")
-            develop_problem_statement_with_guidance
-            ;;
-        "target_audience")
-            develop_target_audience_with_guidance
-            ;;
-        # ... continue for all sections
-    esac
-}
-```
 
 ## Interactive Canvas Components
 
@@ -522,41 +359,18 @@ business_model_workshop:
 ## Advanced Analysis Features
 
 ### Competitive Intelligence
-```bash
-# AI-powered competitive analysis
-analyze_competition() {
-    COMPETITIVE_ANALYSIS=$(/gemini-query "Conduct comprehensive competitive analysis for: $CANVAS_DATA
-    
-    Analyze:
-    1. Direct competitors and their positioning
-    2. Indirect competitors and alternatives
-    3. Competitive advantages and differentiators
-    4. Market gaps and opportunities
-    5. Competitive response strategies
-    
-    Provide strategic recommendations for competitive positioning.")
-    
-    # Create competitive matrix
-    generate_competitive_matrix
-}
-```
+- **Direct Competitor Analysis**: Feature comparison and positioning
+- **Indirect Competition**: Alternative solutions and substitutes
+- **Market Gap Identification**: Unserved needs and opportunities
+- **Differentiation Strategy**: Unique value proposition development
+- **Competitive Response**: Strategic positioning recommendations
 
 ### Risk Assessment & Mitigation
-```bash
-# Strategic risk analysis
-assess_risks() {
-    RISK_ANALYSIS=$(/gemini-query "As a seasoned product leader, identify and assess risks for: $CANVAS_DATA
-    
-    Evaluate:
-    1. Market risks (demand, competition, timing)
-    2. Technical risks (feasibility, scalability)
-    3. Business risks (monetization, operations)
-    4. Execution risks (team, resources, timeline)
-    5. Strategic risks (market shifts, disruption)
-    
-    Provide risk mitigation strategies.")
-}
-```
+- **Market Risk Analysis**: Demand validation and timing assessment
+- **Technical Risk Evaluation**: Feasibility and scalability review
+- **Business Risk Assessment**: Revenue model and operational viability
+- **Execution Risk Planning**: Resource and timeline considerations
+- **Strategic Risk Management**: Market shift and disruption preparedness
 
 ### Success Metrics Framework
 ```yaml
@@ -654,43 +468,18 @@ success_metrics_workshop:
 ## Notion Integration Features
 
 ### Canvas Creation in Notion
-```bash
-# Create structured canvas in Notion
-create_notion_canvas() {
-    # Create new database for canvas
-    CANVAS_DB=$(/notion_create_database \
-        --parent "workspace" \
-        --title "Product Canvas - $PRODUCT_NAME" \
-        --properties '{
-            "Component": {"type": "select"},
-            "Status": {"type": "select"},
-            "Priority": {"type": "select"},
-            "Owner": {"type": "people"}
-        }')
-    
-    # Add canvas sections as pages
-    create_canvas_sections "$CANVAS_DB"
-}
-```
+- **Database Structure**: Automated canvas database creation with properties
+- **Section Pages**: Individual pages for each canvas section
+- **Property Management**: Status, priority, and ownership tracking
+- **Template Application**: Standardized canvas template implementation
+- **Collaborative Features**: Comments, mentions, and team collaboration
 
 ### Canvas Updates and Sync
-```bash
-# Update existing Notion canvas
-update_notion_canvas() {
-    # Update canvas sections
-    /notion_update_page_properties "$PAGE_ID" \
-        --properties '{
-            "Last Updated": {"date": {"start": "'$(date -u +%Y-%m-%dT%H:%M:%S.000Z)'"}},
-            "Analysis Score": {"number": '$ANALYSIS_SCORE'},
-            "Status": {"select": {"name": "Updated"}}
-        }'
-    
-    # Add analysis as comments
-    /notion_create_comment \
-        --parent "$PAGE_ID" \
-        --rich_text "AI Analysis: $ANALYSIS_SUMMARY"
-}
-```
+- **Real-time Updates**: Synchronize analysis results to Notion
+- **Property Updates**: Automatic status and metadata management
+- **Comment Integration**: AI insights added as contextual comments
+- **Version Tracking**: Historical progression and change tracking
+- **Analysis Scoring**: Completeness and quality metrics
 
 ## Configuration Options
 

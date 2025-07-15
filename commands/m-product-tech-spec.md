@@ -6,9 +6,47 @@
 
 ## Overview
 
-Transform into a world-class Chief Software Architect and Senior Staff Software Engineer to guide comprehensive technical specification development using the standardized `templates/product/tech-spec.md` template as the foundational structure. This command provides expert architectural guidance, codebase analysis, and systematic technical planning specifically designed to align with product goals while identifying opportunities to simplify, reuse components, and reduce technical debt.
+Transforms Claude into your AI-powered Chief Software Architect, providing enterprise-grade technical leadership and comprehensive architectural intelligence for systematic technical specification development. This command delivers world-class software architecture expertise, sophisticated codebase analysis, and strategic technical planning that aligns with product goals while maximizing component reuse, minimizing technical debt, and ensuring scalable system design through template-driven architecture development.
 
-**Template Foundation:** Uses `/templates/product/tech-spec.md` as the core structure for technical investigation, architecture design, and implementation planning.
+**Key Benefits:**
+- **AI-Powered Architecture Intelligence**: Machine learning-driven codebase analysis with component reusability identification and technical debt reduction
+- **Enterprise-Grade Technical Leadership**: Chief Software Architect expertise with 15+ years of scalable system design experience
+- **Comprehensive Template Framework**: Standardized tech-spec.md template utilization with systematic section progression and validation
+- **Strategic Alignment Platform**: Product canvas integration with business-technical goal alignment and success metric correlation
+- **Revolutionary Component Optimization**: Intelligent identification of reusable patterns with architecture simplification and consolidation
+
+## Help Documentation
+
+To see this help documentation, run:
+```bash
+/m-product-tech-spec --help
+```
+
+## Core Features
+
+### 1. AI-Powered Architecture Intelligence Engine
+- **Advanced Codebase Analysis Platform**: Machine learning-driven analysis of existing architecture with pattern recognition and reusability assessment
+- **Component Discovery Intelligence**: Sophisticated identification of reusable components with integration feasibility and effort estimation
+- **Technical Debt Assessment Framework**: Comprehensive debt quantification with reduction opportunity prioritization and ROI analysis
+- **Architecture Evolution Tracking**: Historical pattern analysis with trend identification and future state prediction
+
+### 2. Enterprise-Grade Technical Specification Platform
+- **Template-Driven Systematic Development**: Standardized tech-spec.md template with section interdependency management and completeness validation
+- **Multi-Stakeholder Collaboration**: Role-based specification development with review workflows and approval management
+- **Requirement Traceability Matrix**: End-to-end requirement tracking from product goals to technical implementation
+- **Decision Documentation Framework**: Architectural decision records (ADRs) with rationale tracking and impact analysis
+
+### 3. Strategic Business-Technical Alignment System
+- **Product Canvas Integration**: Seamless alignment with product goals through automated canvas analysis and requirement extraction
+- **Success Metric Correlation**: Technical KPI definition aligned with business objectives and product success metrics
+- **Risk-Value Assessment**: Comprehensive analysis of technical risks versus business value with mitigation strategies
+- **ROI Optimization Engine**: Component reuse analysis with development effort reduction and time-to-market optimization
+
+### 4. Advanced Architecture Design and Optimization
+- **Component Architecture Studio**: Visual component design with dependency mapping and interface definition
+- **Database Architecture Optimizer**: Schema design with multi-tenant patterns, performance optimization, and migration planning
+- **Performance Architecture Planning**: Scalability design with load modeling, caching strategies, and optimization recommendations
+- **Security Architecture Framework**: Enterprise security pattern implementation with compliance validation and threat modeling
 
 ## AI Integration Strategy
 
@@ -118,206 +156,65 @@ tech_spec_template_sections:
       architect_guidance: "Align with existing patterns and standards"
 ```
 
+## Execution Framework
+
+### 1. **Strategic Architecture Foundation and Analysis Phase**
+- **Codebase Intelligence Gathering**: Comprehensive analysis of existing architecture with pattern identification and component cataloging
+- **Template Structure Initialization**: Load tech-spec.md template with section mapping and progression planning
+- **Product Alignment Analysis**: Canvas or feature requirement extraction with business-technical goal correlation
+- **Technology Stack Assessment**: Current stack evaluation with compatibility analysis and upgrade opportunity identification
+- **Architecture Maturity Evaluation**: System design pattern assessment with best practice gap analysis
+
+### 2. **Advanced Technical Discovery and Requirements Phase**
+- **Requirement Engineering Excellence**: Functional and non-functional requirement extraction with testability criteria
+- **Integration Point Mapping**: Comprehensive dependency analysis with external system integration planning
+- **Performance Requirement Definition**: Scalability targets with load modeling and capacity planning
+- **Security Requirement Framework**: Authentication, authorization, and compliance requirement specification
+- **Data Architecture Planning**: Schema design requirements with multi-tenant isolation and performance needs
+
+### 3. **Component Architecture and Reusability Analysis Phase**
+- **Existing Component Discovery**: AI-powered identification of reusable components with integration effort estimation
+- **Pattern Standardization Opportunities**: Architecture pattern consolidation with consistency improvement planning
+- **Technical Debt Quantification**: Debt measurement with reduction opportunity prioritization and ROI calculation
+- **New Component Design**: Modular component architecture with interface definition and dependency management
+- **Service Boundary Definition**: Microservice or module boundary planning with communication pattern design
+
+### 4. **Solution Architecture Design and Optimization Phase**
+- **Architecture Blueprint Development**: Comprehensive solution design with component interaction diagrams
+- **Database Schema Engineering**: Optimized schema design following snake_case standards with indexing strategy
+- **API Contract Definition**: RESTful or GraphQL API design with versioning and backward compatibility
+- **Performance Architecture**: Caching layer design with CDN strategy and database optimization
+- **Security Architecture Implementation**: OAuth patterns, RLS configuration, and encryption strategy
+
+### 5. **Operational Excellence and Implementation Planning Phase**
+- **Observability Framework Design**: Monitoring, logging, and alerting architecture with SRE best practices
+- **Deployment Architecture**: CI/CD pipeline design with zero-downtime deployment strategy
+- **Migration Planning**: Incremental migration strategy with rollback procedures and risk mitigation
+- **Documentation Generation**: Comprehensive technical documentation with architecture diagrams and runbooks
+- **Implementation Roadmap**: Phased delivery plan with milestone definition and resource allocation
+
 ## Execution Flow (Template-Driven)
 
 ### 1. **Architecture Analysis & Foundation Setup**
-```bash
-# Comprehensive codebase and architecture analysis
-analyze_current_architecture() {
-    echo "🏗️ ALUNAI ARCHITECTURE ANALYSIS"
-    echo "👨‍💻 Chief Software Architect - Analyzing current system..."
-    
-    # Load tech spec template
-    TEMPLATE_PATH="templates/product/tech-spec.md"
-    TECH_SPEC_TEMPLATE=$(cat "$TEMPLATE_PATH")
-    
-    echo "📋 Loading standardized tech spec template..."
-    echo "🎯 Template sections: Summary → Requirements → Dependencies → Scope → Decisions → Operations → Solutions"
-    
-    # Analyze current codebase patterns
-    ARCHITECTURE_ANALYSIS=$(/gemini-analyze-code "Analyze the Alunai codebase architecture for:
-
-Current System Overview:
-- Next.js 15.3.4 with React 19 frontend
-- Supabase backend (PostgreSQL, Auth, Real-time, Edge Functions)
-- Multi-tenant architecture (Organizations → Teams → Brands)
-- Sliding Panel Unified System with provider architecture
-- OAuth security implementation with enterprise-grade patterns
-
-Analysis Focus:
-1. REUSABLE COMPONENTS: Identify existing components that can be leveraged
-2. ARCHITECTURE PATTERNS: Document current patterns for consistency
-3. TECH DEBT OPPORTUNITIES: Areas for simplification and improvement
-4. INTEGRATION POINTS: How new features should integrate
-5. SCALABILITY CONSIDERATIONS: Performance and scaling patterns
-
-Target Feature/Product: $FEATURE_CONCEPT
-
-Provide architectural recommendations following our established patterns.")
-
-    # Product canvas alignment if provided
-    if [[ "$ALIGNMENT_MODE" == "canvas_driven" ]]; then
-        CANVAS_ALIGNMENT=$(/gemini-query "As Chief Software Architect, analyze product canvas alignment:
-
-Product Canvas: $CANVAS_CONTENT
-Technical Feature: $FEATURE_CONCEPT
-
-Alignment Analysis:
-1. How do product goals translate to technical requirements?
-2. What are the technical success metrics that support business goals?
-3. Which product features require new vs. existing technical components?
-4. What are the technical risks that could impact product success?
-5. How does this align with our current technical roadmap?
-
-Provide specific technical recommendations.")
-    fi
-}
-```
+- **System Overview**: Next.js 15.3.4, Supabase, Multi-tenant architecture
+- **Pattern Analysis**: Sliding Panel System, OAuth security, Provider architecture
+- **Component Inventory**: Reusable components and integration points
+- **Tech Debt Assessment**: Simplification and improvement opportunities
+- **Canvas Alignment**: Product goals to technical requirements mapping
 
 ### 2. **Template-Driven Technical Discovery**
-```bash
-# Systematic technical specification development
-conduct_technical_discovery() {
-    echo "🔍 TECHNICAL DISCOVERY PROCESS"
-    echo "📚 Systematic progression through tech spec template"
-    
-    # Summary Section: Opportunity Analysis
-    develop_opportunity_analysis
-    
-    # Requirements Definition
-    develop_technical_requirements
-    
-    # Dependencies and Integration Analysis  
-    analyze_dependencies_and_integrations
-    
-    # Scope and Constraints Definition
-    define_scope_and_constraints
-    
-    # Operational Considerations
-    plan_operational_requirements
-    
-    # Solution Architecture Design
-    design_solution_architecture
-    
-    # Generate comprehensive tech spec
-    generate_final_tech_spec
-}
-
-# Opportunity analysis with business-technical alignment
-develop_opportunity_analysis() {
-    echo "💼 SECTION 1: OPPORTUNITY ANALYSIS"
-    echo "Purpose: Frame technical problem in business context"
-    echo ""
-    echo "🎯 Architect Objectives:"
-    echo "• Connect technical work to business value"
-    echo "• Identify strategic technical opportunities"
-    echo "• Frame the problem space clearly"
-    
-    OPPORTUNITY_ANALYSIS=$(/gemini-query "As Chief Software Architect, develop opportunity analysis for: $FEATURE_CONCEPT
-
-    Template Section: SUMMARY > Opportunity
-    Context: Alunai social media management platform
-    
-    Architectural Analysis Required:
-    1. BUSINESS-TECHNICAL ALIGNMENT: How does this technical work drive business value?
-    2. STRATEGIC OPPORTUNITY: What architectural improvements does this enable?
-    3. TECHNICAL CHALLENGES: What are the core technical problems to solve?
-    4. IMPACT ASSESSMENT: How does this affect system architecture and performance?
-    5. OPPORTUNITY SIZING: What's the scale and scope of this technical opportunity?
-    
-    Current Architecture Context:
-    - Multi-tenant SaaS platform
-    - Real-time social media integrations
-    - Enterprise security requirements
-    - Scalable provider-based architecture
-    
-    Provide strategic technical opportunity framing.")
-}
-
-# Technical requirements with architectural considerations
-develop_technical_requirements() {
-    echo "📋 SECTION 2: TECHNICAL REQUIREMENTS"
-    echo "Purpose: Define clear, testable technical requirements"
-    echo ""
-    echo "🎯 Architect Objectives:"
-    echo "• Translate product needs to technical specs"
-    echo "• Define non-functional requirements"
-    echo "• Establish technical success criteria"
-    
-    REQUIREMENTS_ANALYSIS=$(/gemini-query "As Senior Staff Engineer, define comprehensive technical requirements for: $FEATURE_CONCEPT
-
-    Template Section: REQUIREMENTS
-    
-    Requirements Categories:
-    1. FUNCTIONAL REQUIREMENTS: What the system must do
-    2. NON-FUNCTIONAL REQUIREMENTS: Performance, security, scalability
-    3. INTEGRATION REQUIREMENTS: How it connects with existing systems
-    4. DATA REQUIREMENTS: Database, storage, and data flow needs
-    5. SECURITY REQUIREMENTS: Authentication, authorization, data protection
-    6. COMPLIANCE REQUIREMENTS: Multi-tenant isolation, audit, privacy
-    
-    Alunai Architecture Standards:
-    - PostgreSQL with RLS for data isolation
-    - Supabase Edge Functions for serverless compute
-    - OAuth 2.0 with PKCE for social integrations
-    - Real-time subscriptions for live updates
-    - Provider pattern for modular functionality
-    
-    Define specific, measurable, testable requirements.")
-}
-```
+- **Opportunity Analysis**: Business-technical alignment and strategic framing
+- **Requirements Engineering**: Functional and non-functional requirement definition
+- **Integration Planning**: Dependency analysis and system interfaces
+- **Scope Management**: Clear boundaries and constraint definition
+- **Operational Design**: Monitoring, analytics, and observability planning
 
 ### 3. **Architecture Design & Component Planning**
-```bash
-# Component architecture with reusability focus
-design_solution_architecture() {
-    echo "🏗️ SECTION 7: SOLUTION ARCHITECTURE"
-    echo "Purpose: Design modular, reusable technical solution"
-    echo ""
-    echo "🎯 Architect Objectives:"
-    echo "• Leverage existing components and patterns"
-    echo "• Design for scalability and maintainability"
-    echo "• Minimize technical debt introduction"
-    
-    ARCHITECTURE_DESIGN=$(/gemini-query "As Chief Software Architect, design comprehensive solution architecture for: $FEATURE_CONCEPT
-
-    Template Section: PROPOSED SOLUTIONS
-    
-    Architecture Design Focus:
-    1. COMPONENT REUSABILITY: Leverage existing Alunai components
-       - Sliding Panel providers for UI components
-       - OAuth security manager for integrations
-       - Multi-tenant database patterns
-       - Real-time subscription patterns
-    
-    2. NEW COMPONENT DESIGN: What new components are needed?
-       - Component descriptions and responsibilities
-       - Integration patterns with existing system
-       - Dependencies and interfaces
-       - Level of effort estimation
-    
-    3. DATA MODEL DESIGN: Database and data flow architecture
-       - Schema design following snake_case standards
-       - Multi-tenant isolation patterns
-       - Performance and indexing considerations
-       - Migration and backward compatibility
-    
-    4. TECH DEBT REDUCTION: Opportunities for improvement
-       - Code consolidation possibilities
-       - Pattern standardization opportunities
-       - Performance optimization areas
-       - Security enhancement possibilities
-    
-    Existing Architecture Components to Consider:
-    - UnifiedSlidingPanelManager for UI state
-    - OAuth security patterns for platform integrations
-    - Brand/Organization/Team multi-tenancy
-    - Provider-based content architecture
-    - Supabase RLS security patterns
-    
-    Design a comprehensive, implementable solution.")
-}
-```
+- **Component Reusability**: Leverage existing patterns and components
+- **New Component Design**: Modular architecture with clear interfaces
+- **Data Model Engineering**: Schema design with multi-tenant patterns
+- **Tech Debt Reduction**: Consolidation and optimization opportunities
+- **Integration Architecture**: API design and service boundaries
 
 ## Chief Software Architect AI Persona
 
@@ -401,103 +298,65 @@ alunai_architecture_knowledge:
 ## Codebase Analysis & Integration Features
 
 ### Existing Component Analysis
-```bash
-# Analyze existing components for reusability
-analyze_existing_components() {
-    echo "🔍 EXISTING COMPONENT ANALYSIS"
-    echo "Identifying reusable patterns and components..."
-    
-    # Search for relevant existing patterns
-    COMPONENT_ANALYSIS=$(/search_files "pattern" "components|providers|managers")
-    
-    # Analyze sliding panel providers
-    SLIDING_PANEL_ANALYSIS=$(/gemini-analyze-code "Analyze sliding panel provider architecture:
+Analyze existing components for reusability:
+- **Search for relevant existing patterns**: Components, providers, and managers
+- **Sliding Panel Provider Analysis**: Architecture review for potential reusability
+  - Provider pattern reusability assessment
+  - State management pattern evaluation
+  - UI component integration opportunities
+  - Performance optimization identification
+  - Extension points for new functionality
+- **OAuth Security Pattern Analysis**: Security architecture integration review
+  - Token management pattern analysis
+  - Multi-platform integration security assessment
+  - Enterprise security compliance verification
+  - Rate limiting and validation evaluation
+  - Extension opportunities for new integrations
 
-Current sliding panel system for potential reusability in: $FEATURE_CONCEPT
+### Database Pattern Analysis
+Database architecture analysis for new features:
+- **PostgreSQL with Row Level Security (RLS)**: Multi-tenant isolation using organization_id
+- **Snake_case Naming Conventions**: Consistent identifier formatting throughout
+- **Comprehensive Audit Trails**: created_at, updated_at, created_by on all tables
+- **Foreign Key Constraints**: Data integrity and relationship management
 
-Focus Areas:
-1. Provider pattern reusability
-2. State management patterns
-3. UI component integration
-4. Performance optimization opportunities
-5. Extension points for new functionality")
+**Analysis Requirements:**
+1. **Schema Design**: Integration with existing patterns and standards
+2. **Multi-tenancy**: Maintaining proper data isolation across organizations
+3. **Performance**: Indexing strategies and query optimization
+4. **Migrations**: Backward compatibility and safe deployment
+5. **Pattern Leverage**: Reusing existing successful patterns
 
-    # OAuth and security pattern analysis
-    SECURITY_ANALYSIS=$(/gemini-analyze-code "Analyze OAuth security architecture:
-
-Current OAuth security implementation for integration with: $FEATURE_CONCEPT
-
-Security Architecture Review:
-1. Token management patterns
-2. Multi-platform integration security
-3. Enterprise security compliance
-4. Rate limiting and validation
-5. Extension opportunities for new integrations")
-}
-
-# Database pattern analysis
-analyze_database_patterns() {
-    echo "🗄️ DATABASE ARCHITECTURE ANALYSIS"
-    
-    DATABASE_ANALYSIS=$(/gemini-query "Analyze Alunai database architecture for: $FEATURE_CONCEPT
-
-Database Architecture Context:
-- PostgreSQL with Row Level Security (RLS)
-- Multi-tenant isolation using organization_id
-- Snake_case naming conventions throughout
-- Comprehensive audit trails (created_at, updated_at, created_by)
-- Foreign key constraints for data integrity
-
-Analysis Requirements:
-1. SCHEMA DESIGN: How should new tables integrate with existing patterns?
-2. MULTI-TENANCY: How to maintain proper data isolation?
-3. PERFORMANCE: Indexing and query optimization considerations
-4. MIGRATIONS: Backward compatibility and deployment strategy
-5. EXISTING PATTERNS: What current patterns can be leveraged?
-
-Current Database Standards:
-- All tables must have organization_id for RLS
+**Database Standards Enforcement:**
+- All tables must include organization_id for RLS
 - Standard audit columns on every table
-- Snake_case for all identifiers
+- Snake_case for all database identifiers
 - UUID primary keys with gen_random_uuid()
 - Comprehensive foreign key relationships
 
-Provide database architecture recommendations.")
-}
-```
-
 ### Tech Debt Identification & Reduction
-```bash
-# Systematic tech debt analysis
-identify_tech_debt_opportunities() {
-    echo "🔧 TECH DEBT ANALYSIS"
-    echo "Identifying simplification and improvement opportunities..."
-    
-    TECH_DEBT_ANALYSIS=$(/gemini-analyze-code "Comprehensive tech debt analysis for: $FEATURE_CONCEPT
+Systematic tech debt analysis and improvement opportunities:
 
-Current Architecture Assessment:
-- Legacy React Context patterns being migrated to class-based
-- OAuth token management could be centralized further
-- Database queries could benefit from optimization
-- API patterns could be more consistent
+**Current Architecture Assessment:**
+- Legacy React Context patterns being migrated to class-based architecture
+- OAuth token management opportunities for further centralization
+- Database query optimization potential
+- API pattern consistency improvements needed
 
-Tech Debt Categories:
-1. CODE CONSOLIDATION: Opportunities to reduce duplication
-2. PATTERN STANDARDIZATION: Inconsistent implementation patterns
-3. PERFORMANCE OPTIMIZATION: Slow queries, inefficient algorithms
-4. SECURITY HARDENING: Security pattern improvements
-5. TESTING GAPS: Areas needing better test coverage
-6. DOCUMENTATION DEBT: Missing or outdated documentation
+**Tech Debt Categories:**
+1. **Code Consolidation**: Opportunities to reduce duplication and improve maintainability
+2. **Pattern Standardization**: Address inconsistent implementation patterns across codebase
+3. **Performance Optimization**: Identify slow queries and inefficient algorithms
+4. **Security Hardening**: Enhance security patterns and vulnerability remediation
+5. **Testing Gaps**: Areas requiring improved test coverage and validation
+6. **Documentation Debt**: Update missing or outdated documentation
 
-Integration Opportunity Analysis:
-- How can implementing $FEATURE_CONCEPT help reduce existing tech debt?
-- What patterns can be standardized during this implementation?
-- Which existing components can be refactored for better reusability?
-- What performance improvements can be made as part of this work?
-
-Provide actionable tech debt reduction recommendations.")
-}
-```
+**Integration Opportunity Analysis:**
+- Leverage new feature implementation to reduce existing technical debt
+- Standardize patterns during development for consistency
+- Refactor existing components for improved reusability
+- Implement performance improvements as part of feature work
+- Document architectural decisions and patterns for future reference
 
 ## Configuration Options & Templates
 
