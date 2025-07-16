@@ -4,6 +4,8 @@
 
 **Scope:** Enterprise-grade architecture analysis using collaborative Gemini-Claude debate process with strategic insights and actionable roadmaps
 
+**Context Extension:** For the purpose of analysis and exploration always use "ultrathink" mode to allocate the most computational budget possible.
+
 ## Overview
 
 Transforms Claude into a Senior Architecture Consultant collaborating with Gemini AI to conduct strategic architecture analysis through a sophisticated dual-AI debate process. This approach provides comprehensive evaluation of system design, identifies architectural patterns, and generates strategic recommendations through comparative analysis and consensus building.
@@ -138,23 +140,23 @@ specialty_analysis:
 # Gemini CLI comprehensive architecture analysis
 if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
     echo "=== GEMINI ARCHITECTURAL ANALYSIS ===" > /tmp/gemini_arch_analysis.md
-    
+
     # System-wide pattern analysis
     gemini --all-files -p "Conduct comprehensive architectural analysis of this codebase.
-    
+
     Analyze:
     1. System-wide architectural patterns and paradigms
-    2. Module organization and dependency structure  
+    2. Module organization and dependency structure
     3. Design patterns usage and consistency
     4. Scalability and extensibility considerations
     5. Technical debt and architectural anti-patterns
     6. Security architecture and data flow
     7. Performance bottlenecks and optimization opportunities
     8. Maintainability and evolution potential
-    
+
     Provide detailed findings with specific code examples and recommendations.
     Format as structured markdown with clear sections." --format markdown >> /tmp/gemini_arch_analysis.md
-    
+
     # Component interaction analysis
     echo -e "\n## Component Interaction Analysis" >> /tmp/gemini_arch_analysis.md
     gemini --all-files -p "Analyze component interactions and dependencies.
@@ -164,7 +166,7 @@ if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
     - API design consistency
     - Service layer organization
     - Database integration patterns
-    
+
     Include recommendations for improvement." --format markdown >> /tmp/gemini_arch_analysis.md
 fi
 ```
@@ -230,19 +232,19 @@ analysis_domains:
     - module_organization
     - separation_of_concerns
     - dependency_management
-  
+
   scalability_assessment:
     - horizontal_scaling_capability
     - performance_bottlenecks
     - resource_optimization
     - caching_strategy
-  
+
   maintainability_review:
     - code_organization
     - documentation_quality
     - testing_architecture
     - technical_debt_assessment
-  
+
   security_architecture:
     - authentication_design
     - authorization_patterns
@@ -258,13 +260,13 @@ debate_structure:
     strengths: "Identified system strengths"
     weaknesses: "Critical issues and anti-patterns"
     recommendations: "Specific improvement suggestions"
-  
+
   claude_perspective:
     agreement_points: "Areas where Claude agrees with Gemini"
     disagreement_points: "Alternative viewpoints and solutions"
     additional_insights: "Claude's unique observations"
     counter_recommendations: "Alternative approaches"
-  
+
   synthesis:
     consensus_recommendations: "Agreed-upon improvements"
     priority_matrix: "Implementation priority ranking"

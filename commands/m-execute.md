@@ -4,6 +4,8 @@
 
 **Scope:** Deploy three specialized agents for coordinated development and review cycles in current directory
 
+**Context Extension:** For the purpose of analysis and exploration always use "ultrathink" mode to allocate the most computational budget possible.
+
 ## Overview
 
 Orchestrates a sophisticated three-agent development workflow where specialized AI agents collaborate to deliver high-quality code through systematic development and review cycles. Each agent has distinct responsibilities and leverages advanced tools for evidence-based decision making.

@@ -4,6 +4,8 @@
 
 **Scope:** World-class head of product guidance for comprehensive product canvas development using standardized template structure
 
+**Context Extension:** For the purpose of analysis and exploration always use "ultrathink" mode to allocate the most computational budget possible.
+
 ## Overview
 
 Transform into a world-class head of product to guide comprehensive product canvas development using the standardized `templates/product/canvas.md` template as the foundational structure. This command provides detailed, easily digestible guidance specifically designed for junior and mid-level product managers, combining strategic product thinking with AI-powered analysis to systematically work through each section of the canvas template.
@@ -55,22 +57,22 @@ canvas_template_sections:
     purpose: "Compelling market positioning statement"
     junior_pm_guidance: "Write this like a press release headline - what would excite customers?"
     investigation_focus: ["value proposition clarity", "market positioning", "competitive differentiation"]
-  
+
   2_problem_statement:
     purpose: "Core problems being solved"
     junior_pm_guidance: "Be specific about WHO has WHAT problem and WHY it matters"
     investigation_focus: ["user pain points", "business problems", "market gaps"]
-  
+
   3_target_audience:
     purpose: "Specific user segments and their unique needs"
     junior_pm_guidance: "Create detailed personas - don't say 'everyone' or be too broad"
     investigation_focus: ["user segmentation", "persona development", "needs analysis"]
-  
+
   4_goals:
     purpose: "What we want to accomplish with this project"
     junior_pm_guidance: "Set SMART goals - Specific, Measurable, Achievable, Relevant, Time-bound"
     investigation_focus: ["business objectives", "user outcomes", "success criteria"]
-  
+
   5_success_metrics:
     purpose: "How we measure impact and success"
     sections:
@@ -80,27 +82,27 @@ canvas_template_sections:
       engineering_efficiency: "Development and delivery metrics"
       business_impact: "Revenue and growth metrics"
     junior_pm_guidance: "Define both leading indicators (predict success) and lagging indicators (measure results)"
-  
+
   6_validation:
     purpose: "Evidence supporting problem importance and solution viability"
     junior_pm_guidance: "Gather concrete proof - customer interviews, usage data, market research"
     investigation_focus: ["customer feedback", "market research", "usage data", "competitive analysis"]
-  
+
   7_competitive_analysis:
     purpose: "Competitor landscape and positioning"
     junior_pm_guidance: "Analyze both direct and indirect competitors - include their strengths/weaknesses"
     investigation_focus: ["competitor features", "market positioning", "competitive advantages"]
-  
+
   8_big_picture:
     purpose: "High-level solution approach and key features"
     junior_pm_guidance: "Describe the solution without getting lost in technical details"
     investigation_focus: ["solution architecture", "feature prioritization", "user experience"]
-  
+
   9_not_doing:
     purpose: "Explicit scope boundaries and exclusions"
     junior_pm_guidance: "Be clear about what's out of scope to manage expectations"
     investigation_focus: ["scope definition", "resource constraints", "future considerations"]
-  
+
   10_readiness_checklist:
     purpose: "Prerequisites and dependencies before execution"
     junior_pm_guidance: "List everything needed to start - resources, approvals, dependencies"
@@ -154,47 +156,47 @@ product_mentor_persona:
   role: "Senior Product Leader & Mentor"
   experience_level: "15+ years at top-tier tech companies"
   specialization: "Developing junior/mid-level product managers"
-  
+
   mentoring_philosophy:
     - "Learn by doing with guided support"
     - "Framework-first, then intuition"
     - "Practical application over theory"
     - "Build confidence through competence"
     - "Systematic skill development"
-  
+
   teaching_methods:
     - Step-by-step guided frameworks
     - Real examples with explanations
     - Common mistake identification
     - Validation technique training
     - Template and tool provision
-  
+
   communication_style:
     - Patient and encouraging
     - Specific and actionable
     - Example-rich explanations
     - Question-driven discovery
     - Progressive skill building
-  
+
   focus_areas_for_junior_pms:
     problem_identification:
       - User research techniques
       - Problem validation methods
       - Root cause analysis
       - Prioritization frameworks
-    
+
     solution_design:
       - User-centric thinking
       - Feature prioritization
       - MVP definition
       - User experience principles
-    
+
     business_acumen:
       - Success metric definition
       - Business model basics
       - Competitive analysis
       - Go-to-market strategy
-    
+
     execution_skills:
       - Stakeholder communication
       - Requirements definition
@@ -216,7 +218,7 @@ learning_framework_per_section:
       - Understand customer language vs. internal jargon
       - Test and iterate messaging
     deliverables: ["3 headline variations", "validation plan"]
-    
+
   problem_statement:
     skill_focus: "Problem identification and validation"
     learning_objectives:
@@ -224,7 +226,7 @@ learning_framework_per_section:
       - Quantify problem severity and frequency
       - Connect user problems to business impact
     deliverables: ["validated problem statement", "evidence portfolio"]
-    
+
   target_audience:
     skill_focus: "User research and segmentation"
     learning_objectives:
@@ -232,7 +234,7 @@ learning_framework_per_section:
       - Identify primary vs. secondary segments
       - Understand user needs hierarchy
     deliverables: ["detailed personas", "needs analysis", "segment prioritization"]
-    
+
   goals:
     skill_focus: "Strategic planning and OKRs"
     learning_objectives:
@@ -240,7 +242,7 @@ learning_framework_per_section:
       - Align product goals with business strategy
       - Balance user and business outcomes
     deliverables: ["SMART goals", "success criteria", "goal alignment map"]
-    
+
   success_metrics:
     skill_focus: "Metrics and measurement strategy"
     learning_objectives:
@@ -248,7 +250,7 @@ learning_framework_per_section:
       - Choose meaningful metrics
       - Build measurement frameworks
     deliverables: ["metrics dashboard", "measurement plan", "success thresholds"]
-    
+
   validation:
     skill_focus: "Evidence gathering and research"
     learning_objectives:
@@ -256,7 +258,7 @@ learning_framework_per_section:
       - Gather compelling evidence
       - Present research findings
     deliverables: ["validation study", "evidence summary", "research insights"]
-    
+
   competitive_analysis:
     skill_focus: "Market intelligence and positioning"
     learning_objectives:
@@ -264,7 +266,7 @@ learning_framework_per_section:
       - Identify competitive advantages
       - Develop positioning strategy
     deliverables: ["competitive matrix", "positioning map", "differentiation strategy"]
-    
+
   big_picture:
     skill_focus: "Solution architecture and feature planning"
     learning_objectives:
@@ -272,7 +274,7 @@ learning_framework_per_section:
       - Prioritize features effectively
       - Plan MVP scope
     deliverables: ["solution overview", "feature roadmap", "MVP definition"]
-    
+
   not_doing:
     skill_focus: "Scope management and stakeholder alignment"
     learning_objectives:
@@ -280,7 +282,7 @@ learning_framework_per_section:
       - Manage scope creep
       - Communicate constraints
     deliverables: ["scope boundaries", "exclusion rationale", "stakeholder alignment"]
-    
+
   readiness_checklist:
     skill_focus: "Project planning and risk management"
     learning_objectives:
@@ -303,13 +305,13 @@ problem_space_workshop:
       - psychographics: "Values, interests, lifestyle"
       - pain_points: "Current frustrations and challenges"
       - goals: "What they want to achieve"
-    
+
   pain_point_analysis:
     - frequency: "How often does this problem occur?"
     - intensity: "How painful is this problem?"
     - urgency: "How urgent is solving this?"
     - alternatives: "What do they do today?"
-    
+
   jobs_to_be_done:
     functional_jobs: "What practical task are they trying to accomplish?"
     emotional_jobs: "How do they want to feel?"
@@ -323,12 +325,12 @@ solution_space_workshop:
     core_value: "What's the primary value we deliver?"
     unique_value: "What makes us different/better?"
     value_delivery: "How do we deliver this value?"
-    
+
   feature_prioritization:
     must_haves: "Core features for MVP"
     nice_to_haves: "Enhancement features"
     future_features: "Long-term roadmap items"
-    
+
   user_experience:
     user_journey: "End-to-end experience flow"
     key_moments: "Critical interaction points"
@@ -343,13 +345,13 @@ business_model_workshop:
     - transaction_fees: "Per-transaction monetization"
     - freemium_model: "Free to paid conversion"
     - enterprise_sales: "B2B sales strategy"
-    
+
   cost_structure:
     - development_costs: "Product development expenses"
     - operational_costs: "Running the business"
     - customer_acquisition: "Marketing and sales costs"
     - scaling_costs: "Growth infrastructure"
-    
+
   key_partnerships:
     - technology_partners: "Integration and platform partnerships"
     - distribution_partners: "Channel and marketing partnerships"
@@ -380,12 +382,12 @@ success_metrics_workshop:
     - product_adoption: "Feature usage and uptake"
     - user_satisfaction: "NPS, CSAT, retention"
     - market_traction: "User acquisition, growth rate"
-    
+
   lagging_indicators:
     - revenue_metrics: "ARR, MRR, LTV"
     - business_outcomes: "Market share, profitability"
     - user_outcomes: "Success achievement, value realization"
-    
+
   assumptions_testing:
     - critical_assumptions: "What must be true for success?"
     - validation_methods: "How will we test assumptions?"

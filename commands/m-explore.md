@@ -4,6 +4,8 @@
 
 **Scope:** Enterprise-grade dual-AI analysis with Gemini research and Claude review for strategic implementation planning and execution roadmaps
 
+**Context Extension:** For the purpose of analysis and exploration always use "ultrathink" mode to allocate the most computational budget possible.
+
 ## Overview
 
 Transforms Claude into a Senior Project Planning Architect collaborating with Gemini AI to conduct comprehensive task planning through sophisticated dual-AI analysis. This approach provides strategic implementation planning, technical feasibility assessment, and structured task decomposition through collaborative AI intelligence.
@@ -245,12 +247,12 @@ planning_methodology:
     scope: "Comprehensive extraction and analysis of project requirements"
     approach: ["documentation_mining", "code_analysis", "stakeholder_alignment"]
     deliverables: ["requirement_matrix", "gap_analysis", "clarification_questions"]
-    
+
   technical_feasibility:
     scope: "Technical constraint and opportunity assessment"
     approach: ["technology_evaluation", "performance_analysis", "integration_assessment"]
     deliverables: ["feasibility_report", "risk_analysis", "recommendation_matrix"]
-    
+
   task_decomposition:
     scope: "Strategic breakdown of complex requirements into actionable tasks"
     approach: ["feature_decomposition", "dependency_mapping", "priority_sequencing"]
@@ -264,22 +266,22 @@ task_types:
     description: "New functionality and user-facing capabilities"
     indicators: ["implement", "add", "create", "build"]
     priority_factors: ["user_impact", "business_value", "technical_complexity"]
-    
+
   architecture_design:
     description: "System design and architectural planning"
     indicators: ["design", "architecture", "system", "structure"]
     priority_factors: ["foundation_importance", "scalability_impact", "team_dependencies"]
-    
+
   testing_quality:
     description: "Testing strategy and quality assurance"
     indicators: ["test", "validate", "quality", "coverage"]
     priority_factors: ["risk_mitigation", "regression_prevention", "compliance_requirements"]
-    
+
   integration_apis:
     description: "Third-party integrations and API development"
     indicators: ["integrate", "api", "service", "connect"]
     priority_factors: ["external_dependencies", "security_requirements", "performance_impact"]
-    
+
   documentation_specs:
     description: "Documentation and specification development"
     indicators: ["document", "spec", "guide", "readme"]
@@ -292,15 +294,15 @@ priority_calculation:
   business_value:
     weight: 40%
     factors: ["user_impact", "revenue_potential", "strategic_alignment"]
-    
+
   technical_complexity:
     weight: 25%
     factors: ["implementation_difficulty", "risk_level", "resource_requirements"]
-    
+
   dependencies:
     weight: 20%
     factors: ["blocking_other_tasks", "external_dependencies", "team_coordination"]
-    
+
   urgency:
     weight: 15%
     factors: ["deadline_pressure", "stakeholder_expectations", "market_timing"]

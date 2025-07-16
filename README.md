@@ -70,51 +70,6 @@ Predefined development workflows:
 - Security workflows
 - Testing strategies
 
-## 🛠 Setup for New Projects
-
-### Add as Submodule
-```bash
-# In your project root
-git submodule add https://github.com/alun-ai/.claude .claude
-
-# Restart Claude Code to make commands available
-```
-
-### Manual Setup
-```bash
-# After adding the submodule, create project-specific config
-echo '{}' > .claude_config.json
-
-# Commands will be available after restarting Claude Code
-```
-
-### MCP Configuration Setup
-```bash
-# Copy the MCP configuration example to your project root
-cp .claude/.mcp.json.example .mcp.json
-
-# Edit .mcp.json to enable/disable specific MCP servers based on your needs
-# Note: Environment variables are required for most MCP servers
-```
-
-## 🎯 Project-Specific Configuration
-
-Each project can have its own settings in `.claude_config.json`:
-
-```json
-{
-  "permissions": {
-    "allow": [
-      "project-specific permissions here"
-    ]
-  },
-  "environment": {
-    "PROJECT_TYPE": "nextjs",
-    "CUSTOM_SETTING": "value"
-  }
-}
-```
-
 ## 🚀 Getting Started
 
 ### For Existing Projects
@@ -134,21 +89,33 @@ Each project can have its own settings in `.claude_config.json`:
 3. **Setup environment variables** (if using MCP servers):
    ```bash
    # Ensure direnv is properly configured
-   echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc  # or ~/.bashrc
+   echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+   echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
    # Copy environment variables example
    cp .claude/.envrc.example .envrc
 
    # Edit .envrc with your actual API keys
-   nano .envrc  # or use your preferred editor
+   code .envrc  # or use your preferred editor
 
    # Allow direnv for this project
    direnv allow
+
+   # Check if direnv is working:
+   direnv status
    ```
+
+> NOTE: You should run `direnv reload` once you add new variables or values
 
 4. **Restart Claude Code**:
    ```bash
    # Commands and MCP servers will be available after restart
+   ```
+
+5. **Update or Create ../CLAUDE.md:**
+   ```bash
+   # REQUIRED
+    - Memorize into project memory ./claude/CLAUDE.md
    ```
 
 ### For New Projects
@@ -164,14 +131,36 @@ Each project can have its own settings in `.claude_config.json`:
    # Copy configurations
    cp .claude/.mcp.json.example .mcp.json
    cp .claude/.envrc.example .envrc
-
-   # Configure your API keys
-   nano .envrc
-   direnv allow
    ```
 
-3. **Restart Claude Code to access commands and MCP servers**
+3. **Setup environment variables** (if using MCP servers):
+   ```bash
+   # Ensure direnv is properly configured
+   echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+   echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
+   # Copy environment variables example
+   cp .claude/.envrc.example .envrc
+
+   # Edit .envrc with your actual API keys
+   code .envrc  # or use your preferred editor
+
+   # Allow direnv for this project
+   direnv allow
+
+   # Check if direnv is working:
+   direnv status
+   ```
+
+> NOTE: You should run `direnv reload` once you add new variables or values
+
+4. **Restart Claude Code to access commands and MCP servers**
+
+5. **Update or Create ../CLAUDE.md:**
+   ```bash
+   # REQUIRED
+    - Memorize into project memory ./claude/CLAUDE.md
+   ```
 
 ## 📊 Command Integration
 
@@ -254,31 +243,6 @@ export JIRA_API_TOKEN="your-jira-token"
 ```bash
 direnv allow
 ```
-
-#### MCP Configuration Example
-
-In your `.claude_config.json`:
-```json
-{
-  "mcpServers": {
-    "gemini": {
-      "command": "npx",
-      "args": ["-y", "https://github.com/Jinkxed/gemini-mcp"],
-      "env": {
-        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
-      }
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
-      }
-    }
-  }
-}
-```
-
 #### Troubleshooting Environment Variables
 
 **Check if direnv is working**:
@@ -297,6 +261,7 @@ env | grep GEMINI
 2. **Not allowed**: Run `direnv allow` in project directory
 3. **Shell restart**: Restart terminal after adding direnv hook
 4. **MCP connection fails**: Claude Code inherits environment from shell - ensure variables are exported
+5. **GEMINI** - Gemini MCP can be weird and depending on the environment not want to use the environment variable.  You may have to hardcode it into the .mcp.json to get it to work.
 
 #### Security Best Practices
 
@@ -370,7 +335,6 @@ git submodule update
 
 ### Getting Help
 
-- Check project-specific `.claude_config.json`
 - Review shared configuration documentation
 - Use `/m-help` for context-aware assistance (after restart)
 - Ensure Claude Code is restarted after adding submodule

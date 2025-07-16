@@ -2,6 +2,8 @@
 
 **Purpose**: Analyze the current project's codebase and generate/update the project's CLAUDE.md file with comprehensive information needed for world-class AI assistance.
 
+**Context Extension:** For the purpose of analysis and exploration always use "ultrathink" mode to allocate the most computational budget possible.
+
 ## Overview
 
 This command performs a deep analysis of the current project's codebase, technology stack, architecture, and patterns to create a comprehensive CLAUDE.md file that enables Claude Code to provide optimal assistance for the specific project.
@@ -9,7 +11,8 @@ This command performs a deep analysis of the current project's codebase, technol
 ## What This Command Does
 
 ### 1. Codebase Analysis
-- Analyzes package.json for dependencies and scripts
+- Determine language and package utilities
+- Analyzes package.json/mix.exs/etc for dependencies and scripts
 - Examines project directory structure and organization
 - Identifies technology stack and frameworks
 - Reviews database schemas and naming conventions
@@ -19,7 +22,7 @@ This command performs a deep analysis of the current project's codebase, technol
 - Identifies unique architectural patterns
 
 ### 2. Technology Stack Detection
-- Framework identification (Next.js, React, Vue, etc.)
+- Framework identification (Next.js, React, Vue, Elixir, PHP, Rails, etc.)
 - Language detection and version (TypeScript, JavaScript, etc.)
 - Database technology and patterns
 - Authentication and security implementations
@@ -28,7 +31,7 @@ This command performs a deep analysis of the current project's codebase, technol
 - Testing frameworks and patterns
 
 ### 3. Architecture Pattern Recognition
-- Multi-tenant architecture detection
+- Single/Multi-tenant architecture detection
 - Authentication/authorization patterns
 - Database design patterns
 - API architecture and conventions
@@ -84,7 +87,8 @@ The command will:
    - Establish project type and domain
 
 2. **Perform Deep Codebase Analysis**
-   - Read package.json and analyze dependencies
+   - Review Git history of the respository for releases
+   - Read package files and analyze dependencies
    - Examine file structure and organization
    - Analyze database schemas and migrations
    - Review API routes and middleware
@@ -134,8 +138,8 @@ The generated CLAUDE.md will include:
 - **Deployment**: Build and deployment configuration
 
 ### Optional Sections (based on project)
-- **Multi-Tenant Architecture**: If applicable
-- **OAuth Implementation**: If social auth is used
+- **Tenant Architecture**: If applicable
+- **Auth Implementation**: If social auth is used
 - **State Management**: Complex state patterns
 - **Performance Optimizations**: Caching and optimization patterns
 - **Third-Party Integrations**: External service patterns
@@ -174,7 +178,7 @@ This command leverages various analysis tools:
 
 This command is designed to work with any technology stack:
 
-- **Language Agnostic**: Works with TypeScript, JavaScript, Python, etc.
+- **Language Agnostic**: Works with Elixir, Rails, PHP, TypeScript, JavaScript, Python, etc.
 - **Framework Agnostic**: Supports Next.js, React, Vue, Angular, etc.
 - **Database Agnostic**: Works with PostgreSQL, MySQL, MongoDB, etc.
 - **Architecture Agnostic**: Supports various architectural patterns

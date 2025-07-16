@@ -4,6 +4,8 @@
 
 **Scope:** Enterprise-grade code-level analysis using collaborative Gemini-Claude debate process with actionable tactical insights
 
+**Context Extension:** For the purpose of analysis and exploration always use "ultrathink" mode to allocate the most computational budget possible.
+
 ## Overview
 
 Transforms Claude into a Senior Code Review Specialist collaborating with Gemini AI to conduct tactical code review through sophisticated dual-AI debate process. This approach provides comprehensive evaluation of code quality, implementation patterns, security vulnerabilities, and performance considerations through comparative analysis and expert synthesis.
@@ -144,12 +146,12 @@ code_languages:
 # Gemini CLI comprehensive code analysis
 if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
     echo "=== GEMINI CODE ANALYSIS ===" > /tmp/gemini_code_analysis.md
-    
+
     # Detailed code implementation analysis
     if git diff --staged --quiet; then
         # Analyze recent changes if nothing staged
         git diff HEAD~1 | gemini -p "Conduct comprehensive tactical code review.
-        
+
         Analyze:
         1. Code quality and implementation patterns
         2. Performance bottlenecks and optimization opportunities
@@ -159,7 +161,7 @@ if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
         6. Documentation clarity and completeness
         7. Coding standards and style consistency
         8. Maintainability and readability issues
-        
+
         Provide specific line-by-line feedback with code examples.
         Format as structured markdown with severity levels." --format markdown >> /tmp/gemini_code_analysis.md
     else
@@ -168,7 +170,7 @@ if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
         Focus on implementation details, potential bugs, and improvement opportunities.
         Provide actionable feedback with specific recommendations." --format markdown >> /tmp/gemini_code_analysis.md
     fi
-    
+
     # Security-focused analysis
     echo -e "\n## Security Analysis" >> /tmp/gemini_code_analysis.md
     gemini --all-files -p "Conduct security-focused code review.
@@ -179,7 +181,7 @@ if command -v gemini >/dev/null 2>&1 && [[ -n "$GEMINI_API_KEY" ]]; then
     - Sensitive data exposure
     - Cryptographic implementations
     - Access control violations
-    
+
     Provide specific security recommendations." --format markdown >> /tmp/gemini_code_analysis.md
 fi
 ```
@@ -245,19 +247,19 @@ analysis_domains:
     - algorithm_efficiency
     - design_pattern_usage
     - error_handling_robustness
-  
+
   security_assessment:
     - vulnerability_identification
     - input_validation_review
     - authentication_implementation
     - data_sanitization_practices
-  
+
   performance_evaluation:
     - bottleneck_identification
     - resource_optimization
     - caching_strategies
     - database_query_efficiency
-  
+
   maintainability_review:
     - code_organization
     - documentation_quality
@@ -272,17 +274,17 @@ severity_classification:
     description: "Security vulnerabilities, data corruption risks"
     action: "immediate_fix_required"
     examples: ["SQL injection", "authentication bypass", "data loss"]
-  
+
   high:
     description: "Performance issues, major bugs, compliance violations"
     action: "fix_before_release"
     examples: ["memory leaks", "infinite loops", "broken functionality"]
-  
+
   medium:
     description: "Code quality issues, minor bugs, style violations"
     action: "fix_in_current_sprint"
     examples: ["code duplication", "poor naming", "missing validation"]
-  
+
   low:
     description: "Optimization opportunities, documentation improvements"
     action: "backlog_consideration"
