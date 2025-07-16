@@ -1,18 +1,20 @@
 {
   "mcpServers": {
     "filesystem": {
-      "type": "stdio",
-      "command": "mcp-server-filesystem",
+      "command": "npx",
       "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
         "."
       ],
       "env": {}
     },
     "memory": {
-      "type": "stdio",
-      "command": "mcp-server-memory",
-      "args": [],
-      "env": {}
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
     },
     "puppeteer": {
       "command": "npx",
