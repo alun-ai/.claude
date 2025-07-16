@@ -26,34 +26,62 @@ Documents/Github/
 Claude Code slash commands available across all projects after adding the submodule and restarting Claude (all use `/m-*` prefix):
 
 #### Core Development Workflow
-- `/m-execute` - Multi-agent development workflow
-- `/m-commit-push` - Intelligent commit and push
-- `/m-bug-fix` - Comprehensive bug analysis and fixing
-- `/m-project-init` - Initialize project with shared configuration
+- `/m-execute` - Multi-agent development workflow orchestration
+- `/m-commit` - Intelligent local git commit with AI-powered commit message generation (no push)
+- `/m-commit-push` - Intelligent git commit and push with AI-powered message generation
+- `/m-fix-bug` - Systematic bug analysis, reproduction, root cause identification, and verification
+- `/m-project-init` - Initialize project with shared configuration and intelligent environment setup
+
+#### Advanced Development Tools
+- `/m-ask-gemini` - AI-powered development assistant with direct access to Google Gemini
+- `/m-parallel-tasks` - Multi-agent asynchronous development workflow with checkpoint-based coordination
+- `/m-fix-build` - Comprehensive build error detection and fixing across local, production, and CircleCI environments
+- `/m-generate-claude-md` - AI-powered CLAUDE.md generation with ultrathink mode extensions
+- `/m-onboard-me` - Platform-agnostic onboarding system with intelligent technology stack detection
+- `/m-product-canvas` - AI-powered product strategy workshop with template-driven canvas development
+- `/m-product-tech-spec` - Chief Software Architect guidance for technical specifications with component reusability analysis
 
 #### Code Quality & Security
-- `/m-security-scan` - Security vulnerability scanning
-- `/m-test-generation` - Automated test creation
-- `/m-review-code` - Code quality review
-- `/m-cleanup` - Project maintenance and cleanup
+- `/m-security-scan` - Security vulnerability scanning with comprehensive threat analysis
+- `/m-test-generation` - Automated test creation with intelligent test case generation
+- `/m-review-code` - Code quality review with AI-powered analysis
+- `/m-cleanup` - Project maintenance and cleanup with intelligent debt detection
+- `/m-qa` - Quality assurance validation with comprehensive testing
 
 #### Planning & Analysis
-- `/m-explore` - Dev task plan workflow with dual-AI analysis
-- `/m-tdd-planner` - Test-driven development planning
-- `/m-next-task` - Next action recommendations
-- `/m-next-context` - Context compilation and analysis
+- `/m-explore` - Dev task plan workflow with dual-AI analysis and strategic planning
+- `/m-tdd-planner` - Test-driven development planning with comprehensive test strategy
+- `/m-next-task` - Next action recommendations with intelligent task prioritization
+- `/m-next-context` - Context compilation and analysis for development continuity
 
 #### Architecture & Design
-- `/m-debate-architecture` - Architecture review and analysis
-- `/m-debate-code` - Tactical code review
+- `/m-debate-architecture` - Architecture review and analysis with expert consultation
+- `/m-debate-code` - Tactical code review with intelligent feedback
 
 #### Project Management
-- `/m-document-update` - Documentation maintenance
-- `/m-branch-prune` - Branch cleanup and management
-- `/m-branch-prune-lite` - Lightweight branch cleanup
+- `/m-document-update` - Documentation maintenance with intelligent content synchronization
+- `/m-branch-prune` - Branch cleanup and management with intelligent branch analysis
+- `/m-branch-prune-lite` - Lightweight branch cleanup for quick maintenance
+
+#### Jira Integration
+- `/m-jira-test-plan` - Comprehensive testing strategy generation with automated test case creation
+- `/m-jira-qa-findings` - Quality assurance documentation with intelligent bug tracking
+- `/m-jira-sprint` - Sprint planning and execution with AI-powered sprint master capabilities
+- `/m-jira-report` - Analytics and reporting with AI-powered analytics engine
+- `/m-jira-workflow` - Issue management with AI-powered workflow orchestration
+- `/m-jira-dev-start` - Development workflow initialization with AI-powered issue selection
+- `/m-jira-dev-complete` - Development completion with AI-powered quality intelligence
+- `/m-jira-issue` - Unified issue management with AI-powered issue intelligence
+- `/m-jira-planning` - Project planning with intelligent resource allocation
+- `/m-jira-docs` - Documentation management with automated content generation
+- `/m-jira-estimate` - Estimation and planning with AI-powered effort analysis
+- `/m-jira-metrics` - Performance metrics and analytics with intelligent insights
+
+#### Environment & Setup
+- `/m-nix-setup` - Shared Nix development environment setup with unified infrastructure
 
 #### Help & Discovery
-- `/m-help` - Context-aware help and command discovery
+- `/m-help` - Context-aware help and command discovery with intelligent assistance
 
 ### `/templates/` - Project Templates
 Ready-to-use project templates with Claude configuration:
