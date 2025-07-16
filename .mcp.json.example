@@ -135,6 +135,14 @@
       "env": {
         "REF_API_KEY": "${REF_API_KEY}"
       }
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "type": "stdio"
     }
   }
 }
