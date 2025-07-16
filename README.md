@@ -206,6 +206,111 @@ Projects automatically inherit shared configuration while allowing local overrid
 2. **Project Override**: `.claude_config.json` for project-specific settings
 3. **Environment Variables**: Project-specific environment via `.envrc`
 
+## 🔌 MCP Server Integration
+
+### What are MCP Servers?
+
+**Model Context Protocol (MCP)** servers are specialized services that extend Claude Code's capabilities by providing access to external systems, APIs, and tools. They act as bridges between Claude and various services, enabling seamless integration with databases, development tools, documentation, and more.
+
+MCP servers run as separate processes and communicate with Claude Code via a standardized protocol, providing enhanced functionality while maintaining security and isolation.
+
+### Available MCP Servers
+
+Our shared configuration includes these powerful MCP servers:
+
+#### 🗂️ **Filesystem Server**
+- **Purpose**: Enhanced file system operations beyond basic read/write
+- **Tools**: `read_file`, `write_file`, `edit_file`, `search_files`, `list_directory`, `directory_tree`
+- **Value**: Enables complex file operations, batch processing, and intelligent file navigation
+- **Use Cases**: Codebase analysis, bulk file operations, project structure exploration
+
+#### 🧠 **Memory Server**
+- **Purpose**: Persistent knowledge graph for storing and retrieving project context
+- **Tools**: `create_entities`, `create_relations`, `search_nodes`, `read_graph`
+- **Value**: Maintains long-term project knowledge, remembers decisions and patterns
+- **Use Cases**: Architecture documentation, team knowledge sharing, pattern recognition
+
+#### 🌐 **Puppeteer Server**
+- **Purpose**: Browser automation and web scraping capabilities
+- **Tools**: `navigate`, `screenshot`, `click`, `fill`, `evaluate`
+- **Value**: Enables web testing, UI debugging, and data extraction
+- **Use Cases**: E2E testing, UI regression detection, web app debugging
+
+#### 🤖 **Gemini Server**
+- **Purpose**: Google Gemini AI integration for advanced analysis
+- **Tools**: `gemini-query`, `gemini-brainstorm`, `gemini-analyze-code`
+- **Value**: Provides additional AI perspectives and specialized analysis
+- **Use Cases**: Code review, architectural analysis, complex problem solving
+
+#### 🐙 **GitHub Server**
+- **Purpose**: Direct GitHub API integration
+- **Tools**: `search_repositories`, `create_issue`, `get_file_contents`, `create_pull_request`
+- **Value**: Streamlines GitHub workflows and repository management
+- **Use Cases**: Issue tracking, repository analysis, automated PR creation
+
+#### 📊 **Jira Server**
+- **Purpose**: Atlassian Jira integration for project management
+- **Tools**: `jira_get_issue`, `jira_create_issue`, `jira_search`, `jira_update_issue`
+- **Value**: Enables seamless issue tracking and project management
+- **Use Cases**: Ticket creation, sprint planning, issue analysis
+
+#### 🗄️ **Database Server (DBHub)**
+- **Purpose**: Direct database query and management
+- **Tools**: `execute_sql`
+- **Value**: Enables direct database interaction and analysis
+- **Use Cases**: Database debugging, schema analysis, data validation
+
+#### 📝 **Notion Server**
+- **Purpose**: Notion workspace integration
+- **Tools**: `retrieve_page`, `create_database`, `query_database`
+- **Value**: Integrates documentation and knowledge management
+- **Use Cases**: Documentation updates, knowledge base management
+
+#### ⚡ **Supabase Server**
+- **Purpose**: Supabase platform integration
+- **Tools**: `list_tables`, `execute_sql`, `apply_migration`
+- **Value**: Streamlines Supabase development and management
+- **Use Cases**: Database migrations, real-time features, authentication
+
+#### 🔄 **CircleCI Server**
+- **Purpose**: CI/CD pipeline integration
+- **Tools**: `get_build_logs`, `run_pipeline`, `get_test_results`
+- **Value**: Enables CI/CD automation and monitoring
+- **Use Cases**: Build debugging, deployment automation, test analysis
+
+#### 🧭 **Sequential Thinking Server**
+- **Purpose**: Advanced reasoning and step-by-step analysis
+- **Tools**: `sequentialthinking`
+- **Value**: Provides structured problem-solving and complex analysis
+- **Use Cases**: Architecture planning, debugging complex issues, systematic analysis
+
+#### 📚 **Ref Server**
+- **Purpose**: Technical documentation search and retrieval
+- **Tools**: `ref_search_documentation`, `ref_read_url`
+- **Value**: Provides access to up-to-date technical documentation
+- **Use Cases**: API reference lookup, best practices research, technology learning
+
+#### 🔍 **Context7 Server**
+- **Purpose**: Library documentation and code examples
+- **Tools**: `resolve-library-id`, `get-library-docs`
+- **Value**: Provides comprehensive library documentation and examples
+- **Use Cases**: Framework learning, API integration, code examples
+
+#### 🕰️ **Claude Historian Server**
+- **Purpose**: Claude Code conversation history and context
+- **Tools**: `search_conversations`, `find_file_context`
+- **Value**: Enables learning from previous interactions and context
+- **Use Cases**: Context continuity, learning from past solutions, debugging patterns
+
+### MCP Server Benefits
+
+1. **Enhanced Capabilities**: Extends Claude's functionality beyond built-in tools
+2. **Seamless Integration**: Works transparently with existing workflows
+3. **Specialized Tools**: Each server provides domain-specific expertise
+4. **Scalable Architecture**: Easy to add new servers as needs evolve
+5. **Secure Isolation**: Each server runs independently with controlled access
+6. **Standardized Protocol**: Consistent interface across all servers
+
 ## 🔐 Environment Variable Configuration
 
 ### direnv Setup for MCP Servers
