@@ -1,19 +1,19 @@
-# New Engineer Onboarding: AI-Powered Codebase Discovery
+# AI-Powered Codebase Onboarding: Universal Developer Experience
 
-**Target:** $ARGUMENTS (Optional: JIRA project key for team-specific context)
+**Target:** $ARGUMENTS (Optional: specific team/project context)
 
-**Scope:** Comprehensive interactive onboarding for new software engineers to quickly understand {{PROJECT_NAME}}'s codebase, architecture, history, and development workflow
+**Scope:** Dynamic, intelligent onboarding that adapts to any codebase, technology stack, and development environment
 
 ## Overview
 
-Transforms Claude into your AI-powered Onboarding Specialist, providing enterprise-grade codebase discovery and comprehensive knowledge transfer that accelerates new engineer productivity through intelligent guidance and personalized learning paths. This command delivers world-class onboarding experiences with interactive exploration, contextual learning, and hands-on exercises that enable rapid understanding of complex systems while building practical skills through AI-assisted mentorship and progressive knowledge acquisition.
+Transforms Claude into your AI-powered Onboarding Specialist that analyzes your specific codebase in real-time and creates a personalized, interactive learning experience. This command works with any technology stack - from Next.js to Django, React to Vue, PostgreSQL to MongoDB - by intelligently discovering your project's patterns, architecture, and conventions to deliver world-class onboarding experiences.
 
 **Key Benefits:**
-- **AI-Powered Learning Intelligence**: Machine learning-driven personalization with adaptive learning paths and skill-based progression tracking
-- **Enterprise-Grade Knowledge Transfer**: Comprehensive codebase understanding with architectural insights and historical context analysis
-- **Interactive Discovery Platform**: Hands-on exploration with guided exercises, real-time Q&A, and contextual code navigation
-- **Personalized Skill Development**: Role-specific learning paths with targeted exercises and competency-based progression
-- **Accelerated Productivity Engine**: Rapid ramp-up through intelligent prioritization and focused learning objectives
+- **Universal Compatibility**: Works with any language, framework, or architecture
+- **Dynamic Analysis**: Real-time codebase discovery and pattern recognition
+- **Personalized Learning**: Adapts to individual experience levels and learning styles
+- **Interactive Discovery**: Hands-on exploration with guided exercises
+- **Team Integration**: Contextual onboarding based on actual team work patterns
 
 ## Help Documentation
 
@@ -24,1093 +24,604 @@ To see this help documentation, run:
 
 ## Core Features
 
-### 1. AI-Powered Personalized Learning Engine
-- **Adaptive Learning Path Generation**: Machine learning-based curriculum creation tailored to individual experience levels and role requirements
-- **Skill Gap Analysis**: Intelligent assessment of current knowledge with targeted learning recommendations and progression tracking
-- **Interactive Knowledge Verification**: Real-time comprehension testing with adaptive difficulty and personalized feedback
-- **Learning Style Optimization**: Dynamic content delivery adapted to individual learning preferences and pace
+### 1. Dynamic Codebase Analysis Engine
+- **Technology Stack Detection**: Automatically identifies languages, frameworks, databases, and tools
+- **Architecture Pattern Recognition**: Discovers MVC, microservices, monoliths, or custom patterns
+- **Code Convention Analysis**: Learns naming conventions, file organization, and coding standards
+- **Dependency Mapping**: Understands external libraries, APIs, and service integrations
 
-### 2. Enterprise-Grade Codebase Discovery Platform
-- **Intelligent Architecture Exploration**: Guided tours through system architecture with contextual explanations and dependency mapping
-- **Historical Context Analysis**: Git history mining with evolution insights, decision rationale, and architectural pattern emergence
-- **Component Relationship Mapping**: Visual and interactive exploration of component dependencies and data flow
-- **Best Practice Pattern Recognition**: Identification and explanation of coding patterns, conventions, and architectural decisions
+### 2. Adaptive Learning Framework
+- **Experience Level Assessment**: Tailors depth and pace to individual background
+- **Learning Style Optimization**: Adapts to visual, hands-on, or conceptual learning preferences
+- **Progressive Skill Building**: Builds from foundational concepts to advanced patterns
+- **Interactive Knowledge Validation**: Real-time comprehension testing and feedback
 
-### 3. Interactive Hands-On Learning System
-- **Guided Exercise Framework**: Progressive coding challenges with real-time guidance and solution validation
-- **Sandbox Environment Provision**: Safe exploration spaces for experimentation without production impact
-- **Pair Programming Simulation**: AI-assisted coding sessions with contextual hints and best practice suggestions
-- **Real-World Task Integration**: Actual development tasks scaled for learning with mentorship support
+### 3. Intelligent Content Generation
+- **Custom Exercise Creation**: Generates relevant coding exercises based on actual codebase
+- **Contextual Documentation**: Creates explanations specific to your project's patterns
+- **Team-Specific Insights**: Analyzes recent commits and issues for relevant context
+- **Best Practice Guidance**: Identifies and explains project-specific conventions
 
-### 4. Comprehensive Knowledge Integration Platform
-- **Multi-Modal Learning Resources**: Documentation, code examples, video explanations, and interactive tutorials
-- **Team Integration Facilitation**: Introduction to team members, processes, and communication channels
-- **Development Workflow Mastery**: Hands-on practice with git workflows, CI/CD pipelines, and deployment processes
-- **Continuous Learning Tracking**: Progress monitoring with milestone achievements and competency certifications
+### 4. Universal Integration Platform
+- **Version Control Analysis**: Git history mining for evolution insights
+- **Issue Tracking Integration**: Connects with GitHub Issues, Jira, or similar systems
+- **Development Environment Setup**: Automated detection and setup guidance
+- **Testing Framework Integration**: Discovers and explains testing patterns
 
-## Interactive Onboarding Framework
+## Usage Examples
 
-### Learning Pathways by Role/Team
-```yaml
-onboarding_pathways:
-  frontend_focused:
-    priority_areas: ["React components", "Sliding Panel System", "UI patterns", "State management"]
-    key_files: ["AdminLayout", "SlidingPanel", "BrandContext", "component libraries"]
-    estimated_time: "3-5 days deep dive"
-    
-  backend_focused:
-    priority_areas: ["API routes", "Supabase integration", "OAuth security", "Database schema"]
-    key_files: ["api routes", "Edge Functions", "oauth-security", "database migrations"]
-    estimated_time: "3-5 days deep dive"
-    
-  fullstack_general:
-    priority_areas: ["Overall architecture", "Multi-tenancy", "Integration patterns", "Development workflow"]
-    key_files: ["CLAUDE.md", "architecture docs", "core lib files", "key components"]
-    estimated_time: "5-7 days comprehensive"
-    
-  devops_infrastructure:
-    priority_areas: ["Deployment", "Database management", "Performance", "Security"]
-    key_files: ["deployment scripts", "Supabase config", "performance docs", "security implementations"]
-    estimated_time: "2-4 days focused"
+```bash
+# Basic onboarding - analyzes current directory
+/m-onboard-me
+
+# Team-specific onboarding with context
+/m-onboard-me --team backend-api
+
+# Focus on specific technology areas
+/m-onboard-me --focus architecture
+/m-onboard-me --focus database
+/m-onboard-me --focus frontend
+
+# Experience level customization
+/m-onboard-me --experience junior
+/m-onboard-me --experience senior
+
+# Learning style preferences
+/m-onboard-me --style hands-on
+/m-onboard-me --style conceptual
 ```
 
-## Execution Framework
+## Command Options
 
-### 1. **Strategic Onboarding Initialization and Assessment Phase**
-- **Personalized Welcome Experience**: AI-driven introduction with role detection, team assignment verification, and learning objective establishment
-- **Comprehensive Skill Assessment**: Intelligent evaluation of technical background, experience level, and learning preferences
-- **Learning Path Generation**: Custom curriculum creation based on role, experience, and team-specific requirements
-- **Environment Setup Validation**: Development environment verification with automated tool installation and configuration
-- **Success Metrics Definition**: Clear learning objectives with measurable milestones and expected outcomes
+- `--team <name>`: Team-specific onboarding with context
+- `--focus <area>`: Focus on specific technology area
+- `--experience <level>`: Customize for experience level (junior/mid/senior)
+- `--style <type>`: Learning style preference (visual/hands-on/conceptual)
+- `--quick`: Fast-track overview for experienced developers
+- `--deep`: Comprehensive deep-dive onboarding
+- `--interactive`: Enhanced interactive mode with Q&A
 
-### 2. **Advanced Codebase Architecture Discovery Phase**
-- **System Overview Presentation**: High-level architecture explanation with visual diagrams and component relationships
-- **Technology Stack Deep Dive**: Comprehensive exploration of frameworks, libraries, and tools with practical examples
-- **Design Pattern Recognition**: Identification and explanation of architectural patterns with implementation rationale
-- **Historical Evolution Analysis**: Git history exploration showing system growth and architectural decisions
-- **Best Practice Demonstration**: Code quality standards, conventions, and team-specific practices
+## Implementation Framework
 
-### 3. **Interactive Component Exploration and Understanding Phase**
-- **Core Component Analysis**: Deep dive into essential components with functionality explanations and usage examples
-- **Data Flow Visualization**: Interactive tracing of data through the system with state management insights
-- **API Endpoint Mapping**: Comprehensive API exploration with request/response patterns and authentication flows
-- **Database Schema Understanding**: Table relationships, multi-tenancy patterns, and query optimization strategies
-- **Integration Point Discovery**: External service connections, OAuth flows, and third-party API interactions
+### Phase 1: Intelligent Codebase Discovery
 
-### 4. **Hands-On Practice and Skill Development Phase**
-- **Guided Exercise Progression**: Carefully crafted coding challenges with increasing complexity and real-world relevance
-- **Feature Implementation Practice**: Small feature additions with code review simulation and feedback
-- **Bug Fix Scenarios**: Debugging exercises with common issues and resolution strategies
-- **Testing Practice**: Unit test creation, integration testing, and test-driven development exercises
-- **Code Review Participation**: Simulated code review scenarios with best practice reinforcement
+The command begins by analyzing the current project to understand its unique characteristics:
 
-### 5. **Team Integration and Productivity Acceleration Phase**
-- **Development Workflow Mastery**: Git workflow practice, PR creation, and CI/CD pipeline interaction
-- **Team Process Integration**: Introduction to sprint ceremonies, ticket management, and communication channels
-- **First Task Assignment**: Carefully selected starter task with mentor support and success pathway
-- **Knowledge Resource Access**: Documentation locations, team wikis, and help channel introductions
-- **Continuous Learning Planning**: Ongoing skill development roadmap with advanced topic progression
-
-## Execution Flow
-
-### 1. **Welcome & Initial Assessment**
 ```bash
-# Interactive onboarding startup
-start_onboarding() {
-    echo "🚀 WELCOME TO {{PROJECT_NAME}}!"
-    echo "========================================"
-    echo "Interactive Codebase Onboarding System"
-    echo "========================================"
-    echo ""
-    echo "Hi! I'm your AI onboarding guide. Let's get you up to speed with our codebase!"
-    echo ""
-    echo "First, let me learn about you:"
-    
-    # Gather context about the new engineer
-    gather_engineer_context
-    
-    # Determine learning pathway
-    select_learning_pathway
-    
-    # Set up interactive session
-    initialize_onboarding_session
-}
-
-gather_engineer_context() {
-    echo "📋 GETTING TO KNOW YOU"
-    echo ""
-    echo "Help me customize your onboarding experience:"
-    echo ""
-    echo "1. What's your primary role? (frontend/backend/fullstack/devops)"
-    echo "2. Years of experience with React/Next.js? (0-2/3-5/5+)"
-    echo "3. Experience with TypeScript? (beginner/intermediate/advanced)"
-    echo "4. Familiar with Supabase/PostgreSQL? (yes/no/some)"
-    echo "5. Previous experience with multi-tenant SaaS? (yes/no)"
-    echo ""
-    echo "💡 I'll use this to prioritize what we cover first!"
-    
-    # AI analysis of responses to customize experience
-    LEARNING_CUSTOMIZATION=$(/mcp__gemini__gemini-query "Customize onboarding path based on:
-    Role: $ROLE_RESPONSE
-    React Experience: $REACT_EXPERIENCE  
-    TypeScript: $TYPESCRIPT_LEVEL
-    Supabase: $SUPABASE_EXPERIENCE
-    Multi-tenant: $MULTITENANT_EXPERIENCE
-    
-    Recommend:
-    1. Learning priority order
-    2. Depth level for each area
-    3. Estimated timeline
-    4. Key concepts to emphasize
-    5. Areas that might be challenging")
-}
-```
-
-### 2. **Repository History & Evolution**
-```bash
-# Git history analysis and storytelling
-explore_repository_history() {
-    echo "📚 {{PROJECT_NAME}}'S STORY: Repository History & Evolution"
-    echo "================================================"
-    echo ""
-    echo "Let's understand how this codebase evolved..."
-    
-    # Recent commit analysis
-    RECENT_COMMITS=$(git log --oneline -20 --pretty=format:"%h %s" | head -10)
-    echo "🔍 Recent Development Activity:"
-    echo "$RECENT_COMMITS"
-    echo ""
-    
-    # Major milestone analysis
-    analyze_major_milestones
-    
-    # Architecture evolution story
-    tell_architecture_story
-    
-    # Interactive Q&A about history
-    history_comprehension_check
-}
-
-analyze_major_milestones() {
-    echo "🏗️ MAJOR ARCHITECTURAL MILESTONES"
-    echo ""
-    
-    MILESTONE_ANALYSIS=$(/mcp__gemini__gemini-query "Analyze git history to identify major milestones:
-
-Recent commits: $RECENT_COMMITS
-
-Identify and explain:
-1. OAUTH SECURITY IMPLEMENTATION: Recent PKCE and security improvements
-2. SLIDING PANEL SYSTEM: Unified state management architecture  
-3. MULTI-TENANT REFACTOR: Agency to Organization migration
-4. CONTENT CURATION: Review workflow and collaboration features
-5. ASSET LIBRARY: Phase 1-3 asset management system
-
-For each milestone, explain:
-- What problem it solved
-- How it impacts the current architecture
-- Why it's important for new engineers to understand
-
-Format as story-driven explanations perfect for onboarding.")
-
-    echo "📖 {{PROJECT_NAME}}'S TECHNICAL EVOLUTION:"
-    echo "$MILESTONE_ANALYSIS"
-    echo ""
-    
-    # Interactive timeline exploration
-    echo "🤔 COMPREHENSION CHECK:"
-    echo "1. Why was the OAuth security system redesigned recently?"
-    echo "2. What problem does the Sliding Panel System solve?"
-    echo "3. How does multi-tenancy work in our architecture?"
-    echo ""
-    echo "💡 Think about these - we'll explore the code that implements these concepts!"
-}
-
-tell_architecture_story() {
-    echo "🏛️ ARCHITECTURE EVOLUTION STORY"
-    echo ""
-    
-    ARCHITECTURE_STORY=$(/mcp__gemini__gemini-query "Create an engaging architecture evolution story for {{PROJECT_NAME}}:
-
-Context: Social media management platform built with Next.js 15, Supabase, multi-tenant SaaS
-
-Tell the story of:
-1. FOUNDATION: Next.js + Supabase foundation for SaaS
-2. SCALING CHALLENGE: Managing multiple brands/organizations  
-3. UI COMPLEXITY: Need for sliding panel state management
-4. SECURITY EVOLUTION: OAuth integrations with 10+ platforms
-5. COLLABORATION: Team workflows and content review systems
-
-Make it engaging and help new engineers understand WHY architectural decisions were made, not just WHAT was built.
-
-Include specific examples of how the architecture enables features like:
-- Brand switching in the UI
-- Secure social media integrations  
-- Real-time collaboration
-- Multi-tenant data isolation")
-
-    echo "$ARCHITECTURE_STORY"
-}
-```
-
-### 3. **Interactive Architecture Discovery**
-```bash
-# Guided architecture exploration
-explore_architecture_interactively() {
-    echo "🏗️ INTERACTIVE ARCHITECTURE EXPLORATION"
-    echo "======================================="
-    echo ""
-    echo "Now let's explore the actual code! We'll go from high-level to specific."
-    
-    # Start with the big picture
-    show_architecture_overview
-    
-    # Explore each major system
-    explore_major_systems_interactively
-    
-    # Deep dive into key components
-    hands_on_component_exploration
-}
-
-show_architecture_overview() {
-    echo "🌐 BIG PICTURE: {{PROJECT_NAME}} System Architecture"
-    echo ""
-    echo "┌─────────────────────────────────────────────────────────────┐"
-    echo "│                    {{PROJECT_NAME}} ARCHITECTURE                      │"
-    echo "├─────────────────────────────────────────────────────────────┤"
-    echo "│ Frontend: Next.js 15 + React 19 + TypeScript               │"
-    echo "│ ├── Admin Dashboard (/app/admin/)                           │"
-    echo "│ ├── Marketing Site (/app/)                                  │"
-    echo "│ ├── Components (/components/)                               │"
-    echo "│ └── Sliding Panel System (/lib/sliding-panel/)             │"
-    echo "├─────────────────────────────────────────────────────────────┤"
-    echo "│ Backend: Supabase + Edge Functions                         │"
-    echo "│ ├── API Routes (/app/api/)                                 │"
-    echo "│ ├── Database (PostgreSQL + RLS)                           │"
-    echo "│ ├── Authentication (Supabase Auth)                        │"
-    echo "│ └── Real-time (Supabase Realtime)                         │"
-    echo "├─────────────────────────────────────────────────────────────┤"
-    echo "│ Core Systems:                                              │"
-    echo "│ ├── Multi-tenant Architecture (Orgs → Teams → Brands)     │"
-    echo "│ ├── OAuth Security (10+ social platforms)                 │"
-    echo "│ ├── Asset Management (Upload, CDN, Collaboration)         │"
-    echo "│ └── Content Workflows (Curation, Review, Publishing)      │"
-    echo "└─────────────────────────────────────────────────────────────┘"
-    echo ""
-    
-    # Interactive architecture questions
-    echo "🎯 ARCHITECTURE UNDERSTANDING CHECK:"
-    echo ""
-    echo "Before we dive deeper, let's test your understanding:"
-    echo "1. Where would you look to find API endpoints?"
-    echo "2. What handles user interface state management?"
-    echo "3. How is data security handled in a multi-tenant system?"
-    echo "4. Where are social media integrations implemented?"
-    echo ""
-    echo "💡 Keep these questions in mind as we explore the actual code!"
-}
-
-explore_major_systems_interactively() {
-    echo "🔍 GUIDED SYSTEM EXPLORATION"
-    echo ""
-    echo "Let's explore each major system hands-on. I'll show you key files and ask questions."
-    
-    # Multi-tenant system exploration
-    explore_multitenant_system
-    
-    # Sliding panel system deep dive
-    explore_sliding_panel_system
-    
-    # OAuth security system
-    explore_oauth_security_system
-    
-    # Database and API patterns
-    explore_database_api_patterns
-}
-
-explore_multitenant_system() {
-    echo "🏢 MULTI-TENANT ARCHITECTURE DEEP DIVE"
-    echo "======================================"
-    echo ""
-    echo "{{PROJECT_NAME}} uses a 3-tier hierarchy: Organizations → Teams → Brands"
-    echo ""
-    
-    # Show key files
-    echo "📁 KEY FILES TO UNDERSTAND:"
-    echo "   /src/types/organization.ts - Type definitions"
-    echo "   /src/lib/auth/organization-auth.ts - Auth logic"
-    echo "   /supabase/migrations/ - Database schema"
-    echo ""
-    
-    # Read and explain key files
-    ORGANIZATION_TYPES=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/types/organization.ts")
-    
-    echo "🔎 Let's look at the organization types:"
-    echo "----------------------------------------"
-    echo "$ORGANIZATION_TYPES" | head -30
-    echo ""
-    
-    # Interactive learning
-    echo "🧠 THINK ABOUT IT:"
-    echo "1. How do you think data isolation works between organizations?"
-    echo "2. What permissions might a 'team_lead' have vs 'team_member'?"
-    echo "3. Why do you think we have both Teams AND Brands?"
-    echo ""
-    
-    # Show database schema
-    echo "🗄️ Database Schema (check this out):"
-    echo "   Look at: /supabase/migrations/ for RLS policies"
-    echo "   Key concept: Every table has organization_id for isolation"
-    echo ""
-    
-    MULTITENANT_EXPLANATION=$(/mcp__gemini__gemini-query "Explain multi-tenancy for new engineer:
-
-Organization Types: $ORGANIZATION_TYPES
-
-Explain in simple terms:
-1. How data isolation works (RLS with organization_id)
-2. The permission hierarchy (org → team → brand roles)
-3. Why this architecture scales for SaaS
-4. Common patterns they'll see in the codebase
-5. How to write new features that respect multi-tenancy
-
-Include practical examples and what to watch out for.")
-
-    echo "📚 UNDERSTANDING MULTI-TENANCY:"
-    echo "$MULTITENANT_EXPLANATION"
-}
-
-explore_sliding_panel_system() {
-    echo "🖥️ SLIDING PANEL SYSTEM DEEP DIVE"
-    echo "================================="
-    echo ""
-    echo "Our custom UI state management system - one of our most important patterns!"
-    echo ""
-    
-    # Show the sliding panel architecture
-    SLIDING_PANEL_README=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/lib/sliding-panel/README.md")
-    
-    echo "📖 SLIDING PANEL SYSTEM OVERVIEW:"
-    echo "----------------------------------"
-    echo "$SLIDING_PANEL_README" | head -50
-    echo ""
-    
-    # Show key files
-    echo "📁 KEY FILES TO EXPLORE:"
-    echo "   /src/lib/sliding-panel/UnifiedSlidingPanelManager.ts - Core manager"
-    echo "   /src/lib/sliding-panel/providers/ - Content providers"
-    echo "   /src/lib/sliding-panel/observers.ts - React hooks"
-    echo ""
-    
-    # Interactive exploration
-    echo "🔍 HANDS-ON EXPLORATION:"
-    echo "1. Open UnifiedSlidingPanelManager.ts in your editor"
-    echo "2. Look for the 'open' method - this is how panels are opened"
-    echo "3. Check out providers/OverviewContentProvider.tsx for an example"
-    echo ""
-    
-    echo "🤔 COMPREHENSION QUESTIONS:"
-    echo "1. Why not just use React state for panel management?"
-    echo "2. How does the observer pattern work here?"
-    echo "3. What's a 'provider' in this context?"
-    echo ""
-    
-    SLIDING_PANEL_EXPLANATION=$(/mcp__gemini__gemini-query "Explain sliding panel system for new engineer:
-
-README content: $SLIDING_PANEL_README
-
-Explain clearly:
-1. Why we built custom state management vs React Context
-2. How the observer pattern enables performance
-3. What providers are and how to create them
-4. Common use cases and when to use sliding panels
-5. How to extend the system for new features
-
-Make it practical with examples they can try.")
-
-    echo "🎯 UNDERSTANDING SLIDING PANELS:"
-    echo "$SLIDING_PANEL_EXPLANATION"
-}
-```
-
-### 4. **Component Discovery & Hands-On Exploration**
-```bash
-# Interactive component exploration
-hands_on_component_exploration() {
-    echo "🧩 HANDS-ON COMPONENT EXPLORATION"
-    echo "================================="
-    echo ""
-    echo "Time to get your hands dirty! Let's explore key components together."
-    
-    # Component discovery exercise
-    discover_key_components
-    
-    # Code reading exercises
-    guided_code_reading_exercises
-    
-    # Mini implementation challenges
-    practical_coding_exercises
-}
-
-discover_key_components() {
-    echo "🔍 COMPONENT DISCOVERY EXERCISE"
-    echo ""
-    echo "Let's find and understand our most important shared components..."
-    
-    # Search for key components
-    KEY_COMPONENTS=$(/mcp__filesystem__search_files "{{PROJECT_PATH}}/src/components" "*.tsx")
-    
-    echo "📂 COMPONENT INVENTORY:"
-    echo "----------------------"
-    echo "$KEY_COMPONENTS" | grep -E "(AdminLayout|AssetLibrary|BrandSelector|ChannelManager)" | head -10
-    echo ""
-    
-    # Analyze component patterns
-    COMPONENT_ANALYSIS=$(/mcp__gemini__gemini-query "Analyze component structure for new engineer:
-
-Key components found: $KEY_COMPONENTS
-
-Help them understand:
-1. How components are organized (shared vs feature-specific)
-2. Common patterns (props, hooks, state management)
-3. Key components every engineer should know
-4. How to find the right component for their needs
-5. Naming conventions and file organization
-
-Focus on practical guidance for finding and using components.")
-
-    echo "🧩 COMPONENT PATTERNS & ORGANIZATION:"
-    echo "$COMPONENT_ANALYSIS"
-    echo ""
-    
-    # Interactive component exploration
-    echo "🎯 EXPLORATION EXERCISE:"
-    echo "1. Find the BrandSelector component - where is it used?"
-    echo "2. Look at AdminLayoutNew.tsx - how does navigation work?"
-    echo "3. Explore AssetLibraryPanel.tsx - how does it handle state?"
-    echo ""
-    echo "💡 Try opening these files and tracing through the code!"
-}
-
-guided_code_reading_exercises() {
-    echo "📖 GUIDED CODE READING EXERCISES"
-    echo "================================"
-    echo ""
-    echo "Let's practice reading and understanding code together!"
-    
-    # Exercise 1: OAuth security
-    echo "🔐 EXERCISE 1: OAuth Security Flow"
-    echo "-----------------------------------"
-    
-    OAUTH_SECURITY=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/lib/oauth-security.ts" 30)
-    
-    echo "Here's a snippet from our OAuth security system:"
-    echo "```typescript"
-    echo "$OAUTH_SECURITY"
-    echo "```"
-    echo ""
-    echo "🤔 Questions to think about:"
-    echo "1. What security measures can you identify?"
-    echo "2. How is state management handled?"
-    echo "3. What might 'PKCE' stand for and why is it important?"
-    echo ""
-    
-    # Exercise 2: API route patterns
-    echo "🛠️ EXERCISE 2: API Route Patterns"
-    echo "----------------------------------"
-    
-    API_ROUTE_EXAMPLE=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/src/app/api/brands/route.ts" 40)
-    
-    echo "Here's an API route example:"
-    echo "```typescript"
-    echo "$API_ROUTE_EXAMPLE"
-    echo "```"
-    echo ""
-    echo "🤔 Questions to consider:"
-    echo "1. How is authentication handled?"
-    echo "2. What's the database access pattern?"
-    echo "3. How is error handling done?"
-    echo ""
-    
-    # Exercise 3: Database schema
-    echo "🗄️ EXERCISE 3: Database Schema Patterns"
-    echo "---------------------------------------"
-    
-    MIGRATION_EXAMPLE=$(/mcp__filesystem__read_file "{{PROJECT_PATH}}/supabase/migrations" 30)
-    
-    echo "Let's look at our database patterns:"
-    echo "📁 Check: /supabase/migrations/20250710000001_asset_library_system.sql"
-    echo ""
-    echo "🤔 Key patterns to notice:"
-    echo "1. Every table has organization_id (multi-tenancy)"
-    echo "2. Snake_case naming throughout"
-    echo "3. Comprehensive audit columns (created_at, updated_at, created_by)"
-    echo "4. RLS policies for security"
-    echo ""
-}
-
-practical_coding_exercises() {
-    echo "💻 PRACTICAL CODING EXERCISES"
+# Codebase analysis initialization
+analyze_codebase() {
+    echo "🔍 ANALYZING YOUR CODEBASE..."
     echo "============================="
     echo ""
-    echo "Ready to write some code? Here are beginner-friendly exercises:"
     
-    echo "🎯 EXERCISE 1: Create a Simple Component"
-    echo "----------------------------------------"
-    echo "Goal: Create a 'WelcomeCard' component that:"
-    echo "- Takes a 'userName' prop"
-    echo "- Displays a welcome message"
-    echo "- Uses our design system (Tailwind classes)"
-    echo "- Follows our component patterns"
+    # Detect project type and technology stack
+    detect_technology_stack
+    
+    # Analyze project structure and patterns
+    analyze_project_architecture
+    
+    # Discover development workflows
+    discover_development_patterns
+    
+    # Identify team conventions
+    extract_coding_conventions
+    
+    # Generate onboarding plan
+    create_personalized_onboarding_plan
+}
+
+detect_technology_stack() {
+    echo "🔎 TECHNOLOGY STACK DETECTION"
+    echo "-----------------------------"
+    
+    # Use comprehensive analysis to detect stack
+    TECH_ANALYSIS=$(analyze_current_project)
+    
+    # Frontend framework detection
+    if [[ -f "package.json" ]]; then
+        FRONTEND_FRAMEWORK=$(detect_frontend_framework)
+        echo "Frontend: $FRONTEND_FRAMEWORK"
+    fi
+    
+    # Backend framework detection
+    BACKEND_FRAMEWORK=$(detect_backend_framework)
+    echo "Backend: $BACKEND_FRAMEWORK"
+    
+    # Database technology
+    DATABASE_TECH=$(detect_database_technology)
+    echo "Database: $DATABASE_TECH"
+    
+    # Additional tools and services
+    TOOLS_AND_SERVICES=$(detect_tools_and_services)
+    echo "Tools: $TOOLS_AND_SERVICES"
+    
     echo ""
-    echo "📍 Create: /src/components/onboarding/WelcomeCard.tsx"
-    echo "💡 Hint: Look at existing components for patterns!"
+    echo "✅ Technology stack analysis complete!"
+}
+
+analyze_project_architecture() {
+    echo "🏗️ ARCHITECTURE ANALYSIS"
+    echo "------------------------"
+    
+    # Analyze directory structure
+    PROJECT_STRUCTURE=$(analyze_directory_structure)
+    
+    # Identify architectural patterns
+    ARCHITECTURE_PATTERNS=$(identify_architectural_patterns)
+    
+    # Analyze component relationships
+    COMPONENT_RELATIONSHIPS=$(analyze_component_relationships)
+    
+    # Generate architecture summary
+    ARCHITECTURE_SUMMARY=$(/mcp__gemini__gemini-query "Analyze project architecture:
+    
+    Project structure: $PROJECT_STRUCTURE
+    Detected patterns: $ARCHITECTURE_PATTERNS
+    Component relationships: $COMPONENT_RELATIONSHIPS
+    
+    Provide:
+    1. High-level architecture overview
+    2. Key architectural decisions and patterns
+    3. Component interaction patterns
+    4. Data flow and state management
+    5. Important concepts for new developers
+    
+    Tailor explanation to detected technology stack and make it beginner-friendly.")
+    
+    echo "$ARCHITECTURE_SUMMARY"
+}
+```
+
+### Phase 2: Personalized Learning Path Generation
+
+Based on the analysis, the system creates a customized learning experience:
+
+```bash
+create_personalized_onboarding_plan() {
+    echo "🎯 PERSONALIZED ONBOARDING PLAN"
+    echo "==============================="
+    
+    # Assess developer experience and preferences
+    assess_developer_context
+    
+    # Generate learning objectives
+    generate_learning_objectives
+    
+    # Create progressive learning path
+    create_learning_path
+    
+    # Prepare interactive exercises
+    prepare_contextual_exercises
+}
+
+assess_developer_context() {
+    echo "👤 DEVELOPER CONTEXT ASSESSMENT"
+    echo "-------------------------------"
+    echo ""
+    echo "Let me customize your onboarding experience:"
     echo ""
     
-    echo "🎯 EXERCISE 2: Add a Simple API Route"
-    echo "-------------------------------------"
-    echo "Goal: Create an API route that:"
-    echo "- Returns onboarding status for a user"
-    echo "- Includes proper authentication"
-    echo "- Follows our error handling patterns"
-    echo ""
-    echo "📍 Create: /src/app/api/onboarding/status/route.ts"
-    echo "💡 Hint: Copy patterns from /api/brands/route.ts"
+    # Gather developer context
+    echo "1. What's your experience level with $FRONTEND_FRAMEWORK?"
+    echo "2. How familiar are you with $BACKEND_FRAMEWORK?"
+    echo "3. Experience with $DATABASE_TECH?"
+    echo "4. Preferred learning style? (visual/hands-on/conceptual)"
+    echo "5. What's your primary role? (frontend/backend/fullstack/devops)"
     echo ""
     
-    echo "🎯 EXERCISE 3: Understand Database Query"
-    echo "---------------------------------------"
-    echo "Goal: Write a query that:"
-    echo "- Gets all brands for current user's organization"
-    echo "- Respects RLS security"
-    echo "- Uses proper TypeScript types"
+    # AI-powered personalization
+    PERSONALIZATION_PLAN=$(/mcp__gemini__gemini-query "Create personalized onboarding plan:
+    
+    Technology stack: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK, $DATABASE_TECH
+    Architecture: $ARCHITECTURE_SUMMARY
+    Developer context: [responses will be provided]
+    
+    Generate:
+    1. Learning priority order
+    2. Appropriate depth level for each topic
+    3. Recommended timeline
+    4. Key concepts to emphasize
+    5. Potential challenge areas
+    6. Suggested learning resources
+    
+    Adapt to developer's experience level and learning style.")
+    
+    echo "📋 YOUR PERSONALIZED PLAN:"
+    echo "$PERSONALIZATION_PLAN"
+}
+
+generate_learning_objectives() {
+    echo "🎯 LEARNING OBJECTIVES"
+    echo "----------------------"
+    
+    # Generate specific, measurable objectives
+    LEARNING_OBJECTIVES=$(/mcp__gemini__gemini-query "Create specific learning objectives:
+    
+    Based on: $ARCHITECTURE_SUMMARY
+    Technology stack: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK, $DATABASE_TECH
+    
+    Generate 5-7 specific, measurable objectives like:
+    - Understand [specific architectural pattern] and how it's implemented
+    - Navigate [specific directory structure] and locate key components
+    - Implement [specific type of feature] following project conventions
+    - Debug [specific type of issue] using project tooling
+    - Contribute to [specific workflow] following team processes
+    
+    Make objectives specific to this codebase and technology stack.")
+    
+    echo "$LEARNING_OBJECTIVES"
+}
+```
+
+### Phase 3: Interactive Architecture Exploration
+
+The system provides hands-on exploration of the specific codebase:
+
+```bash
+explore_codebase_interactively() {
+    echo "🗺️ INTERACTIVE CODEBASE EXPLORATION"
+    echo "===================================="
+    
+    # Start with overview
+    provide_codebase_overview
+    
+    # Explore key directories and files
+    explore_key_components
+    
+    # Trace through important workflows
+    trace_important_workflows
+    
+    # Hands-on exercises
+    conduct_hands_on_exercises
+}
+
+provide_codebase_overview() {
+    echo "📊 CODEBASE OVERVIEW"
+    echo "-------------------"
+    
+    # Generate visual representation
+    CODEBASE_OVERVIEW=$(/mcp__gemini__gemini-query "Create codebase overview:
+    
+    Technology: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK, $DATABASE_TECH
+    Architecture: $ARCHITECTURE_SUMMARY
+    Structure: $PROJECT_STRUCTURE
+    
+    Create:
+    1. Visual directory structure explanation
+    2. Key files and their purposes
+    3. Important entry points
+    4. Configuration files and their roles
+    5. Build and development scripts
+    
+    Format as an educational guide for new developers.")
+    
+    echo "$CODEBASE_OVERVIEW"
+    
+    # Interactive navigation
     echo ""
-    echo "💡 Hint: Look at existing queries in API routes"
+    echo "🎮 INTERACTIVE NAVIGATION:"
+    echo "Let's explore together! I'll show you key files and explain their purpose."
+    echo ""
+}
+
+explore_key_components() {
+    echo "🔍 KEY COMPONENT EXPLORATION"
+    echo "----------------------------"
+    
+    # Identify the most important files to understand
+    KEY_FILES=$(identify_key_files)
+    
+    for file in $KEY_FILES; do
+        if [[ -f "$file" ]]; then
+            echo "📄 EXPLORING: $file"
+            echo "$(printf '%.0s-' {1..50})"
+            
+            # Show file content with explanation
+            FILE_CONTENT=$(head -50 "$file")
+            
+            FILE_EXPLANATION=$(/mcp__gemini__gemini-query "Explain this file for new developer:
+            
+            File: $file
+            Content: $FILE_CONTENT
+            Project context: $ARCHITECTURE_SUMMARY
+            
+            Explain:
+            1. What this file does
+            2. How it fits into the architecture
+            3. Key concepts demonstrated
+            4. Patterns to notice
+            5. How it connects to other components
+            
+            Make it educational and highlight important concepts.")
+            
+            echo "$FILE_EXPLANATION"
+            echo ""
+            
+            # Interactive questions
+            echo "🤔 THINK ABOUT IT:"
+            echo "- How does this file contribute to the overall system?"
+            echo "- What would happen if you modified key parts?"
+            echo "- How does it follow the project's conventions?"
+            echo ""
+        fi
+    done
+}
+
+trace_important_workflows() {
+    echo "🔄 WORKFLOW TRACING"
+    echo "-------------------"
+    
+    # Identify key workflows in the application
+    IMPORTANT_WORKFLOWS=$(identify_important_workflows)
+    
+    echo "Let's trace through important workflows in your application:"
     echo ""
     
-    # Provide code templates
+    for workflow in $IMPORTANT_WORKFLOWS; do
+        echo "📋 WORKFLOW: $workflow"
+        echo "$(printf '%.0s-' {1..30})"
+        
+        WORKFLOW_TRACE=$(/mcp__gemini__gemini-query "Trace workflow for learning:
+        
+        Workflow: $workflow
+        Architecture: $ARCHITECTURE_SUMMARY
+        Technology: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK
+        
+        Trace the workflow step by step:
+        1. Entry point (where it starts)
+        2. Key functions/components involved
+        3. Data flow and transformations
+        4. External dependencies
+        5. Output or result
+        
+        Include file names and line numbers where possible.
+        Make it educational with clear explanations.")
+        
+        echo "$WORKFLOW_TRACE"
+        echo ""
+    done
+}
+```
+
+### Phase 4: Technology-Specific Skill Building
+
+The system adapts exercises to the specific technology stack:
+
+```bash
+conduct_hands_on_exercises() {
+    echo "💻 HANDS-ON EXERCISES"
+    echo "====================="
+    
+    # Generate exercises based on detected technology
+    generate_technology_specific_exercises
+    
+    # Provide templates and guidance
     provide_exercise_templates
+    
+    # Conduct mini-implementation challenges
+    conduct_implementation_challenges
+}
+
+generate_technology_specific_exercises() {
+    echo "🎯 CUSTOMIZED EXERCISES"
+    echo "----------------------"
+    
+    # Generate exercises based on actual technology stack
+    EXERCISES=$(/mcp__gemini__gemini-query "Create hands-on exercises:
+    
+    Technology stack: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK, $DATABASE_TECH
+    Architecture: $ARCHITECTURE_SUMMARY
+    Project patterns: $CODING_CONVENTIONS
+    
+    Create 3-5 progressive exercises:
+    1. Basic - Simple modification or addition
+    2. Intermediate - Feature implementation
+    3. Advanced - Integration or optimization
+    
+    For each exercise include:
+    - Clear objective
+    - Step-by-step instructions
+    - Expected outcome
+    - Files to modify/create
+    - Testing instructions
+    
+    Adapt to detected technology stack and project patterns.")
+    
+    echo "$EXERCISES"
 }
 
 provide_exercise_templates() {
     echo "📝 EXERCISE TEMPLATES"
-    echo "===================="
-    echo ""
-    echo "Here are starter templates for the exercises:"
-    echo ""
+    echo "--------------------"
     
-    echo "🧩 WelcomeCard Component Template:"
-    echo "```typescript"
-    echo "// /src/components/onboarding/WelcomeCard.tsx"
-    echo "interface WelcomeCardProps {"
-    echo "  userName: string;"
-    echo "}"
-    echo ""
-    echo "export function WelcomeCard({ userName }: WelcomeCardProps) {"
-    echo "  return ("
-    echo "    <div className=\"bg-white rounded-lg shadow-sm border p-6\">"
-    echo "      {/* Your implementation here */}"
-    echo "    </div>"
-    echo "  );"
-    echo "}"
-    echo "```"
-    echo ""
+    # Provide starter templates based on technology
+    TEMPLATES=$(/mcp__gemini__gemini-query "Create exercise templates:
     
-    echo "🛠️ API Route Template:"
-    echo "```typescript"
-    echo "// /src/app/api/onboarding/status/route.ts"
-    echo "import { createClient } from '@/lib/supabase/server';"
-    echo ""
-    echo "export async function GET() {"
-    echo "  try {"
-    echo "    const supabase = createClient();"
-    echo "    // Your implementation here"
-    echo "  } catch (error) {"
-    echo "    // Error handling"
-    echo "  }"
-    echo "}"
-    echo "```"
+    Technology: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK, $DATABASE_TECH
+    Conventions: $CODING_CONVENTIONS
+    
+    Provide starter templates for:
+    1. Component/module creation
+    2. API endpoint implementation
+    3. Database integration
+    4. Testing setup
+    
+    Use actual project conventions and patterns.")
+    
+    echo "$TEMPLATES"
 }
 ```
 
-### 5. **Team-Specific Context & JIRA Integration**
+### Phase 5: Team Integration and Next Steps
+
+The system provides team-specific context and growth path:
+
 ```bash
-# Team context and recent work analysis
-explore_team_context() {
-    if [[ -n "$JIRA_PROJECT" ]]; then
-        echo "👥 TEAM-SPECIFIC ONBOARDING"
-        echo "==========================="
-        echo ""
-        echo "Let's explore what your team has been working on recently..."
-        
-        # Fetch recent tickets for the team
-        analyze_team_recent_work
-        
-        # Show relevant code areas
-        map_tickets_to_code_areas
-        
-        # Suggest onboarding priorities
-        customize_onboarding_for_team
-    else
-        # General team context
-        show_general_team_structure
-    fi
-}
-
-analyze_team_recent_work() {
-    echo "🎫 RECENT TEAM ACTIVITY ANALYSIS"
-    echo ""
-    
-    # Fetch recent tickets from JIRA project
-    RECENT_TICKETS=$(/mcp__jira__jira_search "project = $JIRA_PROJECT AND updated >= -30d" "summary,status,assignee,updated,labels" 10)
-    
-    echo "📋 Your team's recent work (last 30 days):"
-    echo "$RECENT_TICKETS"
-    echo ""
-    
-    # Analyze ticket patterns
-    TEAM_FOCUS_ANALYSIS=$(/mcp__gemini__gemini-query "Analyze team focus for new engineer onboarding:
-
-Recent tickets: $RECENT_TICKETS
-
-Help new engineer understand:
-1. What types of work does this team typically do?
-2. Which areas of the codebase are they working in?
-3. What technologies/patterns are most relevant?
-4. What should they focus on learning first?
-5. Who are the key people to learn from?
-
-Provide practical onboarding guidance based on actual recent work.")
-
-    echo "🎯 TEAM FOCUS ANALYSIS:"
-    echo "$TEAM_FOCUS_ANALYSIS"
-}
-
-map_tickets_to_code_areas() {
-    echo "🗺️ MAPPING TICKETS TO CODE AREAS"
-    echo ""
-    
-    TICKET_CODE_MAPPING=$(/mcp__gemini__gemini-query "Map recent tickets to {{PROJECT_NAME}} code areas:
-
-Recent tickets: $RECENT_TICKETS
-
-For each ticket type, identify:
-1. Primary code areas they would touch
-2. Key files/components to understand
-3. Architectural patterns involved
-4. Dependencies with other systems
-
-Help new engineer understand where different types of work happen in the codebase.")
-
-    echo "📍 CODE AREA MAPPING:"
-    echo "$TICKET_CODE_MAPPING"
-    echo ""
-    
-    echo "💡 RECOMMENDED EXPLORATION ORDER:"
-    echo "Based on your team's recent work, I recommend exploring these areas first:"
-    echo "1. [AI will customize based on team activity]"
-    echo "2. [AI will customize based on team activity]"
-    echo "3. [AI will customize based on team activity]"
-}
-
-customize_onboarding_for_team() {
-    echo "🎯 CUSTOMIZED ONBOARDING PLAN"
-    echo "============================="
-    echo ""
-    
-    CUSTOM_PLAN=$(/mcp__gemini__gemini-query "Create customized onboarding plan:
-
-Team context: $TEAM_FOCUS_ANALYSIS
-Code mapping: $TICKET_CODE_MAPPING
-
-Create a specific 7-day onboarding plan:
-Day 1: Foundation (most critical concepts for this team)
-Day 2-3: Core systems they work with
-Day 4-5: Hands-on exercises in their area
-Day 6-7: First real contribution preparation
-
-Include:
-- Specific files to read
-- People to meet/shadow
-- Practical exercises
-- Mini-projects to attempt
-
-Make it actionable and team-specific.")
-
-    echo "📅 YOUR CUSTOMIZED 7-DAY ONBOARDING PLAN:"
-    echo "$CUSTOM_PLAN"
-}
-
-show_general_team_structure() {
-    echo "👥 GENERAL TEAM STRUCTURE"
-    echo "========================"
-    echo ""
-    echo "💡 Tip: Run '/m-onboard-me [JIRA-PROJECT-KEY]' for team-specific guidance!"
-    echo ""
-    echo "🏗️ TYPICAL TEAM STRUCTURE AT {{PROJECT_NAME}}:"
-    echo "- Frontend Team: React components, UI/UX, sliding panels"
-    echo "- Backend Team: API routes, database, integrations"
-    echo "- Full-stack: Feature development across the stack"
-    echo "- Platform Team: Infrastructure, security, performance"
-    echo ""
-    echo "📋 COMMON WORK TYPES:"
-    echo "- New feature development"
-    echo "- Social platform integrations"
-    echo "- Performance optimization"
-    echo "- Security improvements"
-    echo "- Bug fixes and maintenance"
-}
-```
-
-### 6. **Tech Debt & Learning Opportunities**
-```bash
-# Tech debt analysis and learning opportunities
-explore_tech_debt_and_opportunities() {
-    echo "🔧 TECH DEBT & LEARNING OPPORTUNITIES"
-    echo "====================================="
-    echo ""
-    echo "Every codebase has areas for improvement. Let's explore ours honestly!"
-    
-    # Known tech debt areas
-    show_known_tech_debt
-    
-    # Performance improvement areas
-    identify_performance_opportunities
-    
-    # Learning and contribution opportunities
-    suggest_learning_contributions
-}
-
-show_known_tech_debt() {
-    echo "📋 KNOWN TECH DEBT AREAS"
-    echo "========================"
-    echo ""
-    echo "Being transparent about areas we're actively improving:"
-    echo ""
-    echo "🔄 MIGRATION IN PROGRESS:"
-    echo "- Legacy React Context → Class-based patterns (Sliding Panel migration)"
-    echo "- OAuth token refresh patterns standardization"
-    echo "- Database query optimization"
-    echo ""
-    echo "🎯 IMPROVEMENT OPPORTUNITIES:"
-    echo "- API response caching"
-    echo "- Bundle size optimization"
-    echo "- Test coverage in some areas"
-    echo "- Documentation coverage"
-    echo ""
-    echo "💡 WHY THIS MATTERS FOR YOU:"
-    echo "Understanding tech debt helps you:"
-    echo "1. Avoid extending problematic patterns"
-    echo "2. Contribute to improvements"
-    echo "3. Make informed architectural decisions"
-    echo "4. Understand why some code looks different"
-    
-    TECH_DEBT_EXPLANATION=$(/mcp__gemini__gemini-query "Explain tech debt context for new engineer:
-
-Known areas:
-- Sliding panel migration from React Context
-- OAuth token refresh standardization  
-- Database query optimization
-- API caching improvements
-
-Explain:
-1. Why each area is considered tech debt
-2. How it impacts development
-3. What improvements are planned
-4. How new engineers can help
-5. What patterns to follow vs avoid
-
-Be constructive and educational.")
-
-    echo ""
-    echo "🎓 TECH DEBT LEARNING:"
-    echo "$TECH_DEBT_EXPLANATION"
-}
-
-suggest_learning_contributions() {
-    echo "🌱 LEARNING CONTRIBUTION OPPORTUNITIES"
-    echo "======================================"
-    echo ""
-    echo "Great ways to learn while contributing:"
-    echo ""
-    echo "🏃‍♂️ QUICK WINS (1-2 days):"
-    echo "- Add TypeScript types to untyped components"
-    echo "- Write tests for utility functions"
-    echo "- Improve error handling in API routes"
-    echo "- Add loading states to components"
-    echo ""
-    echo "🎯 MEDIUM PROJECTS (1-2 weeks):"
-    echo "- Migrate a component to use sliding panel system"
-    echo "- Optimize a slow database query"
-    echo "- Add new OAuth provider integration"
-    echo "- Implement missing API endpoints"
-    echo ""
-    echo "🚀 LARGER PROJECTS (1+ months):"
-    echo "- Performance optimization initiatives"
-    echo "- New feature development"
-    echo "- Security improvements"
-    echo "- Testing infrastructure"
-    echo ""
-    echo "💡 RECOMMENDATION: Start with quick wins to build confidence!"
-}
-```
-
-### 7. **Interactive Q&A and Knowledge Validation**
-```bash
-# Knowledge validation and interactive Q&A
-conduct_onboarding_assessment() {
-    echo "🧠 KNOWLEDGE CHECK & INTERACTIVE Q&A"
-    echo "===================================="
-    echo ""
-    echo "Let's validate your understanding and answer any questions!"
-    
-    # Comprehensive knowledge check
-    knowledge_validation_quiz
-    
-    # Open Q&A session
-    interactive_qa_session
-    
-    # Next steps and resources
-    provide_next_steps
-}
-
-knowledge_validation_quiz() {
-    echo "📝 UNDERSTANDING VALIDATION"
-    echo "=========================="
-    echo ""
-    echo "Test your understanding (think through these, no wrong answers!):"
-    echo ""
-    echo "🏗️ ARCHITECTURE:"
-    echo "1. If you need to add a new admin page, where would you put it?"
-    echo "2. How would you ensure it respects multi-tenant isolation?"
-    echo "3. Where would you add the API endpoints it needs?"
-    echo ""
-    echo "🔐 SECURITY:"
-    echo "1. How does authentication work in our API routes?"
-    echo "2. What's RLS and why do we use it?"
-    echo "3. How do OAuth integrations maintain security?"
-    echo ""
-    echo "🎨 FRONTEND:"
-    echo "1. When would you use the sliding panel system vs regular routing?"
-    echo "2. How do you access current brand context in a component?"
-    echo "3. Where are shared UI components stored?"
-    echo ""
-    echo "💾 DATABASE:"
-    echo "1. What columns does every table have?"
-    echo "2. How do you write a query that respects organization boundaries?"
-    echo "3. Where are database schema changes managed?"
-    echo ""
-    
-    # Provide answers and explanations
-    provide_quiz_explanations
-}
-
-provide_quiz_explanations() {
-    echo "💡 ANSWER EXPLANATIONS"
-    echo "======================"
-    echo ""
-    
-    QUIZ_EXPLANATIONS=$(/mcp__gemini__gemini-query "Provide comprehensive answers to onboarding quiz:
-
-Create detailed explanations for:
-1. Architecture questions (admin pages, multi-tenancy, API endpoints)
-2. Security questions (auth, RLS, OAuth)
-3. Frontend questions (sliding panels, brand context, components)
-4. Database questions (table structure, queries, migrations)
-
-Include:
-- Clear explanations
-- Code examples where helpful
-- Links to relevant files
-- Common mistakes to avoid
-
-Make it educational and reinforce learning.")
-
-    echo "$QUIZ_EXPLANATIONS"
-}
-
-interactive_qa_session() {
-    echo "❓ OPEN Q&A SESSION"
+facilitate_team_integration() {
+    echo "👥 TEAM INTEGRATION"
     echo "=================="
-    echo ""
-    echo "Ask me anything about:"
-    echo "- Codebase architecture and patterns"
-    echo "- Development workflow and tools"
-    echo "- Team processes and culture"
-    echo "- Specific technical questions"
-    echo "- Career growth and learning paths"
-    echo ""
-    echo "💬 Sample questions to get you started:"
-    echo "- 'How do I set up my development environment?'"
-    echo "- 'What's the code review process like?'"
-    echo "- 'How do I run tests locally?'"
-    echo "- 'What are the most important patterns to learn first?'"
-    echo "- 'How does deployment work?'"
-    echo ""
-    echo "🎯 I'm here to help you succeed!"
+    
+    # Analyze team patterns and recent work
+    analyze_team_context
+    
+    # Provide development workflow guidance
+    explain_development_workflow
+    
+    # Suggest first contributions
+    suggest_first_contributions
+    
+    # Provide ongoing learning resources
+    provide_learning_resources
 }
 
-provide_next_steps() {
-    echo "🚀 NEXT STEPS & RESOURCES"
-    echo "========================="
-    echo ""
-    echo "🎯 IMMEDIATE NEXT STEPS:"
-    echo "1. Set up your development environment (see /docs/setup/SETUP.md)"
-    echo "2. Run the app locally and explore the admin interface"
-    echo "3. Make your first small contribution (see suggestions above)"
-    echo "4. Schedule 1:1s with team members"
-    echo "5. Join team standups and planning sessions"
-    echo ""
-    echo "📚 KEY RESOURCES:"
-    echo "- CLAUDE.md: Comprehensive project documentation"
-    echo "- /docs/: Technical documentation and guides"
-    echo "- /docs/architecture/: System architecture details"
-    echo "- Team Slack channels for questions"
-    echo "- Code review process documentation"
-    echo ""
-    echo "👥 PEOPLE TO CONNECT WITH:"
-    echo "- Your assigned mentor/buddy"
-    echo "- Team lead for project priorities"
-    echo "- Frontend/Backend leads based on your role"
-    echo "- DevOps for infrastructure questions"
-    echo ""
-    echo "🏆 30-DAY GOALS:"
-    echo "- Complete first meaningful contribution"
-    echo "- Understand core architectural patterns"
-    echo "- Build relationships with team members"
-    echo "- Feel comfortable with development workflow"
-    echo ""
-    echo "✅ Remember: Everyone learns at their own pace. Don't hesitate to ask questions!"
+analyze_team_context() {
+    echo "🔍 TEAM CONTEXT ANALYSIS"
+    echo "------------------------"
+    
+    # Analyze recent commits and issues
+    RECENT_ACTIVITY=$(analyze_recent_development_activity)
+    
+    # Identify team patterns
+    TEAM_PATTERNS=$(identify_team_patterns)
+    
+    TEAM_CONTEXT=$(/mcp__gemini__gemini-query "Analyze team context:
+    
+    Recent activity: $RECENT_ACTIVITY
+    Team patterns: $TEAM_PATTERNS
+    Technology stack: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK
+    
+    Provide insights about:
+    1. What the team has been working on
+    2. Common types of contributions
+    3. Key areas of focus
+    4. Collaboration patterns
+    5. Good first contribution opportunities
+    
+    Make it specific to actual team activity.")
+    
+    echo "$TEAM_CONTEXT"
 }
-```
 
-## Advanced Onboarding Features
-
-### Development Environment Setup Validation
-```bash
-# Validate development setup
-validate_dev_environment() {
-    echo "🔧 DEVELOPMENT ENVIRONMENT VALIDATION"
-    echo "===================================="
-    echo ""
-    echo "Let's make sure everything is set up correctly..."
+suggest_first_contributions() {
+    echo "🌱 FIRST CONTRIBUTION SUGGESTIONS"
+    echo "================================="
     
-    # Check Node.js version
-    NODE_VERSION=$(node --version 2>/dev/null || echo "not installed")
-    echo "Node.js: $NODE_VERSION"
+    # Analyze codebase for good first issues
+    FIRST_CONTRIBUTIONS=$(/mcp__gemini__gemini-query "Suggest first contributions:
     
-    # Check npm dependencies
-    if [[ -f "package.json" ]]; then
-        NPM_CHECK=$(npm list --depth=0 >/dev/null 2>&1 && echo "✅ Dependencies installed" || echo "❌ Run npm install")
-        echo "Dependencies: $NPM_CHECK"
-    fi
+    Codebase analysis: $ARCHITECTURE_SUMMARY
+    Team context: $TEAM_CONTEXT
+    Technology: $FRONTEND_FRAMEWORK, $BACKEND_FRAMEWORK
     
-    # Check environment variables
-    if [[ -f ".env.local" ]]; then
-        echo "✅ Environment file exists"
-    else
-        echo "❌ Create .env.local (see setup docs)"
-    fi
+    Suggest 3-5 good first contributions:
+    1. Documentation improvements
+    2. Small bug fixes
+    3. Code quality improvements
+    4. Testing additions
+    5. Feature enhancements
     
-    # Test database connection
-    echo "🗄️ Testing database connection..."
-    # Add actual connection test here
+    For each suggestion:
+    - Specific task description
+    - Expected difficulty level
+    - Learning objectives
+    - Files to work with
+    - Success criteria
     
-    echo ""
-    echo "🚀 QUICK START COMMANDS:"
-    echo "npm run dev          # Start development server"
-    echo "npm run test         # Run tests"
-    echo "npm run lint         # Check code style"
+    Make suggestions specific to this codebase.")
+    
+    echo "$FIRST_CONTRIBUTIONS"
 }
 ```
 
-### Learning Path Customization
+## Universal Technology Support
+
+### Automatic Technology Detection
+
+The command automatically detects and adapts to:
+
+**Frontend Frameworks:**
+- React, Vue, Angular, Svelte
+- Next.js, Nuxt.js, Gatsby
+- Plain JavaScript/TypeScript
+
+**Backend Frameworks:**
+- Node.js (Express, Fastify, Nest.js)
+- Python (Django, Flask, FastAPI)
+- Java (Spring, Spring Boot)
+- C# (.NET, ASP.NET)
+- Go (Gin, Echo)
+- Ruby (Rails, Sinatra)
+- PHP (Laravel, Symfony)
+
+**Databases:**
+- PostgreSQL, MySQL, MongoDB
+- Redis, Elasticsearch
+- SQLite, CouchDB
+
+**Additional Tools:**
+- Docker, Kubernetes
+- CI/CD (GitHub Actions, GitLab CI)
+- Testing frameworks
+- Build tools and bundlers
+
+### Adaptive Learning Paths
+
+The system creates different learning paths based on detected technology:
+
 ```yaml
-learning_paths:
-  week_1_foundation:
-    day_1: ["Project overview", "Development setup", "Basic architecture"]
-    day_2: ["Component patterns", "Routing and navigation", "State management basics"]
-    day_3: ["Database concepts", "API patterns", "Authentication flow"]
-    day_4: ["Multi-tenancy deep dive", "Security patterns", "OAuth basics"]
-    day_5: ["First contribution", "Code review", "Testing patterns"]
+technology_adaptations:
+  react_nextjs:
+    focus_areas: ["Component patterns", "Server-side rendering", "Routing", "State management"]
+    key_concepts: ["JSX", "Hooks", "Context", "Props"]
+    exercises: ["Create component", "Implement route", "Add state management"]
     
-  specialized_tracks:
-    frontend_specialist:
-      focus: ["React patterns", "Component library", "Sliding panel system", "UI/UX patterns"]
-      exercises: ["Create new component", "Implement sliding panel provider", "Style system usage"]
-      
-    backend_specialist:  
-      focus: ["API design", "Database optimization", "Security patterns", "Integration patterns"]
-      exercises: ["Create API endpoint", "Write database migration", "Implement OAuth flow"]
-      
-    fullstack_generalist:
-      focus: ["End-to-end features", "System integration", "Performance", "Architecture"]
-      exercises: ["Complete feature implementation", "Cross-system integration", "Performance optimization"]
+  django_python:
+    focus_areas: ["MVT pattern", "ORM", "Admin interface", "URL routing"]
+    key_concepts: ["Models", "Views", "Templates", "Migrations"]
+    exercises: ["Create model", "Implement view", "Add template"]
+    
+  spring_boot_java:
+    focus_areas: ["Dependency injection", "REST controllers", "JPA", "Security"]
+    key_concepts: ["Annotations", "Beans", "Controllers", "Services"]
+    exercises: ["Create REST endpoint", "Add service layer", "Implement security"]
 ```
 
-## Configuration & Customization
+## Advanced Features
 
-### Onboarding Personalization
-```json
-{
-  "onboarding_config": {
-    "experience_levels": {
-      "junior": {
-        "pace": "slower",
-        "depth": "foundational",
-        "support": "high_touch",
-        "exercises": "guided"
-      },
-      "mid_level": {
-        "pace": "moderate", 
-        "depth": "comprehensive",
-        "support": "structured",
-        "exercises": "semi_independent"
-      },
-      "senior": {
-        "pace": "faster",
-        "depth": "architectural",
-        "support": "minimal",
-        "exercises": "independent"
-      }
-    },
-    "learning_styles": {
-      "visual": ["architecture diagrams", "code examples", "UI walkthroughs"],
-      "hands_on": ["coding exercises", "debugging sessions", "implementation tasks"],
-      "conceptual": ["architecture discussions", "pattern explanations", "design rationale"]
-    }
-  }
-}
-```
+### Git History Analysis
+- Analyzes commit patterns and evolution
+- Identifies key contributors and their areas
+- Shows architectural evolution over time
 
-## Usage Examples
+### Issue Tracking Integration
+- Connects with GitHub Issues, Jira, or similar
+- Analyzes issue patterns and common problems
+- Suggests areas for contribution
 
-### Basic Onboarding
+### Development Environment Setup
+- Automatically detects required tools
+- Provides setup instructions
+- Validates environment configuration
+
+### Performance and Security Analysis
+- Identifies performance patterns
+- Highlights security considerations
+- Suggests optimization opportunities
+
+## Configuration Options
+
 ```bash
-# Start general onboarding
-/m-onboard-me
+# Experience level customization
+/m-onboard-me --experience junior --deep
+/m-onboard-me --experience senior --quick
 
-# Team-specific onboarding with JIRA context
-/m-onboard-me {{TEAM_NAME}}-FRONTEND
+# Technology focus
+/m-onboard-me --focus frontend --style visual
+/m-onboard-me --focus backend --style hands-on
 
-# Frontend-focused onboarding
-/m-onboard-me --role frontend
-
-# Experienced developer fast-track
-/m-onboard-me --experience senior
+# Team integration
+/m-onboard-me --team backend-api --with-jira
+/m-onboard-me --team frontend --with-github-issues
 ```
 
-### Targeted Learning
-```bash
-# Focus on specific systems
-/m-onboard-me --focus sliding-panels
-/m-onboard-me --focus oauth-security
-/m-onboard-me --focus multi-tenancy
-
-# Practice specific skills
-/m-onboard-me --practice components
-/m-onboard-me --practice api-development
-/m-onboard-me --practice database-patterns
-```
-
-This comprehensive onboarding command provides new engineers with an interactive, personalized journey through the {{PROJECT_NAME}} codebase, combining technical education with practical exercises and team-specific context to accelerate their path to productivity.
+This universal onboarding command provides intelligent, adaptive onboarding that works with any technology stack while delivering personalized learning experiences based on actual codebase analysis and team context.
