@@ -6,14 +6,16 @@
 
 ## Overview
 
-Transforms Claude into your AI-powered Senior QA Engineer, providing enterprise-grade quality assurance intelligence with sophisticated test discovery and comprehensive risk-based testing strategies. This command delivers world-class testing expertise with intelligent change analysis, automated test generation, and strategic quality validation that ensures software excellence while maximizing testing efficiency through context-aware prioritization and predictive defect detection.
+Transforms Claude into your AI-powered Senior QA Engineer, providing enterprise-grade quality assurance intelligence with sophisticated test discovery, comprehensive risk-based testing strategies, and advanced Puppeteer-powered browser automation. This command delivers world-class testing expertise with intelligent change analysis, automated test generation, strategic quality validation, and real-time console monitoring that ensures software excellence while maximizing testing efficiency through context-aware prioritization and predictive defect detection.
 
 **Key Benefits:**
 - **AI-Powered Test Intelligence**: Machine learning-driven test discovery with change impact analysis and risk-based prioritization
 - **Enterprise-Grade Quality Assurance**: Comprehensive testing strategies with multi-layer validation and regression prevention
+- **Advanced Puppeteer Integration**: Real-time browser automation with console monitoring, network tracking, and performance analysis
 - **Intelligent Change Analysis**: Sophisticated code change understanding with dependency mapping and impact prediction
 - **Automated Test Generation**: Context-aware test case creation with edge case identification and coverage optimization
 - **Predictive Defect Detection**: Advanced pattern recognition for potential issues with proactive quality gates
+- **Comprehensive Console Monitoring**: Real-time JavaScript error tracking, network failure detection, and performance metrics
 
 ## Help Documentation
 
@@ -30,20 +32,28 @@ To see this help documentation, run:
 - **Dynamic Test Suite Generation**: Automated test case creation based on code changes, API modifications, and UI updates
 - **Coverage Gap Identification**: Intelligent detection of untested code paths with critical path analysis and edge case discovery
 
-### 2. Enterprise-Grade Quality Validation Platform
+### 2. Advanced Puppeteer Browser Automation Platform
+- **Real-Time Console Monitoring**: Comprehensive JavaScript console log capture with error tracking and performance analysis
+- **Network Request Monitoring**: Failed request detection, response time tracking, and API health validation
+- **Interactive Element Testing**: Smart element interaction with screenshot capture and validation logging
+- **Visual Regression Analysis**: AI-powered screenshot comparison with console state correlation
+- **Performance Metrics Collection**: Page load times, memory usage, DOM performance, and resource optimization analysis
+
+### 3. Enterprise-Grade Quality Validation Platform
 - **Multi-Layer Testing Orchestration**: Comprehensive test execution across unit, integration, end-to-end, and performance layers
 - **Automated Regression Detection**: Pattern-based identification of potential regressions with historical defect correlation
 - **Cross-Browser/Device Testing**: Intelligent test distribution across platforms with compatibility matrix optimization
 - **Accessibility Compliance Validation**: WCAG 2.1 AAA standard verification with assistive technology simulation
 
-### 3. Intelligent Test Generation and Optimization System
+### 4. Intelligent Test Generation and Optimization System
 - **Context-Aware Test Case Creation**: AI-powered generation of test scenarios based on code understanding and user behavior patterns
 - **Edge Case Discovery Engine**: Sophisticated boundary value analysis with combinatorial test generation
 - **Test Data Generation**: Intelligent creation of realistic test data with constraint satisfaction and privacy compliance
 - **Performance Test Scenarios**: Load pattern generation based on production traffic analysis and growth projections
 
-### 4. Advanced Quality Analytics and Reporting Platform
+### 5. Advanced Quality Analytics and Reporting Platform
 - **Predictive Defect Analysis**: Machine learning models for defect prediction with root cause identification
+- **Console Health Analytics**: Real-time error pattern analysis with JavaScript performance insights
 - **Quality Trend Visualization**: Real-time quality metrics with trend analysis and anomaly detection
 - **Test Effectiveness Scoring**: ROI-based test suite evaluation with optimization recommendations
 - **Executive Quality Dashboards**: High-level quality insights with risk heat maps and release readiness indicators
@@ -66,9 +76,10 @@ To see this help documentation, run:
 
 ### 3. **Comprehensive Test Execution and Validation Phase**
 - **Parallel Test Orchestration**: Distributed test execution across multiple environments with optimal resource utilization
-- **Real-Time Monitoring**: Live test progress tracking with failure detection and automatic retry mechanisms
-- **Intelligent Failure Analysis**: Root cause identification with stack trace analysis and historical correlation
-- **Performance Baseline Validation**: Comparison against established benchmarks with regression detection
+- **Real-Time Browser Monitoring**: Live console log capture, network monitoring, and JavaScript error tracking during test execution
+- **Intelligent Failure Analysis**: Root cause identification with stack trace analysis, console state correlation, and historical pattern matching
+- **Performance Baseline Validation**: Comparison against established benchmarks with regression detection and memory usage analysis
+- **Visual Regression Detection**: Screenshot-based UI validation with AI-powered difference analysis and console health correlation
 - **Security Vulnerability Scanning**: Integrated security testing with OWASP compliance verification
 
 ### 4. **Quality Analysis and Defect Management Phase**
@@ -222,8 +233,12 @@ Identify:
 - **Intelligent Change Detection**: Analyzes git diffs, PRs, and commits to understand what changed
 - **Impact Analysis**: Determines which components, features, and user journeys are affected
 - **Smart Test Selection**: Only runs tests relevant to the changes made
-- **Regression Prevention**: Identifies areas at risk of regression
-- **Coverage Gap Detection**: Finds what's not tested based on actual changes
+- **Advanced Browser Automation**: Puppeteer-powered testing with real-time console monitoring and network tracking
+- **Console Health Monitoring**: Real-time JavaScript error detection, warning analysis, and performance tracking
+- **Visual Regression Testing**: AI-powered screenshot comparison with console state correlation
+- **Network Request Validation**: Failed API detection, response time monitoring, and service health checks
+- **Regression Prevention**: Identifies areas at risk of regression with browser-level validation
+- **Coverage Gap Detection**: Finds what's not tested based on actual changes including browser interactions
 - **Context-Aware Testing**: Understands {{PROJECT_NAME}}'s architecture to make smart testing decisions
 
 ## Intelligent QA Behavior
@@ -254,17 +269,28 @@ intelligent_capabilities:
     - API endpoint tracking
     - Database schema changes
     
+  browser_automation:
+    - Real-time console monitoring
+    - JavaScript error tracking
+    - Network request validation
+    - Visual regression detection
+    - Performance metrics collection
+    - Memory usage analysis
+    
   test_selection:
     - Only runs affected unit tests
-    - Targets specific E2E scenarios
-    - Identifies regression areas
+    - Targets specific E2E scenarios with console monitoring
+    - Identifies regression areas with browser validation
     - Skips unrelated test suites
+    - Prioritizes tests based on console health
     
   risk_assessment:
     - Security vulnerability detection
-    - Performance impact analysis
+    - Performance impact analysis with browser metrics
     - Multi-tenant isolation checks
     - OAuth integration validation
+    - JavaScript error pattern analysis
+    - Network failure detection
 ```
 
 ## QA Testing Framework
@@ -294,11 +320,17 @@ test_strategy:
       negative: "Error handling, edge cases"
       boundary: "Input validation, limits"
       
+    browser_automation:
+      console_monitoring: "JavaScript error tracking, log analysis"
+      network_validation: "API response monitoring, failed request detection"
+      visual_regression: "Screenshot comparison, UI element validation"
+      performance_analysis: "Page load metrics, memory usage tracking"
+      
     non_functional:
-      performance: "Load time, response time"
+      performance: "Load time, response time, DOM metrics"
       security: "Authentication, authorization, data protection"
       accessibility: "WCAG compliance, keyboard navigation"
-      cross_browser: "Chrome, Firefox, Safari, Edge"
+      cross_browser: "Chrome, Firefox, Safari, Edge with console monitoring"
       
   test_environments:
     local: "Development environment validation"
@@ -764,165 +796,642 @@ Ensure all tests are:
 }
 ```
 
-### 3. **Automated Test Execution with Puppeteer**
+### 3. **Advanced Puppeteer Test Execution with Console Monitoring**
 ```bash
-# Execute E2E tests using Puppeteer
+# Execute E2E tests using Puppeteer with comprehensive monitoring
 execute_puppeteer_tests() {
-    echo "🤖 AUTOMATED E2E TEST EXECUTION"
-    echo "==============================="
-    echo "Starting Puppeteer automation..."
+    echo "🤖 ADVANCED PUPPETEER TEST EXECUTION"
+    echo "===================================="
+    echo "Starting intelligent browser automation with console monitoring..."
     
-    # Initialize test results tracking
+    # Initialize comprehensive test results tracking
     TEST_RESULTS='{
         "passed": [],
         "failed": [],
         "skipped": [],
         "screenshots": [],
+        "console_logs": [],
         "performance": {},
-        "coverage": {}
+        "coverage": {},
+        "network_failures": [],
+        "javascript_errors": [],
+        "accessibility_violations": []
     }'
     
-    # Launch Puppeteer for testing
-    launch_puppeteer_session
+    # Launch Puppeteer with comprehensive monitoring
+    launch_enhanced_puppeteer_session
     
-    # Execute test scenarios
+    # Execute test scenarios with console monitoring
     for scenario in $POSITIVE_SCENARIOS $NEGATIVE_SCENARIOS; do
-        execute_single_test_scenario "$scenario"
+        execute_monitored_test_scenario "$scenario"
     done
     
-    # Capture visual regression
-    perform_visual_regression_testing
+    # Capture visual regression with console validation
+    perform_enhanced_visual_regression_testing
     
-    # Performance testing
-    measure_performance_metrics
+    # Comprehensive performance and console analysis
+    measure_comprehensive_metrics
 }
 
-launch_puppeteer_session() {
-    echo "🌐 Launching browser session..."
+launch_enhanced_puppeteer_session() {
+    echo "🌐 Launching enhanced browser session with monitoring..."
     
-    # Navigate to application
-    /mcp__puppeteer__puppeteer_navigate \
-        --url "http://localhost:3000" \
-        --launchOptions "$PUPPETEER_CONFIG"
+    # Configure Puppeteer with console and network monitoring
+    ENHANCED_PUPPETEER_CONFIG='{
+        "headless": false,
+        "devtools": true,
+        "args": [
+            "--disable-web-security", 
+            "--disable-features=VizDisplayCompositor",
+            "--enable-logging",
+            "--v=1"
+        ]
+    }'
     
-    # Login if required
-    perform_test_login
+    # Navigate to application with monitoring setup
+    mcp__puppeteer__puppeteer_navigate "http://localhost:3000"
+    
+    # Setup comprehensive console and error monitoring
+    setup_browser_monitoring
+    
+    # Login if required with monitoring
+    perform_monitored_test_login
 }
 
-execute_single_test_scenario() {
+setup_browser_monitoring() {
+    echo "🔍 Setting up comprehensive browser monitoring..."
+    
+    # Setup console log capture, error monitoring, and network tracking
+    MONITORING_SCRIPT='
+        // Console log capture
+        const originalConsole = {
+            log: console.log,
+            warn: console.warn,
+            error: console.error,
+            info: console.info
+        };
+        
+        window.testLogs = [];
+        window.testErrors = [];
+        window.networkFailures = [];
+        
+        // Override console methods
+        console.log = (...args) => {
+            window.testLogs.push({type: "log", message: args.join(" "), timestamp: Date.now()});
+            originalConsole.log.apply(console, args);
+        };
+        
+        console.warn = (...args) => {
+            window.testLogs.push({type: "warn", message: args.join(" "), timestamp: Date.now()});
+            originalConsole.warn.apply(console, args);
+        };
+        
+        console.error = (...args) => {
+            window.testErrors.push({type: "error", message: args.join(" "), timestamp: Date.now(), stack: new Error().stack});
+            window.testLogs.push({type: "error", message: args.join(" "), timestamp: Date.now()});
+            originalConsole.error.apply(console, args);
+        };
+        
+        console.info = (...args) => {
+            window.testLogs.push({type: "info", message: args.join(" "), timestamp: Date.now()});
+            originalConsole.info.apply(console, args);
+        };
+        
+        // Global error handling
+        window.addEventListener("error", (event) => {
+            window.testErrors.push({
+                type: "javascript_error",
+                message: event.message,
+                filename: event.filename,
+                lineno: event.lineno,
+                colno: event.colno,
+                error: event.error ? event.error.toString() : "Unknown error",
+                timestamp: Date.now()
+            });
+        });
+        
+        // Promise rejection handling
+        window.addEventListener("unhandledrejection", (event) => {
+            window.testErrors.push({
+                type: "unhandled_promise_rejection",
+                reason: event.reason ? event.reason.toString() : "Unknown rejection",
+                timestamp: Date.now()
+            });
+        });
+        
+        // Network monitoring setup
+        const originalFetch = window.fetch;
+        window.fetch = async (...args) => {
+            const startTime = Date.now();
+            try {
+                const response = await originalFetch.apply(this, args);
+                const endTime = Date.now();
+                
+                if (!response.ok) {
+                    window.networkFailures.push({
+                        url: args[0],
+                        status: response.status,
+                        statusText: response.statusText,
+                        duration: endTime - startTime,
+                        timestamp: Date.now()
+                    });
+                }
+                
+                return response;
+            } catch (error) {
+                const endTime = Date.now();
+                window.networkFailures.push({
+                    url: args[0],
+                    error: error.message,
+                    duration: endTime - startTime,
+                    timestamp: Date.now()
+                });
+                throw error;
+            }
+        };
+        
+        return "Monitoring setup complete";
+    '
+    
+    MONITORING_RESULT=$(mcp__puppeteer__puppeteer_evaluate "$MONITORING_SCRIPT")
+    echo "✅ Browser monitoring active: $MONITORING_RESULT"
+}
+
+execute_monitored_test_scenario() {
     local SCENARIO=$1
     local SCENARIO_ID=$(echo "$SCENARIO" | jq -r '.id')
     local SCENARIO_STEPS=$(echo "$SCENARIO" | jq -r '.steps[]')
     
-    echo "🧪 Executing Test: $SCENARIO_ID"
+    echo "🧪 Executing Monitored Test: $SCENARIO_ID"
     
-    # Execute each test step
+    # Clear previous logs for this scenario
+    CLEAR_LOGS_SCRIPT='
+        window.testLogs = [];
+        window.testErrors = [];
+        window.networkFailures = [];
+        return "Logs cleared for new scenario";
+    '
+    mcp__puppeteer__puppeteer_evaluate "$CLEAR_LOGS_SCRIPT"
+    
+    # Execute each test step with monitoring
     for step in $SCENARIO_STEPS; do
         case $step.action in
             "navigate")
-                /mcp__puppeteer__puppeteer_navigate --url "$step.url"
+                echo "🧭 Navigating to: $step.url"
+                mcp__puppeteer__puppeteer_navigate "$step.url"
+                capture_navigation_metrics "$SCENARIO_ID" "$step.url"
                 ;;
             "click")
-                /mcp__puppeteer__puppeteer_click --selector "$step.selector"
+                echo "👆 Clicking: $step.selector"
+                mcp__puppeteer__puppeteer_click "$step.selector"
+                capture_interaction_logs "$SCENARIO_ID" "click" "$step.selector"
                 ;;
             "fill")
-                /mcp__puppeteer__puppeteer_fill \
-                    --selector "$step.selector" \
-                    --value "$step.value"
+                echo "✏️ Filling: $step.selector with $step.value"
+                mcp__puppeteer__puppeteer_fill "$step.selector" "$step.value"
+                capture_interaction_logs "$SCENARIO_ID" "fill" "$step.selector"
                 ;;
             "screenshot")
-                SCREENSHOT_PATH=$(/mcp__puppeteer__puppeteer_screenshot \
-                    --name "${SCENARIO_ID}_${step.name}" \
-                    --selector "$step.selector")
+                echo "📷 Capturing screenshot: $step.name"
+                SCREENSHOT_PATH=$(mcp__puppeteer__puppeteer_screenshot "${SCENARIO_ID}_${step.name}")
                 
-                # Add to results
+                # Add to results with console state
+                CONSOLE_STATE=$(capture_console_state "$SCENARIO_ID")
                 TEST_RESULTS=$(echo "$TEST_RESULTS" | jq \
-                    ".screenshots += [{\"scenario\": \"$SCENARIO_ID\", \"path\": \"$SCREENSHOT_PATH\"}]")
+                    ".screenshots += [{\"scenario\": \"$SCENARIO_ID\", \"path\": \"$SCREENSHOT_PATH\", \"console_state\": $CONSOLE_STATE}]")
                 ;;
             "validate")
-                VALIDATION_RESULT=$(/mcp__puppeteer__puppeteer_evaluate \
-                    --script "$step.validation_script")
+                echo "✅ Validating: $step.validation_name"
+                VALIDATION_RESULT=$(mcp__puppeteer__puppeteer_evaluate "$step.validation_script")
                 
-                # Record result
+                # Capture validation logs
+                VALIDATION_LOGS=$(capture_validation_logs "$SCENARIO_ID" "$step.validation_name")
+                
+                # Record result with detailed logging
                 if [[ "$VALIDATION_RESULT" == "true" ]]; then
-                    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".passed += [\"$SCENARIO_ID\"]")
+                    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".passed += [{\"scenario\": \"$SCENARIO_ID\", \"logs\": $VALIDATION_LOGS}]")
+                    echo "✅ Validation passed: $step.validation_name"
                 else
-                    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".failed += [\"$SCENARIO_ID\"]")
+                    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".failed += [{\"scenario\": \"$SCENARIO_ID\", \"logs\": $VALIDATION_LOGS, \"validation_result\": $(echo "$VALIDATION_RESULT" | jq -Rs .)}]")
+                    echo "❌ Validation failed: $step.validation_name"
                 fi
                 ;;
+            "wait")
+                echo "⏱️ Waiting: $step.duration seconds"
+                sleep "$step.duration"
+                ;;
         esac
+        
+        # Small pause between steps to capture intermediate states
+        sleep 0.5
     done
+    
+    # Capture final console state for scenario
+    FINAL_CONSOLE_STATE=$(capture_final_console_state "$SCENARIO_ID")
+    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".console_logs += [$FINAL_CONSOLE_STATE]")
 }
 
-perform_visual_regression_testing() {
-    echo "📸 VISUAL REGRESSION TESTING"
-    echo "==========================="
+capture_navigation_metrics() {
+    local SCENARIO_ID=$1
+    local URL=$2
     
-    # Capture screenshots of key pages/components
-    VISUAL_TEST_PAGES=("dashboard" "channels" "calendar" "settings" "brand-selector")
+    echo "📊 Capturing navigation metrics for $SCENARIO_ID at $URL"
     
-    for page in "${VISUAL_TEST_PAGES[@]}"; do
-        echo "📷 Capturing: $page"
-        
-        # Navigate to page
-        /mcp__puppeteer__puppeteer_navigate --url "http://localhost:3000/admin/$page"
-        
-        # Wait for content to load
-        sleep 2
-        
-        # Capture screenshot
-        SCREENSHOT=$(/mcp__puppeteer__puppeteer_screenshot \
-            --name "visual_regression_${page}_$(date +%Y%m%d)" \
-            --encoded true)
-        
-        # Compare with baseline if exists
-        compare_visual_regression "$page" "$SCREENSHOT"
-    done
-}
-
-compare_visual_regression() {
-    local PAGE=$1
-    local NEW_SCREENSHOT=$2
+    # Wait for page to stabilize
+    sleep 2
     
-    # AI-powered visual comparison
-    VISUAL_COMPARISON=$(/mcp__gemini__gemini-analyze-text "Compare visual regression:
-
-Page: $PAGE
-New Screenshot: [base64 data]
-
-Analyze for:
-1. Layout changes
-2. Styling differences
-3. Missing elements
-4. Text changes
-5. Color variations
-
-Report any significant visual differences.")
-}
-
-measure_performance_metrics() {
-    echo "⚡ PERFORMANCE MEASUREMENT"
-    echo "========================="
-    
-    # Measure page load times
-    PERFORMANCE_SCRIPT='
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        const ttfb = perfData.responseStart - perfData.navigationStart;
-        const domReady = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+    NAVIGATION_METRICS_SCRIPT='
+        const perfData = performance.timing;
+        const navEntries = performance.getEntriesByType("navigation")[0];
         
         return {
-            pageLoadTime,
-            ttfb,
-            domReady,
-            resources: window.performance.getEntriesByType("resource").length
+            scenario: "'$SCENARIO_ID'",
+            url: "'$URL'",
+            metrics: {
+                domContentLoaded: perfData.domContentLoadedEventEnd - perfData.navigationStart,
+                loadComplete: perfData.loadEventEnd - perfData.navigationStart,
+                firstPaint: navEntries ? navEntries.loadEventEnd - navEntries.fetchStart : null,
+                domInteractive: perfData.domInteractive - perfData.navigationStart
+            },
+            console_logs: window.testLogs.slice(),
+            errors: window.testErrors.slice(),
+            network_failures: window.networkFailures.slice(),
+            timestamp: Date.now()
         };
     '
     
-    PERFORMANCE_DATA=$(/mcp__puppeteer__puppeteer_evaluate --script "$PERFORMANCE_SCRIPT")
+    METRICS_RESULT=$(mcp__puppeteer__puppeteer_evaluate "$NAVIGATION_METRICS_SCRIPT")
+    echo "Navigation metrics captured: $(echo "$METRICS_RESULT" | jq -r '.metrics.domContentLoaded')ms DOM load"
+}
+
+capture_interaction_logs() {
+    local SCENARIO_ID=$1
+    local ACTION=$2
+    local SELECTOR=$3
     
-    # Add to test results
-    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".performance = $PERFORMANCE_DATA")
+    INTERACTION_LOGS_SCRIPT='
+        return {
+            scenario: "'$SCENARIO_ID'",
+            action: "'$ACTION'",
+            selector: "'$SELECTOR'",
+            console_logs: window.testLogs.slice(-10), // Last 10 logs
+            errors: window.testErrors.slice(),
+            timestamp: Date.now()
+        };
+    '
+    
+    INTERACTION_RESULT=$(mcp__puppeteer__puppeteer_evaluate "$INTERACTION_LOGS_SCRIPT")
+    
+    # Check for errors after interaction
+    ERROR_COUNT=$(echo "$INTERACTION_RESULT" | jq '.errors | length')
+    if [[ $ERROR_COUNT -gt 0 ]]; then
+        echo "⚠️ Detected $ERROR_COUNT errors after $ACTION on $SELECTOR"
+    fi
+}
+
+capture_console_state() {
+    local SCENARIO_ID=$1
+    
+    CONSOLE_STATE_SCRIPT='
+        return {
+            scenario: "'$SCENARIO_ID'",
+            logs: window.testLogs.slice(),
+            errors: window.testErrors.slice(),
+            network_failures: window.networkFailures.slice(),
+            dom_state: {
+                title: document.title,
+                url: window.location.href,
+                ready_state: document.readyState,
+                visible_elements: document.querySelectorAll("*:not([style*=\"display: none\"]):not([hidden])").length
+            },
+            timestamp: Date.now()
+        };
+    '
+    
+    mcp__puppeteer__puppeteer_evaluate "$CONSOLE_STATE_SCRIPT"
+}
+
+capture_validation_logs() {
+    local SCENARIO_ID=$1
+    local VALIDATION_NAME=$2
+    
+    VALIDATION_LOGS_SCRIPT='
+        return {
+            scenario: "'$SCENARIO_ID'",
+            validation: "'$VALIDATION_NAME'",
+            pre_validation_logs: window.testLogs.slice(),
+            pre_validation_errors: window.testErrors.slice(),
+            network_state: window.networkFailures.slice(),
+            timestamp: Date.now()
+        };
+    '
+    
+    mcp__puppeteer__puppeteer_evaluate "$VALIDATION_LOGS_SCRIPT"
+}
+
+capture_final_console_state() {
+    local SCENARIO_ID=$1
+    
+    FINAL_STATE_SCRIPT='
+        return {
+            scenario: "'$SCENARIO_ID'",
+            final_logs: window.testLogs.slice(),
+            final_errors: window.testErrors.slice(),
+            final_network_failures: window.networkFailures.slice(),
+            performance_summary: {
+                total_logs: window.testLogs.length,
+                total_errors: window.testErrors.length,
+                total_network_failures: window.networkFailures.length,
+                page_load_complete: document.readyState === "complete"
+            },
+            browser_state: {
+                user_agent: navigator.userAgent,
+                viewport: {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                },
+                memory_usage: performance.memory ? {
+                    used: performance.memory.usedJSHeapSize,
+                    total: performance.memory.totalJSHeapSize
+                } : null
+            },
+            timestamp: Date.now()
+        };
+    '
+    
+    mcp__puppeteer__puppeteer_evaluate "$FINAL_STATE_SCRIPT"
+}
+
+perform_enhanced_visual_regression_testing() {
+    echo "📸 ENHANCED VISUAL REGRESSION TESTING WITH CONSOLE VALIDATION"
+    echo "============================================================="
+    
+    # Enhanced visual test pages with console monitoring
+    VISUAL_TEST_PAGES=("dashboard" "channels" "calendar" "settings" "brand-selector" "login" "admin")
+    
+    for page in "${VISUAL_TEST_PAGES[@]}"; do
+        echo "📷 Capturing enhanced visual state: $page"
+        
+        # Clear console before navigation
+        mcp__puppeteer__puppeteer_evaluate 'window.testLogs = []; window.testErrors = []; return "Cleared";'
+        
+        # Navigate to page
+        mcp__puppeteer__puppeteer_navigate "http://localhost:3000/admin/$page"
+        
+        # Wait for content to load and capture console state
+        sleep 3
+        
+        # Capture pre-screenshot console state
+        PRE_SCREENSHOT_STATE=$(capture_console_state "visual_$page")
+        
+        # Capture screenshot
+        SCREENSHOT=$(mcp__puppeteer__puppeteer_screenshot "visual_regression_${page}_$(date +%Y%m%d_%H%M%S)")
+        
+        # Capture post-screenshot console state
+        POST_SCREENSHOT_STATE=$(capture_console_state "visual_${page}_post")
+        
+        # Enhanced visual comparison with console analysis
+        compare_enhanced_visual_regression "$page" "$SCREENSHOT" "$PRE_SCREENSHOT_STATE" "$POST_SCREENSHOT_STATE"
+    done
+}
+
+compare_enhanced_visual_regression() {
+    local PAGE=$1
+    local NEW_SCREENSHOT=$2
+    local PRE_STATE=$3
+    local POST_STATE=$4
+    
+    echo "🔍 Enhanced visual comparison for $PAGE with console analysis..."
+    
+    # AI-powered visual and console log analysis
+    ENHANCED_COMPARISON=$(mcp__gemini__gemini-analyze-text "Enhanced visual regression analysis:
+
+Page: $PAGE
+Screenshot captured: $NEW_SCREENSHOT
+Pre-screenshot console state: $PRE_STATE
+Post-screenshot console state: $POST_STATE
+
+Analyze:
+1. VISUAL CHANGES: Layout, styling, missing elements, color variations
+2. CONSOLE HEALTH: Any errors or warnings during page load
+3. NETWORK ISSUES: Failed requests or slow responses
+4. JAVASCRIPT ERRORS: Runtime errors or unhandled promises
+5. PERFORMANCE IMPACT: DOM load times and responsiveness
+6. USER EXPERIENCE: Any issues that would affect users
+
+Provide assessment of:
+- Visual regression severity (none/low/medium/high)
+- Console health status (healthy/warnings/errors)
+- User impact level (none/minor/moderate/severe)
+- Recommended actions")
+    
+    echo "📊 Enhanced comparison results:"
+    echo "$ENHANCED_COMPARISON"
+    
+    # Store detailed results
+    VISUAL_ANALYSIS=$(echo '{
+        "page": "'$PAGE'",
+        "screenshot": "'$NEW_SCREENSHOT'",
+        "console_analysis": '"$ENHANCED_COMPARISON"',
+        "pre_state": '"$PRE_STATE"',
+        "post_state": '"$POST_STATE"',
+        "timestamp": "'$(date -Iseconds)'"
+    }')
+    
+    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".visual_regression += [$VISUAL_ANALYSIS]")
+}
+
+measure_comprehensive_metrics() {
+    echo "⚡ COMPREHENSIVE PERFORMANCE & CONSOLE MEASUREMENT"
+    echo "=================================================="
+    
+    # Comprehensive performance, console, and browser state analysis
+    COMPREHENSIVE_METRICS_SCRIPT='
+        const perfData = window.performance.timing;
+        const navEntries = performance.getEntriesByType("navigation")[0];
+        const resourceEntries = performance.getEntriesByType("resource");
+        
+        // Calculate performance metrics
+        const metrics = {
+            page_load_time: perfData.loadEventEnd - perfData.navigationStart,
+            time_to_first_byte: perfData.responseStart - perfData.navigationStart,
+            dom_content_loaded: perfData.domContentLoadedEventEnd - perfData.navigationStart,
+            dom_interactive: perfData.domInteractive - perfData.navigationStart,
+            resource_count: resourceEntries.length,
+            large_resources: resourceEntries.filter(r => r.transferSize > 100000).length
+        };
+        
+        // Console and error analysis
+        const console_analysis = {
+            total_logs: window.testLogs.length,
+            log_types: window.testLogs.reduce((acc, log) => {
+                acc[log.type] = (acc[log.type] || 0) + 1;
+                return acc;
+            }, {}),
+            total_errors: window.testErrors.length,
+            error_types: window.testErrors.reduce((acc, error) => {
+                acc[error.type] = (acc[error.type] || 0) + 1;
+                return acc;
+            }, {}),
+            network_failures: window.networkFailures.length,
+            failed_requests: window.networkFailures.map(f => ({
+                url: f.url,
+                status: f.status || "network_error",
+                error: f.error || f.statusText
+            }))
+        };
+        
+        // Memory and browser state
+        const browser_state = {
+            memory_usage: performance.memory ? {
+                used_mb: Math.round(performance.memory.usedJSHeapSize / 1024 / 1024),
+                total_mb: Math.round(performance.memory.totalJSHeapSize / 1024 / 1024),
+                limit_mb: Math.round(performance.memory.jsHeapSizeLimit / 1024 / 1024)
+            } : null,
+            dom_elements: document.querySelectorAll("*").length,
+            viewport: {
+                width: window.innerWidth,
+                height: window.innerHeight
+            },
+            connection: navigator.connection ? {
+                effective_type: navigator.connection.effectiveType,
+                downlink: navigator.connection.downlink,
+                rtt: navigator.connection.rtt
+            } : null
+        };
+        
+        return {
+            performance: metrics,
+            console_analysis: console_analysis,
+            browser_state: browser_state,
+            timestamp: Date.now()
+        };
+    '
+    
+    COMPREHENSIVE_DATA=$(mcp__puppeteer__puppeteer_evaluate "$COMPREHENSIVE_METRICS_SCRIPT")
+    
+    echo "📊 Performance Summary:"
+    echo "$COMPREHENSIVE_DATA" | jq '.performance'
+    
+    echo "🔍 Console Analysis:"
+    echo "$COMPREHENSIVE_DATA" | jq '.console_analysis'
+    
+    # Add comprehensive data to test results
+    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".comprehensive_metrics = $COMPREHENSIVE_DATA")
+    
+    # Generate intelligent performance assessment
+    PERFORMANCE_ASSESSMENT=$(mcp__gemini__gemini-analyze-text "Analyze comprehensive test metrics:
+
+Performance Data: $(echo "$COMPREHENSIVE_DATA" | jq '.performance')
+Console Analysis: $(echo "$COMPREHENSIVE_DATA" | jq '.console_analysis')
+Browser State: $(echo "$COMPREHENSIVE_DATA" | jq '.browser_state')
+
+Provide assessment of:
+1. PERFORMANCE HEALTH: Load times, resource efficiency
+2. CONSOLE HEALTH: Error patterns, warning trends
+3. MEMORY USAGE: Efficiency and potential leaks
+4. NETWORK HEALTH: Failed requests and slow responses
+5. OVERALL QUALITY: User experience impact
+6. RECOMMENDATIONS: Specific improvements needed
+
+Rate overall health: Excellent/Good/Fair/Poor")
+    
+    echo "🎯 Comprehensive Assessment:"
+    echo "$PERFORMANCE_ASSESSMENT"
+    
+    TEST_RESULTS=$(echo "$TEST_RESULTS" | jq ".performance_assessment = $(echo "$PERFORMANCE_ASSESSMENT" | jq -Rs .)")
+}
+
+perform_monitored_test_login() {
+    echo "🔐 Performing monitored test login..."
+    
+    # Test login with console monitoring
+    LOGIN_MONITORING_SCRIPT='
+        console.log("Starting monitored login test");
+        
+        // Check if already logged in
+        const isLoggedIn = document.querySelector("[data-testid=\"user-menu\"]") || 
+                          document.querySelector(".user-avatar") ||
+                          window.location.pathname.includes("/admin");
+        
+        if (isLoggedIn) {
+            console.log("User appears to be already logged in");
+            return {status: "already_logged_in", redirect_needed: false};
+        }
+        
+        // Check for login form
+        const loginForm = document.querySelector("form[data-testid=\"login-form\"]") ||
+                         document.querySelector("input[type=\"email\"]");
+        
+        if (loginForm) {
+            console.log("Login form detected");
+            return {status: "login_form_found", redirect_needed: false};
+        }
+        
+        console.log("No login form found, may need redirect");
+        return {status: "no_login_form", redirect_needed: true};
+    '
+    
+    LOGIN_STATUS=$(mcp__puppeteer__puppeteer_evaluate "$LOGIN_MONITORING_SCRIPT")
+    echo "Login status: $LOGIN_STATUS"
+    
+    # Handle login based on status
+    STATUS=$(echo "$LOGIN_STATUS" | jq -r '.status')
+    case $STATUS in
+        "already_logged_in")
+            echo "✅ Already authenticated"
+            ;;
+        "login_form_found")
+            echo "📝 Attempting test login..."
+            attempt_monitored_login
+            ;;
+        "no_login_form")
+            echo "🔄 Redirecting to login page..."
+            mcp__puppeteer__puppeteer_navigate "http://localhost:3000/auth/login"
+            sleep 2
+            attempt_monitored_login
+            ;;
+    esac
+}
+
+attempt_monitored_login() {
+    echo "🔑 Attempting login with monitoring..."
+    
+    # Fill login form with monitoring
+    mcp__puppeteer__puppeteer_fill 'input[type="email"]' "test@example.com"
+    capture_interaction_logs "login" "fill_email" 'input[type="email"]'
+    
+    mcp__puppeteer__puppeteer_fill 'input[type="password"]' "testpassword"
+    capture_interaction_logs "login" "fill_password" 'input[type="password"]'
+    
+    mcp__puppeteer__puppeteer_click 'button[type="submit"]'
+    capture_interaction_logs "login" "submit" 'button[type="submit"]'
+    
+    # Wait for login completion and monitor
+    sleep 3
+    
+    LOGIN_COMPLETION_SCRIPT='
+        const isLoggedIn = document.querySelector("[data-testid=\"user-menu\"]") || 
+                          window.location.pathname.includes("/admin");
+        
+        return {
+            logged_in: isLoggedIn,
+            current_url: window.location.href,
+            console_logs: window.testLogs.slice(-5),
+            errors: window.testErrors.slice(),
+            timestamp: Date.now()
+        };
+    '
+    
+    LOGIN_RESULT=$(mcp__puppeteer__puppeteer_evaluate "$LOGIN_COMPLETION_SCRIPT")
+    
+    LOGGED_IN=$(echo "$LOGIN_RESULT" | jq -r '.logged_in')
+    if [[ "$LOGGED_IN" == "true" ]]; then
+        echo "✅ Login successful with monitoring"
+    else
+        echo "❌ Login failed - check console logs"
+        echo "$LOGIN_RESULT" | jq '.console_logs, .errors'
+    fi
 }
 ```
 
@@ -1613,22 +2122,32 @@ risk_matrix:
     "regression_risk": "low"
   },
   "test_strategy": {
-    "approach": "targeted",
-    "reason": "Only auth and channel components changed",
+    "approach": "targeted_with_browser_monitoring",
+    "reason": "Auth and channel components changed, requiring console validation",
     "tests_selected": 45,
     "tests_skipped": 111,
-    "time_saved": "75%"
+    "time_saved": "75%",
+    "browser_monitoring_enabled": true
   },
   "test_execution_summary": {
     "targeted_tests_run": 45,
     "passed": 43,
     "failed": 2,
     "execution_time": "3m 12s",
+    "console_monitoring_active": true,
     "coverage_for_changes": {
       "unit": 92.4,
       "integration": 85.0,
-      "e2e": 100.0
+      "e2e": 100.0,
+      "browser_validation": 95.5
     }
+  },
+  "console_health_summary": {
+    "total_console_logs": 127,
+    "javascript_errors": 2,
+    "network_failures": 1,
+    "performance_warnings": 3,
+    "console_health_score": "Good"
   },
   "failed_tests": [
     {
@@ -1637,13 +2156,24 @@ risk_matrix:
       "error": "Token expiry not handled correctly",
       "severity": "high",
       "screenshot": "path/to/screenshot.png",
-      "suggested_fix": "Implement automatic token refresh logic"
+      "console_errors": ["TypeError: Cannot read property 'token' of undefined"],
+      "network_failures": ["401 Unauthorized on /api/auth/refresh"],
+      "suggested_fix": "Implement automatic token refresh logic with error handling"
     }
   ],
   "performance_metrics": {
     "page_load_time": "1.2s",
     "ttfb": "234ms",
-    "largest_contentful_paint": "1.8s"
+    "largest_contentful_paint": "1.8s",
+    "memory_usage_mb": 45.2,
+    "dom_elements": 1247,
+    "resource_count": 89
+  },
+  "visual_regression_results": {
+    "pages_tested": 7,
+    "visual_changes_detected": 1,
+    "console_health_during_screenshots": "Healthy",
+    "ui_consistency_score": "97%"
   },
   "accessibility_results": {
     "violations": 3,
@@ -1651,9 +2181,9 @@ risk_matrix:
     "wcag_level": "AA"
   },
   "recommendations": {
-    "immediate": ["Fix OAuth token refresh", "Add missing alt texts"],
-    "short_term": ["Improve test coverage for API endpoints"],
-    "long_term": ["Implement visual regression testing"]
+    "immediate": ["Fix OAuth token refresh with console error handling", "Resolve network failure in auth endpoint"],
+    "short_term": ["Improve test coverage for API endpoints", "Add console monitoring to CI pipeline"],
+    "long_term": ["Implement comprehensive visual regression testing", "Enhance error boundary components"]
   }
 }
 ```
@@ -1701,11 +2231,20 @@ risk_matrix:
 # Analyze impact without running tests
 /m-qa-test ALU-123 --analyze-only
 
-# Include performance impact analysis
+# Include performance impact analysis with browser metrics
 /m-qa-test ALU-123 --include-performance
 
 # Include security vulnerability scanning
 /m-qa-test ALU-123 --include-security
+
+# Enable enhanced console monitoring
+/m-qa-test ALU-123 --console-monitoring
+
+# Include visual regression testing with console validation
+/m-qa-test ALU-123 --visual-regression
+
+# Enable network request monitoring
+/m-qa-test ALU-123 --network-monitoring
 
 # Force test even unchanged areas (paranoid mode)
 /m-qa-test ALU-123 --test-all
@@ -1715,21 +2254,52 @@ risk_matrix:
 
 # Generate missing tests recommendations
 /m-qa-test ALU-123 --suggest-tests
+
+# Run with headless browser (faster execution)
+/m-qa-test ALU-123 --headless
+
+# Run with devtools open for debugging
+/m-qa-test ALU-123 --devtools
 ```
 
 ### Integration Testing
 ```bash
-# Test API changes specifically
+# Test API changes specifically with network monitoring
 /m-qa-test ALU-123 --api-focus
 
 # Test database migration impact
 /m-qa-test ALU-123 --db-changes
 
-# Test UI components only
+# Test UI components only with visual regression
 /m-qa-test ALU-123 --ui-only
 
-# Test OAuth integration changes
+# Test OAuth integration changes with console monitoring
 /m-qa-test ALU-123 --oauth-focus
+
+# Test with specific browser for compatibility
+/m-qa-test ALU-123 --browser=firefox
+
+# Test with mobile viewport simulation
+/m-qa-test ALU-123 --mobile-testing
 ```
 
-This comprehensive QA testing command provides automated test planning, execution, and reporting with deep integration into your development workflow, helping ensure quality while accelerating the testing process.
+### Browser Automation Features
+
+```bash
+# Console monitoring capabilities
+/m-qa-test ALU-123 --console-detailed    # Detailed console analysis
+/m-qa-test ALU-123 --error-tracking      # Focus on JavaScript errors
+/m-qa-test ALU-123 --performance-deep    # Deep performance analysis
+
+# Visual testing options
+/m-qa-test ALU-123 --screenshot-all      # Screenshot every interaction
+/m-qa-test ALU-123 --visual-baseline     # Create new visual baselines
+/m-qa-test ALU-123 --ui-health-check     # UI component health validation
+
+# Network and API monitoring
+/m-qa-test ALU-123 --api-health          # API endpoint health checks
+/m-qa-test ALU-123 --network-detailed    # Detailed network analysis
+/m-qa-test ALU-123 --response-validation # API response validation
+```
+
+This comprehensive QA testing command provides automated test planning, execution, and reporting with deep integration into your development workflow and advanced Puppeteer-powered browser automation, helping ensure quality while accelerating the testing process with real-time console monitoring and visual validation.

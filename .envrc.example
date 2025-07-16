@@ -62,3 +62,8 @@ export REF_API_KEY="your-ref-api-key-here"
 # Ensure you have the correct shell hook in your shell rc file:
 # For zsh: eval "$(direnv hook zsh)" in ~/.zshrc
 # For bash: eval "$(direnv hook bash)" in ~/.bashrc
+
+# If you want to try out Kimi K2
+# https://garysvenson09.medium.com/how-to-run-kimi-k2-inside-claude-code-the-ultimate-open-source-ai-coding-combo-7b248adcf336
+# export ANTHROPIC_AUTH_TOKEN=sk-YOURKEY
+# export ANTHROPIC_BASE_URL=https://api.moonshot.ai/anthropic

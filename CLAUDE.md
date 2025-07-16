@@ -9,14 +9,42 @@ This document contains universal development principles and practices for AI ass
 BEFORE ANY ACTION, you MUST use these tools. Tool names use double underscores between segments.
 
 #### Documentation Research (ALWAYS FIRST)
+Use MCP-native tools BEFORE any other approach:
+
 ```bash
-# BEFORE writing ANY code, search ALL relevant docs:
-mcp__Ref__ref_search_documentation "[language/framework] [feature] best practices 2025"
-mcp__Ref__ref_search_documentation "[API name] documentation"
-mcp__Ref__ref_search_documentation "[technology] [pattern] implementation"
+# PRIORITY 1: MCP-native documentation search
+mcp__ref__ref_search_documentation "[language/framework] [feature] best practices 2025"
+mcp__ref__ref_search_documentation "[API name] documentation"
+mcp__ref__ref_search_documentation "[technology] [pattern] implementation"
 
 # Read the actual documentation URLs found:
-mcp__Ref__ref_read_url "[documentation URL from search]"
+mcp__ref__ref_read_url "[documentation URL from search]"
+
+# PRIORITY 2: MCP filesystem operations for local docs
+mcp__filesystem__search_files "docs" "*.md"
+mcp__filesystem__read_file "path/to/documentation.md"
+
+# PRIORITY 3: MCP memory for project knowledge
+mcp__memory__search_nodes "[feature or concept]"
+mcp__memory__read_graph
+
+# PRIORITY 4: MCP GitHub for external references
+mcp__github__search_repositories "[technology] [pattern]"
+mcp__github__get_file_contents "owner" "repo" "README.md"
+
+# PRIORITY 5: MCP Supabase for database docs
+mcp__supabase__search_docs 'query { searchDocs(query: "[database feature]") { nodes { title href content } } }'
+
+# PRIORITY 6: MCP Puppeteer for web automation and console logs
+mcp__puppeteer__puppeteer_navigate "https://app.example.com"
+mcp__puppeteer__puppeteer_screenshot "page-state"
+mcp__puppeteer__puppeteer_evaluate "console.log('Testing console'); return document.title;"
+mcp__puppeteer__puppeteer_click "button[data-testid='submit']"
+mcp__puppeteer__puppeteer_fill "input[name='email']" "test@example.com"
+
+# PRIORITY 7: MCP web search as fallback only
+WebSearch "[technology] [feature] official documentation 2025"
+WebFetch "https://docs.example.com/api"
 ```
 
 #### Sequential Thinking (FOR COMPLEX TASKS)
@@ -43,6 +71,54 @@ mcp__git__git_show [commit_hash]  # Understand specific changes
 
 # Before implementing features:
 mcp__git__git_grep "[feature_name]"  # Find related code
+```
+
+#### Puppeteer Web Automation (FOR BROWSER TESTING & DEBUGGING)
+Use `mcp__puppeteer__*` tools for:
+- **Web app debugging**: Navigate to your app and capture console errors
+- **UI testing verification**: Screenshot states and interact with elements
+- **API debugging**: Monitor network requests and responses
+- **Console log analysis**: Execute JavaScript and capture console output
+- **Form testing**: Fill inputs and validate form behavior
+- **Authentication flows**: Test login/logout scenarios
+- **Performance monitoring**: Measure page load times and interactions
+
+```bash
+# Navigation and page state
+mcp__puppeteer__puppeteer_navigate "http://localhost:3000/dashboard"
+mcp__puppeteer__puppeteer_screenshot "dashboard-loaded" 
+
+# Console debugging and JavaScript execution
+mcp__puppeteer__puppeteer_evaluate "
+  console.error('Debug info:', window.location.href);
+  return {
+    title: document.title,
+    errors: window.errors || [],
+    userAgent: navigator.userAgent
+  };
+"
+
+# Form interactions and UI testing
+mcp__puppeteer__puppeteer_fill "input[data-testid='email']" "test@example.com"
+mcp__puppeteer__puppeteer_click "button[type='submit']"
+mcp__puppeteer__puppeteer_hover "nav .dropdown-trigger"
+
+# Advanced debugging scenarios
+mcp__puppeteer__puppeteer_evaluate "
+  // Capture network errors
+  window.addEventListener('error', e => console.error('JS Error:', e.error));
+  
+  // Monitor API calls
+  const originalFetch = window.fetch;
+  window.fetch = (...args) => {
+    console.log('API Call:', args[0]);
+    return originalFetch.apply(this, args)
+      .then(r => { console.log('API Response:', r.status); return r; })
+      .catch(e => { console.error('API Error:', e); throw e; });
+  };
+  
+  return 'Monitoring enabled';
+"
 ```
 
 #### Code Validation Requirements

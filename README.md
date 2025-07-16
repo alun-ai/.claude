@@ -31,7 +31,7 @@ Claude Code slash commands available across all projects after adding the submod
 - `/m-bug-fix` - Comprehensive bug analysis and fixing
 - `/m-project-init` - Initialize project with shared configuration
 
-#### Code Quality & Security  
+#### Code Quality & Security
 - `/m-security-scan` - Security vulnerability scanning
 - `/m-test-generation` - Automated test creation
 - `/m-review-code` - Code quality review
@@ -75,7 +75,7 @@ Predefined development workflows:
 ### Add as Submodule
 ```bash
 # In your project root
-git submodule add https://github.com/your-username/.claude .claude
+git submodule add https://github.com/alun-ai/.claude .claude
 
 # Restart Claude Code to make commands available
 ```
@@ -120,7 +120,7 @@ Each project can have its own settings in `.claude_config.json`:
 ### For Existing Projects
 1. **Add shared configuration as submodule**:
    ```bash
-   git submodule add https://github.com/your-username/.claude .claude
+   git submodule add https://github.com/alun-ai/.claude .claude
    ```
 
 2. **Setup MCP configuration**:
@@ -156,7 +156,7 @@ Each project can have its own settings in `.claude_config.json`:
    ```bash
    mkdir my-app && cd my-app
    git init
-   git submodule add https://github.com/your-username/.claude .claude
+   git submodule add https://github.com/alun-ai/.claude .claude
    ```
 
 2. **Setup MCP and environment**:

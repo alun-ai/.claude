@@ -650,9 +650,14 @@ fi
 
 ### Submodule Error Handling
 ```bash
-# Enhanced submodule error handling
-process_submodules_with_error_handling() {
-    echo "🔍 Detecting git submodules..."
+# Ultimate submodule processing with maximum reliability
+process_all_submodules_ultimate() {
+    echo "🔍 ULTIMATE SUBMODULE DETECTION AND PROCESSING"
+    echo "=============================================="
+    
+    # Store original directory
+    ORIGINAL_DIR=$(pwd)
+    local START_TIME=$(date +%s)
     
     # Verify we're in a git repository
     if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
@@ -660,129 +665,386 @@ process_submodules_with_error_handling() {
         return 1
     fi
     
+    # Force refresh git index first
+    echo "🔄 Refreshing git index and status..."
+    git status > /dev/null 2>&1 || true
+    git update-index --refresh > /dev/null 2>&1 || true
+    
     # Check if .gitmodules exists
     if [ ! -f ".gitmodules" ]; then
         echo "No submodules detected in repository"
         return 0
     fi
     
-    # Initialize submodules if needed
-    git submodule init > /dev/null 2>&1
-    git submodule update > /dev/null 2>&1
+    # Initialize and update all submodules recursively with force
+    echo "🔄 Force initializing and updating all submodules..."
+    git submodule deinit --force --all > /dev/null 2>&1 || true
+    git submodule init --recursive > /dev/null 2>&1 || true
+    git submodule update --init --recursive --force > /dev/null 2>&1 || true
+    git submodule sync --recursive > /dev/null 2>&1 || true
     
-    # Get list of submodules with error handling
-    SUBMODULES=$(git submodule status 2>/dev/null | awk '{print $2}')
+    # Get comprehensive list of submodules using multiple methods
+    echo "🔍 Discovering all submodules (using 4 detection methods)..."
     
-    if [ -z "$SUBMODULES" ]; then
+    # Method 1: Direct .gitmodules parsing
+    DIRECT_SUBMODULES=$(git config --file .gitmodules --get-regexp path 2>/dev/null | awk '{ print $2 }' | sort -u)
+    
+    # Method 2: Git submodule status
+    STATUS_SUBMODULES=$(git submodule status --recursive 2>/dev/null | awk '{print $2}' | sort -u)
+    
+    # Method 3: Git submodule foreach
+    FOREACH_SUBMODULES=$(git submodule foreach --recursive --quiet 'echo $sm_path' 2>/dev/null | sort -u)
+    
+    # Method 4: Directory scanning for .git files/folders
+    DIRECTORY_SUBMODULES=$(find . -name ".git" -type f -o -name ".git" -type d 2>/dev/null | grep -v "^\./\.git" | sed 's|^\./||; s|/\.git$||' | sort -u)
+    
+    # Combine all methods and deduplicate
+    ALL_DETECTED=$(echo -e "$DIRECT_SUBMODULES\n$STATUS_SUBMODULES\n$FOREACH_SUBMODULES\n$DIRECTORY_SUBMODULES" | grep -v '^$' | sort -u)
+    
+    # Filter to only valid submodule directories
+    VALID_SUBMODULES=""
+    for POTENTIAL_SUBMODULE in $ALL_DETECTED; do
+        if [ -d "$POTENTIAL_SUBMODULE" ] && ([ -f "$POTENTIAL_SUBMODULE/.git" ] || [ -d "$POTENTIAL_SUBMODULE/.git" ]); then
+            if git -C "$POTENTIAL_SUBMODULE" rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+                VALID_SUBMODULES=$(echo -e "$VALID_SUBMODULES\n$POTENTIAL_SUBMODULE")
+            fi
+        fi
+    done
+    
+    COMBINED_SUBMODULES=$(echo "$VALID_SUBMODULES" | grep -v '^$' | sort -u)
+    
+    if [ -z "$COMBINED_SUBMODULES" ]; then
         echo "No active submodules found"
         return 0
     fi
     
-    echo "📦 Found submodules: $(echo $SUBMODULES | tr '\n' ' ')"
+    echo "📦 Discovered $(echo "$COMBINED_SUBMODULES" | wc -l | tr -d ' ') submodules:"
+    echo "$COMBINED_SUBMODULES" | sed 's/^/  - /'
+    echo ""
     
-    # Process each submodule with error handling
-    for SUBMODULE in $SUBMODULES; do
+    # Track comprehensive statistics
+    OVERALL_SUCCESS=true
+    PROCESSED_SUBMODULES=()
+    FAILED_SUBMODULES=()
+    SKIPPED_SUBMODULES=()
+    TOTAL_COMMITS=0
+    TOTAL_PUSHES=0
+    
+    # Process each submodule with maximum reliability
+    for SUBMODULE in $COMBINED_SUBMODULES; do
         echo "🔄 Processing submodule: $SUBMODULE"
+        echo "----------------------------------------"
         
-        # Verify submodule directory exists
-        if [ ! -d "$SUBMODULE" ]; then
-            echo "⚠️  Warning: Submodule directory $SUBMODULE does not exist, skipping..."
-            continue
+        # Verify and repair submodule if needed
+        if [ ! -d "$SUBMODULE" ] || [ ! -e "$SUBMODULE/.git" ]; then
+            echo "🔧 Repairing submodule: $SUBMODULE"
+            git submodule update --init --force "$SUBMODULE" > /dev/null 2>&1 || {
+                echo "❌ Failed to repair $SUBMODULE, skipping..."
+                FAILED_SUBMODULES+=("$SUBMODULE (repair failed)")
+                continue
+            }
         fi
         
-        # Navigate to submodule directory
-        if ! cd "$SUBMODULE"; then
+        # Navigate to submodule directory with error handling
+        if ! cd "$SUBMODULE" 2>/dev/null; then
             echo "❌ Error: Cannot access submodule directory $SUBMODULE"
+            FAILED_SUBMODULES+=("$SUBMODULE (access denied)")
+            cd "$ORIGINAL_DIR"
             continue
         fi
         
-        # Verify submodule is a git repository
+        # Verify git repository and repair if needed
         if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-            echo "❌ Error: $SUBMODULE is not a valid git repository"
-            cd - > /dev/null
-            continue
+            echo "🔧 Attempting to repair git repository in $SUBMODULE..."
+            git init > /dev/null 2>&1 || {
+                echo "❌ Error: Cannot repair git repository in $SUBMODULE"
+                FAILED_SUBMODULES+=("$SUBMODULE (git repair failed)")
+                cd "$ORIGINAL_DIR"
+                continue
+            }
         fi
         
-        # Check if submodule has changes
-        if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git status --porcelain)" ]; then
-            echo "📝 Changes detected in submodule: $SUBMODULE"
+        # Force refresh the submodule's git status
+        git status > /dev/null 2>&1 || true
+        git update-index --refresh > /dev/null 2>&1 || true
+        
+        # Ultra-comprehensive change detection
+        echo "🔍 Deep scanning for changes in $SUBMODULE..."
+        
+        HAS_STAGED_CHANGES=false
+        HAS_UNSTAGED_CHANGES=false
+        HAS_UNTRACKED_FILES=false
+        HAS_MODIFIED_FILES=false
+        HAS_ADDED_FILES=false
+        HAS_DELETED_FILES=false
+        
+        # Check staged changes
+        if ! git diff --cached --quiet 2>/dev/null; then
+            HAS_STAGED_CHANGES=true
+            echo "  📝 Staged changes detected"
+        fi
+        
+        # Check unstaged changes
+        if ! git diff --quiet 2>/dev/null; then
+            HAS_UNSTAGED_CHANGES=true
+            echo "  📝 Unstaged changes detected"
+        fi
+        
+        # Check untracked files (multiple methods)
+        UNTRACKED_COUNT=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d ' ')
+        if [ "$UNTRACKED_COUNT" -gt 0 ]; then
+            HAS_UNTRACKED_FILES=true
+            echo "  📝 $UNTRACKED_COUNT untracked files detected"
+        fi
+        
+        # Check for specific file states
+        STATUS_OUTPUT=$(git status --porcelain=v1 2>/dev/null)
+        if echo "$STATUS_OUTPUT" | grep -q "^M"; then HAS_MODIFIED_FILES=true; fi
+        if echo "$STATUS_OUTPUT" | grep -q "^A"; then HAS_ADDED_FILES=true; fi
+        if echo "$STATUS_OUTPUT" | grep -q "^D"; then HAS_DELETED_FILES=true; fi
+        
+        # Determine if any changes exist
+        if [ "$HAS_STAGED_CHANGES" = true ] || [ "$HAS_UNSTAGED_CHANGES" = true ] || [ "$HAS_UNTRACKED_FILES" = true ]; then
+            echo "📝 Changes confirmed in submodule: $SUBMODULE"
             
-            # Get submodule changes with error handling
-            SUBMODULE_CHANGES=$(git diff --cached 2>/dev/null; git diff 2>/dev/null; git status --porcelain 2>/dev/null)
+            # Get ultra-comprehensive change analysis
+            echo "📊 Analyzing all changes..."
+            SUBMODULE_STATUS=$(git status --porcelain=v1 2>/dev/null)
+            SUBMODULE_DIFF_STAGED=$(git diff --cached --name-status 2>/dev/null)
+            SUBMODULE_DIFF_UNSTAGED=$(git diff --name-status 2>/dev/null)
+            SUBMODULE_SUMMARY=$(git diff --cached --stat 2>/dev/null; git diff --stat 2>/dev/null)
+            UNTRACKED_FILES=$(git ls-files --others --exclude-standard 2>/dev/null)
             
-            if [ -z "$SUBMODULE_CHANGES" ]; then
-                echo "⚠️  Warning: No changes detected in $SUBMODULE, skipping..."
-                cd - > /dev/null
-                continue
-            fi
-            
-            # Generate AI commit message for submodule
-            SUBMODULE_MESSAGE=$(mcp__gemini__gemini-query "Generate a conventional commit message for these submodule changes in $SUBMODULE:
+            # Create ultra-comprehensive change description
+            SUBMODULE_CHANGES="Repository: $SUBMODULE
+Status Summary:
+$SUBMODULE_STATUS
 
-${SUBMODULE_CHANGES}
+Staged Changes:
+$SUBMODULE_DIFF_STAGED
 
-Format: type(scope): description
-Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build
-Keep description under 72 characters. Be specific and clear.
-Context: This is a submodule within a larger project." 2>/dev/null)
+Unstaged Changes:
+$SUBMODULE_DIFF_UNSTAGED
+
+Untracked Files:
+$UNTRACKED_FILES
+
+Change Summary:
+$SUBMODULE_SUMMARY"
             
-            # Fallback commit message if AI generation fails
-            if [ -z "$SUBMODULE_MESSAGE" ]; then
-                SUBMODULE_MESSAGE="chore($SUBMODULE): update submodule changes"
-                echo "⚠️  Warning: AI commit message generation failed, using fallback"
-            fi
-            
-            # Stage all changes in submodule
-            if ! git add . 2>/dev/null; then
+            # Stage ALL changes including untracked files
+            echo "📦 Staging all changes in $SUBMODULE..."
+            git add --all . 2>/dev/null || {
                 echo "❌ Error: Failed to stage changes in $SUBMODULE"
-                cd - > /dev/null
+                FAILED_SUBMODULES+=("$SUBMODULE (staging failed)")
+                cd "$ORIGINAL_DIR"
+                continue
+            }
+            
+            # Final verification that changes were staged
+            if git diff --cached --quiet 2>/dev/null && [ "$UNTRACKED_COUNT" -eq 0 ]; then
+                echo "⚠️  Warning: No changes staged in $SUBMODULE after git add --all, skipping..."
+                SKIPPED_SUBMODULES+=("$SUBMODULE (no stageable changes)")
+                cd "$ORIGINAL_DIR"
                 continue
             fi
             
-            # Commit submodule changes
-            if ! git commit -m "$SUBMODULE_MESSAGE" 2>/dev/null; then
-                echo "❌ Error: Failed to commit changes in $SUBMODULE"
-                cd - > /dev/null
-                continue
-            fi
+            # Generate enhanced AI commit message
+            echo "🤖 Generating intelligent commit message for $SUBMODULE..."
+            SUBMODULE_MESSAGE=$(mcp__gemini__gemini-query "Generate a precise conventional commit message for these submodule changes in '$SUBMODULE':
+
+$SUBMODULE_CHANGES
+
+STRICT Requirements:
+- Format: type(scope): description
+- Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build
+- Description MUST be under 72 characters
+- Be specific about the primary change
+- Context: Submodule '$SUBMODULE' in a larger project
+- If multiple change types, pick the most significant
+
+Analysis the changes and pick the most appropriate type:
+- feat: new functionality, new files, new features
+- fix: bug fixes, error corrections, issue resolutions
+- docs: documentation changes, README updates, comment additions
+- refactor: code restructuring without behavior change
+- chore: maintenance, dependency updates, configuration changes
+- style: formatting, whitespace, code style improvements
+- test: test additions, test fixes, test updates
+- perf: performance improvements
+- ci: CI/CD changes, workflow updates
+- build: build system changes, compilation fixes
+
+Examples:
+- feat(commands): add deployment automation scripts
+- fix(config): resolve environment variable parsing
+- docs(readme): update installation instructions  
+- chore(deps): update dependencies to latest versions" 2>/dev/null)
             
-            # Push submodule changes with retry logic
-            PUSH_ATTEMPTS=0
-            MAX_PUSH_ATTEMPTS=3
-            
-            while [ $PUSH_ATTEMPTS -lt $MAX_PUSH_ATTEMPTS ]; do
-                if git push origin HEAD 2>/dev/null; then
-                    echo "✅ Submodule $SUBMODULE committed and pushed"
-                    break
+            # Enhanced intelligent fallback
+            if [ -z "$SUBMODULE_MESSAGE" ] || [ "$SUBMODULE_MESSAGE" = "null" ] || [ ${#SUBMODULE_MESSAGE} -gt 100 ]; then
+                echo "🧠 Creating intelligent fallback commit message..."
+                
+                # Smart analysis for fallback
+                if echo "$SUBMODULE_STATUS" | grep -q "^A.*\\.md$"; then
+                    FALLBACK_TYPE="docs"
+                    FALLBACK_DESC="add documentation updates"
+                elif echo "$SUBMODULE_STATUS" | grep -q "^A"; then
+                    FALLBACK_TYPE="feat"
+                    FALLBACK_DESC="add new functionality"
+                elif echo "$SUBMODULE_STATUS" | grep -q "^M.*package\\.json$\|^M.*\\.lock$"; then
+                    FALLBACK_TYPE="chore"
+                    FALLBACK_DESC="update dependencies"
+                elif echo "$SUBMODULE_STATUS" | grep -q "^M.*\\.md$"; then
+                    FALLBACK_TYPE="docs"
+                    FALLBACK_DESC="update documentation"
+                elif echo "$SUBMODULE_STATUS" | grep -q "^M.*\\.js$\|^M.*\\.ts$\|^M.*\\.jsx$\|^M.*\\.tsx$"; then
+                    FALLBACK_TYPE="refactor"
+                    FALLBACK_DESC="update code implementation"
+                elif echo "$SUBMODULE_STATUS" | grep -q "^M.*config\|^M.*\\.json$\|^M.*\\.yaml$\|^M.*\\.yml$"; then
+                    FALLBACK_TYPE="chore"
+                    FALLBACK_DESC="update configuration"
                 else
-                    PUSH_ATTEMPTS=$((PUSH_ATTEMPTS + 1))
-                    echo "⚠️  Push attempt $PUSH_ATTEMPTS failed for $SUBMODULE, retrying..."
-                    
-                    if [ $PUSH_ATTEMPTS -eq $MAX_PUSH_ATTEMPTS ]; then
-                        echo "❌ Error: Failed to push $SUBMODULE after $MAX_PUSH_ATTEMPTS attempts"
-                        echo "💡 Suggestion: Check network connection and repository permissions"
-                    else
-                        sleep 2
-                    fi
+                    FALLBACK_TYPE="chore"
+                    FALLBACK_DESC="update submodule changes"
                 fi
-            done
+                
+                SUBMODULE_MESSAGE="$FALLBACK_TYPE($SUBMODULE): $FALLBACK_DESC"
+            fi
+            
+            echo "💬 Final commit message: $SUBMODULE_MESSAGE"
+            
+            # Commit with enhanced error handling
+            echo "📝 Committing changes in $SUBMODULE..."
+            if git commit -m "$SUBMODULE_MESSAGE" 2>/dev/null; then
+                TOTAL_COMMITS=$((TOTAL_COMMITS + 1))
+                COMMIT_HASH=$(git rev-parse HEAD 2>/dev/null)
+                COMMIT_SHORT=$(git rev-parse --short HEAD 2>/dev/null)
+                echo "✅ Commit successful: $COMMIT_SHORT"
+                
+                # Enhanced push with comprehensive retry logic
+                echo "📤 Pushing changes for $SUBMODULE..."
+                PUSH_ATTEMPTS=0
+                MAX_PUSH_ATTEMPTS=5
+                PUSH_SUCCESS=false
+                RETRY_DELAY=1
+                
+                while [ $PUSH_ATTEMPTS -lt $MAX_PUSH_ATTEMPTS ]; do
+                    PUSH_ATTEMPTS=$((PUSH_ATTEMPTS + 1))
+                    echo "  Push attempt $PUSH_ATTEMPTS/$MAX_PUSH_ATTEMPTS..."
+                    
+                    if git push origin HEAD 2>/dev/null; then
+                        echo "✅ Successfully pushed $SUBMODULE (commit: $COMMIT_SHORT)"
+                        PUSH_SUCCESS=true
+                        TOTAL_PUSHES=$((TOTAL_PUSHES + 1))
+                        PROCESSED_SUBMODULES+=("$SUBMODULE")
+                        break
+                    else
+                        echo "⚠️  Push attempt $PUSH_ATTEMPTS failed for $SUBMODULE"
+                        
+                        if [ $PUSH_ATTEMPTS -lt $MAX_PUSH_ATTEMPTS ]; then
+                            echo "  Retrying in $RETRY_DELAY seconds..."
+                            sleep $RETRY_DELAY
+                            RETRY_DELAY=$((RETRY_DELAY * 2))  # Exponential backoff
+                        fi
+                    fi
+                done
+                
+                if [ "$PUSH_SUCCESS" = false ]; then
+                    echo "❌ Failed to push $SUBMODULE after $MAX_PUSH_ATTEMPTS attempts"
+                    echo "💡 Commit was successful locally (commit: $COMMIT_SHORT)"
+                    echo "💡 Manual push required: cd $SUBMODULE && git push"
+                    FAILED_SUBMODULES+=("$SUBMODULE (push failed after commit $COMMIT_SHORT)")
+                fi
+            else
+                echo "❌ Error: Failed to commit changes in $SUBMODULE"
+                FAILED_SUBMODULES+=("$SUBMODULE (commit failed)")
+            fi
         else
-            echo "⚪ No changes in submodule: $SUBMODULE"
+            echo "⚪ No changes detected in submodule: $SUBMODULE"
+            SKIPPED_SUBMODULES+=("$SUBMODULE (no changes)")
         fi
         
         # Return to main repository
-        cd - > /dev/null
+        cd "$ORIGINAL_DIR"
+        echo ""
     done
     
-    # Update submodule references in main repo with error handling
-    echo "🔄 Updating submodule references in main repository..."
-    git add .gitmodules 2>/dev/null || true
-    git submodule sync 2>/dev/null || echo "⚠️  Warning: Failed to sync submodules"
+    # Ultimate main repository submodule reference updating
+    echo "🔄 ULTIMATE MAIN REPOSITORY REFERENCE UPDATE"
+    echo "==========================================="
     
-    # Add submodule reference updates
-    for SUBMODULE in $SUBMODULES; do
-        git add "$SUBMODULE" 2>/dev/null || true
+    # Force sync and update all submodule configurations
+    echo "🔄 Force syncing all submodule configurations..."
+    git submodule sync --recursive > /dev/null 2>&1 || echo "⚠️  Some submodules failed to sync"
+    
+    # Update .gitmodules if changed
+    if ! git diff --quiet .gitmodules 2>/dev/null; then
+        echo "📝 Staging .gitmodules changes..."
+        git add .gitmodules 2>/dev/null || echo "⚠️  Failed to stage .gitmodules"
+    fi
+    
+    # Add all submodule reference updates comprehensively
+    echo "📦 Staging all submodule reference updates..."
+    for SUBMODULE in $COMBINED_SUBMODULES; do
+        if [ -d "$SUBMODULE" ]; then
+            # Add both the submodule directory and any nested changes
+            git add "$SUBMODULE" 2>/dev/null || true
+            # Also try to add specific submodule files if they exist
+            git add "$SUBMODULE/"* 2>/dev/null || true
+        fi
     done
+    
+    # Force add any remaining submodule references
+    git add . 2>/dev/null || true
+    
+    # Final statistics and reporting
+    local END_TIME=$(date +%s)
+    local DURATION=$((END_TIME - START_TIME))
+    
+    echo "📊 ULTIMATE SUBMODULE PROCESSING SUMMARY"
+    echo "======================================="
+    echo "Total submodules found: $(echo "$COMBINED_SUBMODULES" | wc -l | tr -d ' ')"
+    echo "Successfully processed: ${#PROCESSED_SUBMODULES[@]}"
+    echo "Failed operations: ${#FAILED_SUBMODULES[@]}"
+    echo "Skipped (no changes): ${#SKIPPED_SUBMODULES[@]}"
+    echo "Total commits created: $TOTAL_COMMITS"
+    echo "Total successful pushes: $TOTAL_PUSHES"
+    echo "Processing duration: ${DURATION} seconds"
+    
+    if [ ${#PROCESSED_SUBMODULES[@]} -gt 0 ]; then
+        echo ""
+        echo "✅ Successfully processed submodules:"
+        printf '  - %s\n' "${PROCESSED_SUBMODULES[@]}"
+    fi
+    
+    if [ ${#SKIPPED_SUBMODULES[@]} -gt 0 ]; then
+        echo ""
+        echo "⚪ Skipped submodules (no changes):"
+        printf '  - %s\n' "${SKIPPED_SUBMODULES[@]}"
+    fi
+    
+    if [ ${#FAILED_SUBMODULES[@]} -gt 0 ]; then
+        echo ""
+        echo "❌ Failed operations:"
+        printf '  - %s\n' "${FAILED_SUBMODULES[@]}"
+        OVERALL_SUCCESS=false
+    fi
+    
+    echo ""
+    echo "🎯 Optimization Notes:"
+    echo "- Used 4 detection methods for maximum submodule discovery"
+    echo "- Applied force refresh and repair for reliability"
+    echo "- Implemented exponential backoff for push retries"
+    echo "- Added comprehensive change detection and staging"
+    echo "- Enhanced AI commit message generation with smart fallbacks"
+    
+    # Return comprehensive success status
+    if [ "$OVERALL_SUCCESS" = true ] && [ ${#PROCESSED_SUBMODULES[@]} -gt 0 -o ${#SKIPPED_SUBMODULES[@]} -gt 0 ]; then
+        return 0
+    else
+        return 1
+    fi
 }
 ```
 
