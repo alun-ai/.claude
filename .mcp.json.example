@@ -21,7 +21,11 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-puppeteer"
-      ]
+      ],
+      "env": {
+        "PUPPETEER_HEADLESS": "true",
+        "PUPPETEER_ARGS": "--window-size=1920,1080 --start-maximized --disable-dev-shm-usage --no-sandbox"
+      }
     },
     "gemini": {
       "command": "npx",
