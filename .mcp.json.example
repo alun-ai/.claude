@@ -10,11 +10,18 @@
       "env": {}
     },
     "memory": {
-      "command": "npx",
+      "command": "docker",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ]
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "MEMORY_FILE_PATH",
+        "ghcr.io/alun-ai/mcp-persistent-memory:latest"
+      ],
+      "env": {
+        "MEMORY_FILE_PATH": "/tmp/memory.json"
+      }
     },
     "puppeteer": {
       "command": "npx",
